@@ -1,0 +1,4 @@
+#Sat Feb 05 10:30:23 KST 2022
+base.0=/Users/chosunghyun/Desktop/app/12_Chari-o/App/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

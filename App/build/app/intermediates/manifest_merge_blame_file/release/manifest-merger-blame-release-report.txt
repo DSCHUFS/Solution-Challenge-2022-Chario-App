@@ -1,0 +1,84 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_try"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml
+10
+11    <application
+12        android:name="android.app.Application"
+12-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:5:9-42
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.6.0] /Users/chosunghyun/.gradle/caches/transforms-2/files-2.1/5f663b08eec19eef9a9d1af662d9025e/core-1.6.0/AndroidManifest.xml:24:18-86
+14        android:icon="@mipmap/ic_launcher"
+14-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:6:9-43
+15        android:label="Chari-o" >
+15-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:4:9-32
+16        <activity
+16-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:7:9-27:20
+17            android:name="com.example.flutter_try.MainActivity"
+17-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:8:13-41
+18            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+18-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:12:13-163
+19            android:exported="true"
+19-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:9:13-36
+20            android:hardwareAccelerated="true"
+20-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:13:13-47
+21            android:launchMode="singleTop"
+21-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:10:13-43
+22            android:theme="@style/LaunchTheme"
+22-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:11:13-47
+23            android:windowSoftInputMode="adjustResize" >
+23-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:14:13-55
+24
+25            <!--
+26                 Specifies an Android theme to apply to this Activity as soon as
+27                 the Android process has started. This theme is visible to the user
+28                 while the Flutter UI initializes. After that, this theme continues
+29                 to determine the Window background behind the Flutter UI.
+30            -->
+31            <meta-data
+31-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:19:13-22:17
+32                android:name="io.flutter.embedding.android.NormalTheme"
+32-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:20:15-70
+33                android:resource="@style/NormalTheme" />
+33-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:21:15-52
+34
+35            <intent-filter>
+35-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:23:13-26:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:24:17-68
+36-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:24:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:25:17-76
+38-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:25:27-74
+39            </intent-filter>
+40        </activity>
+41        <!--
+42             Don't delete the meta-data below.
+43             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+44        -->
+45        <meta-data
+45-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:30:9-32:33
+46            android:name="flutterEmbedding"
+46-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:31:13-44
+47            android:value="2" />
+47-->/Users/chosunghyun/Desktop/app/12_Chari-o/App/android/app/src/main/AndroidManifest.xml:32:13-30
+48
+49        <activity
+49-->[:url_launcher_android] /Users/chosunghyun/Desktop/app/12_Chari-o/App/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:8:9-11:74
+50            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+50-->[:url_launcher_android] /Users/chosunghyun/Desktop/app/12_Chari-o/App/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:9:13-74
+51            android:exported="false"
+51-->[:url_launcher_android] /Users/chosunghyun/Desktop/app/12_Chari-o/App/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:10:13-37
+52            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+52-->[:url_launcher_android] /Users/chosunghyun/Desktop/app/12_Chari-o/App/build/url_launcher_android/intermediates/library_manifest/release/AndroidManifest.xml:11:13-71
+53    </application>
+54
+55</manifest>
