@@ -25,6 +25,7 @@
     - MySQL
     - Swagger
     - Notion
-
+## Contributors
+[Minseo Kim](https://github.com/kimwest00) [sunghyun cho](https://github.com/chosunghyun18)
 ##
 <p></p>
