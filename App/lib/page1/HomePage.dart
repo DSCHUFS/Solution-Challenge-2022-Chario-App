@@ -9,8 +9,9 @@ import '../color.dart';
 import 'package:flutter_try/api.dart';
 
 class HomePage extends StatefulWidget {
-  //static const color = const Color(0xffb74093);
   const HomePage({Key? key}) : super(key: key);
+  static const String id = "HomePage";
+
   @override
   _MyAppState createState() => _MyAppState();
 
@@ -67,7 +68,6 @@ class _MyAppState extends State<HomePage>{
 
                                       ],
                                     ),
-
                                     SizedBox(height: 30.0,),
                                     Container(
                                       child: Row(

@@ -1,8 +1,8 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/Users/chosunghyun/Developer/flutter
-FLUTTER_APPLICATION_PATH=/Users/chosunghyun/Desktop/app/flutter_hakerton
+FLUTTER_APPLICATION_PATH=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=/Users/chosunghyun/Desktop/app/flutter_hakerton/lib/page1/main.dart
+FLUTTER_TARGET=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/lib/main.dart
 FLUTTER_BUILD_DIR=build
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1
@@ -11,4 +11,4 @@ DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRU
 DART_OBFUSCATION=false
 TRACK_WIDGET_CREATION=true
 TREE_SHAKE_ICONS=false
-PACKAGE_CONFIG=/Users/chosunghyun/Desktop/app/flutter_hakerton/.dart_tool/package_config.json
+PACKAGE_CONFIG=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/.dart_tool/package_config.json

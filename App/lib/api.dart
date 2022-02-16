@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
@@ -14,12 +12,13 @@ Future<Album> fetchAlbum() async {
       }
       );
   print(response.statusCode);
-  if (response.statusCode == 200) {
+  if (response.statusCode == 200)
+  {
     // If the server did return a 200 OK response,
     // then parse the JSON.
     String jsonData = response.body;
     var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
-    //print(myJson);
+    print(myJson);
     return Album.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
@@ -31,17 +30,21 @@ Future<Album> fetchAlbum() async {
 class Album {
   final int count;
   final List<Data> data;
-
   const Album({
     // required this.u_username,
     required this.count,
     required this.data,
   });
-
-  factory Album.fromJson(Map<String, dynamic> json) {
+  factory Album.fromJson(Map<String, dynamic> json)
+  {
     var list = json['data'] as List;
     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
-    print(list);
+
+    print(list[0]);
+    print("   ");
+    print("   ");
+    print(list[0]["f_name"]);
+
     return Album(count: json['count'], data: dataList);
   }
 }

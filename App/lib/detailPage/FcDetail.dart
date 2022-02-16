@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_try/color.dart';
-import 'package:flutter_try/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api.dart';
+
 _launchURL(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
@@ -12,12 +12,17 @@ _launchURL(String url) async {
   }
 }
 
-class NoPoverty1 extends StatefulWidget {
+class NoPoverty1 extends StatefulWidget
+{
   const NoPoverty1({Key? key}) : super(key: key);
   @override
   _MyAppState createState() => _MyAppState();
 }
-class _MyAppState extends State<NoPoverty1>{
+
+
+
+class _MyAppState extends State<NoPoverty1>
+{
   late Future<Album> DetailAlbum;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",

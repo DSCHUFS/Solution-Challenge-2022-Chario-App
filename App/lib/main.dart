@@ -1,20 +1,26 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_try/color.dart';
-import 'package:flutter_try/page1/HomePage.dart';
+import 'page1/HomePage.dart';
+import 'page1/welcome_screen.dart';
+import 'page1/registration_screen.dart';
+import '../color.dart';
 
-
-void main() => runApp(
-    MyApp()
-);//앱 구동시켜주세요~
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title:'Chari-o',
-      theme: ThemeData(primarySwatch: Colors.red),
-      home: HomePage(),
+      //theme: ThemeData(primarySwatch:),
+      //home: HomePage(),
+      initialRoute: WelcomeScreen.id,
+      // routes to run an app
+      routes: {
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        HomePage.id: (context) => HomePage(),
+        },
+
     );
 
   }
