@@ -11,6 +11,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  final amountInputController = TextEditingController();
   @override
   Widget build(BuildContext context) {
 
@@ -65,13 +66,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
+              controller: amountInputController,
             ),
             SizedBox(
               height: 24.0,
             ),
             TextField(
               onChanged: (value) {
-                //Do something with the user input.
+
               },
               decoration: InputDecoration(
                 hintText: 'PW',
@@ -103,6 +105,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   onPressed: () {
                     //Go to login screen.
                     Navigator.pushNamed(context, HomePage.id);
+                    print(amountInputController.text);
                   },
                   minWidth: 200.0,
                   height: 42.0,
