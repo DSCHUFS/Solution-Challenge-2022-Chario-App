@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_try/color.dart';
-import 'package:flutter_try/like_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api.dart';
 
@@ -24,7 +23,7 @@ class NoPoverty1 extends StatefulWidget
 
 class _MyAppState extends State<NoPoverty1>
 {
-
+  bool isLike = true;
   late Future<Album> DetailAlbum;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
@@ -38,7 +37,6 @@ class _MyAppState extends State<NoPoverty1>
   }
   @override
   Widget build(BuildContext context) {
-    bool isLike = false;
     return Scaffold(
       appBar: AppBar(
         title: ListTile(
@@ -167,7 +165,7 @@ class _MyAppState extends State<NoPoverty1>
                           onPressed: () {
                             print(isLike);
                             if(isLike){isLike = false;}else{
-                              print("gotofalse");isLike = true;}}
+                              isLike = true;}}
                         ),
 
 
