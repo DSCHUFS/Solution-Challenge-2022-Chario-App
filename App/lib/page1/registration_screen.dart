@@ -145,6 +145,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
               ),
             ),
+          SizedBox(
+            width: double.infinity,
+            height:50,
+            child: ElevatedButton(
+              child:Text('next'),
+
+              onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);},
+            ),
+          ),
+
 
           ],
         ),

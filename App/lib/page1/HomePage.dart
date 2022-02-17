@@ -7,6 +7,14 @@ import 'package:flutter_try/detailPage/FcDetail5.dart';
 import 'package:flutter_try/main.dart';
 import '../color.dart';
 import 'package:flutter_try/api.dart';
+import 'package:flutter_try/page1/personal_screen.dart';
+import 'package:flutter_try/page1/search_screen.dart';
+import 'package:flutter_try/page1/subscribe_screen.dart';
+
+
+
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,12 +36,106 @@ class _MyAppState extends State<HomePage>{
   Widget build(BuildContext context) {
     return Scaffold(
           appBar: AppBar(
+            automaticallyImplyLeading: false, // for custom icon option setting down below
             backgroundColor: mainColor,
             title:Image.asset("assets/chario_logo.png",width:100,height:50),
-            //centerTitle: true,
-            actions: <Widget>[
+            leading: Builder(
+              builder: (context) => IconButton(
+                icon: Icon(Icons.person_rounded),
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              ),
+            ),
+            actions: [
+              IconButton(
+                  icon: Icon(Icons.search),
+              //     onPressed: () => Navigator.of(context)
+              //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
+              onPressed: (){Navigator.pushNamed(context, PersonalScreen.id);},
+              )
             ],
           ),
+      drawer: Container(
+        child: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage('assets/selfie.jpeg'),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundImage: AssetImage('assets/GDSCLOGO.jpg'),
+                  )
+                ],
+                accountEmail: Text('assets/krischo1204@gmail.com'),
+                accountName: Text('chosung hyun'),
+                onDetailsPressed: () {
+                  print('press details');
+                },
+                decoration: BoxDecoration(
+                  // color:
+                    color: mainColor,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40),
+                    )),
+              ),
+              ListTile(
+                leading:Icon(
+                  Icons.home,
+                  color:Colors.grey[850],
+                ),
+                title: Text('회원정보 보기'),
+
+                onTap:()
+                {
+                  print('회원정보 보기');
+                  Navigator.pushNamed(context, PersonalScreen.id);
+
+                  },
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+
+              // ListTile
+              //   (
+              //   title: Text('Item 2'),
+              //   onTap: () {
+              //     Navigator.pop(context);
+              //   },
+              // ),
+              //
+
+              ListTile(
+                  leading:Icon(
+                    Icons.image,
+                    color:Colors.grey[850],
+                  ),
+                  title: Text('구독현황'),
+                  // onTap:(){
+                  //   Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //           builder: (context) =>Subscribe_Screen()
+                  //       ));
+                  //   },
+                  onTap:()
+                  {
+                    Navigator.pushNamed(context, SubscribeScreen.id);
+                  },
+                  trailing: Icon(Icons.arrow_forward_ios)
+              )
+            ],
+          ),
+        ),
+      ),
+
+
+
+
+
+
+
           body: ListView(
                   children:<Widget> [
                       FutureBuilder<Album>(
