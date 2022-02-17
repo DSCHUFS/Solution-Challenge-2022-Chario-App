@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/personal_screen.dart';
+import 'package:flutter_try/page1/search_screen.dart';
+import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
@@ -19,6 +22,9 @@ class MyApp extends StatelessWidget{
         WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         HomePage.id: (context) => HomePage(),
+        PersonalScreen.id: (context) => PersonalScreen(),
+        SubscribeScreen.id: (context) => SubscribeScreen(),
+        SearchScreen.id: (context) =>  SearchScreen(),
         },
 
     );

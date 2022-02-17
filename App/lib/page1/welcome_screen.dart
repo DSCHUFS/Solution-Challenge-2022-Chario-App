@@ -127,6 +127,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Register',
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),

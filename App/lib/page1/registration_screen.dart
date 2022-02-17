@@ -101,6 +101,29 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 24.0,
             ),
+            TextField(
+              onChanged: (value) {
+                //Do something with the user input.
+              },
+              decoration: InputDecoration(
+                hintText: ''
+                    'Pw again',
+                contentPadding:
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: TeamColor, width: 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: TeamColor, width: 2.0),
+                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                ),
+              ),
+            ),
+
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
@@ -110,6 +133,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Implement registration functionality.
+
+
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -120,6 +145,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
               ),
             ),
+          SizedBox(
+            width: double.infinity,
+            height:50,
+            child: ElevatedButton(
+              child:Text('next'),
+
+              onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);},
+            ),
+          ),
+
 
           ],
         ),
