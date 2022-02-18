@@ -4,21 +4,24 @@ import 'package:http/http.dart' as http;
 //minseo branch try
 Future<Album> fetchAlbum() async {
   final response = await http.get(
-       // Uri.parse("http://34.64.163.180:8080/api/facilities"),
-      Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/facility/"),
+      Uri.parse("http://34.134.67.181:8080/api/facilities/"),
       headers: {
       "Accept": "application/json",
       "Access-Control-Allow-Origin": "*"
       }
       );
   print(response.statusCode);
+
   if (response.statusCode == 200)
   {
     // If the server did return a 200 OK response,
     // then parse the JSON.
     String jsonData = response.body;
+
+
     var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
     print(myJson);
+
     return Album.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,

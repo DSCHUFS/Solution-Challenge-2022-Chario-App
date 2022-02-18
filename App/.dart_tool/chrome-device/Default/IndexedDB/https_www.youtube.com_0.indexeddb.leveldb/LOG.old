@@ -1,0 +1,6 @@
+2022/02/17-16:29:36.531 26313 Creating DB /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.poPK3X/flutter_tools_chrome_device.Cf1ZFI/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb since it was missing.
+2022/02/17-16:29:36.589 26313 Reusing MANIFEST /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.poPK3X/flutter_tools_chrome_device.Cf1ZFI/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/02/17-16:32:04.685 26313 Level-0 table #5: started
+2022/02/17-16:32:04.706 26313 Level-0 table #5: 69674 bytes OK
+2022/02/17-16:32:04.746 26313 Delete type=0 #3
+2022/02/17-16:32:04.747 26313 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

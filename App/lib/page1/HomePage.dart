@@ -11,11 +11,6 @@ import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 
-
-
-
-
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
   static const String id = "HomePage";
@@ -32,6 +27,7 @@ class _MyAppState extends State<HomePage>{
     super.initState();
     HomeAlbum = fetchAlbum();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,12 +125,6 @@ class _MyAppState extends State<HomePage>{
           ),
         ),
       ),
-
-
-
-
-
-
 
           body: ListView(
                   children:<Widget> [
