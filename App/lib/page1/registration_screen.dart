@@ -10,6 +10,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+
+  final TextEditingController _textEditingController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +80,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 8.0,
             ),
+
             TextField(
+              // controller: _textController,
+
               onChanged: (value) {
                 //Do something with the user input.
               },
@@ -133,7 +139,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Implement registration functionality.
-
 
                   },
                   minWidth: 200.0,
