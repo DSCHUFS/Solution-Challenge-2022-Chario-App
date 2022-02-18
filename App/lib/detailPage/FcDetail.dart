@@ -164,8 +164,15 @@ class _MyAppState extends State<NoPoverty1>
                           color: isLike? Colors.red:null,
                           onPressed: () {
                             print(isLike);
-                            if(isLike){isLike = false;}else{
-                              isLike = true;}}
+                            setState(() {
+                              if (isLike) {
+                                isLike = false;
+                              } else {
+                                isLike = true;
+                              }
+                            }
+                            );
+                          }
                         ),
 
 
