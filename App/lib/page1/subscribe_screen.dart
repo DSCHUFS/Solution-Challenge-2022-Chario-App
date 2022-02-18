@@ -20,7 +20,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const PrimaryColor = const Color(0xFFffa8a8);
+    // const PrimaryColor = const Color(0xFFffa8a8);
     return MaterialApp(
       home: Scaffold(
         body: Column(
