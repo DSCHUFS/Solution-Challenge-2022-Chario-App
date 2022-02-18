@@ -23,6 +23,7 @@ class NoPoverty1 extends StatefulWidget
 
 class _MyAppState extends State<NoPoverty1>
 {
+  bool isLike = true;
   late Future<Album> DetailAlbum;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
@@ -49,12 +50,14 @@ class _MyAppState extends State<NoPoverty1>
         future: DetailAlbum,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+
             return Container(child: Column(
-                children:[Center(
-                  child: SizedBox(
-                    height: 10,
-                    width: 200,
-                    child: Container(color: Colors.white),
+                children:[
+                  Center(
+                    child: SizedBox(
+                      height: 10,
+                      width: 200,
+                      child: Container(color: Colors.white),
                   ),
                 ),
                   // logo
@@ -144,17 +147,32 @@ class _MyAppState extends State<NoPoverty1>
                     ),
                   ),
 
-                  Container(
-                    child: RaisedButton(
-                      onPressed: () {
-                        _launchURL(snapshot.data!.data[0].f_pay);
-                      },
-                      child: const Text('donation', style: TextStyle(fontSize: 20)),
-                      color: mainColor,
-                      textColor: Colors.white,
-                      elevation: 5,
-                    ),
-                  ),]));
+                    Center(
+                      child: Row(
+                        children:[
+                        RaisedButton(
+                          onPressed: () {
+                          _launchURL(snapshot.data!.data[0].f_pay);
+                        },
+                          child: const Text('donation', style: TextStyle(fontSize: 20)),
+                          color: mainColor,
+                          textColor: Colors.white,
+                          elevation: 5,
+                      ),
+                        IconButton(
+                          icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
+                          color: isLike? Colors.red:null,
+                          onPressed: () {
+                            print(isLike);
+                            if(isLike){isLike = false;}else{
+                              isLike = true;}}
+                        ),
+
+
+                    ]
+          ),),
+                  ]
+            ),);
           } else if (snapshot.hasError) {
             return Text('${snapshot.error}');
           }
