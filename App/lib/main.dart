@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget{
       title:'Chari-o',
       //theme: ThemeData(primarySwatch:),
       //home: HomePage(),
-      // initialRoute: HomePage.id,
+      // initialRoute: SubscribeScreen.id,
       initialRoute: WelcomeScreen.id,
       // routes to run an app
       routes: {

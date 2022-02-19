@@ -19,8 +19,8 @@ Future<FcJdata> fetchFcJdata() async {
     String jsonData = response.body;
 
     /// test code
-    var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
-    print(myJson);
+    // var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
+    // print(myJson);
 
     return FcJdata.fromJson(jsonDecode(jsonData));
   } else {

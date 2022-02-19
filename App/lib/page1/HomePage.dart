@@ -86,7 +86,6 @@ class _MyAppState extends State<HomePage>{
 
                 onTap:()
                 {
-                  print('회원정보 보기');
                   Navigator.pushNamed(context, PersonalScreen.id);
 
                   },
