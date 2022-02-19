@@ -15,12 +15,13 @@ Future<UserJdata> fetchUserJdata() async {
   if (response.statusCode == 200)
   {
     String jsonData = response.body;
-    // var myJson = jsonDecode(jsonData)['data']['u_username'];
-    // print(myJson);
+
+    var myJson = jsonDecode(jsonData)['data']['u_username'];
+    print("user api check");
+    print(myJson);
+
     return UserJdata.fromJson(jsonDecode(jsonData));
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
     throw Exception('Failed to load data');
   }
 }
@@ -34,23 +35,14 @@ class UserJdata {
   final int u_birth;
 
 
-  UserJdata(this.u_username,this.u_name, this.u_email,this.u_phone,this.u_birth);
+  UserJdata({required this.u_username,required this.u_name, required this.u_email,required this.u_phone,required this.u_birth});
 
-  UserJdata.fromJson(Map<String, dynamic> json)
-      : u_username  = json['u_username'],
-        u_name = json['u_name'],
-        u_email = json['u_email'],
-        u_phone = json['u_phone'],
-        u_birth = json['u_birth'];
-
-  Map<String, dynamic> toJson() =>
-      {
-        'u_username': u_username,
-        'u_name': u_name,
-        'u_email': u_email,
-        'u_phone': u_phone,
-        'u_birth': u_birth,
-      };
+  factory UserJdata.fromJson(Map<String, dynamic> json)
+  {
+    return UserJdata(u_username: json["u_username"],
+        u_name: json["u_name]"], u_email: json["u_email"],
+        u_phone: json["u_phone"], u_birth: json["u_birth"]);
+  }
 }
 
 
