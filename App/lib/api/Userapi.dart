@@ -52,18 +52,6 @@ class Data {
   final String u_name;
   final String u_email;
   final String u_phone;
-<<<<<<< HEAD
-  final int u_birth;
-
-
-  UserJdata({required this.u_username,required this.u_name, required this.u_email,required this.u_phone,required this.u_birth});
-
-  factory UserJdata.fromJson(Map<String, dynamic> json)
-  {
-    return UserJdata(u_username: json["u_username"],
-        u_name: json["u_name]"], u_email: json["u_email"],
-        u_phone: json["u_phone"], u_birth: json["u_birth"]);
-=======
   final String u_birth;
 
 
@@ -71,13 +59,12 @@ class Data {
 
   factory Data.fromJson(Map<String, dynamic> json)
   {
-    return Data(
-        u_username: json["u_username"],
-        u_name: json["u_name"],
+    return Data(u_username:
+        json["u_username"],
+        u_name: json["u_name]"],
         u_email: json["u_email"],
         u_phone: json["u_phone"],
         u_birth: json["u_birth"]);
->>>>>>> 0bf8374 (upload new parsing)
   }
 }
 
