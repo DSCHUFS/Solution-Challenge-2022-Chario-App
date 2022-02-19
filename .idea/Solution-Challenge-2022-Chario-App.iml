@@ -6,6 +6,12 @@
       <excludeFolder url="file://$MODULE_DIR$/App/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/App/build" />
       <excludeFolder url="file://$MODULE_DIR$/App/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/url_launcher_ios/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

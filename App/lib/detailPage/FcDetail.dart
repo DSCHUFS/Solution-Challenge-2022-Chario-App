@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_try/color.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_try/api.dart';
+import 'package:flutter_try/api/Fcapi.dart';
 
 _launchURL(String url) async {
   if (await canLaunch(url)) {
@@ -24,7 +24,7 @@ class NoPoverty1 extends StatefulWidget
 class _MyAppState extends State<NoPoverty1>
 {
   bool isLike = true;
-  late Future<Album> DetailAlbum;
+  late Future<FcJdata> DetailFcJdata;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
@@ -33,7 +33,7 @@ class _MyAppState extends State<NoPoverty1>
   void initState() {
     // TODO: implement initState
     super.initState();
-    DetailAlbum = fetchAlbum();
+    DetailFcJdata = fetchFcJdata();
   }
   @override
   Widget build(BuildContext context) {
@@ -46,8 +46,8 @@ class _MyAppState extends State<NoPoverty1>
         backgroundColor: mainColor,
       ),
       body:
-      FutureBuilder<Album>(
-        future: DetailAlbum,
+      FutureBuilder<FcJdata>(
+        future: DetailFcJdata,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
 

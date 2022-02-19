@@ -6,7 +6,7 @@ import 'package:flutter_try/detailPage/FcDetail4.dart';
 import 'package:flutter_try/detailPage/FcDetail5.dart';
 import 'package:flutter_try/main.dart';
 import '../color.dart';
-import 'package:flutter_try/api.dart';
+import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
@@ -20,12 +20,12 @@ class HomePage extends StatefulWidget {
 
 }
 class _MyAppState extends State<HomePage>{
-  late Future<Album> HomeAlbum;
+  late Future<FcJdata> HomeFcJdata;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    HomeAlbum = fetchAlbum();
+    HomeFcJdata = fetchFcJdata();
   }
 
   @override
@@ -128,8 +128,8 @@ class _MyAppState extends State<HomePage>{
 
           body: ListView(
                   children:<Widget> [
-                      FutureBuilder<Album>(
-                        future: HomeAlbum,
+                      FutureBuilder<FcJdata>(
+                        future: HomeFcJdata,
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
                             return Container(
@@ -194,8 +194,8 @@ class _MyAppState extends State<HomePage>{
                         },
                       ),
                       SizedBox(height: 30.0,),
-                    FutureBuilder<Album>(
-                      future: HomeAlbum,
+                    FutureBuilder<FcJdata>(
+                      future: HomeFcJdata,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return Container(
@@ -248,8 +248,8 @@ class _MyAppState extends State<HomePage>{
                     ),
 
                     SizedBox(height: 30.0,),
-                    FutureBuilder<Album>(
-                      future: HomeAlbum,
+                    FutureBuilder<FcJdata>(
+                      future: HomeFcJdata,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return Container(
@@ -322,8 +322,8 @@ class _MyAppState extends State<HomePage>{
                       },
                     ),
                     SizedBox(height: 30.0,),
-                    FutureBuilder<Album>(
-                      future: HomeAlbum,
+                    FutureBuilder<FcJdata>(
+                      future: HomeFcJdata,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return Container(
@@ -391,8 +391,8 @@ class _MyAppState extends State<HomePage>{
                       },
                     ),
                     SizedBox(height: 30.0,),
-                    FutureBuilder<Album>(
-                      future: HomeAlbum,
+                    FutureBuilder<FcJdata>(
+                      future: HomeFcJdata,
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           return Container(

@@ -1,28 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-//minseo branch try
-Future<Album> fetchAlbum() async {
+
+Future<SubJdata> fetchSubJdata() async {
   final response = await http.get(
-      Uri.parse("http://34.134.67.181:8080/api/facilities/"),
+      Uri.parse("http://34.134.67.181:8080/api/subscribes"),
       headers: {
-      "Accept": "application/json",
-      "Access-Control-Allow-Origin": "*"
+        "Accept": "application/json",
+        "Access-Control-Allow-Origin": "*"
       }
-      );
+  );
   print(response.statusCode);
 
   if (response.statusCode == 200)
   {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
     String jsonData = response.body;
-
-
     var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
     print(myJson);
-
-    return Album.fromJson(jsonDecode(jsonData));
+    return SubJdata.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
     // then throw an exception.
@@ -30,27 +25,28 @@ Future<Album> fetchAlbum() async {
   }
 }
 
-class Album {
+class SubJdata {
   final int count;
   final List<Data> data;
-  const Album({
+  const SubJdata({
     // required this.u_username,
     required this.count,
     required this.data,
   });
-  factory Album.fromJson(Map<String, dynamic> json)
+
+  factory SubJdata.fromJson(Map<String, dynamic> json)
   {
     var list = json['data'] as List;
     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
 
-    print(list[0]);
-    print("   ");
-    print("   ");
-    print(list[0]["f_name"]);
-
-    return Album(count: json['count'], data: dataList);
+    return SubJdata(count: json['count'], data: dataList);
   }
+
+
+
 }
+
+
 
 class Data {
   final String f_name;
@@ -73,7 +69,8 @@ class Data {
     required this.f_logo,
   });
 
-  factory Data.fromJson(Map<String, dynamic> json) {
+  factory Data.fromJson(Map<String, dynamic> json)
+  {
     return Data(
         f_name: json['f_name'],
         f_intro: json['f_intro'],
@@ -86,3 +83,6 @@ class Data {
 
   }
 }
+
+
+

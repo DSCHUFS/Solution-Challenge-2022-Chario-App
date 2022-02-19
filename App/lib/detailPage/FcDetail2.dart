@@ -3,7 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_try/color.dart';
 import 'package:flutter_try/main.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_try/api.dart';
+import 'package:flutter_try/api/Fcapi.dart';
 _launchURL(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
@@ -18,7 +18,7 @@ class NoPoverty2 extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 class _MyAppState extends State<NoPoverty2>{
-  late Future<Album> DetailAlbum;
+  late Future<FcJdata> DetailFcJdata;
   final List<String> imageList =
   ["https://storage.googleapis.com/content_image/Unicef_contents/Unicef_tonga_01_27.jpg?authuser=1",
     "assets/bts.png",
@@ -30,7 +30,7 @@ class _MyAppState extends State<NoPoverty2>{
   void initState() {
     // TODO: implement initState
     super.initState();
-    DetailAlbum = fetchAlbum();
+    DetailFcJdata = fetchFcJdata();
   }
   @override
   Widget build(BuildContext context) {
@@ -43,8 +43,8 @@ class _MyAppState extends State<NoPoverty2>{
         backgroundColor: mainColor,
       ),
       body:
-      FutureBuilder<Album>(
-        future: DetailAlbum,
+      FutureBuilder<FcJdata>(
+        future: DetailFcJdata,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Container(child: Column(

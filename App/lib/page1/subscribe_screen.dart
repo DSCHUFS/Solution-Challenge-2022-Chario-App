@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_try/api.dart';
+import 'package:flutter_try/api/Subscribeapi.dart';
 import 'HomePage.dart';
 
 class SubscribeScreen extends StatefulWidget {
@@ -9,13 +9,12 @@ class SubscribeScreen extends StatefulWidget {
 }
 
 class _SubscribeScreenState extends State<SubscribeScreen> {
-  late Future<Album> Fcinform;
+  late Future<SubJdata> Fcinform;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Fcinform = fetchAlbum();
+    Fcinform = fetchSubJdata();
   }
 
   @override
@@ -28,7 +27,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<Album>(
+                child: FutureBuilder<SubJdata>(
                   future: Fcinform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
@@ -38,7 +37,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                         itemCount: 7,//  정보를 7개 보여줍니다   / 수정 필요
 
                         itemBuilder: (context, index) {
-                          // List<Album> eachname = snapshot.data.f_name.toList();
+                          // List<SubJdata> eachname = snapshot.data.f_name.toList();
 
                           return ListTile(
                               //leading:ImageIcon(AssetImage(snapshot.data!.data[index].f_logo), size: 50.0,),    -> url 받아와서 어떻게,,
