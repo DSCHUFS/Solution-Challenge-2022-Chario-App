@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_try/api/Subscribeapi.dart';
 import 'package:flutter_try/api/Userapi.dart';
 
 
@@ -35,12 +34,12 @@ class _PersonalScreenState extends State<PersonalScreen>
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      // Text(snapshot.data!.u_name);
+                      Text(snapshot.data!.data.u_username);
                       return Container(
                         child: Column(
                             children: [
                               SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.u_name) ),
+                              Expanded(child:Text(snapshot.data!.data.u_username) ),
                               SizedBox(width: 300.0,),
                               SizedBox(width: 300.0,),
                               SizedBox(width: 300.0,),
@@ -50,7 +49,7 @@ class _PersonalScreenState extends State<PersonalScreen>
                         ),
                       );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
+                      return Text('${snapshot.error}'+'    this is error');
                     }
                     return const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
