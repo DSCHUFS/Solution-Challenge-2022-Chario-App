@@ -42,10 +42,12 @@ class _PersonalScreenState extends State<PersonalScreen>
                               SizedBox(width: 300.0,),
                               Expanded(child:Text(snapshot.data!.datag.u_Name)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Email)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Phone)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Birth)),
                               SizedBox(width: 300.0,),
-
                             ],
                         ),
                       );
