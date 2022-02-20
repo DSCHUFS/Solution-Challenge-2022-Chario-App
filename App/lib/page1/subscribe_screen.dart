@@ -2,6 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_try/api/Subscribeapi.dart';
 import 'HomePage.dart';
 
+
+
+
+/// userapi 에서 data를 가져온다.
+
+
+
+
+
 class SubscribeScreen extends StatefulWidget {
   static const String id = "subscribe_screen";
   @override
@@ -14,7 +23,9 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
   @override
   void initState() {
     super.initState();
-    Fcinform = fetchSubJdata();
+    /// 이름 맞는거만 받기 위해 string 을 넣자
+     var g_name= "shindh0429"
+    Fcinform = fetchSubJdata(g_name);
   }
 
   @override
@@ -41,7 +52,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
 
                           return ListTile(
                               //leading:ImageIcon(AssetImage(snapshot.data!.data[index].f_logo), size: 50.0,),    -> url 받아와서 어떻게,,
-                              title: Text(snapshot.data!.data[index].f_name)
+                              // title: Text(snapshot.data!.data[index].f_name)
                           //title: Text(eachname)
                             // subtitle:
                             // trailing:
