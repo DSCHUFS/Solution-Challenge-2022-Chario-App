@@ -2,7 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<SubJdata> fetchSubJdata() async {
+
+// 이름 같으면 구독 정보를 알려 주는 class   api 를 이용
+
+
+
+
+Future<SubJdata> fetchSubJdata(var g_name) async {
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/subscribes"),
       headers: {
@@ -15,8 +21,37 @@ Future<SubJdata> fetchSubJdata() async {
   if (response.statusCode == 200)
   {
     String jsonData = response.body;
-    var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
-    print(myJson);
+
+
+    var myJson1 = jsonDecode(jsonData)['data'][0]['user'];
+    print("this is user");
+    print(myJson1);
+
+    var countofdata = jsonDecode(jsonData)['count'];
+    print(countofdata);
+
+
+    var uname = jsonDecode(jsonData)['data'][0]['user']['u_username'];
+    print(uname);
+
+    print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
+    print(g_name);
+    // 이름이 같은 것만 추출
+    for(var i = 0  ; i < countofdata ; i++)
+    {
+      uname = jsonDecode(jsonData)['data'][i]['user']['u_username'] ;
+      if (uname == g_name)
+      {
+        print(" name  is same") ;
+        print(uname);
+      }
+    }
+
+
+    var myJson3 = jsonDecode(jsonData)['data'][0]['f_name'];
+    print(myJson3);
+
+
     return SubJdata.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
@@ -25,13 +60,19 @@ Future<SubJdata> fetchSubJdata() async {
   }
 }
 
+
+
+
+
+
 class SubJdata {
   final int count;
-  final List<Data> data;
+  final List<Data> datag;
+
   const SubJdata({
     // required this.u_username,
     required this.count,
-    required this.data,
+    required this.datag,
   });
 
   factory SubJdata.fromJson(Map<String, dynamic> json)
@@ -39,7 +80,7 @@ class SubJdata {
     var list = json['data'] as List;
     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
 
-    return SubJdata(count: json['count'], data: dataList);
+    return SubJdata(count: json['count'], datag: dataList);
   }
 
 
@@ -83,6 +124,3 @@ class Data {
 
   }
 }
-
-
-
