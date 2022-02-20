@@ -37,15 +37,18 @@ Future<SubJdata> fetchSubJdata(var g_name) async {
     print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
     print(g_name);
     // 이름이 같은 것만 추출
+    
+    var Subfc_list = [];
     for(var i = 0  ; i < countofdata ; i++)
     {
       uname = jsonDecode(jsonData)['data'][i]['user']['u_username'] ;
       if (uname == g_name)
       {
-        print(" name  is same") ;
-        print(uname);
+        Subfc_list.add(jsonDecode(jsonData)['data'][i]['f_name']);
       }
     }
+
+    print(Subfc_list);
 
 
     var myJson3 = jsonDecode(jsonData)['data'][0]['f_name'];
