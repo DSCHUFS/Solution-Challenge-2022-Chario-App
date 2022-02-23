@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_try/api/Subscribeapi.dart';
 import 'HomePage.dart';
 
-
-
-
 /// userapi 에서 data를 가져온다.
-
-
-
 
 
 class SubscribeScreen extends StatefulWidget {
@@ -18,14 +12,16 @@ class SubscribeScreen extends StatefulWidget {
 }
 
 class _SubscribeScreenState extends State<SubscribeScreen> {
+
+
   late Future<SubJdata> Fcinform;
 
   @override
   void initState() {
     super.initState();
     /// 이름 맞는거만 받기 위해 string 을 넣자
-     var g_name= "shindh0429"
-    Fcinform = fetchSubJdata(g_name);
+    Fcinform = fetchSubJdata("shindh0429");
+    print(Fcinform);
   }
 
   @override
@@ -43,26 +39,19 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       return ListView.separated(
-                        // itemCount: snapshot.data.length, //  정보를 20개 보여줍니다
-
-                        itemCount: 7,//  정보를 7개 보여줍니다   / 수정 필요
-
+                        itemCount: int.parse(snapshot.data!.count), //  정보를 20개 보여줍니다
+                        //  정보를 7개 보여줍니다   / 수정 필요
                         itemBuilder: (context, index) {
-                          // List<SubJdata> eachname = snapshot.data.f_name.toList();
 
                           return ListTile(
-                              //leading:ImageIcon(AssetImage(snapshot.data!.data[index].f_logo), size: 50.0,),    -> url 받아와서 어떻게,,
-                              // title: Text(snapshot.data!.data[index].f_name)
-                          //title: Text(eachname)
-                            // subtitle:
-                            // trailing:
-
+                              // leading:ImageIcon(AssetImage(snapshot.data!.data[index].f_logo), size: 50.0,),
+                              title: Text(snapshot.data!.data[0].f_name)
                         );
                       },
                         separatorBuilder: (context, index) { return Divider(); },
                       );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
+                      return Text("${snapshot}");
                     }
                     return const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
