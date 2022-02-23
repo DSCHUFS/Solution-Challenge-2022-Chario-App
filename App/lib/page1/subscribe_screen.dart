@@ -45,8 +45,8 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                                 minHeight: 44,
                                 maxWidth: 64,
                                 maxHeight: 64, //
-                                ),child: Image.network(snapshot.data!.datag[index].f_logo, fit: BoxFit.cover),
-                                  //child:Image.network("https://storage.googleapis.com/content_image/%EB%A1%9C%EA%B3%A0/%E1%84%8E%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A1%E1%86%AB.gif?authuser=1",fit: BoxFit.cover,)
+                                ),child: Image.network(snapshot.data!.datag[index].f_logo, fit: BoxFit.fill),
+
                               ),
                                 title:new Center(child:new Text(snapshot.data!.datag[index].f_name),)
                             );
