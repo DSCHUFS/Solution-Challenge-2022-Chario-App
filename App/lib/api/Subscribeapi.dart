@@ -20,8 +20,11 @@ Future <DataList>fetchSubJdata(var g_name)async {
   print(uname);
   print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
 
-  List Subfc_list =[];
 
+
+
+  Map <String,dynamic> givedata ={};
+  List Subfc_list =[];
   int cnt = 0;
   for(var i = 0  ; i < countofdata ; i++)
   {
@@ -36,37 +39,58 @@ Future <DataList>fetchSubJdata(var g_name)async {
     }
   }
 
-
   print("check---after for loop");
-  print(Subfc_list);
+
   print(Subfc_list.runtimeType);
+  givedata['data'] = Subfc_list;
 
-  var jdata = jsonEncode(Subfc_list);
+  print("this is answ");
+  print(givedata);
+  print(givedata.runtimeType);
+  // jsone encdode -> string
+  // use json decode and map to build
+  print("this is answ2");
+  String datafinal = json.encode(givedata);
+  print(datafinal.runtimeType);
+  print(datafinal);
+  Map <String,dynamic> ourjson = jsonDecode(datafinal);
+  print(ourjson);
+  print(ourjson.runtimeType);
 
-  print(jdata.runtimeType);
-
-  //Subfc_list   encode to json
-
-
-
-  return DataList.fromJson(jdata);
+  return DataList.fromJson(ourjson);
 }
+
 
 class DataList
 {
 
-  final String f_name;
-  final String f_logo;
+  final List<Data> datag;
 
-  // List<String> listdata;
+  DataList({required this.datag});
 
-  DataList({required this.f_name,required this.f_logo});
-
-  factory DataList.fromJson(Map<String, dynamic> give)
+  factory DataList.fromJson(Map<String, dynamic> json)
   {
-    return DataList(
-        f_name: give["f_name"],
-        f_logo: give['f_logo']);
+    var list = json['data'] as List;
+     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
+    return DataList(datag: dataList);
   }
 
+}
+
+
+class Data {
+
+  final String f_name;
+  final String f_logo;
+  Data({
+  required this.f_name,
+  required this.f_logo,
+  });
+  factory Data.fromJson(Map<String, dynamic> json)
+  {
+    return Data(
+    f_name: json['f_name'],
+    f_logo: json['f_logo']
+    );
+  }
 }
