@@ -38,17 +38,15 @@ Future <DataList>fetchSubJdata(var g_name)async
   print(Subfc_list.runtimeType);
 
 
-  return DataList(Subfc_list, per_sublist: []);
+  print (DataList(listdata: Subfc_list).listdata[1]);
+  return DataList(listdata: Subfc_list);
 
 }
 
-class DataList {
+class DataList
+{
 
-  List<String> per_sublist;
-
-  DataList(List<String> subfc_list,
-      {
-        required this.per_sublist
-      });
+  List<String> listdata;
+  DataList({required this.listdata});
 
 }
