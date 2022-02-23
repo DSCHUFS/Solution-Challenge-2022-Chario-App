@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-Future <DataList>fetchSubJdata(var g_name)async
-{
-  List <String> Subfc_list =[];
+
+Future <DataList>fetchSubJdata(var g_name)async {
 
   final response = await http.get
     (
@@ -14,13 +13,14 @@ Future <DataList>fetchSubJdata(var g_name)async
       }
   );
   String jsonData = response.body;
-
+  print("----------");
   var countofdata = jsonDecode(jsonData)['count'];
   print(countofdata);
   var uname = jsonDecode(jsonData)['data'][0]['user']['u_username'];
   print(uname);
   print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
-  print(g_name);
+
+  List Subfc_list =[];
 
   int cnt = 0;
   for(var i = 0  ; i < countofdata ; i++)
@@ -29,24 +29,44 @@ Future <DataList>fetchSubJdata(var g_name)async
     if (uname == g_name)
     {
       cnt++;
-      Subfc_list.add(jsonDecode(jsonData)['data'][i]['f_name']);
+      Map<String, String> mapli = {};
+      mapli['f_name'] = jsonDecode(jsonData)['data'][i]['f_name'] as String;
+      mapli['f_logo'] = jsonDecode(jsonData)['data'][i]['f_logo'] as String;
+      Subfc_list.add(mapli);
     }
   }
+
 
   print("check---after for loop");
   print(Subfc_list);
   print(Subfc_list.runtimeType);
 
+  var jdata = jsonEncode(Subfc_list);
 
-  print (DataList(listdata: Subfc_list).listdata[1]);
-  return DataList(listdata: Subfc_list);
+  print(jdata.runtimeType);
 
+  //Subfc_list   encode to json
+
+
+
+  return DataList.fromJson(jdata);
 }
 
 class DataList
 {
 
-  List<String> listdata;
-  DataList({required this.listdata});
+  final String f_name;
+  final String f_logo;
+
+  // List<String> listdata;
+
+  DataList({required this.f_name,required this.f_logo});
+
+  factory DataList.fromJson(Map<String, dynamic> give)
+  {
+    return DataList(
+        f_name: give["f_name"],
+        f_logo: give['f_logo']);
+  }
 
 }
