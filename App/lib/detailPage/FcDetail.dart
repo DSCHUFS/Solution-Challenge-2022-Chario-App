@@ -20,10 +20,10 @@ class NoPoverty1 extends StatefulWidget
 }
 
 
-
+bool isLike = true;
 class _MyAppState extends State<NoPoverty1>
 {
-  bool isLike = true;
+
   late Future<FcJdata> DetailFcJdata;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",

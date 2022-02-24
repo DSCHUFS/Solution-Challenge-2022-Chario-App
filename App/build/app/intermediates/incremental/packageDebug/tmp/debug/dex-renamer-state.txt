@@ -1,4 +1,4 @@
-#Sat Feb 05 09:34:46 KST 2022
-base.0=/Users/chosunghyun/Desktop/app/flutter_hakerton/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Thu Feb 24 02:20:43 KST 2022
+base.0=C\:\\flutter_project\\flutter_try\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

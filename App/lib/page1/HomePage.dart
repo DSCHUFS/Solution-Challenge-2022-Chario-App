@@ -137,7 +137,6 @@ class _MyAppState extends State<HomePage>{
 
                                   children:<Widget>
                                   [
-
                                     Row(
                                       children:[
                                         ClipOval(
