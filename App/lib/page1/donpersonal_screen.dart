@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../page1/subscribe_screen.dart';
 import '../api/donationgetapi.dart';
 
 class DonpersonalScreen extends StatefulWidget {
@@ -21,8 +22,7 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
   @override
   Widget build(BuildContext context) {
     // const PrimaryColor = const Color(0xFFffa8a8);
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: Column(
           children: [
             Expanded(
@@ -36,6 +36,10 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                       return ListView.separated(
                           itemBuilder: (context, index) {
                             return ListTile(
+                              onTap:()
+                              {
+                                Navigator.pushNamed(context, SubscribeScreen.id);
+                              },
                                 leading: ConstrainedBox(
                                   constraints: BoxConstraints(
                                     minWidth: 44,
@@ -47,10 +51,15 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                                       snapshot.data!.datag[index].f_logo,
                                       fit: BoxFit.fill),
                                 ),
-                                title: new Center(
-                                  child: new Text(
+                                title:Center
+                                  (
+                                  child:Text
+                                    (
                                       snapshot.data!.datag[index].f_name),
-                                ));
+                                ),
+                              trailing: Icon(Icons.arrow_forward_ios),
+
+                            );
                           },
                           separatorBuilder: (context, index) {
                             return Divider();
@@ -69,7 +78,6 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
           ],
         ),
         bottomNavigationBar: BottomBar(userDonform),
-      ),
     );
   }
 }

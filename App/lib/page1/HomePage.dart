@@ -66,7 +66,7 @@ class _MyAppState extends State<HomePage>{
                 ),
                 otherAccountsPictures: [
                   CircleAvatar(
-                    backgroundImage: AssetImage('assets/GDSCLOGO.jpg'),
+                    backgroundImage: AssetImage('assets/logo.png'),
                   )
                 ],
                 accountEmail: Text('assets/krischo1204@gmail.com'),

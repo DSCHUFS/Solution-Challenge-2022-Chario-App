@@ -1,11 +1,11 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
-
 import '../api/Subscribeapi.dart';
 
 class SubscribeScreen extends StatefulWidget
 {
-  static const String id = "Subscribe_screen";
+  static const String id = "subscribe_screen";
+
   @override
   _SubscribeScreenState createState() => _SubscribeScreenState();
 }
@@ -38,7 +38,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
 
                   if (snapshot.hasData) {
                     // return Text(snapshot.data!.datag[1].f_name);
-                    return ListView.separated(
+                    return  ListView.separated(
                         itemBuilder:(context, index)
                         {
                           return
@@ -51,7 +51,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                                 ),child: Image.network(snapshot.data!.datag[index].f_logo, fit: BoxFit.fill),
 
                               ),
-                                title:new Center(child:new Text(snapshot.data!.datag[index].f_name),)
+                                title:Center(child:Text(snapshot.data!.datag[index].f_name),)
                             );
                         },
                         separatorBuilder: (context, index) { return Divider(); },
