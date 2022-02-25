@@ -14,13 +14,10 @@ Future<FcJdata> fetchFcJdata() async {
 
   if (response.statusCode == 200)
   {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
+
     String jsonData = response.body;
 
-    /// test code
-    // var myJson = jsonDecode(jsonData)['data'][0]['f_name'];
-    // print(myJson);
+    print(jsonDecode(jsonData));
 
     return FcJdata.fromJson(jsonDecode(jsonData));
   } else {
@@ -32,7 +29,9 @@ Future<FcJdata> fetchFcJdata() async {
 
 class FcJdata {
   final int count;
+
   final List<Data> data;
+
   const FcJdata({
     // required this.u_username,
     required this.count,

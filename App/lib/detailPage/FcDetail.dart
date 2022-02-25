@@ -4,6 +4,8 @@ import 'package:flutter_try/color.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 
+import '../page1/donationask_screen.dart';
+
 _launchURL(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
@@ -29,6 +31,8 @@ class _MyAppState extends State<NoPoverty1>
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
   ];
+
+
   @override
   void initState() {
     // TODO: implement initState
@@ -153,6 +157,7 @@ class _MyAppState extends State<NoPoverty1>
                         RaisedButton(
                           onPressed: () {
                           _launchURL(snapshot.data!.data[0].f_pay);
+                          Navigator.pushNamed(context, Donationask.id);
                         },
                           child: const Text('donation', style: TextStyle(fontSize: 20)),
                           color: mainColor,

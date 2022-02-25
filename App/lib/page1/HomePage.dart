@@ -57,7 +57,7 @@ class _MyAppState extends State<HomePage>{
             children: [
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage('assets/selfie.jpeg'),
+                  backgroundImage: AssetImage('assets/logo.png'),
                 ),
                 otherAccountsPictures: [
                   CircleAvatar(

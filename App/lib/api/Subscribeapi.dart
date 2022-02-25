@@ -21,8 +21,6 @@ Future <DataList>fetchSubJdata(var g_name)async {
   print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
 
 
-
-
   Map <String,dynamic> givedata ={};
   List Subfc_list =[];
   int cnt = 0;
@@ -47,8 +45,7 @@ Future <DataList>fetchSubJdata(var g_name)async {
   print("this is answ");
   print(givedata);
   print(givedata.runtimeType);
-  // jsone encdode -> string
-  // use json decode and map to build
+
   print("this is answ2");
   String datafinal = json.encode(givedata);
   print(datafinal.runtimeType);
@@ -66,6 +63,7 @@ class DataList
 
   final List<Data> datag;
 
+
   DataList({required this.datag});
 
   factory DataList.fromJson(Map<String, dynamic> json)
@@ -75,6 +73,7 @@ class DataList
     return DataList(datag: dataList);
   }
 
+
 }
 
 
@@ -83,8 +82,9 @@ class Data {
   final String f_name;
   final String f_logo;
   Data({
-  required this.f_name,
-  required this.f_logo,
+    required this.f_name,
+    required this.f_logo,
+
   });
   factory Data.fromJson(Map<String, dynamic> json)
   {
@@ -94,3 +94,4 @@ class Data {
     );
   }
 }
+

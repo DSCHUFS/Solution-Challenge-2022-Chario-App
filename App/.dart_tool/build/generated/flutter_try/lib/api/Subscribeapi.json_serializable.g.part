@@ -1,0 +1,87 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+SubJdata _$SubJdataFromJson(Map<String, dynamic> json) => SubJdata(
+      count: json['count'] as String,
+      data: (json['data'] as List<dynamic>)
+          .map((e) => Data.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$SubJdataToJson(SubJdata instance) => <String, dynamic>{
+      'count': instance.count,
+      'data': instance.data.map((e) => e.toJson()).toList(),
+    };
+
+Data _$DataFromJson(Map<String, dynamic> json) => Data(
+      f_name: json['f_name'] as String,
+      f_intro: json['f_intro'] as String,
+      f_minimal: json['f_minimal'] as String,
+      f_home: json['f_home'] as String,
+      f_ars: json['f_ars'] as String,
+      f_phone: json['f_phone'] as String,
+      f_pay: json['f_pay'] as String,
+      f_logo: json['f_logo'] as String,
+      usersinsub:
+          Userinsub.fromJson(json['usersinsub'] as Map<String, dynamic>),
+      facilityCategoryList: (json['facilityCategoryList'] as List<dynamic>)
+          .map((e) => FacilityCategoryList.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+      'f_name': instance.f_name,
+      'f_intro': instance.f_intro,
+      'f_minimal': instance.f_minimal,
+      'f_home': instance.f_home,
+      'f_ars': instance.f_ars,
+      'f_phone': instance.f_phone,
+      'f_pay': instance.f_pay,
+      'f_logo': instance.f_logo,
+      'usersinsub': instance.usersinsub.toJson(),
+      'facilityCategoryList':
+          instance.facilityCategoryList.map((e) => e.toJson()).toList(),
+    };
+
+Userinsub _$UserinsubFromJson(Map<String, dynamic> json) => Userinsub(
+      id: json['id'] as int,
+      u_username: json['u_username'] as String,
+      u_name: json['u_name'] as String,
+      u_phone: json['u_phone'] as String,
+      u_birth: json['u_birth'] as String,
+      u_email: json['u_email'] as String,
+    );
+
+Map<String, dynamic> _$UserinsubToJson(Userinsub instance) => <String, dynamic>{
+      'id': instance.id,
+      'u_username': instance.u_username,
+      'u_name': instance.u_name,
+      'u_email': instance.u_email,
+      'u_phone': instance.u_phone,
+      'u_birth': instance.u_birth,
+    };
+
+FacilityCategoryList _$FacilityCategoryListFromJson(
+        Map<String, dynamic> json) =>
+    FacilityCategoryList(
+      id: json['id'] as String,
+      category: Category.fromJson(json['category'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$FacilityCategoryListToJson(
+        FacilityCategoryList instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'category': instance.category.toJson(),
+    };
+
+Category _$CategoryFromJson(Map<String, dynamic> json) => Category(
+      id: json['id'] as String,
+      cate_name: json['cate_name'] as String,
+    );
+
+Map<String, dynamic> _$CategoryToJson(Category instance) => <String, dynamic>{
+      'id': instance.id,
+      'cate_name': instance.cate_name,
+    };
