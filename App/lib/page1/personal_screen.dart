@@ -12,7 +12,7 @@ class PersonalScreen extends StatefulWidget {
 
 class _PersonalScreenState extends State<PersonalScreen>
 {
-  late Future<UserJdata> Userform;
+  late Future<Data> Userform;
 
   @override
   void initState() {
@@ -31,24 +31,24 @@ class _PersonalScreenState extends State<PersonalScreen>
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<UserJdata>(
+                child: FutureBuilder<Data>(
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       // Text(snapshot.data.u_Username);
                       return Container(
                         child: Column(
-                            children: [
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Name)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Email)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Phone)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Birth)),
-                              SizedBox(width: 300.0,),
-                            ],
+                          children: [
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Name)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Email)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Phone)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Birth)),
+                            SizedBox(width: 300.0,),
+                          ],
                         ),
                       );
                     } else if (snapshot.hasError) {
