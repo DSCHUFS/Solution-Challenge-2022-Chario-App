@@ -22,7 +22,10 @@ Future<UserJdata> fetchUserJdata() async {
     var myJson = jsonDecode(jsonData);
 
     print(myJson.runtimeType);
+    print(myJson);
     print(myJson['data']);
+
+    //return myJson;
 
     return UserJdata.fromJson(myJson);
   } else {
@@ -31,8 +34,11 @@ Future<UserJdata> fetchUserJdata() async {
 }
 
 
+
+
 class UserJdata
 {
+
 
   Data datag;
 
@@ -59,8 +65,8 @@ class Data {
   final String u_Birth;
 
 
-  Data({required this.u_Username,required this.u_Name, required this.u_Email,
-    required this.u_Phone,required this.u_Birth});
+  Data({required this.u_Username,required this.u_Name, required this.u_Email,required this.u_Phone,required this.u_Birth});
+
 
   factory Data.fromJson(Map<String, dynamic> json)
   {

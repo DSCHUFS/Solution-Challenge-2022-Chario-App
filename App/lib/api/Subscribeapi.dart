@@ -21,7 +21,6 @@ Future <DataList>fetchSubJdata(var g_name)async {
   print(jsonDecode(jsonData)['data'][8]['user']['u_username']);
 
 
-
   Map <String,dynamic> givedata ={};
   List Subfc_list =[];
   int cnt = 0;
@@ -64,14 +63,16 @@ class DataList
 
   final List<Data> datag;
 
+
   DataList({required this.datag});
 
   factory DataList.fromJson(Map<String, dynamic> json)
   {
     var list = json['data'] as List;
-    List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
+     List<Data> dataList = list.map((i) => Data.fromJson(i)).toList();
     return DataList(datag: dataList);
   }
+
 
 }
 
@@ -83,12 +84,14 @@ class Data {
   Data({
     required this.f_name,
     required this.f_logo,
+
   });
   factory Data.fromJson(Map<String, dynamic> json)
   {
     return Data(
-        f_name: json['f_name'],
-        f_logo: json['f_logo']
+    f_name: json['f_name'],
+    f_logo: json['f_logo']
     );
   }
 }
+

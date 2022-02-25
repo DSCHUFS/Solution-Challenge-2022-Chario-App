@@ -17,6 +17,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
   void initState()
   {
     super.initState();
+
     //// need name
     Fcinform  = fetchSubJdata("shindh0429");
   }
