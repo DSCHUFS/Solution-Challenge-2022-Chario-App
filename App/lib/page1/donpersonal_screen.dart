@@ -11,6 +11,7 @@ class DonpersonalScreen extends StatefulWidget {
 class _DonpersonalScreenState extends State<DonpersonalScreen> {
   late Future<UserDonJdata> userDonform;
   // global 변수를 설정 하단 바에 정보 전
+  late Map arg;
 
   @override
   void initState() {
@@ -32,13 +33,18 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                   future: userDonform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      // return Text(snapshot.data!.datag[1].f_name);
                       return ListView.separated(
                           itemBuilder: (context, index) {
                             return ListTile(
                               onTap:()
-                              {
-                                Navigator.pushNamed(context, DonfcdetailScreen.id);
+                              { // send argument
+                                arg = {   'f_name' :   snapshot.data!.datag[index].f_name,
+                                  'f_logo' :   snapshot.data!.datag[index].f_logo,
+                                  'u_m_price' :   snapshot.data!.datag[index].u_m_price,
+                                  'don_date' :   snapshot.data!.datag[index].don_date
+                                };
+
+                                Navigator.pushNamed(context, DonfcdetailScreen.id,arguments:arg);
                               },
                                 leading: ConstrainedBox(
                                   constraints: BoxConstraints(
