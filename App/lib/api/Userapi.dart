@@ -6,10 +6,10 @@ import 'package:http/http.dart' as http;
 
 Future<UserJdata> fetchUserJdata() async {
   final response = await http.get(
-      Uri.parse("http://34.134.67.181:8080/api/users/"+"1"),
+      Uri.parse("http://34.134.67.181:8080/api/user/"),
       headers: {
-        "Accept": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Authorization" :"1",
+        "Content-Type": "application/json",
       }
   );
 
