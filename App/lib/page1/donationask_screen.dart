@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/constants.dart' as colort;
-
+import 'dmoneyinput_screen.dart';
 import '../detailPage/FcDetail.dart';
 
 class Donationask extends StatefulWidget {
@@ -40,7 +40,12 @@ class _DonationaskState extends State<Donationask> {
                     mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>Donationmoneyinput())
+                              );
+                            },
                             child: Text("O"),
                             style:  ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),
