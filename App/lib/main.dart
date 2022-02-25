@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget{
       //home: HomePage(),
 
       //initialRoute: SubscribeScreen.id,
-      initialRoute:DonpersonalScreen.id,
+      // initialRoute:DonpersonalScreen.id,
 
-      //initialRoute: WelcomeScreen.id,
+      initialRoute: WelcomeScreen.id,
       // routes to run an app
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),

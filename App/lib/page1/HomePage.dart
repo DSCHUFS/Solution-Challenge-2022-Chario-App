@@ -20,7 +20,10 @@ class HomePage extends StatefulWidget {
 
 }
 class _MyAppState extends State<HomePage>{
+
   late Future<FcJdata> HomeFcJdata;
+  static const List<String> images = <String>['assets/sdg/goal1.png','assets/sdg/goal2.png','assets/sdg/goal3.png','assets/sdg/goal4.png','assets/sdg/goal6.png','assets/sdg/goal10.png','assets/sdg/goal13.png','assets/sdg/14,15goal.png'];
+  static const List<String> goals = <String>['No Poverty','Zero hunger','Good Health and well-being','Quality education','Clean water and snitaion?','reduced inequalities','Climate action','Saving Life'];
   @override
   void initState() {
     // TODO: implement initState
@@ -125,14 +128,41 @@ class _MyAppState extends State<HomePage>{
         ),
       ),
 
-          body: ListView(
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+            Text("Where do you want to donate?",style: TextStyle(fontSize: 40),),
+      Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 20.0,
+          runSpacing: 20.0,
+          children: [
+
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[0])),
+
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[1])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[2])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[3])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[4])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[5])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[6])),
+            CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[7])),
+          ]
+      )
+      ,ListView(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
                   children:<Widget> [
                       FutureBuilder<FcJdata>(
                         future: HomeFcJdata,
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
                             return Container(
-                              child:Column(
+                                child:Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: 20.0,
+                                  runSpacing: 20.0,
+                              children:[Column(
                                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
                                   children:<Widget>
@@ -147,9 +177,9 @@ class _MyAppState extends State<HomePage>{
                                           width: 100,height: 100,
                                         )
                                         ),
-                                        Text(snapshot.data!.data[0].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-                                        SizedBox(width: 300.0,),
-                                        Text("더 알아보기",style: TextStyle(fontSize: 15),),
+                                        Text(snapshot.data!.data[0].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                                        // SizedBox(width: 300.0,),
+                                        // Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                         IconButton(onPressed: (){
                                           Navigator.push(
                                               context,
@@ -183,8 +213,8 @@ class _MyAppState extends State<HomePage>{
                                       ),
                                     ),
                                   ]
-                              ),
-                            );
+                              )],
+                            ),);
                           } else if (snapshot.hasError) {
                             return Text('${snapshot.error}');
                           }
@@ -462,7 +492,7 @@ class _MyAppState extends State<HomePage>{
 
                   ]
               ),
-            );
+            ]),);
 
 
 
