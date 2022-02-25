@@ -1,20 +1,24 @@
+import 'dart:core';
 import 'package:flutter/material.dart';
-import 'package:flutter_try/api/Subscribeapi.dart';
-import 'HomePage.dart';
+import '../api/Subscribeapi.dart';
 
-class SubscribeScreen extends StatefulWidget {
-  static const String id = "subscribe_screen";
+
+class SubscribeScreen extends StatefulWidget
+{
+  static const String id = "Subscribe_screen";
   @override
   _SubscribeScreenState createState() => _SubscribeScreenState();
 }
 
-class _SubscribeScreenState extends State<SubscribeScreen> {
-  late Future<SubJdata> Fcinform;
-
+class _SubscribeScreenState extends State<SubscribeScreen>
+{
+  late Future <DataList> Fcinform;
   @override
-  void initState() {
+  void initState()
+  {
     super.initState();
-    Fcinform = fetchSubJdata();
+    //// need name
+    Fcinform  = fetchSubJdata("shindh0429");
   }
 
   @override
@@ -22,45 +26,42 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
     // const PrimaryColor = const Color(0xFFffa8a8);
     return MaterialApp(
       home: Scaffold(
-        body: Column(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<SubJdata>(
-                  future: Fcinform,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return ListView.separated(
-                        // itemCount: snapshot.data.length, //  정보를 20개 보여줍니다
+        appBar: AppBar(
+          automaticallyImplyLeading: false, // for custom icon option setting down below
+        ),
 
-                        itemCount: 7,//  정보를 7개 보여줍니다   / 수정 필요
+        body: Container(
+            child: FutureBuilder<DataList>(
+                future: Fcinform,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // return Text(snapshot.data!.datag[1].f_name);
+                    return ListView.separated(
+                        itemBuilder:(context, index)
+                        {
+                          return
+                            ListTile(
+                              leading:ConstrainedBox(constraints: BoxConstraints(
+                                minWidth: 44,
+                                minHeight: 44,
+                                maxWidth: 64,
+                                maxHeight: 64, //
+                                ),child: Image.network(snapshot.data!.datag[index].f_logo, fit: BoxFit.fill),
 
-                        itemBuilder: (context, index) {
-                          // List<SubJdata> eachname = snapshot.data.f_name.toList();
-
-                          return ListTile(
-                              //leading:ImageIcon(AssetImage(snapshot.data!.data[index].f_logo), size: 50.0,),    -> url 받아와서 어떻게,,
-                              title: Text(snapshot.data!.data[index].f_name)
-                          //title: Text(eachname)
-                            // subtitle:
-                            // trailing:
-
-                        );
-                      },
+                              ),
+                                title:new Center(child:new Text(snapshot.data!.datag[index].f_name),)
+                            );
+                        },
                         separatorBuilder: (context, index) { return Divider(); },
-                      );
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    }
-                    return const CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ],
+                        itemCount: snapshot.data!.datag.length);
+                  }
+                  else if (snapshot.hasError) {
+
+                    return Text('${snapshot.error}');
+                  }
+                  else {
+                    return CircularProgressIndicator();
+                  }})
         ),
       ),
     );

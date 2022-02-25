@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Sl30c+Tmk02IUZVIyOlBGIwAmu8=
+		IjJ/TnDcRP6DF3UtntIZikhiytA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,7 +118,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		SfDhwGD7pCi8ARVn6T+z7fpZ3TM=
+		JQvXOi0ZVjHeOhPkquPxtGtdQ3w=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		i7GnV9uhqUnNSxY6jrmCXPbxUXA=
+		yzogBm9HP0cdzsTyjRkps48Wnwc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/chario_logo.png</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		DXGIqHFGDICJffsCMyk+hcCwi7I=
+		rNaaMCZYpooNwclShkc9/sQ2nEM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -254,7 +254,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		cQqhCBuACmcyGQIDdYO+4aC1rAY=
+		v/Mb2jshwdmhF7bSOYMkO7fk2/0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -553,11 +553,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Sl30c+Tmk02IUZVIyOlBGIwAmu8=
+			IjJ/TnDcRP6DF3UtntIZikhiytA=
 			</data>
 			<key>hash2</key>
 			<data>
-			yRUm3H/ud8oKDOfkTs1fyiO5yuQoUvE0SKMsUZ4VHY0=
+			/lgcPTjiLk9c9oAIogyEwN2sHW+6aaE0qzN7rxH596E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -575,11 +575,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SfDhwGD7pCi8ARVn6T+z7fpZ3TM=
+			JQvXOi0ZVjHeOhPkquPxtGtdQ3w=
 			</data>
 			<key>hash2</key>
 			<data>
-			4n0YkZ4FVoJtDS4ccM158gjPwcWvT22P0rGd0RlIY+I=
+			KXTm9hLXOTg1LGZ4zSTwOppLPmOErOV6Yymaiu7lmB4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
@@ -608,11 +608,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			i7GnV9uhqUnNSxY6jrmCXPbxUXA=
+			yzogBm9HP0cdzsTyjRkps48Wnwc=
 			</data>
 			<key>hash2</key>
 			<data>
-			sAm2d5aEgLbT/qyQ6CFw+zo5N97RqfMxwzjKjn/5qXc=
+			V1L02mBuibXvFL/G8HdT7SwS331j+n1YqOOKMhQn6+o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/chario_logo.png</key>
@@ -652,11 +652,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DXGIqHFGDICJffsCMyk+hcCwi7I=
+			rNaaMCZYpooNwclShkc9/sQ2nEM=
 			</data>
 			<key>hash2</key>
 			<data>
-			CWKVPnGqSVOD3b8fBc+UwMBcDT+xmm49yQjhZ5MrF2c=
+			20Lbc+gthU4aHPuYtk9DFD8fbJx0CZ6MAOP86uOug4I=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

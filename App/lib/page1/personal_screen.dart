@@ -18,6 +18,7 @@ class _PersonalScreenState extends State<PersonalScreen>
   void initState() {
     super.initState();
     Userform = fetchUserJdata();
+
   }
 
   @override
@@ -34,22 +35,24 @@ class _PersonalScreenState extends State<PersonalScreen>
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      Text(snapshot.data!.data.u_username);
+                      // Text(snapshot.data.u_Username);
                       return Container(
                         child: Column(
                             children: [
                               SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.data.u_username) ),
+                              Expanded(child:Text(snapshot.data!.datag.u_Name)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Email)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Phone)),
                               SizedBox(width: 300.0,),
+                              Expanded(child:Text(snapshot.data!.datag.u_Birth)),
                               SizedBox(width: 300.0,),
-
                             ],
                         ),
                       );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}'+'    this is error');
+                      return Text('${snapshot.error}'+'    !!this is error');
                     }
                     return const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),

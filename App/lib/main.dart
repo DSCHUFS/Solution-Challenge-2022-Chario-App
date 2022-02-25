@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/donationask_screen.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
-import '../color.dart';
+import'';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget{
       title:'Chari-o',
       //theme: ThemeData(primarySwatch:),
       //home: HomePage(),
-      // initialRoute: SubscribeScreen.id,
+
+      //initialRoute: SubscribeScreen.id,
+      //initialRoute:Donationask.id,
+
       initialRoute: WelcomeScreen.id,
       // routes to run an app
       routes: {
@@ -26,6 +30,7 @@ class MyApp extends StatelessWidget{
         PersonalScreen.id: (context) => PersonalScreen(),
         SubscribeScreen.id: (context) => SubscribeScreen(),
         SearchScreen.id: (context) =>  SearchScreen(),
+        Donationask.id:(context) => Donationask(),
         },
 
     );
