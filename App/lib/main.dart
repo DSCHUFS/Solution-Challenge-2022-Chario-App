@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/dmoneyinput_screen.dart';
 import 'package:flutter_try/page1/donationask_screen.dart';
+import 'package:flutter_try/page1/donpersonal_screen.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
@@ -19,9 +21,9 @@ class MyApp extends StatelessWidget{
       //home: HomePage(),
 
       //initialRoute: SubscribeScreen.id,
-      //initialRoute:Donationask.id,
+      initialRoute:DonpersonalScreen.id,
 
-      initialRoute: WelcomeScreen.id,
+      //initialRoute: WelcomeScreen.id,
       // routes to run an app
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget{
         SubscribeScreen.id: (context) => SubscribeScreen(),
         SearchScreen.id: (context) =>  SearchScreen(),
         Donationask.id:(context) => Donationask(),
+        Donationmoneyinput.id:(context) =>  Donationmoneyinput(),
+        DonpersonalScreen.id:(context) =>  DonpersonalScreen(),
         },
 
     );
