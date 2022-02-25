@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_try/api/isLikedapi.dart';
 import 'package:flutter_try/color.dart';
+import 'package:http/http.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api/Fcapi.dart';
+
+import '../isLike_User.dart';
 
 _launchURL(String url) async {
   if (await canLaunch(url)) {
@@ -23,7 +27,8 @@ class NoPoverty1 extends StatefulWidget
 bool isLike = true;
 class _MyAppState extends State<NoPoverty1>
 {
-
+  UserModel? _like;
+  UserModel? _delete;
   late Future<FcJdata> DetailFcJdata;
   final List<String> imageList = [
     "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
@@ -162,18 +167,36 @@ class _MyAppState extends State<NoPoverty1>
                         IconButton(
                           icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
                           color: isLike? Colors.red:null,
-                          onPressed: () {
-                            print(isLike);
-                            setState(() {
+                          onPressed: () async {
+
+
+                            setState(()  {
                               if (isLike) {
                                 isLike = false;
                               } else {
                                 isLike = true;
                               }
+                            });
+                            print(isLike);
+                            if (isLike){
+                              final UserModel? like = await createUser(1,"좋아요");
+                              setState(() {
+                                _like = like!;
+                              });
+                              print("dlqhk~~");
+                            }else{
+                              final UserModel? delete = await deleteUser(0,"구독취소");
+                              setState(() {
+                                _delete = delete!;
+                              });
                             }
-                            );
+
+                          print(_like?.status);print(_delete?.status);
+
+
                           }
                         ),
+
 
 
                     ]

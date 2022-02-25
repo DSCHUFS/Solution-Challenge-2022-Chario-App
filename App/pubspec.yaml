@@ -57,6 +57,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/chario_logo.png
+    - assets/sdg/
+    - assets/
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
