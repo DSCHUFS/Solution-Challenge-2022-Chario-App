@@ -11,6 +11,8 @@ import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 
+import 'donpersonal_screen.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
   static const String id = "HomePage";
@@ -95,14 +97,6 @@ class _MyAppState extends State<HomePage>{
                 trailing: Icon(Icons.arrow_forward_ios),
               ),
 
-              // ListTile
-              //   (
-              //   title: Text('Item 2'),
-              //   onTap: () {
-              //     Navigator.pop(context);
-              //   },
-              // ),
-              //
 
               ListTile(
                   leading:Icon(
@@ -110,19 +104,28 @@ class _MyAppState extends State<HomePage>{
                     color:Colors.grey[850],
                   ),
                   title: Text('구독현황'),
-                  // onTap:(){
-                  //   Navigator.push(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //           builder: (context) =>Subscribe_Screen()
-                  //       ));
-                  //   },
                   onTap:()
                   {
                     Navigator.pushNamed(context, SubscribeScreen.id);
                   },
                   trailing: Icon(Icons.arrow_forward_ios)
-              )
+              ),
+
+              ListTile(
+              leading:Icon(
+                Icons.image,
+                color:Colors.grey[850],
+              ),
+              title: Text('기부현황'),
+              onTap:()
+              {
+                Navigator.pushNamed(context,DonpersonalScreen.id);
+              },
+              trailing: Icon(Icons.arrow_forward_ios)
+               ),
+
+
+
             ],
           ),
         ),

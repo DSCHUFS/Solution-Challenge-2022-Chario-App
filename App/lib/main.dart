@@ -8,7 +8,7 @@ import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
-import'';
+
 
 void main() => runApp(MyApp());
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget{
       //home: HomePage(),
 
       //initialRoute: SubscribeScreen.id,
-      // initialRoute:DonpersonalScreen.id,
+      //initialRoute:DonpersonalScreen.id,
 
       initialRoute: WelcomeScreen.id,
       // routes to run an app
