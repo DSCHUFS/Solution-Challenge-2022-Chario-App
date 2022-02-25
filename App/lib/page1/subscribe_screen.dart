@@ -35,6 +35,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
             child: FutureBuilder<DataList>(
                 future: Fcinform,
                 builder: (context, snapshot) {
+
                   if (snapshot.hasData) {
                     // return Text(snapshot.data!.datag[1].f_name);
                     return ListView.separated(
