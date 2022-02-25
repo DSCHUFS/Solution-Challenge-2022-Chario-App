@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../page1/subscribe_screen.dart';
 import '../api/donationgetapi.dart';
+import 'donationfcdetail.dart';
 
 class DonpersonalScreen extends StatefulWidget {
   static const String id = "donpersonal_screen";
@@ -38,7 +38,7 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                             return ListTile(
                               onTap:()
                               {
-                                Navigator.pushNamed(context, SubscribeScreen.id);
+                                Navigator.pushNamed(context, DonfcdetailScreen.id);
                               },
                                 leading: ConstrainedBox(
                                   constraints: BoxConstraints(
