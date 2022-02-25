@@ -2,9 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-
-Future<UserJdata> fetchUserJdata() async {
+Future<Data> fetchUserJdata() async {
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/user/"),
       headers: {
@@ -27,33 +25,10 @@ Future<UserJdata> fetchUserJdata() async {
 
     //return myJson;
 
-    return UserJdata.fromJson(myJson);
+    return Data.fromJson(myJson);
   } else {
     throw Exception('Failed to load data');
   }
-}
-
-
-
-
-class UserJdata
-{
-
-
-  Data datag;
-
-  UserJdata({
-    required this.datag
-  });
-
-  factory UserJdata.fromJson(Map<String, dynamic> json)
-  {
-    return UserJdata(
-        datag: Data.fromJson(json['data'])
-    );
-
-  }
-
 }
 
 class Data {
