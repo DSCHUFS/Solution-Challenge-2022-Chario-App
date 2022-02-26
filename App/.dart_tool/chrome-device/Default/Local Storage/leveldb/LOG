@@ -1,4 +1,2 @@
-2022/02/25-22:23:28.178 5103 Reusing MANIFEST /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.iTWPsG/flutter_tools_chrome_device.Awjb0w/Default/Local Storage/leveldb/MANIFEST-000001
-2022/02/25-22:23:28.180 5103 Recovering log #3
-2022/02/25-22:23:28.180 5103 (ignoring error) /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.iTWPsG/flutter_tools_chrome_device.Awjb0w/Default/Local Storage/leveldb/000003.log: dropping 2285 bytes; Corruption: checksum mismatch
-2022/02/25-22:23:28.181 5103 Reusing old log /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.iTWPsG/flutter_tools_chrome_device.Awjb0w/Default/Local Storage/leveldb/000003.log 
+2022/02/25-23:30:46.237 3674 Creating DB C:\Users\MinSeo\AppData\Local\Temp\flutter_tools.fab32446\flutter_tools_chrome_device.97814b0f\Default\Local Storage\leveldb since it was missing.
+2022/02/25-23:30:46.245 3674 Reusing MANIFEST C:\Users\MinSeo\AppData\Local\Temp\flutter_tools.fab32446\flutter_tools_chrome_device.97814b0f\Default\Local Storage\leveldb/MANIFEST-000001
