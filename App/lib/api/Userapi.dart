@@ -3,13 +3,12 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 
-
-Future<UserJdata> fetchUserJdata() async {
+Future<Data> fetchUserJdata() async {
   final response = await http.get(
-      Uri.parse("http://34.134.67.181:8080/api/users/"+"1"),
+      Uri.parse("http://34.134.67.181:8080/api/user/"),
       headers: {
-        "Accept": "application/json",
-        "Access-Control-Allow-Origin": "*"
+        "Authorization" :"1",
+        "Content-Type": "application/json",
       }
   );
 
@@ -27,47 +26,19 @@ Future<UserJdata> fetchUserJdata() async {
 
     //return myJson;
 
-    return UserJdata.fromJson(myJson);
+    return Data.fromJson(myJson);
   } else {
     throw Exception('Failed to load data');
   }
 }
 
-
-
-
-class UserJdata
-{
-
-
-  Data datag;
-
-  UserJdata({
-    required this.datag
-  });
-
-  factory UserJdata.fromJson(Map<String, dynamic> json)
-  {
-    return UserJdata(
-        datag: Data.fromJson(json['data'])
-    );
-
-  }
-
-}
-
 class Data {
-
   final String u_Username;
   final String u_Name;
   final String u_Email;
   final String u_Phone;
   final String u_Birth;
-
-
   Data({required this.u_Username,required this.u_Name, required this.u_Email,required this.u_Phone,required this.u_Birth});
-
-
   factory Data.fromJson(Map<String, dynamic> json)
   {
     return Data(

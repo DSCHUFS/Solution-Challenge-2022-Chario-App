@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_try/page1/dmoneyinput_screen.dart';
 import 'package:flutter_try/page1/donationask_screen.dart';
@@ -9,9 +10,20 @@ import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
+import 'firebase_options.dart';
 
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+    );
+
+  runApp(MyApp());
+}
+
+
+//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   @override
@@ -21,9 +33,9 @@ class MyApp extends StatelessWidget{
       //theme: ThemeData(primarySwatch:),
       //home: HomePage(),
 
-      initialRoute:DonpersonalScreen.id,
+      //initialRoute:DonpersonalScreen.id,
 
-      //initialRoute: WelcomeScreen.id,
+      initialRoute: WelcomeScreen.id,
       // routes to run an app
       routes: {
 

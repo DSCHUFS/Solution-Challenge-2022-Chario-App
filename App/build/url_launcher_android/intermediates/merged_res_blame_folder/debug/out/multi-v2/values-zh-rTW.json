@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\flutter_project\\sc_ui2\\Solution-Challenge-2022-Chario-App\\App\\build\\url_launcher_android\\intermediates\\res\\merged\\debug\\values-zh-rTW\\values-zh-rTW.xml",
+            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-2\\files-2.1\\5f663b08eec19eef9a9d1af662d9025e\\core-1.6.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "/Users/chosunghyun/.gradle/caches/transforms-2/files-2.1/0cddc18714a4c151874b017a9abca010/core-1.6.0/res/values-zh-rTW/values-zh-rTW.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\flutter_project\\sc_ui2\\Solution-Challenge-2022-Chario-App\\App\\build\\url_launcher_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
+            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-2\\files-2.1\\5f663b08eec19eef9a9d1af662d9025e\\core-1.6.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "/Users/chosunghyun/.gradle/caches/transforms-2/files-2.1/0cddc18714a4c151874b017a9abca010/core-1.6.0/res/values-zh-rTW/values-zh-rTW.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

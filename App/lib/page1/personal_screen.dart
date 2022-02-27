@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/api/Userapi.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_try/page1/welcome_screen.dart';
 
 
 
@@ -7,12 +9,16 @@ class PersonalScreen extends StatefulWidget {
   static const String id = "personal_screen" ;
   @override
   _PersonalScreenState createState() => _PersonalScreenState();
+
+
 }
 
 
 class _PersonalScreenState extends State<PersonalScreen>
 {
-  late Future<UserJdata> Userform;
+  late Future<Data> Userform;
+  final _auth = FirebaseAuth.instance;
+
 
   @override
   void initState() {
@@ -24,35 +30,41 @@ class _PersonalScreenState extends State<PersonalScreen>
   @override
   Widget build(BuildContext context) {
     // const PrimaryColor = const Color(0xFFffa8a8);
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         body: Column(
           children: [
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<UserJdata>(
+                child: FutureBuilder<Data>(
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
                       // Text(snapshot.data.u_Username);
                       return Container(
                         child: Column(
-                            children: [
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Name)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Email)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Phone)),
-                              SizedBox(width: 300.0,),
-                              Expanded(child:Text(snapshot.data!.datag.u_Birth)),
-                              SizedBox(width: 300.0,),
-                            ],
+                          children: [
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Name)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Email)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Phone)),
+                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Birth)),
+                            SizedBox(width: 300.0,),
+                            IconButton(
+                                icon: (Icon(IconData(0xe3b3, fontFamily: 'MaterialIcons'))),
+                                onPressed: () {
+                                  _auth.signOut();
+                                  Navigator.pushNamed(context, WelcomeScreen.id);
+                                },
+                            ),
+                          ],
                         ),
                       );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}'+'    !!this is error');
+                      return Text('${snapshot.error}'+'!!this is error');
                     }
                     return const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -63,7 +75,7 @@ class _PersonalScreenState extends State<PersonalScreen>
             ),
           ],
         ),
-      ),
+
     );
   }
 }
