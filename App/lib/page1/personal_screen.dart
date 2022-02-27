@@ -17,6 +17,7 @@ class PersonalScreen extends StatefulWidget {
 class _PersonalScreenState extends State<PersonalScreen>
 {
   late Future<Data> Userform;
+//<<<<<<< sunghyun
   final _auth = FirebaseAuth.instance;
 
 
@@ -53,6 +54,7 @@ class _PersonalScreenState extends State<PersonalScreen>
                             SizedBox(width: 300.0,),
                             Expanded(child:Text(snapshot.data!.u_Birth)),
                             SizedBox(width: 300.0,),
+
                             IconButton(
                                 icon: (Icon(IconData(0xe3b3, fontFamily: 'MaterialIcons'))),
                                 onPressed: () {
@@ -60,6 +62,7 @@ class _PersonalScreenState extends State<PersonalScreen>
                                   Navigator.pushNamed(context, WelcomeScreen.id);
                                 },
                             ),
+
                           ],
                         ),
                       );
