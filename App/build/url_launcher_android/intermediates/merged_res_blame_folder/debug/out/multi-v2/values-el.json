@@ -4,7 +4,7 @@
             "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml",
             "map": [
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-2/files-2.1/0cddc18714a4c151874b017a9abca010/core-1.6.0/res/values-el/values-el.xml",
+                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/res/values-el/values-el.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/res/merged/debug/values-el/values-el.xml",
+            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_res/debug/values-el/values-el.xml",
             "map": [
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-2/files-2.1/0cddc18714a4c151874b017a9abca010/core-1.6.0/res/values-el/values-el.xml",
+                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/res/values-el/values-el.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
