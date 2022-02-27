@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
@@ -12,6 +13,12 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
   final amountInputController = TextEditingController();
+  final _auth = FirebaseAuth.instance;
+
+  late String email;
+  late String password;
+  
+  
   @override
   Widget build(BuildContext context) {
 
@@ -48,10 +55,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             TextField(
               onChanged: (value) {
-                //Do something with the user input.
+                email= value;
               },
               decoration: InputDecoration(
-                hintText: 'ID',
+                hintText: 'ID:example@gmail.com',
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
@@ -73,6 +80,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             TextField(
               onChanged: (value) {
+              password = value;
 
               },
               decoration: InputDecoration(
@@ -102,10 +110,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: TeamColor,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
-                  onPressed: () {
-                    //Go to login screen.
-                    Navigator.pushNamed(context, HomePage.id);
-                    print(amountInputController.text);
+
+                  onPressed: () async{
+                    try{
+                    final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+                if(user != null) {
+                  print(amountInputController.text);
+                Navigator.pushNamed(context, HomePage.id);
+                }
+                }catch(e){print(e);
+                    }
+                ;
+
+                  print(amountInputController.text);
                   },
                   minWidth: 200.0,
                   height: 42.0,

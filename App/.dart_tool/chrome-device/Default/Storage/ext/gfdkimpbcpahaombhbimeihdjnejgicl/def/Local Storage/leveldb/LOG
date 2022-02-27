@@ -1,2 +1,3 @@
-2022/02/05-10:19:27.375 3303 Creating DB /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.kUhASM/flutter_tools_chrome_device.MD0KUf/Default/Storage/ext/gfdkimpbcpahaombhbimeihdjnejgicl/def/Local Storage/leveldb since it was missing.
-2022/02/05-10:19:27.481 3303 Reusing MANIFEST /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.kUhASM/flutter_tools_chrome_device.MD0KUf/Default/Storage/ext/gfdkimpbcpahaombhbimeihdjnejgicl/def/Local Storage/leveldb/MANIFEST-000001
+2022/02/27-17:05:39.789 3003 Reusing MANIFEST /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.Nzfrdp/flutter_tools_chrome_device.Ps4hhF/Default/Storage/ext/gfdkimpbcpahaombhbimeihdjnejgicl/def/Local Storage/leveldb/MANIFEST-000001
+2022/02/27-17:05:39.790 3003 Recovering log #3
+2022/02/27-17:05:39.791 3003 Reusing old log /private/var/folders/yn/wff70w2110j0s3lfly0jbrpw0000gn/T/flutter_tools.Nzfrdp/flutter_tools_chrome_device.Ps4hhF/Default/Storage/ext/gfdkimpbcpahaombhbimeihdjnejgicl/def/Local Storage/leveldb/000003.log 

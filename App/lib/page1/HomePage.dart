@@ -10,8 +10,12 @@ import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
-
 import 'donpersonal_screen.dart';
+
+
+import 'package:firebase_auth/firebase_auth.dart' as fbs;
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,12 +30,34 @@ class _MyAppState extends State<HomePage>{
   late Future<FcJdata> HomeFcJdata;
   static const List<String> images = <String>['assets/sdg/goal1.png','assets/sdg/goal2.png','assets/sdg/goal3.png','assets/sdg/goal4.png','assets/sdg/goal6.png','assets/sdg/goal10.png','assets/sdg/goal13.png','assets/sdg/14,15goal.png'];
   static const List<String> goals = <String>['No Poverty','Zero hunger','Good Health and well-being','Quality education','Clean water and snitaion?','reduced inequalities','Climate action','Saving Life'];
+
+  final _auth =fbs.FirebaseAuth.instance;
+  late fbs.User loggedInUser;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    getCurrentUser();
     HomeFcJdata = fetchFcJdata();
   }
+
+
+
+  void getCurrentUser() async{
+    try {
+      final user = await _auth.currentUser!;
+      if (user != null) {
+        loggedInUser = user;
+        print(loggedInUser.email);
+      }
+    }catch(e)
+    {
+      print(e);
+    }
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -140,9 +166,7 @@ class _MyAppState extends State<HomePage>{
           spacing: 20.0,
           runSpacing: 20.0,
           children: [
-
             CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[0])),
-
             CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[1])),
             CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[2])),
             CircleAvatar(radius:40.0,backgroundImage:AssetImage(images[3])),
