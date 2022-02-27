@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "747838446439",
+    "project_id": "chari-o",
+    "storage_bucket": "chari-o.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747838446439:android:63b028b3cb9017d1716dc2",
+        "android_client_info": {
+          "package_name": "com.chario.flutter_try"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747838446439-j4filh3gu53eeg2gpgnjfn3um8dicfg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjQvLOzoV0cYKv2NafRUMAn_DeBKpzw8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747838446439-j4filh3gu53eeg2gpgnjfn3um8dicfg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
