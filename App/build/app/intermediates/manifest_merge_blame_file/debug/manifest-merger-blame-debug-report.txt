@@ -1,0 +1,233 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.flutter_try"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml:6:5-66
+14-->/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:5-79
+15-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:24:22-76
+16
+17    <application
+18        android:name="android.app.Application"
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.6.0] /Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/AndroidManifest.xml:24:18-86
+20        android:debuggable="true"
+21        android:icon="@mipmap/ic_launcher"
+22        android:label="Chari-o" >
+23        <activity
+24            android:name="com.example.flutter_try.MainActivity"
+25            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+26            android:exported="true"
+27            android:hardwareAccelerated="true"
+28            android:launchMode="singleTop"
+29            android:theme="@style/LaunchTheme"
+30            android:windowSoftInputMode="adjustResize" >
+31            <meta-data
+32                android:name="flutterEmbedding"
+33                android:value="2" />
+34            <meta-data
+35                android:name="io.flutter.embedding.android.NormalTheme"
+36                android:resource="@style/NormalTheme" />
+37
+38            <intent-filter>
+39                <action android:name="android.intent.action.MAIN" />
+40
+41                <category android:name="android.intent.category.LAUNCHER" />
+42            </intent-filter>
+43        </activity>
+44
+45        <service
+45-->[:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
+46            android:name="com.google.firebase.components.ComponentDiscoveryService"
+46-->[:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:8:18-89
+47            android:directBootAware="true"
+47-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+48            android:exported="false" >
+48-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:76:13-37
+49            <meta-data
+49-->[:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+50                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+50-->[:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+51                android:value="com.google.firebase.components.ComponentRegistrar" />
+51-->[:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+52            <meta-data
+52-->[:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+53                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+53-->[:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-134
+54                android:value="com.google.firebase.components.ComponentRegistrar" />
+54-->[:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+55            <meta-data
+55-->[:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
+56                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+56-->[:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-124
+57                android:value="com.google.firebase.components.ComponentRegistrar" />
+57-->[:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
+58            <meta-data
+58-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+59                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+59-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
+60                android:value="com.google.firebase.components.ComponentRegistrar" />
+60-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+61            <meta-data
+61-->[com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:20:13-22:85
+62                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+62-->[com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:21:17-111
+63                android:value="com.google.firebase.components.ComponentRegistrar" />
+63-->[com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:22:17-82
+64        </service>
+65
+66        <activity
+66-->[:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-11:74
+67            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+67-->[:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-74
+68            android:exported="false"
+68-->[:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:10:13-37
+69            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+69-->[:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-71
+70
+71        <uses-library
+71-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+72            android:name="androidx.window.extensions"
+72-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+73            android:required="false" />
+73-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+74        <uses-library
+74-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+75            android:name="androidx.window.sidecar"
+75-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+76            android:required="false" />
+76-->[androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+77
+78        <activity
+78-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+79            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+79-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+80            android:excludeFromRecents="true"
+80-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+81            android:exported="true"
+81-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+82            android:launchMode="singleTask"
+82-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+83            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+83-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+84            <intent-filter>
+84-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+85                <action android:name="android.intent.action.VIEW" />
+85-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+85-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+86
+87                <category android:name="android.intent.category.DEFAULT" />
+87-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+87-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+88                <category android:name="android.intent.category.BROWSABLE" />
+88-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+88-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+89
+90                <data
+90-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+91                    android:host="firebase.auth"
+91-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+92                    android:path="/"
+92-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+93                    android:scheme="genericidp" />
+93-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+94            </intent-filter>
+95        </activity>
+96        <activity
+96-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+97            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+97-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+98            android:excludeFromRecents="true"
+98-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+99            android:exported="true"
+99-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+100            android:launchMode="singleTask"
+100-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+101            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+101-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+102            <intent-filter>
+102-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+103                <action android:name="android.intent.action.VIEW" />
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+104
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+105-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+106-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
+107
+108                <data
+108-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+109                    android:host="firebase.auth"
+109-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+110                    android:path="/"
+110-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+111                    android:scheme="recaptcha" />
+111-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+112            </intent-filter>
+113        </activity>
+114
+115        <service
+115-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+116            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+116-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+117            android:enabled="true"
+117-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+118            android:exported="false" >
+118-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+119            <intent-filter>
+119-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+120                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+120-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+120-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+121
+122                <category android:name="android.intent.category.DEFAULT" />
+122-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+122-->[com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+123            </intent-filter>
+124        </service>
+125
+126        <provider
+126-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+127            android:name="com.google.firebase.provider.FirebaseInitProvider"
+127-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+128            android:authorities="com.example.flutter_try.firebaseinitprovider"
+128-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+129            android:directBootAware="true"
+129-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+130            android:exported="false"
+130-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+131            android:initOrder="100" />
+131-->[com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+132
+133        <activity
+133-->[com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+134            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+134-->[com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+135            android:exported="false"
+135-->[com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+136            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+136-->[com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+137
+138        <meta-data
+138-->[com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+139            android:name="com.google.android.gms.version"
+139-->[com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
+140            android:value="@integer/google_play_services_version" />
+140-->[com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+141    </application>
+142
+143</manifest>
