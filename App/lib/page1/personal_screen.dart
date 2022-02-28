@@ -3,6 +3,8 @@ import 'package:flutter_try/api/Userapi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_try/page1/welcome_screen.dart';
 
+import '../constants.dart';
+
 
 
 class PersonalScreen extends StatefulWidget {
@@ -55,12 +57,15 @@ class _PersonalScreenState extends State<PersonalScreen>
                             Expanded(child:Text(snapshot.data!.u_Birth)),
                             SizedBox(width: 300.0,),
 
-                            IconButton(
-                                icon: (Icon(IconData(0xe3b3, fontFamily: 'MaterialIcons'))),
-                                onPressed: () {
-                                  _auth.signOut();
-                                  Navigator.pushNamed(context, WelcomeScreen.id);
-                                },
+                            TextButton(
+                              onPressed: (){
+                                _auth.signOut();
+                                Navigator.pushNamed(context, WelcomeScreen.id);
+                              },
+                              child: Text(
+                                'Logout',
+                                style: TextStyle(color: TeamColor, fontSize: 15),
+                              ),
                             ),
 
                           ],

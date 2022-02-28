@@ -8,11 +8,8 @@ import 'package:flutter_try/main.dart';
 import '../color.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
-import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'donpersonal_screen.dart';
-
-
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
 
@@ -46,6 +43,12 @@ class _MyAppState extends State<HomePage>{
   void getCurrentUser() async{
     try {
       final user = await _auth.currentUser!;
+
+      final user_id = user.uid;
+
+      print(user);
+      print(user_id);  // -> token
+
       if (user != null) {
         loggedInUser = user;
         print(loggedInUser.email);
@@ -55,9 +58,6 @@ class _MyAppState extends State<HomePage>{
       print(e);
     }
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
