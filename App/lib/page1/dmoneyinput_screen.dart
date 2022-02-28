@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_try/api/donationpostapi.dart';
 import 'package:flutter_try/constants.dart' as colort;
+import 'package:intl/intl.dart';
 
+import '../api/isLikedapi.dart';
 import '../constants.dart';
 import '../detailPage/FcDetail.dart';
 
@@ -16,6 +19,7 @@ class Donationmoneyinput extends StatefulWidget
 
 class _DonationmoneyinputState extends State<Donationmoneyinput> {
   final amountInputController = TextEditingController();
+  Welcome? _welcome;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,17 +42,17 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                 Text("월별 기부 액수를 입력해주세요"),
                 SizedBox(height: 80),
 
-            Row(mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 350,
-                  child:accountField(),
-                       ),
-                Container(
-                    child:Text("원")
-                )
-              ],
-            ),
+                Row(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: 350,
+                      child:accountField(),
+                    ),
+                    Container(
+                        child:Text("원")
+                    )
+                  ],
+                ),
 
                 Container(
                   padding: EdgeInsets.all(15),
@@ -60,8 +64,13 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                       //////////////////////////////////!!!///////////////
                       ElevatedButton(
                         onPressed: () async {
-                          //action 1
-                          // action 2
+                          final int price = int.parse(amountInputController.text);
+                          String dateTime = DateFormat('yy/MM/dd').format(DateTime.now());
+                          final Welcome? welcome = await createDonation(dateTime, price,"초록어린이우산재단");
+                          setState(() {
+                            _welcome = welcome!;
+                          });
+                          print("The user ${_welcome?.donationPrice}, ${_welcome?.donationDate}");
                           //action 3   go back to Fc_detail page
                           Navigator.push(
                               context,
@@ -79,7 +88,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
 
                       SizedBox(width: 10),
                       ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           // action 2
 
                           // action 3
@@ -113,7 +122,10 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
   {
     return TextField(
       controller: amountInputController,
-      onChanged: (value) {},
+      onChanged: (value) {
+        // final int price = int.parse(amountInputController.text);
+        String dateTime = DateFormat('yy/MM/dd').format(DateTime.now());
+      },
 
       keyboardType: TextInputType.number,
       textAlign: TextAlign.end,
@@ -134,6 +146,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
           borderRadius: BorderRadius.all(Radius.circular(32.0)),
         ),
       ),
+
     );
   }
 
