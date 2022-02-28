@@ -27,6 +27,8 @@ void main() async {
 //void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,7 +62,7 @@ class MyApp extends StatelessWidget{
 class MyClipper extends CustomClipper<Rect>{
   @override
   Rect getClip(Size size) {    // 하위 요소의 사이즈를 가져오는 메소드
-    return Rect.fromCircle(center: new Offset(size.width / 2, size.width / 2),
+    return Rect.fromCircle(center: Offset(size.width / 2, size.width / 2),
         radius: size.width / 2 + 3);    // 하위 요소의 사이즈에 상관없이 넓이와 높이 사이즈를 200px, 100px로 놓았다.
   }
   @override
