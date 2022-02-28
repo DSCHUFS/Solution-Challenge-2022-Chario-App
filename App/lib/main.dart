@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/auth_screen.dart';
 import 'package:flutter_try/page1/dmoneyinput_screen.dart';
 import 'package:flutter_try/page1/donationask_screen.dart';
 import 'package:flutter_try/page1/donationfcdetail.dart';
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget{
         Donationmoneyinput.id:(context) =>  Donationmoneyinput(),
         DonpersonalScreen.id:(context) =>  DonpersonalScreen(),
         DonfcdetailScreen.id: (context) => DonfcdetailScreen(),
-
+        AuthPage.id:(context) => AuthPage(),
         },
 
     );

@@ -10,15 +10,15 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		MJ17bMtX4hTFsodNAgU2TUILd7s=
+		3Rye1F5Uj4EhinQkNHisMCw1P9U=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		vKJkVIcw+LGHFnKJGwrQwCREv68=
+		HuqT/dgvrTHOMum5Qo5BXfxzfaM=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		Zg+fyKXBw0sBgNQ2ysFhM06Z4vM=
+		t5igl56Z8VAfww38ivOwWgoMx10=
 		</data>
 		<key>flutter_assets/assets/bts.png</key>
 		<data>
@@ -78,11 +78,59 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		+9no+WURtY7CtPoG6zEzkel3v/Y=
+		iAFqmVaxwXGDUiz0agjydb6o+68=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/facebook_new.png</key>
+		<data>
+		wsvjgJWTRgfpc2dHMHwZPKkyZGs=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/google_dark.png</key>
+		<data>
+		rpAxPEeBl3sL+Bt0aHp2hDmiONs=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/google_light.png</key>
+		<data>
+		yFU/skGVK140i1TenTibYoow7cQ=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/facebook_new.png</key>
+		<data>
+		C8ShmQ9LsdcExbbsghUpxj4h5Oo=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/google_dark.png</key>
+		<data>
+		ZxQ7Ofrt7UMTpSfPzye7CTJycXI=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/google_light.png</key>
+		<data>
+		7tff4P+ysEgljcgzmErrqfjcsWw=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/facebook_new.png</key>
+		<data>
+		XG2mV8SALzXfOu+sSsNb3CZwnZc=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/google_dark.png</key>
+		<data>
+		MjWIqUgu7liLZWzQeMGn8FFBd5Y=
+		</data>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/google_light.png</key>
+		<data>
+		AKzmlW2KCuNghpE/NjMH07X42V8=
+		</data>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
+		<data>
+		9K4M4LFRtO0XT/e548Ht8/ou2QU=
+		</data>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf</key>
+		<data>
+		TwxaL9PbSu7YG4pf8JX5PQN7/ow=
+		</data>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf</key>
+		<data>
+		qCSzIeujm7QkMIhEZjtJuPn4xMA=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
@@ -95,33 +143,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MJ17bMtX4hTFsodNAgU2TUILd7s=
+			3Rye1F5Uj4EhinQkNHisMCw1P9U=
 			</data>
 			<key>hash2</key>
 			<data>
-			BTZxZi2j2bifhj3a8CVCKcjMUGD3Q9YV5O/a+J4t620=
+			UgE5G58nGXLCudZjCJy0u+usxjjgY57eKtnppdCkyVk=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vKJkVIcw+LGHFnKJGwrQwCREv68=
+			HuqT/dgvrTHOMum5Qo5BXfxzfaM=
 			</data>
 			<key>hash2</key>
 			<data>
-			zX4DZFvESy3Ue3y2JvUcTsv1Whl6t3JBYotHrBZfviE=
+			LNlBG1QOXG4VrGVSOjYBvuZorsqRBOHeE2/DSzqRJ3E=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Zg+fyKXBw0sBgNQ2ysFhM06Z4vM=
+			t5igl56Z8VAfww38ivOwWgoMx10=
 			</data>
 			<key>hash2</key>
 			<data>
-			qbXKu81K03+OqEzYH424fOKsWsTebuHFFjpIqlG98Xc=
+			OdRRbnuZM/X9EAErTEFbrVajbzIV9AJt3+lpvxQu1S4=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/bts.png</key>
@@ -282,11 +330,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+9no+WURtY7CtPoG6zEzkel3v/Y=
+			iAFqmVaxwXGDUiz0agjydb6o+68=
 			</data>
 			<key>hash2</key>
 			<data>
-			IkZkNySnGXj2+d4OAg/O52icU+RZgY4hASnCzvcjrLw=
+			YkkukW0X+BNdgaEyQJj6r3EqWvCdMHpZDcDEd9glrHc=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -298,6 +346,138 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/facebook_new.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			wsvjgJWTRgfpc2dHMHwZPKkyZGs=
+			</data>
+			<key>hash2</key>
+			<data>
+			pxnNpeFWC8M+w0qsOisMJySqQlMqHFzIrzWC3NYWhJE=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/google_dark.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rpAxPEeBl3sL+Bt0aHp2hDmiONs=
+			</data>
+			<key>hash2</key>
+			<data>
+			xqAdoh5ef6DNW8CurveVgMot1bkwmdZRbAOwGkHrf9Q=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/2.0x/google_light.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yFU/skGVK140i1TenTibYoow7cQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			JIlZJwqXe8WyW9aq4kCb5secdhxkh7BXbILq4um+pc8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/facebook_new.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			C8ShmQ9LsdcExbbsghUpxj4h5Oo=
+			</data>
+			<key>hash2</key>
+			<data>
+			MWoizFjctw7wKOyXpv7J6j/S3vqqtZT7M4aMZ5S03VM=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/google_dark.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZxQ7Ofrt7UMTpSfPzye7CTJycXI=
+			</data>
+			<key>hash2</key>
+			<data>
+			XODgPvRzzyvJITR9YTn71eiz479/YDlg2i0XJO4MFec=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/3.0x/google_light.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7tff4P+ysEgljcgzmErrqfjcsWw=
+			</data>
+			<key>hash2</key>
+			<data>
+			4PWajBy+Yu+sO1ZSH5Ey46Q00l1Mb9Hp5hE1dUD+ZMY=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/facebook_new.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XG2mV8SALzXfOu+sSsNb3CZwnZc=
+			</data>
+			<key>hash2</key>
+			<data>
+			vz5RfgC+MGor2SKuMWaCJwbJ2RTdTT6jxIZwzceF/gs=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/google_dark.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MjWIqUgu7liLZWzQeMGn8FFBd5Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZHcAi3UokXzMpeOUL0n4xUhkJFAefVH5lGql2DQdU64=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/flutter_signin_button/assets/logos/google_light.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			AKzmlW2KCuNghpE/NjMH07X42V8=
+			</data>
+			<key>hash2</key>
+			<data>
+			bXLPjBfQxF0mJKnumt7b+egkIvA6byvWCu7bqUODgXc=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9K4M4LFRtO0XT/e548Ht8/ou2QU=
+			</data>
+			<key>hash2</key>
+			<data>
+			5OdoB6IaKslj5wfd/7NiMoNhjAQ0VySya9wj0Nr9/eY=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			TwxaL9PbSu7YG4pf8JX5PQN7/ow=
+			</data>
+			<key>hash2</key>
+			<data>
+			GmpZWgL5Po3urukCH4vQxdxDoXd8w56sQDVWoOBwCmk=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qCSzIeujm7QkMIhEZjtJuPn4xMA=
+			</data>
+			<key>hash2</key>
+			<data>
+			+daTPQTFmkKsowvYjuw4u5y+tpsVR/1VDvc+ugvOeho=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>

@@ -2,8 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-
-
 Future<Data> fetchUserJdata() async {
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/user/"),
