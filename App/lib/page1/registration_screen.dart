@@ -6,8 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart' as fbs;
 import '../methods/validators.dart';
 import '../methods/toast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-
 import 'auth_screen.dart';
+
 
 
 class RegistrationScreen extends StatefulWidget {
