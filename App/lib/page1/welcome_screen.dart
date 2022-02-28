@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import '../api/FirebaseService.dart';
+import '../methods/toast.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
 import '../constants.dart';
@@ -144,6 +147,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
 
+            SignInButton(
+              Buttons.Google,
+              onPressed: () async {
+                try {
+                  await FirebaseService().signInwithGoogle();
+                  Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                } catch (e) {print(e);}
+                  },
+            ),
 
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),

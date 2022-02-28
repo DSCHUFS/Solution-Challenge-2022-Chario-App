@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import '../constants.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
+import '../api/FirebaseService.dart';
+import '../constants.dart';
 import '../methods/validators.dart';
 import '../methods/toast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'HomePage.dart';
 import 'auth_screen.dart';
 
 
@@ -47,19 +48,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
     return Center(
       child: CircularProgressIndicator(),
     );
-  }
-
-  Future<fbs.UserCredential> _googleSignIn() async {
-
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
-
-  // get token
-    final fbs.AuthCredential credential = fbs.GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
-    );
-      return await fbs.FirebaseAuth.instance.signInWithCredential(credential);
   }
 
 
@@ -278,14 +266,13 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               height: 24.0,
             ),
             Text('or'),
-
             SignInButton(
               Buttons.Google,
               onPressed: () async {
                 try {
                   setState(() => _loading = true);
-                  await _googleSignIn();
-                 // Navigator.pushNamedAndRemoveUntil(context, AuthPage.id, (route) => false);
+                  await FirebaseService().signInwithGoogle();
+                 Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                 } catch (e) {
                   toastError(_scaffoldKey, e);
                 } finally {
