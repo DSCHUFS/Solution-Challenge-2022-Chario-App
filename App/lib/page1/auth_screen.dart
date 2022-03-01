@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
+import 'package:flutter_try/page1/regisinput_screen.dart';
+import 'package:flutter_try/page1/welcome_screen.dart';
 import 'dart:async';
 import '../methods/toast.dart';
 import 'HomePage.dart';
@@ -57,7 +59,7 @@ class _AuthPageState extends State<AuthPage>
     fbs.FirebaseAuth.instance.authStateChanges().listen((fbs.User? user)
     {
           if (user == null) {
-            Navigator.pushReplacementNamed(context, '/signin');
+            Navigator.pushReplacementNamed(context, WelcomeScreen.id);
             return;
           }
           setState(() => _firebaseUser = user);
@@ -81,7 +83,8 @@ class _AuthPageState extends State<AuthPage>
           toastError(_scaffoldKey, 'Email is not authenticated. please try again');
           return;
         }
-        Navigator.pushReplacementNamed(context,HomePage.id , arguments: fu);
+        Navigator.pushNamed(context, Regisinput.id);
+
       },
     );
   }

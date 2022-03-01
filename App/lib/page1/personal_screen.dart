@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_try/api/Userapi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_try/page1/welcome_screen.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constants.dart';
 
 
@@ -19,7 +19,6 @@ class PersonalScreen extends StatefulWidget {
 class _PersonalScreenState extends State<PersonalScreen>
 {
   late Future<Data> Userform;
-//<<<<<<< sunghyun
   final _auth = FirebaseAuth.instance;
 
 
@@ -58,8 +57,10 @@ class _PersonalScreenState extends State<PersonalScreen>
                             SizedBox(width: 300.0,),
 
                             TextButton(
-                              onPressed: (){
+                              onPressed: () async {
                                 _auth.signOut();
+                                SharedPreferences prefs = await SharedPreferences.getInstance();
+                                prefs.remove('email');
                                 Navigator.pushNamed(context, WelcomeScreen.id);
                               },
                               child: Text(

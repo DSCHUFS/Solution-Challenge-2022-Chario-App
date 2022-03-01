@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
+import 'package:flutter_try/page1/regisinput_screen.dart';
 import '../api/FirebaseService.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
 import '../methods/toast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'HomePage.dart';
 import 'auth_screen.dart';
-
-
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = "registration_screen" ;
@@ -248,10 +246,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                   final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: confirmpassword);
                   //input name in firebase
                   if (newUser !=null) {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, AuthPage.id, (route) => false);
-                  }
-                }
+                    Navigator.pushNamedAndRemoveUntil(context, AuthPage.id, (route) => false);}}
                 catch (e)
                 {
                   toastError(_scaffoldKey, e);
@@ -272,7 +267,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
                 try {
                   setState(() => _loading = true);
                   await FirebaseService().signInwithGoogle();
-                 Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                 Navigator.pushNamedAndRemoveUntil(context, Regisinput.id, (route) => false);
                 } catch (e) {
                   toastError(_scaffoldKey, e);
                 } finally {
@@ -289,7 +284,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
             height:50,
             child: ElevatedButton(
               child:Text('nexttemp'),
-              onPressed: (){Navigator.pushNamed(context, RegistrationScreen.id);},
+              onPressed: (){Navigator.pushNamed(context, Regisinput.id);},
             ),
           ),
           ],

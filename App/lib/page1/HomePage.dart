@@ -34,30 +34,9 @@ class _MyAppState extends State<HomePage>{
   @override
   void initState() {
     super.initState();
-    getCurrentUser();
     HomeFcJdata = fetchFcJdata();
   }
 
-
-
-  void getCurrentUser() async{
-    try {
-      final user = await _auth.currentUser!;
-
-      final user_id = user.uid;
-
-      print(user);
-      print(user_id);  // -> token
-
-      if (user != null) {
-        loggedInUser = user;
-        print(loggedInUser.email);
-      }
-    }catch(e)
-    {
-      print(e);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
