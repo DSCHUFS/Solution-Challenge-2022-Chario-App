@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\6f86cf7464d07af3059bd078381f8b7b\\transformed\\core-1.6.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,14 +1,14 @@
 [
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/res/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\9ba4060206e1420c5c0a28dd4b2cb5f2\\transformed\\jetified-play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/res/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\9ba4060206e1420c5c0a28dd4b2cb5f2\\transformed\\jetified-play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\9ba4060206e1420c5c0a28dd4b2cb5f2\\transformed\\jetified-play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
     }
 ]

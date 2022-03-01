@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/googleg_disabled_color_18.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/googleg_disabled_color_18.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/googleg_standard_color_18.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/googleg_standard_color_18.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\googleg_standard_color_18.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
-        "merged": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_res/debug/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png",
-        "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+        "merged": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\google_sign_in\\intermediates\\merged_res\\debug\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png",
+        "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     }
 ]
