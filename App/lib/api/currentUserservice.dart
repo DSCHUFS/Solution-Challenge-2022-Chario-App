@@ -12,16 +12,14 @@ class CurrentUser
 final _auth =fbs.FirebaseAuth.instance;
 late fbs.User loggedInUser;
 late String u_id;
+
     void getCurrentUser() async
     {
       try {
         final user = await _auth.currentUser!;
-
         u_id = user.uid as String;
-
         print(user);
         print(u_id);
-
         if (user != null) {
           loggedInUser = user;
           print(loggedInUser.email);

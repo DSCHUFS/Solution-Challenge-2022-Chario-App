@@ -6,8 +6,10 @@ import 'package:flutter_try/page1/donationask_screen.dart';
 import 'package:flutter_try/page1/donationfcdetail.dart';
 import 'package:flutter_try/page1/donpersonal_screen.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
+import 'package:flutter_try/page1/regisinput_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
@@ -19,12 +21,11 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
     );
-
-  runApp(MyApp());
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  var email = prefs.getString('email');
+  print(email);
+  runApp(MaterialApp(home: email == null ? WelcomeScreen() : HomePage()));
 }
-
-
-//void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
   const MyApp({Key? key}) : super(key: key);
@@ -33,15 +34,9 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title:'Chari-o',
-      //theme: ThemeData(primarySwatch:),
-      //home: HomePage(),
-
-      //initialRoute:DonpersonalScreen.id,
-
       initialRoute: WelcomeScreen.id,
-      // routes to run an app
-      routes: {
-
+      routes:
+      {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
         HomePage.id: (context) => HomePage(),
@@ -53,6 +48,7 @@ class MyApp extends StatelessWidget{
         DonpersonalScreen.id:(context) =>  DonpersonalScreen(),
         DonfcdetailScreen.id: (context) => DonfcdetailScreen(),
         AuthPage.id:(context) => AuthPage(),
+        Regisinput.id:(context)=>Regisinput(),
         },
 
     );

@@ -1,11 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:flutter_try/page1/regisinput_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../api/FirebaseService.dart';
-import '../methods/toast.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
 import '../constants.dart';
+import 'package:flutter_try/api/currentUserservice.dart';
+
+
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = "welcome_screen";
@@ -20,8 +24,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   late String email;
   late String password;
-  
-  
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -130,6 +134,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                 if(user != null) {
                   print(amountInputController.text);
+                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                  prefs.setString('email', email);
+
                 Navigator.pushNamed(context, HomePage.id);
                 }
                 }catch(e){print(e);
@@ -152,7 +159,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onPressed: () async {
                 try {
                   await FirebaseService().signInwithGoogle();
-                  Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+
+                  if(CurrentUser().iscomplieteregis())
+                  {
+                    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+                    prefs.setString('email',CurrentUser().loggedInUser.email as String);
+
+                    Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                  }else // go to addtional sign
+                    {
+                    Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                    }
+                  ////////////////////     shared preference need
+
                 } catch (e) {print(e);}
                   },
             ),
