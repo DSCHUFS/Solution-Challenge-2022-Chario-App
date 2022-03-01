@@ -30,6 +30,18 @@
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_auth/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_auth/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_auth/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/firebase_dynamic_links/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -5,6 +5,8 @@ MERGED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-
 MERGED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-15:19
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-13:19
 MERGED from [:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-12:19
@@ -15,20 +17,26 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradl
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:23:5-31:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:23:5-31:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a927e22063d6ea1c38b23a1a53ff5a98/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a927e22063d6ea1c38b23a1a53ff5a98/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/chosunghyun/.gradle/caches/transforms-3/99e94322b7cbba9f8377679fccfcc0ac/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:24:5-20
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/chosunghyun/.gradle/caches/transforms-3/99e94322b7cbba9f8377679fccfcc0ac/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:24:5-20
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:25:5-38:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/5955ec2b772c5392b0498e9dc5e74da9/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/5955ec2b772c5392b0498e9dc5e74da9/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/ea1c16e0136a1f4b9f18239451b6ecb1/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/ea1c16e0136a1f4b9f18239451b6ecb1/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/57b686a915eb5fbdbf45b5d7f95d157a/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/57b686a915eb5fbdbf45b5d7f95d157a/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/f860dadb51cd440147f9724716a81435/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/f860dadb51cd440147f9724716a81435/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:20:5-24:19
 MERGED from [androidx.core:core:1.6.0] /Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.6.0] /Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/chosunghyun/.gradle/caches/transforms-3/4912f8031707cab145841a23eec6b642/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
@@ -45,28 +53,34 @@ INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/
 MERGED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/main/AndroidManifest.xml:1:1-34:12
 MERGED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:google_sign_in] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/7aba578e5692dd74c14f66ac2a4d617c/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/ca1bba69fbdb237e66b810cd75c46bd6/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/7b2e6ab1b38be7197fd14e946761e897/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:17:1-83:12
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:15:1-33:12
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a927e22063d6ea1c38b23a1a53ff5a98/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/chosunghyun/.gradle/caches/transforms-3/99e94322b7cbba9f8377679fccfcc0ac/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:15:1-40:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/chosunghyun/.gradle/caches/transforms-3/df20ec0495cc9a955810692df733cd24/transformed/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/0119417ccf162142bf3c591d3e95a1ed/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/e694168bd94e341ef41fb051f12d401b/transformed/jetified-play-services-auth-base-18.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/5955ec2b772c5392b0498e9dc5e74da9/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4803309023b9c2759b930fe8af99ac0a/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/ea1c16e0136a1f4b9f18239451b6ecb1/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/57b686a915eb5fbdbf45b5d7f95d157a/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/f860dadb51cd440147f9724716a81435/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:16:1-26:12
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f28c98df936da2519799835bfa944029/transformed/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.browser:browser:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/1065e6637f9b338d6ebb313f47895fdf/transformed/browser-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a86a22f17fdf27145eb925ec55cb73c2/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/2cd5e5b368d25bcf01f6951477173bab/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/94765b8165073e3cbae3cc983bf29efa/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/bc9d88c75871cb868cd5313dc798bdf7/transformed/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4b6d4ebcbfe89f4b5fb5debf4281e6b6/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/825d96f229dec66e02bab7194ddca03b/transformed/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -89,8 +103,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/chosunghyun/.g
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/421d4f263b2ca94d5eaeba3a8430ace1/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/9d24b0e7887e83072f31b5c58fa7a7e6/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4701bc1bc2970f5a78529da5bc728308/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.41.0] /Users/chosunghyun/.gradle/caches/transforms-3/fbffcf9d30cd0b5e89151ef90545d3ef/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f8206668e8bf974cbf6cf31a5bb9af3c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
 INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml:1:1-7:12
 INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml:1:1-7:12
@@ -117,10 +131,14 @@ MERGED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-
 MERGED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher_android] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/url_launcher_android/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:google_sign_in] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/7aba578e5692dd74c14f66ac2a4d617c/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/7aba578e5692dd74c14f66ac2a4d617c/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/chosunghyun/.gradle/caches/transforms-3/ca1bba69fbdb237e66b810cd75c46bd6/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
@@ -131,36 +149,44 @@ MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradl
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a927e22063d6ea1c38b23a1a53ff5a98/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a927e22063d6ea1c38b23a1a53ff5a98/transformed/jetified-firebase-auth-interop-20.0.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/chosunghyun/.gradle/caches/transforms-3/99e94322b7cbba9f8377679fccfcc0ac/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] /Users/chosunghyun/.gradle/caches/transforms-3/99e94322b7cbba9f8377679fccfcc0ac/transformed/jetified-firebase-appcheck-interop-16.0.0-beta02/AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/chosunghyun/.gradle/caches/transforms-3/df20ec0495cc9a955810692df733cd24/transformed/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] /Users/chosunghyun/.gradle/caches/transforms-3/df20ec0495cc9a955810692df733cd24/transformed/jetified-play-services-auth-api-phone-17.4.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/0119417ccf162142bf3c591d3e95a1ed/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/0119417ccf162142bf3c591d3e95a1ed/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/e694168bd94e341ef41fb051f12d401b/transformed/jetified-play-services-auth-base-18.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/e694168bd94e341ef41fb051f12d401b/transformed/jetified-play-services-auth-base-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/5955ec2b772c5392b0498e9dc5e74da9/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/5955ec2b772c5392b0498e9dc5e74da9/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4803309023b9c2759b930fe8af99ac0a/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4803309023b9c2759b930fe8af99ac0a/transformed/jetified-firebase-database-collection-18.0.0/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/ea1c16e0136a1f4b9f18239451b6ecb1/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/ea1c16e0136a1f4b9f18239451b6ecb1/transformed/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/57b686a915eb5fbdbf45b5d7f95d157a/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/57b686a915eb5fbdbf45b5d7f95d157a/transformed/jetified-play-services-tasks-18.0.1/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/f860dadb51cd440147f9724716a81435/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/f860dadb51cd440147f9724716a81435/transformed/jetified-firebase-measurement-connector-19.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:18:5-43
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f28c98df936da2519799835bfa944029/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f28c98df936da2519799835bfa944029/transformed/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/1065e6637f9b338d6ebb313f47895fdf/transformed/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.browser:browser:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/1065e6637f9b338d6ebb313f47895fdf/transformed/browser-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a86a22f17fdf27145eb925ec55cb73c2/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/a86a22f17fdf27145eb925ec55cb73c2/transformed/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/2cd5e5b368d25bcf01f6951477173bab/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/2cd5e5b368d25bcf01f6951477173bab/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/94765b8165073e3cbae3cc983bf29efa/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/94765b8165073e3cbae3cc983bf29efa/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/44cd33a029f3b7fd76bbdbd07086a089/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/bc9d88c75871cb868cd5313dc798bdf7/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/bc9d88c75871cb868cd5313dc798bdf7/transformed/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4b6d4ebcbfe89f4b5fb5debf4281e6b6/transformed/coordinatorlayout-1.0.0/AndroidManifest.xml:20:5-44
@@ -205,10 +231,10 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/chosunghyun/.gradl
 MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/9d24b0e7887e83072f31b5c58fa7a7e6/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4701bc1bc2970f5a78529da5bc728308/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/4701bc1bc2970f5a78529da5bc728308/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.41.0] /Users/chosunghyun/.gradle/caches/transforms-3/fbffcf9d30cd0b5e89151ef90545d3ef/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.41.0] /Users/chosunghyun/.gradle/caches/transforms-3/fbffcf9d30cd0b5e89151ef90545d3ef/transformed/jetified-grpc-android-1.41.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/dd1e1694c4cdeab9f173eb30138709a4/transformed/jetified-protolite-well-known-types-18.0.0/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f8206668e8bf974cbf6cf31a5bb9af3c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/f8206668e8bf974cbf6cf31a5bb9af3c/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml
@@ -221,6 +247,10 @@ INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/
 		INJECTED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/android/app/src/debug/AndroidManifest.xml:6:5-66
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [:google_sign_in] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
+MERGED from [:google_sign_in] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/google_sign_in/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:14:5-67
@@ -231,12 +261,16 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_auth] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_auth/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-14:19
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-12:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/bea2ec8bbd83d76080010af97078baf8/transformed/jetified-firebase-auth-21.0.1/AndroidManifest.xml:74:9-80:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:24:9-30:19
+MERGED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:24:9-30:19
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:33:9-37:35
 MERGED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:33:9-37:35
 	android:exported
@@ -259,6 +293,12 @@ ADDED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022
 		ADDED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:cloud_firestore] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/cloud_firestore/intermediates/merged_manifest/debug/AndroidManifest.xml:10:17-134
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.dynamiclinks.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-13:85
+	android:value
+		ADDED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:13:17-82
+	android:name
+		ADDED from [:firebase_dynamic_links] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_dynamic_links/intermediates/merged_manifest/debug/AndroidManifest.xml:12:17-131
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
 ADDED from [:firebase_core] /Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/firebase_core/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-11:85
 	android:value
@@ -367,6 +407,12 @@ ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.g
 		ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:24.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/f15c1103bc20f56fbd3aa1b88c8277c5/transformed/jetified-firebase-firestore-24.0.1/AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar
+ADDED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:27:13-29:85
+	android:value
+		ADDED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:29:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-dynamic-links:21.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/c744f76e2dea501ec5cb6bfb3a6dd4e7/transformed/jetified-firebase-dynamic-links-21.0.0/AndroidManifest.xml:28:17-133
 provider#com.google.firebase.provider.FirebaseInitProvider
 ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
 	android:authorities
@@ -379,17 +425,37 @@ ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.grad
 		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
 	android:name
 		ADDED from [com.google.firebase:firebase-common:20.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/12d25a3f96c4a9bbda9f3f7dac49d85b/transformed/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/7db3dc31802281d28763520b4bd25bb4/transformed/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:20.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/9ba4060206e1420c5c0a28dd4b2cb5f2/transformed/jetified-play-services-auth-20.0.1/AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:17.1.0] /Users/chosunghyun/.gradle/caches/transforms-3/d9a84da4e214f12d44b9b93cccccd33d/transformed/jetified-play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] /Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
