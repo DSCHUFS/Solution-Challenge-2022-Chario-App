@@ -3,12 +3,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
 
-
-
-class FirebaseService {
+class FirebaseService
+{
   final fbs.FirebaseAuth _auth = fbs.FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-
   Future<String?> signInwithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
@@ -20,7 +18,8 @@ class FirebaseService {
         idToken: googleSignInAuthentication.idToken,
       );
       await _auth.signInWithCredential(credential);
-    } on fbs.FirebaseAuthException catch (e) {
+    } on fbs.FirebaseAuthException catch (e)
+    {
       print(e.message);
       throw e;
     }

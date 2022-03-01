@@ -42,7 +42,8 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
-    defaultConfig {
+    defaultConfig
+            {
         multiDexEnabled true
         applicationId "com.example.flutter_try"
         minSdkVersion 19
