@@ -66,7 +66,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                         onPressed: () async {
                           final int price = int.parse(amountInputController.text);
                           String dateTime = DateFormat('yy/MM/dd').format(DateTime.now());
-                          final Welcome? welcome = await createDonation(dateTime, price,"초록어린이우산재단");
+                          final Welcome? welcome = await createDonation(dateTime, price,"유니세프");
                           setState(() {
                             _welcome = welcome!;
                           });
@@ -75,7 +75,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NoPoverty1())
+                                  builder: (context) => NoPoverty(fc_id: 1,))
                           );
                         },
                         child: Text("confirm"),
@@ -95,7 +95,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NoPoverty1())
+                                  builder: (context) => NoPoverty(fc_id: 1,))
                           );
                         },
                         child: Text("tmp button"),

@@ -56,7 +56,7 @@ class _RegisinputState extends State<Regisinput> {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) =>NoPoverty1())
+                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
                         );
                       },
                       child: Text("x"),

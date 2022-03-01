@@ -1,9 +1,9 @@
-#Tue Mar 01 02:28:42 KST 2022
-base.2=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
+#Wed Mar 02 03:39:03 KST 2022
+base.2=C\:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
-base.1=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.1=C\:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.0=C\:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
