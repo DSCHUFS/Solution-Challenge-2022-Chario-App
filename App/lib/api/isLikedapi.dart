@@ -5,12 +5,12 @@ import 'dart:io';
 import '../isLike_User.dart';
 
 
-Future<UserModel?> createUser(int count, String status) async{
+Future<UserModel?> createUser(String fc_id) async{
 
-  const String apiUrl = "http://34.134.67.181:8080/api/subscribe/3";
-  var responsebody = jsonEncode({"count": count , "status": status});
-  final response = await http.post(Uri.parse(apiUrl),headers: {HttpHeaders.authorizationHeader: '1'},
-      body: responsebody
+  // const String apiUrl = Uri.parse("http://34.134.67.181:8080/api/subscribe/" + fc_id);
+  // var responsebody = jsonEncode({"count": count , "status": status});
+  final response = await http.post(Uri.parse("http://34.134.67.181:8080/api/subscribe/" + fc_id),headers: {HttpHeaders.authorizationHeader: '1'},
+
   );
 
   print(response.statusCode);
@@ -22,12 +22,12 @@ Future<UserModel?> createUser(int count, String status) async{
     return null;
   }
 }
-Future<UserModel?> deleteUser(int count, String status) async{
+Future<UserModel?> deleteUser(String fc_id) async{
 
-  const String apiUrl = "http://34.134.67.181:8080/api/subscribe/3";
-  var responsebody = jsonEncode({"count": count as int, "status": status});
-  final response = await http.delete(Uri.parse(apiUrl),headers: {HttpHeaders.authorizationHeader: '1'},
-      body: responsebody
+
+  // var responsebody = jsonEncode({"count": count as int, "status": status});
+  final response = await http.delete(Uri.parse("http://34.134.67.181:8080/api/subscribe/" + fc_id),headers: {HttpHeaders.authorizationHeader: '1'},
+
   );
 
   print(response.statusCode);
