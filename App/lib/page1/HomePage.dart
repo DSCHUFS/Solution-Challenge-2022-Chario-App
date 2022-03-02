@@ -8,8 +8,6 @@ import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'donpersonal_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
-
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
   static const String id = "HomePage";
