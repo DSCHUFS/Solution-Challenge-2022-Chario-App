@@ -19,7 +19,6 @@ dependencies:
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.9
   cloud_firestore: ^3.1.10
-
   flutter_signin_button: ^2.0.0
   email_validator: ^2.0.1
   cupertino_icons: ^1.0.2
@@ -41,7 +40,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/logo.png"
+  image_path: "assets/Logo.png"
 
 flutter:
   assets:

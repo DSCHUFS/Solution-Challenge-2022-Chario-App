@@ -11,6 +11,7 @@ import '../methods/validators.dart';
 import '../methods/toast.dart';
 
 
+
 class Regisinput extends StatefulWidget {
   // const Regisinput({Key? key}) : super(key: key);
   static const String id = "regisinput_screen";
@@ -68,11 +69,12 @@ class _RegisinputState extends State<Regisinput> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                SizedBox(height: 52.0,),
                 Hero(
                   tag: "logo",
                   child: Container(
                     height: 200.0,
-                    child: Image.asset('assets/logo.png'),
+                    child: Image.asset('assets/Logo.png'),
                   ),
                 ),
                 SizedBox(height: 52.0,),

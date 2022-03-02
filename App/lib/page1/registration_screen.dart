@@ -9,6 +9,7 @@ import '../methods/toast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'auth_screen.dart';
 
+
 class RegistrationScreen extends StatefulWidget
 {
   static const String id = "registration_screen" ;
