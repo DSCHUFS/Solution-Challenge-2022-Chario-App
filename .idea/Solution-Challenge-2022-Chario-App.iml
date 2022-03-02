@@ -42,6 +42,12 @@
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/google_sign_in/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/App/ios/.symlinks/plugins/shared_preferences_ios/example/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
