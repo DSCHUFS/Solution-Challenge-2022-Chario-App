@@ -9,7 +9,9 @@ import '../methods/toast.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'auth_screen.dart';
 
-class RegistrationScreen extends StatefulWidget {
+
+class RegistrationScreen extends StatefulWidget
+{
   static const String id = "registration_screen" ;
 
   @override
@@ -51,6 +53,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
@@ -75,25 +78,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
             ),
             SizedBox(
               height: 48.0,
-            ),TextField(
-              onTap: ()
-              {},
-              decoration: InputDecoration(
-                hintText: 'Enter your Name',
-                contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TeamColor, width: 1.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TeamColor, width: 2.0),
-                  borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                ),
-              ),
             ),
             SizedBox(
               height: 8.0,
@@ -194,7 +178,7 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               validator: (confirmpassword){
                 if (passwordValidator!= null) return null;
                 else
-                  return 'Enter a valid email address';
+                  return 'Enter a valid password';
               },
 
             ),
@@ -231,7 +215,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
 
             SignInButtonBuilder
               (
-
               text: 'Sign up with Email',
               icon: Icons.email,
               backgroundColor: Colors.black12,
