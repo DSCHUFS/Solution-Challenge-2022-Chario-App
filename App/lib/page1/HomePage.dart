@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
-import 'package:flutter_try/detailPage/FcDetail2.dart';
-import 'package:flutter_try/detailPage/FcDetail3.dart';
-import 'package:flutter_try/detailPage/FcDetail4.dart';
-import 'package:flutter_try/detailPage/FcDetail5.dart';
 import 'package:flutter_try/main.dart';
 import '../color.dart';
 import 'package:flutter_try/api/Fcapi.dart';
