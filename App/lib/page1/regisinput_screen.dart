@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/constants.dart' as colort;
 import 'HomePage.dart';
-import 'dmoneyinput_screen.dart';
 import '../detailPage/FcDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
-import 'package:flutter_try/page1/regisinput_screen.dart';
 import '../api/FirebaseService.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
 import '../methods/toast.dart';
-import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'auth_screen.dart';
 
 
 class Regisinput extends StatefulWidget {
@@ -26,15 +22,16 @@ class Regisinput extends StatefulWidget {
 class _RegisinputState extends State<Regisinput> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late String email;
+
   late String name;
-  late String password;
-  late String confirmpassword;
+  late String username;
+  late String phone;
 
+  late String email;
 
-  TextEditingController emailInputController = TextEditingController();
-  TextEditingController passwordInputController = TextEditingController();
-  TextEditingController confirmPasswordInputController = TextEditingController();
+  TextEditingController nameInputController = TextEditingController();
+  TextEditingController usernameInputController = TextEditingController();
+  TextEditingController phoneInputController = TextEditingController();
 
 
   final _auth = fbs.FirebaseAuth.instance;
@@ -78,11 +75,9 @@ class _RegisinputState extends State<Regisinput> {
                     child: Image.asset('assets/logo.png'),
                   ),
                 ),
-                SizedBox(
-                  height: 48.0,
-                ),TextField(
-                  onTap: ()
-                  {},
+                SizedBox(height: 52.0,),
+
+                TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Enter your Name',
                     contentPadding:
@@ -99,6 +94,53 @@ class _RegisinputState extends State<Regisinput> {
                       borderRadius: BorderRadius.all(Radius.circular(32.0)),
                     ),
                   ),
+                  onChanged: (value) {
+                    name = value;
+                    // need to check double email ifwhen made a user in same email
+                  },
+                  controller: nameInputController,
+                  keyboardType: TextInputType.name,
+                  validator:(name) {
+                    if (nameValidator(name!) == null)
+                      return null;
+                    else
+                      return 'Enter a valid name in just english or korean';
+                  },
+
+                ),
+                SizedBox(
+                  height: 8.0,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter your UserName',
+                    contentPadding:
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: TeamColor, width: 1.0),
+                      borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: TeamColor, width: 2.0),
+                      borderRadius: BorderRadius.all(Radius.circular(32.0)),
+                    ),
+                  ),
+                  onChanged: (value) {
+                    username = value ;
+                  },
+                  controller: usernameInputController,
+                  keyboardType: TextInputType.text,
+                  validator: (username){
+                    if (usernameValidator(username!) == null)
+                      return null;
+                    else
+                      return 'Enter a valid  username';
+                  },
+
+
                 ),
                 SizedBox(
                   height: 8.0,
@@ -123,16 +165,16 @@ class _RegisinputState extends State<Regisinput> {
                   ),
 
                   onChanged: (value) {
-                    email = value;
+                    phone = value;
                     // need to check double email ifwhen made a user in same email
                   },
-                  controller: emailInputController,
-                  keyboardType: TextInputType.emailAddress,
-                  validator:(email) {
-                    if (emailValidator(email!) == null)
+                  controller: phoneInputController,
+                  keyboardType: TextInputType.phone,
+                  validator:(phone) {
+                    if (phoneValidator(phone!) == null)
                       return null;
                     else
-                      return 'Enter a valid email address';
+                      return 'Enter a valid  phone';
                   },
 
 
@@ -150,14 +192,17 @@ class _RegisinputState extends State<Regisinput> {
                     elevation: 5.0,
                     child: MaterialButton(
                       onPressed: () async{
-                        try {
-                          final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-                          if (newUser !=null)
-                            {
-                              Navigator.pushNamed(context, HomePage.id);
-                            }
-                        }catch(e){print(e);}
-                        },
+                        if (!_formKey.currentState!.validate()) return;
+
+                        // auth에서 ui 와 uemail 을 받아와서  user post에 저장
+                        // try {
+                        //   final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+                        //   if (newUser !=null)
+                        //     {
+                        //       Navigator.pushNamed(context, HomePage.id);
+                        //     }
+                        // }catch(e){print(e);}
+                         },
                       minWidth: 200.0,
                       height: 42.0,
                       child: Text(
@@ -172,9 +217,19 @@ class _RegisinputState extends State<Regisinput> {
                   height: 24.0,
                 ),
 
+                SizedBox(
+                  width: double.infinity,
+                  height:50,
+                  child: ElevatedButton(
+                    child:Text('End'),
+                    onPressed: (){
 
+                      // post to sub api
 
-
+                      Navigator.pushNamed(context,HomePage.id);
+                      },
+                  ),
+                ),
 
 
                 SizedBox(
@@ -185,6 +240,7 @@ class _RegisinputState extends State<Regisinput> {
                     onPressed: (){Navigator.pushNamed(context, Regisinput.id);},
                   ),
                 ),
+
               ],
             ),
 
