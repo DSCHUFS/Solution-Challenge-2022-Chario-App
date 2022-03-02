@@ -25,17 +25,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   late String email;
   late String password;
 
+   init() async{
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+   if (prefs == null)
+   {
+     print("prefs is null");
+   }
+   else{
+
+   }
+
+   }
+
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-
       backgroundColor: Colors.white,
       drawer: Container(child: Text("this is drawer")),
       body:
       Padding(
-
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

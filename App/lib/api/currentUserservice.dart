@@ -30,7 +30,7 @@ late String u_id;
       }
     }
 
-     iscomplieteregis() async
+     iscomplieteregis()
     {
       return false;  // false 받고 register input 으로 ㄱㄱ
     }

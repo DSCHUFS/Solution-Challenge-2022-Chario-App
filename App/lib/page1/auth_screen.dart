@@ -4,7 +4,7 @@ import 'package:flutter_try/page1/regisinput_screen.dart';
 import 'package:flutter_try/page1/welcome_screen.dart';
 import 'dart:async';
 import '../methods/toast.dart';
-import 'HomePage.dart';
+
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
