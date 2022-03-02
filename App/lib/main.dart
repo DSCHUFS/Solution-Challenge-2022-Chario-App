@@ -21,15 +21,17 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
     );
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  var email = prefs.getString('email');
-  print(email);
-  runApp(MaterialApp(home: email == null ? WelcomeScreen() : HomePage()));
+
+  // SharedPreferences prefs = await SharedPreferences.getInstance();
+  // var email = prefs.getString('email');
+  // prefs.setString('email', 'useremail@gmail.com');;
+  //
+  runApp(MyApp());
+
 }
 
 class MyApp extends StatelessWidget{
   const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +52,6 @@ class MyApp extends StatelessWidget{
         AuthPage.id:(context) => AuthPage(),
         Regisinput.id:(context)=>Regisinput(),
         },
-
     );
 
   }

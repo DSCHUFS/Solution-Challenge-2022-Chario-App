@@ -4,7 +4,7 @@ import 'dmoneyinput_screen.dart';
 import '../detailPage/FcDetail.dart';
 
 class Regisinput extends StatefulWidget {
-  const Regisinput({Key? key}) : super(key: key);
+  // const Regisinput({Key? key}) : super(key: key);
   static const String id = "regisinput_screen";
 
   @override
@@ -41,27 +41,24 @@ class _RegisinputState extends State<Regisinput> {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) =>Donationmoneyinput())
-                        );
+                        // Navigator.pushNamed(context,);
                       },
                       child: Text("O"),
                       style:  ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),
+                        // backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),
                       ),
                     ),
                     SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) =>NoPoverty1())
-                        );
+                        // Navigator.push(
+                        //     context,
+                        //     // MaterialPageRoute(builder: (context) =>NoPoverty1())
+                        // );
                       },
                       child: Text("x"),
                       style:  ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),
+                        // backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),
                       ),
                     ),
                   ],
