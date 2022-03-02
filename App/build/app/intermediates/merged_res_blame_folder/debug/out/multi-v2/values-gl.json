@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chosunghyun/Desktop/Solution-Challenge-2022-Chario-App/App/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-gl/values-gl.xml",
+            "outputFile": "C:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gl\\values-gl.xml",
             "map": [
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/45f1c8598c8a31588b3cce3926e395eb/transformed/jetified-play-services-basement-18.0.0/res/values-gl/values.xml",
+                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\45f1c8598c8a31588b3cce3926e395eb\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-gl\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/6f86cf7464d07af3059bd078381f8b7b/transformed/core-1.6.0/res/values-gl/values-gl.xml",
+                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\6f86cf7464d07af3059bd078381f8b7b\\transformed\\core-1.6.0\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/chosunghyun/.gradle/caches/transforms-3/a65575ed24c95292b22a36d152a75681/transformed/jetified-play-services-base-18.0.1/res/values-gl/values.xml",
+                    "source": "C:\\Users\\MinSeo\\.gradle\\caches\\transforms-3\\a65575ed24c95292b22a36d152a75681\\transformed\\jetified-play-services-base-18.0.1\\res\\values-gl\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

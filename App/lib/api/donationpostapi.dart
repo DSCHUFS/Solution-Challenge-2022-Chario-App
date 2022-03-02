@@ -14,10 +14,10 @@ Future<Welcome?> createDonation(String date, int price,String f_name) async{
   });
 
   final response = await http.post(Uri.parse(apiUrl),headers: {
-    HttpHeaders.authorizationHeader: '1'
-    // ,"Accept": "application/json",
-    //   "Access-Control-Allow-Origin": "*"}
-  }
+    HttpHeaders.authorizationHeader: '2'
+    ,"Content-type": "application/json",
+      "Access-Control-Allow-Origin": "*"}
+
       ,body:
       responsebody
   );

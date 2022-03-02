@@ -51,10 +51,10 @@ class _RegisinputState extends State<Regisinput> {
                     SizedBox(width: 10),
                     ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     // MaterialPageRoute(builder: (context) =>NoPoverty1())
-                        // );
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
+                        );
                       },
                       child: Text("x"),
                       style:  ButtonStyle(

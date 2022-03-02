@@ -16,16 +16,19 @@ _launchURL(String url) async {
   }
 }
 
-class NoPoverty1 extends StatefulWidget
+class NoPoverty extends StatefulWidget
 {
-  const NoPoverty1({Key? key}) : super(key: key);
+  const NoPoverty({
+    Key? key,
+  required this.fc_id,}) : super(key: key);
   @override
   _MyAppState createState() => _MyAppState();
+  final int fc_id;
 }
 
 
 bool isLike = true;
-class _MyAppState extends State<NoPoverty1>
+class _MyAppState extends State<NoPoverty>
 {
   UserModel? _like;
   UserModel? _delete;

@@ -14,14 +14,14 @@ io/flutter/plugins/firebase/firestore/FlutterFirebaseFirestorePlugin.java
  io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestorePlugin
 io/flutter/plugins/firebase/firestore/BuildConfig.java
  io.flutter.plugins.firebase.firestore.BuildConfig
-io/flutter/plugins/firebase/firestore/streamhandler/DocumentSnapshotsStreamHandler.java
- io.flutter.plugins.firebase.firestore.streamhandler.DocumentSnapshotsStreamHandler
 io/flutter/plugins/firebase/firestore/utils/ExceptionConverter.java
  io.flutter.plugins.firebase.firestore.utils.ExceptionConverter
-io/flutter/plugins/firebase/firestore/streamhandler/LoadBundleStreamHandler.java
- io.flutter.plugins.firebase.firestore.streamhandler.LoadBundleStreamHandler
+io/flutter/plugins/firebase/firestore/streamhandler/DocumentSnapshotsStreamHandler.java
+ io.flutter.plugins.firebase.firestore.streamhandler.DocumentSnapshotsStreamHandler
 io/flutter/plugins/firebase/firestore/streamhandler/QuerySnapshotsStreamHandler.java
  io.flutter.plugins.firebase.firestore.streamhandler.QuerySnapshotsStreamHandler
+io/flutter/plugins/firebase/firestore/streamhandler/LoadBundleStreamHandler.java
+ io.flutter.plugins.firebase.firestore.streamhandler.LoadBundleStreamHandler
 io/flutter/plugins/firebase/firestore/FlutterFirebaseFirestoreRegistrar.java
  io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
 io/flutter/plugins/firebase/firestore/FlutterFirebaseFirestoreMessageCodec.java

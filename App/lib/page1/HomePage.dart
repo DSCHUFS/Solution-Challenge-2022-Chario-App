@@ -189,7 +189,7 @@ class _MyAppState extends State<HomePage>{
                                         IconButton(onPressed: (){
                                           Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) =>NoPoverty1())
+                                              MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
                                           );
                                         },icon: Icon(Icons.arrow_forward_ios),),
 
@@ -252,7 +252,7 @@ class _MyAppState extends State<HomePage>{
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty2())
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 2,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
                                     ],
@@ -307,7 +307,7 @@ class _MyAppState extends State<HomePage>{
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty3())
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 3,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
@@ -380,7 +380,7 @@ class _MyAppState extends State<HomePage>{
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty4())
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 4,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
@@ -449,7 +449,7 @@ class _MyAppState extends State<HomePage>{
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty5())
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 5,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
