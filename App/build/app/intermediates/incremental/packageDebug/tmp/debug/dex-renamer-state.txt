@@ -1,4 +1,4 @@
-#Wed Mar 02 03:39:03 KST 2022
+#Wed Mar 02 13:40:23 KST 2022
 base.2=C\:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\flutter_project\\sc_ui5\\Solution-Challenge-2022-Chario-App\\App\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

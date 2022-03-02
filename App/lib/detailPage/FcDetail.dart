@@ -30,6 +30,7 @@ class NoPoverty extends StatefulWidget
 bool isLike = true;
 class _MyAppState extends State<NoPoverty>
 {
+
   UserModel? _like;
   UserModel? _delete;
   late Future<FcJdata> DetailFcJdata;
@@ -60,7 +61,7 @@ class _MyAppState extends State<NoPoverty>
         future: DetailFcJdata,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-
+            // f_name_don = snapshot.data!.data[widget.fc_id].f_name;
             return Container(child: Column(
                 children:[
                   Center(
@@ -76,7 +77,7 @@ class _MyAppState extends State<NoPoverty>
                       child: Container(
                         child: InkWell(
                           onTap: () {
-                            _launchURL(snapshot.data!.data[2].f_home);
+                            _launchURL(snapshot.data!.data[widget.fc_id].f_home);
                           },
                           child: Image.network(
                             "https://storage.googleapis.com/content_image/%EB%A1%9C%EA%B3%A0/%E1%84%8E%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A1%E1%86%AB.gif?authuser=1",
@@ -105,7 +106,7 @@ class _MyAppState extends State<NoPoverty>
                     ),
                     child: Center(
                       child: Text(
-                        snapshot.data!.data[0].f_name,
+                        snapshot.data!.data[widget.fc_id].f_name,
                         style: TextStyle(
                           fontFamily: 'Arial',
                           fontSize: 18,
@@ -162,7 +163,7 @@ class _MyAppState extends State<NoPoverty>
                         children:[
                         RaisedButton(
                           onPressed: () {
-                          _launchURL(snapshot.data!.data[0].f_pay);
+                          _launchURL(snapshot.data!.data[widget.fc_id].f_pay);
                           Navigator.pushNamed(context, Donationask.id);
                         },
                           child: const Text('donation', style: TextStyle(fontSize: 20)),
@@ -185,13 +186,15 @@ class _MyAppState extends State<NoPoverty>
                                 });
                                 print(isLike);
                                 if (isLike){
-                                  final UserModel? like = await createUser(1,"좋아요");
+                                  String LikeId = (widget.fc_id).toString();
+                                  final UserModel? like = await createUser(LikeId);
                                   setState(() {
                                     _like = like!;
                                   });
                                   print("dlqhk~~");
                                 }else{
-                                  final UserModel? delete = await deleteUser(0,"구독취소");
+                                  String LikeId = (widget.fc_id).toString();
+                                  final UserModel? delete = await deleteUser(LikeId);
                                   setState(() {
                                     _delete = delete!;
                                   });
