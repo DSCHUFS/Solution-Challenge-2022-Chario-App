@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_try/constants.dart' as colort;
+import '../methods/toast.dart';
 import 'HomePage.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_auth/firebase_auth.dart' as fbs;
 import '../constants.dart';
 import '../methods/validators.dart';
 import 'package:flutter_try/api/UserpostApi.dart';
+import 'package:flutter_try/api/currentUserservice.dart' ;
 
 
 
@@ -24,10 +24,12 @@ class _RegisinputState extends State<Regisinput> {
   late String name;
   late String username;
   late String phone;
-  late String email;
+  late String birth;
+  // final String u_email = CurrentUser().u_email as String;
+  // final String u_token = CurrentUser().Authorization as String;
+  final String u_email = "sd";
+  final String u_token = "fdfd";
 
-  final _auth =fbs.FirebaseAuth.instance;
-  late fbs.User loggedInUser;
 
 
   TextEditingController nameInputController = TextEditingController();
@@ -150,6 +152,7 @@ class _RegisinputState extends State<Regisinput> {
 
                   onChanged: (value) {
                     phone = value;
+                    birth = value;
                     // need to check double email ifwhen made a user in same email
                   },
                   controller: phoneInputController,
@@ -177,7 +180,17 @@ class _RegisinputState extends State<Regisinput> {
                     child: MaterialButton(
                       onPressed: () async{
                         if (!_formKey.currentState!.validate()) return;
-                        createUserpost(u_birth,u_email,u_name,u_phone,u_username);
+                          try {
+                          setState(() => _loading = true);
+
+                          createUserpost(u_token,birth,u_email,name,phone,username);
+                          Navigator.pushNamed(context,HomePage.id);
+                          }
+                          catch (e)
+                          {
+                            toastError(_scaffoldKey, e);
+                            print(e);
+                          }
                         },
                       minWidth: 200.0,
                       height: 42.0,
@@ -198,10 +211,9 @@ class _RegisinputState extends State<Regisinput> {
                   height:50,
                   child: ElevatedButton(
                     child:Text('End'),
-                    onPressed: (){
-
+                    onPressed: ()
+                    {
                       // post to sub api
-
                       Navigator.pushNamed(context,HomePage.id);
                       },
                   ),

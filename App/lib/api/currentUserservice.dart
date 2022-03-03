@@ -7,22 +7,22 @@ class CurrentUser
 {
 final _auth =fbs.FirebaseAuth.instance;
 late fbs.User loggedInUser;
-late String u_id;
+late String Authorization;
 late String u_email;
 
 @override
 void initState()
 {
-  getUserid(u_id,_auth,loggedInUser,u_email);
+  getUserid(Authorization,_auth,loggedInUser,u_email);
 }
 
 
-  getUserid(u_id,_auth,loggedInUser,u_email) async {
+  getUserid(Authorization,_auth,loggedInUser,u_email) async {
   try {
     final user = await _auth.currentUser!;
-    u_id = user.uid as String;
+    Authorization = user.uid as String;
     print(user);
-    print(u_id);
+    print(Authorization);
     if (user != null) {
       loggedInUser = user;
       print(loggedInUser.email);
@@ -41,7 +41,7 @@ void initState()
         final response = await http.get(
             Uri.parse("http://34.134.67.181:8080/api/user/"),
             headers: {
-              "Authorization" : u_id,
+              "Authorization" : Authorization,
               "Content-Type": "application/json",
             }
         );
