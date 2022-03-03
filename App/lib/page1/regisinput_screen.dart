@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/constants.dart' as colort;
 import 'HomePage.dart';
-import '../detailPage/FcDetail.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
-import '../api/FirebaseService.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
-import '../methods/toast.dart';
+import 'package:flutter_try/api/UserpostApi.dart';
+
 
 
 
 class Regisinput extends StatefulWidget {
-  // const Regisinput({Key? key}) : super(key: key);
-  static const String id = "regisinput_screen";
+  static const String id = "regisinpudt_screen";
 
   @override
   _RegisinputState createState() => _RegisinputState();
@@ -27,15 +24,16 @@ class _RegisinputState extends State<Regisinput> {
   late String name;
   late String username;
   late String phone;
-
   late String email;
+
+  final _auth =fbs.FirebaseAuth.instance;
+  late fbs.User loggedInUser;
+
 
   TextEditingController nameInputController = TextEditingController();
   TextEditingController usernameInputController = TextEditingController();
   TextEditingController phoneInputController = TextEditingController();
 
-
-  final _auth = fbs.FirebaseAuth.instance;
 
   bool _loading = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -179,16 +177,8 @@ class _RegisinputState extends State<Regisinput> {
                     child: MaterialButton(
                       onPressed: () async{
                         if (!_formKey.currentState!.validate()) return;
-
-                        // auth에서 ui 와 uemail 을 받아와서  user post에 저장
-                        // try {
-                        //   final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-                        //   if (newUser !=null)
-                        //     {
-                        //       Navigator.pushNamed(context, HomePage.id);
-                        //     }
-                        // }catch(e){print(e);}
-                         },
+                        createUserpost(u_birth,u_email,u_name,u_phone,u_username);
+                        },
                       minWidth: 200.0,
                       height: 42.0,
                       child: Text(

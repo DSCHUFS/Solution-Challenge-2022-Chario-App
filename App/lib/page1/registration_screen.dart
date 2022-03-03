@@ -187,32 +187,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               height: 24.0,
             ),
 
-            // Padding(
-            //   padding: EdgeInsets.symmetric(vertical: 16.0),
-            //   child: Material(
-            //     color: TeamColor,
-            //     borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            //     elevation: 5.0,
-            //     child: MaterialButton(
-            //       onPressed: () async{
-            //         try {
-            //           final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-            //           if (newUser !=null)
-            //             {
-            //               Navigator.pushNamed(context, HomePage.id);
-            //             }
-            //         }catch(e){print(e);}
-            //         },
-            //       minWidth: 200.0,
-            //       height: 42.0,
-            //       child: Text(
-            //         'Register with Email',
-            //         style: TextStyle(color: Colors.white),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-
             SignInButtonBuilder
               (
               text: 'Sign up with Email',

@@ -177,6 +177,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                     prefs.setString('email',CurrentUser().loggedInUser.email as String);
 
+
                     Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                   }else // go to addtional sign
                     {

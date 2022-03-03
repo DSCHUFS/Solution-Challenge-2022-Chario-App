@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<FcJdata> fetchFcJdata() async {
+Future<FcJdata> fetchFcJdata() async
+{
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/facilities/"),
       headers: {

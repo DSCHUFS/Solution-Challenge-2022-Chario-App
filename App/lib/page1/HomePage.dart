@@ -38,7 +38,7 @@ class _MyAppState extends State<HomePage>{
           appBar: AppBar(
             automaticallyImplyLeading: false, // for custom icon option setting down below
             backgroundColor: mainColor,
-            title:Image.asset("assets/logo.png",width:100,height:50),
+            title:Image.asset("assets/Logo.png",width:100,height:50),
             leading: Builder(
               builder: (context) => IconButton(
                 icon: Icon(Icons.person_rounded),
@@ -61,11 +61,11 @@ class _MyAppState extends State<HomePage>{
             children: [
               UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage('assets/logo.png'),
+                  backgroundImage: AssetImage('assets/Logo.png'),
                 ),
                 otherAccountsPictures: [
                   CircleAvatar(
-                    backgroundImage: AssetImage('assets/logo.png'),
+                    backgroundImage: AssetImage('assets/Logo.png'),
                   )
                 ],
                 accountEmail: Text('assets/krischo1204@gmail.com'),

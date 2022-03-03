@@ -2,7 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future <ContentList>fetchContJdata(var g_name,var fcId)async {
+Future <ContentList>fetchContJdata(var g_name,var fcId)async
+{
 
   final response = await http.get
     (

@@ -6,7 +6,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 import '../isLike_User.dart';
 import '../page1/donationask_screen.dart';
-import 'package:http/http.dart';
 
 _launchURL(String url) async {
   if (await canLaunch(url)) {
