@@ -7,6 +7,7 @@ import '../constants.dart';
 import '../methods/validators.dart';
 import 'package:flutter_try/api/UserpostApi.dart';
 import 'package:flutter_try/api/currentUserservice.dart';
+import 'package:intl/intl.dart';
 
 class Regisinput extends StatefulWidget {
   static const String id = "regisinpudt_screen";
@@ -21,7 +22,7 @@ class _RegisinputState extends State<Regisinput> {
   late String name;
   late String username;
   late String phone;
-  late String birth;
+   String birth = "1998-12-04";
   // final String u_email = CurrentUser().u_email as String;
   // final String u_token = CurrentUser().Authorization as String;
   final String u_email = "sd";
@@ -43,13 +44,15 @@ class _RegisinputState extends State<Regisinput> {
 
   Widget buildDatePicker() => SizedBox(
         height: 120,
-        child: CupertinoDatePicker(
+        child: CupertinoDatePicker
+          (
           minimumYear: 1500,
           maximumYear: 2200,
           mode: CupertinoDatePickerMode.date,
           initialDateTime: _dateTime,
           onDateTimeChanged: (dateTime) =>
-              setState(() => this._dateTime = dateTime),
+              setState(() => this._dateTime = dateTime
+              ),
         ),
       );
 
@@ -219,6 +222,8 @@ class _RegisinputState extends State<Regisinput> {
                           },
                         ),
                         SizedBox(height: 24),
+
+
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 16.0),
                           child: Material(
@@ -232,16 +237,22 @@ class _RegisinputState extends State<Regisinput> {
                                 context,
                                 child: buildDatePicker(),
                                 onPressed: () {
-                                  Navigator.pop(context);
+                                 final valueb = DateFormat('yyyy-MM-dd').format(_dateTime);
+                                 print(valueb);
+                                 birth=valueb;
+                                 print(birth.runtimeType);
+                                 Navigator.pop(context);
                                 },
                               ),
                               child: Text(
-                                'birthday',
+                                'birthday : '+ birth,
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
                           ),
                         ),
+
+
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 16.0),
                           child: Material(
@@ -254,9 +265,7 @@ class _RegisinputState extends State<Regisinput> {
                                 if (!_formKey.currentState!.validate()) return;
                                 try {
                                   setState(() => _loading = true);
-
-                                  createUserpost(u_token, birth, u_email, name,
-                                      phone, username);
+                                  createUserpost(u_token,birth , u_email, name, phone, username);
                                   Navigator.pushNamed(context, HomePage.id);
                                 } catch (e) {
                                   toastError(_scaffoldKey, e);
