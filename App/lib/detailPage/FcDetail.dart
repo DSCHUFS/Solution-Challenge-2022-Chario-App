@@ -34,10 +34,8 @@ class _MyAppState extends State<NoPoverty>
   UserModel? _like;
   UserModel? _delete;
   late Future<FcJdata> DetailFcJdata;
-  final List<String> imageList = [
-    "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
-    "https://storage.googleapis.com/content_image/Unicef_contents/Unicef_edu_01_13.jpg?authuser=1",
-  ];
+
+  final List<String> imageList = [];
 
 
   @override
@@ -80,7 +78,7 @@ class _MyAppState extends State<NoPoverty>
                             _launchURL(snapshot.data!.data[widget.fc_id].f_home);
                           },
                           child: Image.network(
-                            "https://storage.googleapis.com/content_image/%EB%A1%9C%EA%B3%A0/%E1%84%8E%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8%E1%84%8B%E1%85%AE%E1%84%89%E1%85%A1%E1%86%AB.gif?authuser=1",
+                            snapshot.data!.data[widget.fc_id].f_logo,
                             fit: BoxFit.fill,
                           ),
 
@@ -125,30 +123,30 @@ class _MyAppState extends State<NoPoverty>
                       child: Container(color: Colors.white),
                     ),
                   ),
-
-                  CarouselSlider(
-                    options: CarouselOptions(
-                      enlargeCenterPage: false,
-                      enableInfiniteScroll: false,
-                      autoPlay: true,
-                    ),
-                    items: imageList
-                        .map((e) => ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Stack(
-                        fit: StackFit.expand,
-                        children: <Widget>[
-                          Image.network(
-                            e,
-                            width: 1050,
-                            height: 350,
-                            fit: BoxFit.cover,
-                          )
-                        ],
-                      ),
-                    ))
-                        .toList(),
-                  ),
+                  // imageList.add(snapshot.data!.data[widget.fc_id].f_pay)
+                  // CarouselSlider(
+                  //   options: CarouselOptions(
+                  //     enlargeCenterPage: false,
+                  //     enableInfiniteScroll: false,
+                  //     autoPlay: true,
+                  //   ),
+                  //   items: imageList
+                  //       .map((e) => ClipRRect(
+                  //     borderRadius: BorderRadius.circular(8),
+                  //     child: Stack(
+                  //       fit: StackFit.expand,
+                  //       children: <Widget>[
+                  //         Image.network(
+                  //           e,
+                  //           width: 1050,
+                  //           height: 350,
+                  //           fit: BoxFit.cover,
+                  //         )
+                  //       ],
+                  //     ),
+                  //   ))
+                  //       .toList(),
+                  // ),
 
                   Center(
                     child: SizedBox(

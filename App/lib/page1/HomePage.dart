@@ -38,7 +38,7 @@ class _MyAppState extends State<HomePage>{
           appBar: AppBar(
             automaticallyImplyLeading: false, // for custom icon option setting down below
             backgroundColor: mainColor,
-            title:Image.asset("assets/chario_logo.png",width:100,height:50),
+            title:Image.asset("assets/logo.png",width:100,height:50),
             leading: Builder(
               builder: (context) => IconButton(
                 icon: Icon(Icons.person_rounded),
@@ -183,13 +183,14 @@ class _MyAppState extends State<HomePage>{
                                         IconButton(onPressed: (){
                                           Navigator.push(
                                               context,
-                                              MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
+                                              MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 0,))
                                           );
                                         },icon: Icon(Icons.arrow_forward_ios),),
 
                                       ],
                                     ),
-                                    SizedBox(height: 30.0,),
+
+
                                     Container(
                                       child: Row(
                                         children:[
@@ -199,16 +200,14 @@ class _MyAppState extends State<HomePage>{
                                               Text(" "),
                                             ],
                                           ),
-                                          SizedBox(width: 30.0,),
 
-                                          SizedBox(width: 30.0,),
                                           // Column(
                                           //   children: [
                                           //     Image.asset("assets/rufi.jpg",width: 200,height: 200,),
                                           //     Text("이건 내 기사내용이다"),
                                           //   ],
 
-                                          SizedBox(width: 30.0,),
+
                                         ],
                                       ),
                                     ),
@@ -222,7 +221,7 @@ class _MyAppState extends State<HomePage>{
                           return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
                         },
                       ),
-                      SizedBox(height: 30.0,),
+
                     FutureBuilder<FcJdata>(
                       future: HomeFcJdata,
                       builder: (context, snapshot) {
@@ -241,24 +240,24 @@ class _MyAppState extends State<HomePage>{
                                       )
                                       ),
                                       Text(snapshot.data!.data[1].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-                                      SizedBox(width: 300.0,),
-                                      Text("더 알아보기",style: TextStyle(fontSize: 15),),
+                                      // SizedBox(width: 300.0,),
+                                      // Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 2,))
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
                                     ],
                                   ),
-                                  SizedBox(height: 30.0,),
+                                  // SizedBox(height: 30.0,),
                                   Container(
                                     child: Row(
                                       children:[
                                         Column(
                                           children: [
                                             Image.network("https://storage.googleapis.com/content_image/Unicef_contents/Unicef_tonga_01_27.jpg?authuser=1",width: 200,height: 200),
-                                            Text(" "),
+
                                           ],
                                         ),
                                       ],
@@ -276,7 +275,7 @@ class _MyAppState extends State<HomePage>{
                       },
                     ),
 
-                    SizedBox(height: 30.0,),
+
                     FutureBuilder<FcJdata>(
                       future: HomeFcJdata,
                       builder: (context, snapshot) {
@@ -296,18 +295,18 @@ class _MyAppState extends State<HomePage>{
                                       )
                                       ),
                                       Text(snapshot.data!.data[2].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-                                      SizedBox(width: 300.0,),
+
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 3,))
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 2,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],
                                   ),
-                                  SizedBox(height: 30.0,),
+
                                   Container(
                                     child: Row(
                                       children:[
@@ -321,21 +320,22 @@ class _MyAppState extends State<HomePage>{
                                             Text(""),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
 
                                             Text(""),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
 
                                             Text(""),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
+
                                       ],
                                     ),
                                   ),
@@ -350,7 +350,7 @@ class _MyAppState extends State<HomePage>{
                         return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
                       },
                     ),
-                    SizedBox(height: 30.0,),
+
                     FutureBuilder<FcJdata>(
                       future: HomeFcJdata,
                       builder: (context, snapshot) {
@@ -369,18 +369,18 @@ class _MyAppState extends State<HomePage>{
                                       )
                                       ),
                                       Text(snapshot.data!.data[3].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-                                      SizedBox(width: 300.0,),
+
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 4,))
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 3,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],
                                   ),
-                                  SizedBox(height: 30.0,),
+
                                   Container(
                                     child: Row(
                                       children:[
@@ -390,21 +390,21 @@ class _MyAppState extends State<HomePage>{
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
                                             //
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
                                             //
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                       ],
                                     ),
                                   ),
@@ -419,7 +419,7 @@ class _MyAppState extends State<HomePage>{
                         return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
                       },
                     ),
-                    SizedBox(height: 30.0,),
+
                     FutureBuilder<FcJdata>(
                       future: HomeFcJdata,
                       builder: (context, snapshot) {
@@ -438,18 +438,18 @@ class _MyAppState extends State<HomePage>{
                                       )
                                       ),
                                       Text(snapshot.data!.data[4].f_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30),),
-                                      SizedBox(width: 300.0,),
+
                                       Text("더 알아보기",style: TextStyle(fontSize: 15),),
                                       IconButton(onPressed: (){
                                         Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 5,))
+                                            MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 4,))
                                         );
                                       },icon: Icon(Icons.arrow_forward_ios),),
 
                                     ],
                                   ),
-                                  SizedBox(height: 30.0,),
+
                                   Container(
                                     child: Row(
                                       children:[
@@ -459,21 +459,21 @@ class _MyAppState extends State<HomePage>{
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
                                             //
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                         Column(
                                           children: [
                                             //
                                             Text("이건 내 기사내용이다"),
                                           ],
                                         ),
-                                        SizedBox(width: 30.0,),
+
                                       ],
                                     ),
                                   ),
@@ -488,7 +488,7 @@ class _MyAppState extends State<HomePage>{
                         return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
                       },
                     ),
-                    SizedBox(height: 30.0,),
+
 
                   ]
               ),
