@@ -61,7 +61,7 @@ class _PersonalScreenState extends State<PersonalScreen>
                                 _auth.signOut();
                                 SharedPreferences prefs = await SharedPreferences.getInstance();
                                 prefs.clear();
-                                Navigator.pushNamed(context, WelcomeScreen.id);
+                                Navigator.pushNamedAndRemoveUntil(context, WelcomeScreen.id, (route) => false);
                               },
                               child: Text(
                                 'Logout',

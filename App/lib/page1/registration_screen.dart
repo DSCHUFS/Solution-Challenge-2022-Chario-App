@@ -241,7 +241,9 @@ class _RegistrationScreenState extends State<RegistrationScreen>
             height:50,
             child: ElevatedButton(
               child:Text('nexttemp'),
-              onPressed: (){Navigator.pushNamed(context, Regisinput.id);},
+              onPressed: (){
+                Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                },
             ),
           ),
           ],

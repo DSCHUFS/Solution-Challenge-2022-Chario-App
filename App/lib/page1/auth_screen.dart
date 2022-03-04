@@ -83,8 +83,7 @@ class _AuthPageState extends State<AuthPage>
           toastError(_scaffoldKey, 'Email is not authenticated. please try again');
           return;
         }
-        Navigator.pushNamed(context, Regisinput.id);
-
+        Navigator.pushNamedAndRemoveUntil(context, Regisinput.id, (route) => false);
       },
     );
   }
