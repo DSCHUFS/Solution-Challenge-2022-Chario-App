@@ -22,7 +22,7 @@ class _RegisinputState extends State<Regisinput> {
   late String name;
   late String username;
   late String phone;
-   String birth = "1998-12-04";
+
   // final String u_email = CurrentUser().u_email as String;
   // final String u_token = CurrentUser().Authorization as String;
   final String u_email = "sd";
@@ -35,6 +35,8 @@ class _RegisinputState extends State<Regisinput> {
   bool _loading = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  bool isDateSelected= false;
+  String birth = DateTime.now() as String ;
   DateTime _dateTime = DateTime.now();
 
   @override
@@ -209,7 +211,6 @@ class _RegisinputState extends State<Regisinput> {
                           ),
                           onChanged: (value) {
                             phone = value;
-                            birth = value;
                             // need to check double email ifwhen made a user in same email
                           },
                           controller: phoneInputController,
@@ -223,7 +224,7 @@ class _RegisinputState extends State<Regisinput> {
                         ),
                         SizedBox(height: 24),
 
-
+ ///// get  birth day form
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 16.0),
                           child: Material(
@@ -238,14 +239,23 @@ class _RegisinputState extends State<Regisinput> {
                                 child: buildDatePicker(),
                                 onPressed: () {
                                  final valueb = DateFormat('yyyy-MM-dd').format(_dateTime);
-                                 print(valueb);
+
+                                  if(valueb!=null && valueb!=birth)
+                                  {
+                                  setState(()      // for syn
+                                  {
+                                  isDateSelected=true;
+                                    birth = valueb; // 08/14/2019
+                                });
+                                }
+                                 print(valueb.runtimeType);
                                  birth=valueb;
                                  print(birth.runtimeType);
                                  Navigator.pop(context);
                                 },
                               ),
                               child: Text(
-                                'birthday : '+ birth,
+                                'birthday : "$birth" ',
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
