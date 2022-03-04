@@ -26,18 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   late String email;
   late String password;
 
-   init() async{
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-   if (prefs == null)
-   {
-     print("prefs is null");
-   }
-   else{
-
-   }
-
-   }
-
+  late bool checkValue;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('assets/logo.png'),
+                    child: Image.asset('assets/Logo.png'),
                     height: 60.0,
                   ),
                 ),
@@ -171,17 +160,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 try {
                   await FirebaseService().signInwithGoogle();
 
-                  if(CurrentUser().iscomplieteregis())
+                  CurrentUser().iscomplieteregis();
+
+                  SharedPreferences pref_user = await SharedPreferences.getInstance();
+                  checkValue = pref_user.getBool("login")!;
+                  print("11");
+                  print(checkValue);
+                  print(checkValue.runtimeType);
+
+                  if(checkValue == true)
                   {
-                    SharedPreferences prefs = await SharedPreferences.getInstance();
-
-                    prefs.setString('email',CurrentUser().loggedInUser.email as String);
-
-
                     Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                   }else // go to addtional sign
                     {
-                    Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                      print("what");
+                      Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
                     }
                   ////////////////////     shared preference need
 
