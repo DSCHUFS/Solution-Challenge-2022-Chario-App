@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
 import 'package:flutter_try/api/UserpostApi.dart';
-import 'package:flutter_try/api/currentUserservice.dart';
 import 'package:intl/intl.dart';
 
 class Regisinput extends StatefulWidget {
@@ -267,7 +266,15 @@ class _RegisinputState extends State<Regisinput> {
                                 if (!_formKey.currentState!.validate()) return;
                                 try {
                                   setState(() => _loading = true);
-                                  createUserpost(u_token,birth , u_email, name, phone, username);
+
+                                  print(u_token.runtimeType);
+                                  print(birth.runtimeType);
+                                  print(u_email.runtimeType);
+                                  print(name.runtimeType);
+                                  print(username.runtimeType);
+                                  print(phone.runtimeType);
+
+                                  // createUserpost(u_token,birth , u_email, name, phone, username);
                                   Navigator.pushNamed(context, HomePage.id);
                                 } catch (e) {
                                   toastError(_scaffoldKey, e);

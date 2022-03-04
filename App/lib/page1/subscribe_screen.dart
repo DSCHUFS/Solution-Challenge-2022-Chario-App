@@ -19,7 +19,7 @@ class _SubscribeScreenState extends State<SubscribeScreen>
     super.initState();
 
     //// need name
-    Fcinform  = fetchSubJdata("shindh0429");
+    Fcinform  = fetchSubJdata();
   }
 
   @override
@@ -47,14 +47,14 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                                 minHeight: 44,
                                 maxWidth: 64,
                                 maxHeight: 64, //
-                                ),child: Image.network(snapshot.data!.datag[index].f_logo, fit: BoxFit.fill),
+                                ),child: Image.network(snapshot.data!.sub_list[index].f_logo, fit: BoxFit.fill),
 
                               ),
-                                title:Center(child:Text(snapshot.data!.datag[index].f_name),)
+                                title:Center(child:Text(snapshot.data!.sub_list[index].f_name),)
                             );
                         },
                         separatorBuilder: (context, index) { return Divider(); },
-                        itemCount: snapshot.data!.datag.length);
+                        itemCount: snapshot.data!.sub_count);
                   }
                   else if (snapshot.hasError) {
 

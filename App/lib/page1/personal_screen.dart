@@ -18,7 +18,7 @@ class PersonalScreen extends StatefulWidget {
 
 class _PersonalScreenState extends State<PersonalScreen>
 {
-  late Future<Data> Userform;
+  late Future<UData> Userform;
   final _auth = FirebaseAuth.instance;
 
 
@@ -38,7 +38,7 @@ class _PersonalScreenState extends State<PersonalScreen>
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<Data>(
+                child: FutureBuilder<UData>(
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
@@ -60,7 +60,7 @@ class _PersonalScreenState extends State<PersonalScreen>
                               onPressed: () async {
                                 _auth.signOut();
                                 SharedPreferences prefs = await SharedPreferences.getInstance();
-                                prefs.remove('email');
+                                prefs.clear();
                                 Navigator.pushNamed(context, WelcomeScreen.id);
                               },
                               child: Text(

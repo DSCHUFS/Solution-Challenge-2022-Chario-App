@@ -21,11 +21,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
     );
-
-  // SharedPreferences prefs = await SharedPreferences.getInstance();
-  // var email = prefs.getString('email');
-  // prefs.setString('email', 'useremail@gmail.com');;
-  //
   runApp(MyApp());
 
 }
