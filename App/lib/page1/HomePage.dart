@@ -201,12 +201,6 @@ class _MyAppState extends State<HomePage>{
                                             ],
                                           ),
 
-                                          // Column(
-                                          //   children: [
-                                          //     Image.asset("assets/rufi.jpg",width: 200,height: 200,),
-                                          //     Text("이건 내 기사내용이다"),
-                                          //   ],
-
 
                                         ],
                                       ),

@@ -179,6 +179,7 @@ class _RegisinputState extends State<Regisinput> {
                           height: 8.0,
                         ),
 
+                        ///////    핸드폰 입력 이후   키보드 done and display - auto
                         TextFormField(
                           decoration: InputDecoration(
                             hintText: 'Enter your phone',
@@ -206,7 +207,10 @@ class _RegisinputState extends State<Regisinput> {
                             // need to check double email ifwhen made a user in same email
                           },
                           controller: phoneInputController,
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.numberWithOptions(signed: true,decimal: true),
+                          inputFormatters:[
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                           validator: (phone) {
                             if (phoneValidator(phone!) == null)
                               return null;
@@ -216,7 +220,7 @@ class _RegisinputState extends State<Regisinput> {
                         ),
                         SizedBox(height: 24),
 
- ///// get  birth day form
+
                         ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: TeamColor,
@@ -288,7 +292,7 @@ class _RegisinputState extends State<Regisinput> {
                           child: ElevatedButton(
                             child: Text('nexttemp'),
                             onPressed: () {
-                              Navigator.pushNamed(context, Regisinput.id);
+                              Navigator.pushNamed(context, HomePage.id);
                             },
                           ),
                         ),
