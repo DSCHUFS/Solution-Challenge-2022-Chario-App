@@ -17,15 +17,15 @@ class Regissub extends StatefulWidget {
 class _RegissubState extends State<Regissub>{
   late Future<FcJdata> DetailFcJdata;
 
-  final List<MultiSelectDialogItem<int>> items =
-  List.generate(30,
-        (index) => MultiSelectDialogItem(index + 1, 'Item Number: ${index + 1}'),
-  );
 
-
-  void  makelsit () async{
-    late Future<FcJdata> g_data =  fetchFcJdata();
-    print(g_data);
+  List<MultiSelectDialogItem<int>> items = List.generate(30, (index) => MultiSelectDialogItem(index + 1, 'Item Number: ${index + 1}'),);
+  void makelist()
+  async{
+    FcJdata gdata = await fetchFcJdata();
+    for (int i = 0; i < gdata.count; i++) {
+      items[i].label = gdata.data[i].f_name;
+      print(items[i].label);
+    }
   }
 
 
@@ -36,7 +36,7 @@ class _RegissubState extends State<Regissub>{
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Items(s) selected'),
+          title: Text('Selected Number'),
           content: Container(
             color: Colors.grey[200],
             child: Wrap(
@@ -44,7 +44,7 @@ class _RegissubState extends State<Regissub>{
               children: selectedValues.map((item) {
                 return Chip(
                   backgroundColor: Colors.yellow,
-                  label: Text('item $item'),
+                  label: Text('select $item'),
                 );
               }).toList(),
             ),
@@ -65,7 +65,7 @@ class _RegissubState extends State<Regissub>{
       context: context,
       builder: (context) {
         return MultiSelectDialog(
-          title: 'Select Item(s)',
+          title: 'you choose',
           items: items,
           initialSelectedValues: selectedValues,
         );
@@ -81,8 +81,12 @@ class _RegissubState extends State<Regissub>{
     DetailFcJdata = fetchFcJdata();
     selectedValues = {1};
     // selectedValues = { 1: {Chip(backgroundColor: Colors.yellow,label: Text('item 1'))}} as Set<int>;
-    makelsit();
+    makelist();
   }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -117,25 +121,17 @@ class _RegissubState extends State<Regissub>{
                             Expanded(
                               child: Wrap(
                                 spacing: 10.0,
-                                children: selectedValues == null ||
-                                    selectedValues.length == 0
-                                    ? [Container()]
-                                    : selectedValues.map(
-                                      (v) {
-                                    return Chip(
-                                      label: Text('item $v'),
-                                      labelStyle:
-                                      TextStyle(color: Colors.white),
+                                children: selectedValues == null || selectedValues.length == 0 ? [Container()]
+                                    : selectedValues.map((v) {
+                                    return Chip(label: Text('No . $v'), labelStyle: TextStyle(color: Colors.white),
                                       backgroundColor: Colors.redAccent,
                                       elevation: 6,
                                       onDeleted: () {
                                         setState(() {
-                                          selectedValues.remove(v);
-                                        });
-                                      },
-                                    );
-                                  },
-                                ).toList(),
+                                          selectedValues.remove(v);});
+                                              },
+                                            );
+                                                        },).toList(),
                               ),
                             ),
                             Container(
