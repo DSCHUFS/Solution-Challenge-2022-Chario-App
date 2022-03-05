@@ -10,8 +10,6 @@ import '../constants.dart';
 import 'package:flutter_try/api/currentUserservice.dart';
 
 
-
-
 class WelcomeScreen extends StatefulWidget {
   static const String id = "welcome_screen";
 
@@ -134,7 +132,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                 if(user != null) {
                   print(amountInputController.text);
-                  Navigator.pushNamed(context, HomePage.id);
+                  Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                 }
                 }catch(e){print(e);}
                   print(amountInputController.text);

@@ -499,6 +499,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  multiple_select:
+    dependency: "direct main"
+    description:
+      name: multiple_select
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.24"
   nested:
     dependency: transitive
     description:

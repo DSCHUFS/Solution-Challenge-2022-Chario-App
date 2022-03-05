@@ -101,7 +101,7 @@ class _RegisinputState extends State<Regisinput> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         SizedBox(
-                          height: 52.0,
+                          height: 120.0,
                         ),
                         Hero(
                           tag: "logo",

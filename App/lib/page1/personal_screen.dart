@@ -46,15 +46,13 @@ class _PersonalScreenState extends State<PersonalScreen>
                       return Container(
                         child: Column(
                           children: [
-                            SizedBox(width: 300.0,),
-                            Expanded(child:Text(snapshot.data!.u_Name)),
-                            SizedBox(width: 300.0,),
+                            SizedBox(height: 60.0,),
                             Expanded(child:Text(snapshot.data!.u_Email)),
-                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Username)),
+                            Expanded(child:Text(snapshot.data!.u_Name)),
                             Expanded(child:Text(snapshot.data!.u_Phone)),
-                            SizedBox(width: 300.0,),
                             Expanded(child:Text(snapshot.data!.u_Birth)),
-                            SizedBox(width: 300.0,),
+
 
                             TextButton(
                               onPressed: () async {

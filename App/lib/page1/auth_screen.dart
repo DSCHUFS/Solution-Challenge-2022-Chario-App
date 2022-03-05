@@ -80,7 +80,7 @@ class _AuthPageState extends State<AuthPage>
         final fu = await fbs.FirebaseAuth.instance.currentUser!;
         await fu.reload();
         if (!fu.emailVerified) {
-          toastError(_scaffoldKey, 'Email is not authenticated. please try again');
+          toastError(_scaffoldKey, 'Email is not authenticated. please check your mail box');
           return;
         }
         Navigator.pushNamedAndRemoveUntil(context, Regisinput.id, (route) => false);
@@ -104,6 +104,13 @@ class _AuthPageState extends State<AuthPage>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Hero(
+                tag: 'logo',
+                child: Container(
+                  child: Image.asset('assets/Logo.png'),
+                  height: 60.0,
+                ),
+              ),
               Text(_message),
               SizedBox(height: 10,),
               _firebaseUser == null ? CircularProgressIndicator() : _buildReloadButton()
