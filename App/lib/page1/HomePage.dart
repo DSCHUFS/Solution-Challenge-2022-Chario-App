@@ -38,7 +38,7 @@ class _MyAppState extends State<HomePage>{
           appBar: AppBar(
             automaticallyImplyLeading: false, // for custom icon option setting down below
             backgroundColor: mainColor,
-            title:Image.asset("assets/logo.png",width:100,height:50),
+            title:Image.asset("assets/Logo_width.png",width:100,height:50),
             leading: Builder(
               builder: (context) => IconButton(
                 icon: Icon(Icons.person_rounded),

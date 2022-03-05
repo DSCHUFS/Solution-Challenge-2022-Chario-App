@@ -35,7 +35,7 @@ class _MyAppState extends State<NoPoverty>
   UserModel? _like;
   UserModel? _delete;
   late Future<FcJdata> DetailFcJdata;
-  late Future<ContentList> ContentFcJdata;
+  late Future<ContentsApi> ContentFcJdata;
   final List<String> imageList = [];
 
 
@@ -45,38 +45,24 @@ class _MyAppState extends State<NoPoverty>
     super.initState();
     DetailFcJdata = fetchFcJdata();
     String fcId = widget.fc_id.toString();
-    ContentFcJdata = fetchContJdata(fcId);
+    ContentFcJdata = fetchContJdata(fcId) ;
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: ListTile(
-            trailing: Image.asset("assets/chario_logo.png",
+            trailing: Image.asset("assets/Logo.png",
                 width: 100, height: 50)),
         // centerTitle: true,
         backgroundColor: mainColor,
       ),
       body:
           Container(
+
                 child:
-
-                  Column(
-                    children: [
-                      FutureBuilder<ContentList>(
+                      FutureBuilder<ContentsApi>(
                         future: ContentFcJdata,
-                        builder: (context,snapshot) {
-                          if (snapshot.hasData) {
-                            imageList.add(snapshot.Confc_list)
-                          }
-                          else if (snapshot.hasError) {
-                            return Text('${snapshot.error}');
-                          }
-                          return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);}
-
-                      ),
-                      FutureBuilder<FcJdata>(
-                        future: DetailFcJdata,
                         builder: (context, snapshot) {
 
                           if (snapshot.hasData) {
@@ -96,10 +82,10 @@ class _MyAppState extends State<NoPoverty>
                                       child: Container(
                                         child: InkWell(
                                           onTap: () {
-                                            _launchURL(snapshot.data!.data[widget.fc_id].f_home);
+                                            _launchURL(snapshot.data!.facDto.fHome);
                                           },
                                           child: Image.network(
-                                            snapshot.data!.data[widget.fc_id].f_logo,
+                                            snapshot.data!.facDto.fLogo,
                                             fit: BoxFit.fill,
                                           ),
 
@@ -125,7 +111,7 @@ class _MyAppState extends State<NoPoverty>
                                     ),
                                     child: Center(
                                       child: Text(
-                                        snapshot.data!.data[widget.fc_id].f_name,
+                                        snapshot.data!.facDto.fName,
                                         style: TextStyle(
                                           fontFamily: 'Arial',
                                           fontSize: 18,
@@ -182,7 +168,7 @@ class _MyAppState extends State<NoPoverty>
                                         children:[
                                           RaisedButton(
                                             onPressed: () {
-                                              _launchURL(snapshot.data!.data[widget.fc_id].f_pay);
+                                              _launchURL(snapshot.data!.facDto.fPay);
                                               Navigator.pushNamed(context, Donationask.id);
                                             },
                                             child: const Text('donation', style: TextStyle(fontSize: 20)),
@@ -239,7 +225,7 @@ class _MyAppState extends State<NoPoverty>
                         },
                       ),
 
-                 ] ),
+
 
 
 
