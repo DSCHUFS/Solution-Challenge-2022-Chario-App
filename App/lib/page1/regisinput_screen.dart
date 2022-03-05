@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../methods/toast.dart';
 import 'HomePage.dart';
+import 'package:flutter_try/page1/regissub_screen.dart';
 import 'package:flutter/services.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
@@ -100,7 +101,7 @@ class _RegisinputState extends State<Regisinput> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         SizedBox(
-                          height: 52.0,
+                          height: 120.0,
                         ),
                         Hero(
                           tag: "logo",
@@ -275,7 +276,8 @@ class _RegisinputState extends State<Regisinput> {
                                   print(phone.runtimeType);
 
                                   // createUserpost(u_token,birth , u_email, name, phone, username);
-                                  Navigator.pushNamed(context, HomePage.id);
+                                  Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
+
                                 } catch (e) {
                                   toastError(_scaffoldKey, e);
                                   print(e);
@@ -299,7 +301,7 @@ class _RegisinputState extends State<Regisinput> {
                           child: ElevatedButton(
                             child: Text('nexttemp'),
                             onPressed: () {
-                              Navigator.pushNamed(context, HomePage.id);
+                              Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
                             },
                           ),
                         ),

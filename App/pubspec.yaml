@@ -30,7 +30,7 @@ dependencies:
   shared_preferences: ^2.0.13
   getwidget: ^2.0.5
   intl: ^0.17.0
-  
+  multiple_select: ^0.1.22
 
 
 dev_dependencies:
