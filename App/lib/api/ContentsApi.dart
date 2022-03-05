@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-Future <ContentList>fetchContJdata(var g_name,var fcId)async
-{
+Future <ContentsApi>fetchContJdata(var fcId)async {
+
+
 
   final response = await http.get
     (
@@ -13,83 +15,124 @@ Future <ContentList>fetchContJdata(var g_name,var fcId)async
         "Access-Control-Allow-Origin": "*"
       }
   );
-  String jsonData_c = response.body;
-  var countofcontent = jsonDecode(jsonData_c)['contentsList'];
 
-  var uname = jsonDecode(jsonData_c)['facDto']['user']['u_username'];
-
-
-  Map <String,dynamic> giveContent ={};
-  List Confc_list =[];
-  int num = 0;
-  for(var i = 0  ; i < countofcontent ; i++)
+  if (response.statusCode == 200)
   {
-    num++;
-    Map<String, String> contli = {};
-    contli['c_title'] = jsonDecode(jsonData_c)['facDto']['c_title'] as String;
-    contli['c_contents'] = jsonDecode(jsonData_c)['facDto']['c_contents'] as String;
-    contli['c_image'] = jsonDecode(jsonData_c)['facDto']['c_image'] as String;
-    contli['c_url'] = jsonDecode(jsonData_c)['facDto']['c_url'] as String;
-    contli['c_pub_date'] = jsonDecode(jsonData_c)['facDto']['c_pub_date'] as String;
 
-    Confc_list.add(contli);
+    String jsonData = response.body;
 
+    print(jsonDecode(jsonData));
+
+    return ContentsApi.fromJson(jsonDecode(jsonData));
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load data');
   }
-
-  print("check---after for loop");
-
-  print(Confc_list.runtimeType);
-  giveContent['facDto'] = Confc_list;
-
-  print("this is answ");
-  print(giveContent);
-  print(giveContent.runtimeType);
-
-  print("this is answ2");
-  String contFinal = json.encode(giveContent);
-  print(contFinal.runtimeType);
-  print(contFinal);
-  Map <String,dynamic> contJson = jsonDecode(contFinal);
-  print(contJson);
-  print(contJson.runtimeType);
-
-  return ContentList.fromJson(contJson);
 }
 
 
-class ContentList
-{
+ContentsApi ContentsApiFromJson(String str) => ContentsApi.fromJson(json.decode(str));
 
-  final List<Content> contentg;
+String ContentsApiToJson(ContentsApi data) => json.encode(data.toJson());
 
-
-  ContentList({required this.contentg});
-
-  factory ContentList.fromJson(Map<String, dynamic> json)
-  {
-    var list = json['contentsList'] as List;
-    List<Content> contentList = list.map((i) => Content.fromJson(i)).toList();
-    return ContentList(contentg: contentList);
-  }
-
-
-}
-
-
-class Content {
-
-  final String f_name;
-  final String f_logo;
-  Content({
-    required this.f_name,
-    required this.f_logo,
-
+class ContentsApi {
+  ContentsApi({
+    required this.facDto,
+    required this.contentsList,
   });
-  factory Content.fromJson(Map<String, dynamic> json)
-  {
-    return Content(
-        f_name: json['f_name'],
-        f_logo: json['f_logo']
-    );
-  }
+
+  FacDto facDto;
+  List<ContentsList> contentsList;
+
+  factory ContentsApi.fromJson(Map<String, dynamic> json) => ContentsApi(
+    facDto: FacDto.fromJson(json["facDto"]),
+    contentsList: List<ContentsList>.from(json["contentsList"].map((x) => ContentsList.fromJson(x))),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "facDto": facDto.toJson(),
+    "contentsList": List<dynamic>.from(contentsList.map((x) => x.toJson())),
+  };
+}
+
+
+
+
+class ContentsList {
+  ContentsList({
+    required this.cTitle,
+    required this.cContents,
+    required this.cImage,
+    required this.cUrl,
+    required this.cPubDate,
+  });
+
+  String cTitle;
+  String cContents;
+  String cImage;
+  String cUrl;
+  DateTime cPubDate;
+
+  factory ContentsList.fromJson(Map<String, dynamic> json) => ContentsList(
+    cTitle: json["c_title"],
+    cContents: json["c_contents"],
+    cImage: json["c_image"],
+    cUrl: json["c_url"],
+    cPubDate: DateTime.parse(json["c_pub_date"]),
+  );
+
+  Map<String, dynamic> toJson() => {
+    "c_title": cTitle,
+    "c_contents": cContents,
+    "c_image": cImage,
+    "c_url": cUrl,
+    "c_pub_date": cPubDate.toIso8601String(),
+  };
+}
+
+class FacDto {
+  FacDto({
+    required this.fName,
+    required this.fIntro,
+    required this.fMinimal,
+    required this.fHome,
+    required this.fArs,
+    required this.fPhone,
+    required this.fPay,
+    required this.fLogo,
+  });
+
+  String fName;
+  String fIntro;
+  int fMinimal;
+  String fHome;
+  String fArs;
+  String fPhone;
+  String fPay;
+  String fLogo;
+
+  factory FacDto.fromJson(Map<String, dynamic> json) =>
+      FacDto(
+        fName: json["f_name"],
+        fIntro: json["f_intro"],
+        fMinimal: json["f_minimal"],
+        fHome: json["f_home"],
+        fArs: json["f_ars"],
+        fPhone: json["f_phone"],
+        fPay: json["f_pay"],
+        fLogo: json["f_logo"],
+      );
+
+  Map<String, dynamic> toJson() =>
+      {
+        "f_name": fName,
+        "f_intro": fIntro,
+        "f_minimal": fMinimal,
+        "f_home": fHome,
+        "f_ars": fArs,
+        "f_phone": fPhone,
+        "f_pay": fPay,
+        "f_logo": fLogo,
+      };
 }

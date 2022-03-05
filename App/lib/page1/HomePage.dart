@@ -55,15 +55,26 @@ class _MyAppState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading:
-            false, // for custom icon option setting down below
-        backgroundColor: mainColor,
-        title: Image.asset("assets/Logo.png", width: 100, height: 50),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: Icon(Icons.person_rounded),
-            onPressed: () => Scaffold.of(context).openDrawer(),
+
+          appBar: AppBar(
+            automaticallyImplyLeading: false, // for custom icon option setting down below
+            backgroundColor: mainColor,
+            title:Image.asset("assets/Logo_width.png",width:100,height:50),
+            leading: Builder(
+              builder: (context) => IconButton(
+                icon: Icon(Icons.person_rounded),
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              ),
+            ),
+            actions: [
+              IconButton(
+                  icon: Icon(Icons.search),
+              //     onPressed: () => Navigator.of(context)
+              //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
+              onPressed: (){Navigator.pushNamed(context, PersonalScreen.id);},
+              )
+            ],
+
           ),
         ),
         actions: [
