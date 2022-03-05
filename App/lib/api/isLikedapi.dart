@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'dart:io';
 import '../isLike_User.dart';
@@ -22,10 +20,9 @@ Future<UserModel?> createUser(String fc_id) async{
     return null;
   }
 }
-Future<UserModel?> deleteUser(String fc_id) async{
+Future<UserModel?> deleteUser(String fc_id) async
+{
 
-
-  // var responsebody = jsonEncode({"count": count as int, "status": status});
   final response = await http.delete(Uri.parse("http://34.134.67.181:8080/api/subscribe/" + fc_id),headers: {HttpHeaders.authorizationHeader: '1'},
 
   );

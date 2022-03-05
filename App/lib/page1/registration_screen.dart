@@ -69,11 +69,14 @@ class _RegistrationScreenState extends State<RegistrationScreen>
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SizedBox(
+              height: 120.0,
+            ),
             Hero(
               tag: "logo",
               child: Container(
                 height: 200.0,
-                child: Image.asset('assets/logo.png'),
+                child: Image.asset('assets/Logo.png'),
               ),
             ),
             SizedBox(
@@ -187,32 +190,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               height: 24.0,
             ),
 
-            // Padding(
-            //   padding: EdgeInsets.symmetric(vertical: 16.0),
-            //   child: Material(
-            //     color: TeamColor,
-            //     borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            //     elevation: 5.0,
-            //     child: MaterialButton(
-            //       onPressed: () async{
-            //         try {
-            //           final newUser = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-            //           if (newUser !=null)
-            //             {
-            //               Navigator.pushNamed(context, HomePage.id);
-            //             }
-            //         }catch(e){print(e);}
-            //         },
-            //       minWidth: 200.0,
-            //       height: 42.0,
-            //       child: Text(
-            //         'Register with Email',
-            //         style: TextStyle(color: Colors.white),
-            //       ),
-            //     ),
-            //   ),
-            // ),
-
             SignInButtonBuilder
               (
               text: 'Sign up with Email',
@@ -241,9 +218,13 @@ class _RegistrationScreenState extends State<RegistrationScreen>
             ),
 
             SizedBox(
-              height: 24.0,
+              height: 12.0,
             ),
-            Text('or'),
+
+            Text('or', textAlign: TextAlign.center,),
+            SizedBox(
+              height: 12.0,
+            ),
             SignInButton(
               Buttons.Google,
               onPressed: () async {
@@ -267,7 +248,9 @@ class _RegistrationScreenState extends State<RegistrationScreen>
             height:50,
             child: ElevatedButton(
               child:Text('nexttemp'),
-              onPressed: (){Navigator.pushNamed(context, Regisinput.id);},
+              onPressed: (){
+                Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                },
             ),
           ),
           ],

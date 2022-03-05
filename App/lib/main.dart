@@ -9,7 +9,7 @@ import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_try/page1/regissub_screen.dart';
 import 'page1/HomePage.dart';
 import 'page1/welcome_screen.dart';
 import 'page1/registration_screen.dart';
@@ -21,11 +21,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
     );
-
-  // SharedPreferences prefs = await SharedPreferences.getInstance();
-  // var email = prefs.getString('email');
-  // prefs.setString('email', 'useremail@gmail.com');;
-  //
   runApp(MyApp());
 
 }
@@ -36,13 +31,14 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title:'Chari-o',
-      // initialRoute: WelcomeScreen.id,
-      // initialRoute: Regisinput.id,
-      initialRoute: HomePage.id,
+      initialRoute: WelcomeScreen.id,
+      //initialRoute: Regissub.id,
+      //initialRoute: HomePage.id,
       routes:
       {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         RegistrationScreen.id: (context) => RegistrationScreen(),
+
         HomePage.id: (context) => HomePage(),
         PersonalScreen.id: (context) => PersonalScreen(),
         SubscribeScreen.id: (context) => SubscribeScreen(),
@@ -53,7 +49,8 @@ class MyApp extends StatelessWidget{
         DonfcdetailScreen.id: (context) => DonfcdetailScreen(),
         AuthPage.id:(context) => AuthPage(),
         Regisinput.id:(context)=>Regisinput(),
-        },
+        Regissub.id:(context) => Regissub()
+      },
     );
 
   }

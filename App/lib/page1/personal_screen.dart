@@ -18,7 +18,7 @@ class PersonalScreen extends StatefulWidget {
 
 class _PersonalScreenState extends State<PersonalScreen>
 {
-  late Future<Data> Userform;
+  late Future<UData> Userform;
   final _auth = FirebaseAuth.instance;
 
 
@@ -38,7 +38,7 @@ class _PersonalScreenState extends State<PersonalScreen>
             Expanded(
               child: Padding(
                 padding: EdgeInsets.only(top: 10.0),
-                child: FutureBuilder<Data>(
+                child: FutureBuilder<UData>(
                   future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
@@ -46,22 +46,20 @@ class _PersonalScreenState extends State<PersonalScreen>
                       return Container(
                         child: Column(
                           children: [
-                            SizedBox(width: 300.0,),
-                            Expanded(child:Text(snapshot.data!.u_Name)),
-                            SizedBox(width: 300.0,),
+                            SizedBox(height: 60.0,),
                             Expanded(child:Text(snapshot.data!.u_Email)),
-                            SizedBox(width: 300.0,),
+                            Expanded(child:Text(snapshot.data!.u_Username)),
+                            Expanded(child:Text(snapshot.data!.u_Name)),
                             Expanded(child:Text(snapshot.data!.u_Phone)),
-                            SizedBox(width: 300.0,),
                             Expanded(child:Text(snapshot.data!.u_Birth)),
-                            SizedBox(width: 300.0,),
+
 
                             TextButton(
                               onPressed: () async {
                                 _auth.signOut();
                                 SharedPreferences prefs = await SharedPreferences.getInstance();
-                                prefs.remove('email');
-                                Navigator.pushNamed(context, WelcomeScreen.id);
+                                prefs.clear();
+                                Navigator.pushNamedAndRemoveUntil(context, WelcomeScreen.id, (route) => false);
                               },
                               child: Text(
                                 'Logout',
