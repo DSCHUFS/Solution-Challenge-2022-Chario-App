@@ -64,6 +64,7 @@ class _MyAppState extends State<HomePage> {
               builder: (context) => IconButton(
                 icon: Icon(Icons.person_rounded),
                 onPressed: () => Scaffold.of(context).openDrawer(),
+                
               ),
             ),
             actions: [
@@ -74,20 +75,7 @@ class _MyAppState extends State<HomePage> {
               onPressed: (){Navigator.pushNamed(context, PersonalScreen.id);},
               )
             ],
-
           ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            //     onPressed: () => Navigator.of(context)
-            //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
-            onPressed: () {
-              Navigator.pushNamed(context, PersonalScreen.id);
-            },
-          )
-        ],
-      ),
       drawer: Container(
         child: Drawer(
           child: ListView(
