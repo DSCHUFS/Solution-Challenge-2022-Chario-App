@@ -17,7 +17,7 @@ String? emailValidator(String value)
 String? passwordValidator(String value) {
   if (value.length < 5)
   {
-    return 'Password must be longer than 5 ';
+    return 'Password must be longer than 5  ';
   } else {
     return null;
   }

@@ -21,15 +21,31 @@ class _RegissubState extends State<Regissub>
   late Future<FcJdata> DetailFcJdata;
   late Set<String> selectedValues;
   List<MultiSelectDialogItem<String>> items = List.generate(7, (index) => MultiSelectDialogItem('$index+1', '미정입니다'),);
+
+  late List <String> namecheck = [];
+  late List <int> requestid = [];
+
   void makelist()
-  async{
+  async {
+
     FcJdata gdata = await fetchFcJdata();
-    for (int i = 0; i < 7; i++)
-    {
+    for (int i = 0; i < 7; i++) {
       items[i].value = gdata.data[i].f_name;
       items[i].label = gdata.data[i].f_name;
     }
+
+    for (int i = 0; i < 7; i++) {
+      namecheck.add(items[i].value);
+    }
+    print("dfd");
+    print(namecheck);
+
+
+
   }
+
+
+
 
   void submit() {
     showDialog(
@@ -53,13 +69,29 @@ class _RegissubState extends State<Regissub>
             TextButton(
               child: Text('OK'),
               onPressed: () {
-                print(selectedValues);
-                print(selectedValues.runtimeType);
                 final requestpost = selectedValues.toList();
+
                 print(requestpost);
                 print(requestpost.runtimeType);
-                // shoot and post using sub multi api
-                Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+
+                print(namecheck);
+                print(namecheck.runtimeType);
+
+                requestid = []; // init for re use
+                for (int i = 0; i < requestpost.length; i++)
+                {
+                  for (int j = 0; j < namecheck.length; j++)
+                {
+                    if (requestpost[i] == namecheck[j])
+                    {
+                      requestid.add(j+1);
+                      }
+                    }
+                }
+                requestid.sort();
+                print(requestid);
+
+                // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
               }
             ),
           ],
