@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-
-class MultiSelectDialogItem<V>
-{
+class MultiSelectDialogItem<V> {
   MultiSelectDialogItem(this.value, this.label);
-  final V value;
-  late String label;
+  late  V value;
+  late  String label;
 }
 
 class MultiSelectDialog<V> extends StatefulWidget {
