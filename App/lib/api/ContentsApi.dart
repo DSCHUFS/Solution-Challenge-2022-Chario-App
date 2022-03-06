@@ -2,7 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
 Future <ContentsApi>fetchContJdata(var fcId)async {
+
+
+
   final response = await http.get
     (
       Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/facility/"+fcId),
@@ -16,9 +20,7 @@ Future <ContentsApi>fetchContJdata(var fcId)async {
   {
 
     String jsonData = response.body;
-
-    print(jsonDecode(jsonData));
-
+    print('나왔다 얍 ${jsonData}');
     return ContentsApi.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
