@@ -67,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               decoration: InputDecoration(
                 hintText: 'ID:example@gmail.com',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
@@ -87,7 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             TextField(
               onChanged: (value) {
-              password = value;
+                password = value;
 
               },
               decoration: InputDecoration(
@@ -129,13 +129,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                   onPressed: () async{
                     try{
-                    final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
-                if(user != null) {
-                  print(amountInputController.text);
-                  Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
-                }
-                }catch(e){print(e);}
-                  print(amountInputController.text);
+                      final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+                      if(user != null) {
+                        print(amountInputController.text);
+                        Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                      }
+                    }catch(e){print(e);}
+                    print(amountInputController.text);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -164,14 +164,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   {
                     Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                   }else // go to addtional sign
-                    {
-                      print("what");
-                      Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
-                    }
+                      {
+                    print("what");
+                    Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                  }
                   ////////////////////     shared preference need
 
                 } catch (e) {print(e);}
-                  },
+              },
             ),
 
             Padding(
@@ -201,5 +201,4 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-
 

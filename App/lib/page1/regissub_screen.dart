@@ -67,32 +67,32 @@ class _RegissubState extends State<Regissub>
           ),
           actions: <Widget>[
             TextButton(
-              child: Text('OK'),
-              onPressed: () {
-                final requestpost = selectedValues.toList();
+                child: Text('OK'),
+                onPressed: () {
+                  final requestpost = selectedValues.toList();
 
-                print(requestpost);
-                print(requestpost.runtimeType);
+                  print(requestpost);
+                  print(requestpost.runtimeType);
 
-                print(namecheck);
-                print(namecheck.runtimeType);
+                  print(namecheck);
+                  print(namecheck.runtimeType);
 
-                requestid = []; // init for re use
-                for (int i = 0; i < requestpost.length; i++)
-                {
-                  for (int j = 0; j < namecheck.length; j++)
-                {
-                    if (requestpost[i] == namecheck[j])
+                  requestid = []; // init for re use
+                  for (int i = 0; i < requestpost.length; i++)
+                  {
+                    for (int j = 0; j < namecheck.length; j++)
                     {
-                      requestid.add(j+1);
+                      if (requestpost[i] == namecheck[j])
+                      {
+                        requestid.add(j+1);
                       }
                     }
-                }
-                requestid.sort();
-                print(requestid);
+                  }
+                  requestid.sort();
+                  print(requestid);
 
-                // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
-              }
+                  // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                }
             ),
           ],
         );
@@ -192,5 +192,4 @@ class _RegissubState extends State<Regissub>
     );
   }
 }
-
 
