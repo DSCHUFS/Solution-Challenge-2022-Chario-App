@@ -69,8 +69,6 @@ class _MyAppState extends State<HomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            //     onPressed: () => Navigator.of(context)
-            //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
             onPressed: () {
               Navigator.pushNamed(context, PersonalScreen.id);
             },
