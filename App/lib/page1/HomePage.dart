@@ -55,7 +55,6 @@ class _MyAppState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         automaticallyImplyLeading: false, // for custom icon option setting down below
         backgroundColor: mainColor,
