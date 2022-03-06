@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import '../api/Fcapi.dart';
 import 'package:flutter_try/methods/multi_select_dialog.dart';
 
+import '../constants.dart';
+
 class Regissub extends StatefulWidget {
   static const String id = "regissub_screen";
   @override
@@ -14,41 +16,32 @@ class Regissub extends StatefulWidget {
 class _RegissubState extends State<Regissub>
 {
   late Future<FcJdata> DetailFcJdata;
-  List<MultiSelectDialogItem<String>> items = List.generate(30, (index) => MultiSelectDialogItem('1', 'Item Number: ${index + 1}'),);
+  late Set<String> selectedValues;
+  List<MultiSelectDialogItem<String>> items = List.generate(7, (index) => MultiSelectDialogItem('$index+1', '미정입니다'),);
   void makelist()
   async{
     FcJdata gdata = await fetchFcJdata();
-    print(items);
-    print(items[0].label);
-    print(items[1].label);
-    print(items[2].label);
-
-    for (int i = 0; i < gdata.count; i++)
+    for (int i = 0; i < 7; i++)
     {
+      items[i].value = gdata.data[i].f_name;
       items[i].label = gdata.data[i].f_name;
     }
-    print("ddd");
-    print(items[1].label);
   }
-
-
-  late Set<String> selectedValues;
 
   void submit() {
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Selected Number'),
+          title: Text('선택하신 기관은 다음과 같습니다'),
           content: Container(
             color: Colors.grey[200],
             child: Wrap(
               spacing: 10.0,
-              children: selectedValues.map((item)
-              {
+              children: selectedValues.map((item) {
                 return Chip(
                   backgroundColor: Colors.yellow,
-                  label: Text('select' +item),
+                  label: Text('$item'),
                 );
               }).toList(),
             ),
@@ -57,6 +50,13 @@ class _RegissubState extends State<Regissub>
             TextButton(
               child: Text('OK'),
               onPressed: () {
+                print(selectedValues);
+                print(selectedValues.runtimeType);
+
+                final requestpost = selectedValues.toList();
+                print(requestpost);
+                print(requestpost.runtimeType);
+
                 Navigator.of(context).pop() ;
               }
             ),
@@ -71,7 +71,7 @@ class _RegissubState extends State<Regissub>
       builder: (context) {
         return MultiSelectDialog
           (
-          title: '선택해주세요',
+          title: '구독할 기관을 선택해 주세요',
           items: items,
           initialSelectedValues: selectedValues,
         );
@@ -85,7 +85,7 @@ class _RegissubState extends State<Regissub>
   void initState() {
     super.initState();
     DetailFcJdata = fetchFcJdata();
-    selectedValues = {"밀알복지"};
+    selectedValues = {"초록우산어린이재단"};
     makelist();
   }
 
@@ -125,8 +125,8 @@ class _RegissubState extends State<Regissub>
                             spacing: 10.0,
                             children: selectedValues == null || selectedValues.length == 0 ? [Container()]
                                 : selectedValues.map((v) {
-                              return Chip(label: Text(v), labelStyle: TextStyle(color: Colors.white),
-                                backgroundColor: Colors.redAccent,
+                              return Chip(label: Text('$v'), labelStyle: TextStyle(color: Colors.white),
+                                backgroundColor: TeamColor,
                                 elevation: 6,
                                 onDeleted: () {
                                   setState(() {

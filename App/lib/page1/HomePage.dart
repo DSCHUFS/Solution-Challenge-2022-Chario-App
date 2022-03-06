@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/main.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 import '../color.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
