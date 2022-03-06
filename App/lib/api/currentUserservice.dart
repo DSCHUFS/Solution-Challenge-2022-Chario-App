@@ -14,7 +14,7 @@ class CurrentUser {
             final response = await http.get(
                 Uri.parse("http://34.134.67.181:8080/api/user/"),
                 headers: {
-                  "Authorization" : '2',
+                  "Authorization" : 'iDfNltmm45UvW4n6nhpFXoHwo1f2',
                   // "Authorization" : Authorization,
                   "Content-Type": "application/json",
                 }
@@ -23,14 +23,12 @@ class CurrentUser {
 
             String jsonData = response.body;
 
-
-
             print(response.statusCode);
             if (response.statusCode == 200)
             {
               pref_user.setBool('login', true);
             }
-            else if(response.statusCode == 400)
+            else if(response.statusCode == 401)
             {
               print("errorhappen code 400");
                ////  navigate to regis  input page

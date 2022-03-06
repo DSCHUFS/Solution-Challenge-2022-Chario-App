@@ -12,8 +12,8 @@ Future <DataList>fetchSubJdata( )async
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/subscribe/"),
       headers: {
-        // "Authorization" :Authorization,
-        "Authorization" :"2",
+        "Authorization" :Authorization,
+        //"Authorization" :"2",
         "Content-Type": "application/json",
       }
   );

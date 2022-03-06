@@ -6,6 +6,7 @@ Future<FcJdata> fetchFcJdata() async
 {
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/facilities/"),
+      // Uri.parse("http://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/facilities/"),
       headers: {
       "Accept": "application/json",
       "Access-Control-Allow-Origin": "*"
@@ -21,9 +22,8 @@ Future<FcJdata> fetchFcJdata() async
     print(jsonDecode(jsonData));
 
     return FcJdata.fromJson(jsonDecode(jsonData));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
+  } else
+  {
     throw Exception('Failed to load data');
   }
 }
