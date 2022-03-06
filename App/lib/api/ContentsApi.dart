@@ -2,16 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-<<<<<<< HEAD
-
 Future <ContentsApi>fetchContJdata(var fcId)async {
-=======
-
-Future <ContentsApi>fetchContJdata(var fcId)async {
-
-
->>>>>>> origin
-
   final response = await http.get
     (
       Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/facility/"+fcId),

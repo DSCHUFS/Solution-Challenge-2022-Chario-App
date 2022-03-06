@@ -87,14 +87,12 @@ class _RegissubState extends State<Regissub>
     DetailFcJdata = fetchFcJdata();
     selectedValues = {"밀알복지"};
     makelist();
-    // selectedValues = { 1: {Chip(backgroundColor: Colors.yellow,label: Text('item 1'))}} as Set<int>;
   }
 
 
 
   @override
   Widget build(BuildContext context) {
-    // const PrimaryColor = const Color(0xFFffa8a8);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
