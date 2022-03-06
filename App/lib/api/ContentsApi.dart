@@ -2,8 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future <ContentList>fetchContJdata(var g_name,var fcId)async
-{
+Future <ContentList>fetchContJdata(var fcId)async {
 
   final response = await http.get
     (
@@ -69,6 +68,7 @@ class ContentList
   {
     var list = json['contentsList'] as List;
     List<Content> contentList = list.map((i) => Content.fromJson(i)).toList();
+    print(contentList);
     return ContentList(contentg: contentList);
   }
 
