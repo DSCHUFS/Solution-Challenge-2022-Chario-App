@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:io';
 
-
-createUserpost(String Authorization)
+// get one more arguments
+postsubs(String Authorization)
 async{
   const String apiUrl = "http://34.134.67.181:8080/api/";
   var requestbody = jsonEncode

@@ -4,6 +4,9 @@ import '../api/Fcapi.dart';
 import 'package:flutter_try/methods/multi_select_dialog.dart';
 
 import '../constants.dart';
+import 'HomePage.dart';
+
+
 
 class Regissub extends StatefulWidget {
   static const String id = "regissub_screen";
@@ -52,12 +55,11 @@ class _RegissubState extends State<Regissub>
               onPressed: () {
                 print(selectedValues);
                 print(selectedValues.runtimeType);
-
                 final requestpost = selectedValues.toList();
                 print(requestpost);
                 print(requestpost.runtimeType);
-
-                Navigator.of(context).pop() ;
+                // shoot and post using sub multi api
+                Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
               }
             ),
           ],
