@@ -35,8 +35,17 @@ class _MyAppState extends State<NoPoverty>
   UserModel? _delete;
   late Future<FcJdata> DetailFcJdata;
   late Future<ContentsApi> ContentFcJdata;
-  final List<String> imageList = [];
 
+  List<String> imageList = [];
+  void makelist()
+  async{
+    ContentsApi gdata = await fetchContJdata(widget.fc_id);
+    for (int i = 0; i < gdata.contentsList.length; i++) {
+      imageList.add(gdata.contentsList[i].cImage);
+      print('${i}는 ${imageList[i]}');
+    }
+    print(imageList);
+  }
 
   @override
   void initState() {
@@ -45,6 +54,7 @@ class _MyAppState extends State<NoPoverty>
     DetailFcJdata = fetchFcJdata();
     String fcId = widget.fc_id.toString();
     ContentFcJdata = fetchContJdata(fcId) ;
+    makelist();
   }
   @override
   Widget build(BuildContext context) {
@@ -129,30 +139,30 @@ class _MyAppState extends State<NoPoverty>
                                       child: Container(color: Colors.white),
                                     ),
                                   ),
-                                  // imageList.add(snapshot.data!.data[widget.fc_id].f_pay)
-                                  // CarouselSlider(
-                                  //   options: CarouselOptions(
-                                  //     enlargeCenterPage: false,
-                                  //     enableInfiniteScroll: false,
-                                  //     autoPlay: true,
-                                  //   ),
-                                  //   items: imageList
-                                  //       .map((e) => ClipRRect(
-                                  //     borderRadius: BorderRadius.circular(8),
-                                  //     child: Stack(
-                                  //       fit: StackFit.expand,
-                                  //       children: <Widget>[
-                                  //         Image.network(
-                                  //           e,
-                                  //           width: 1050,
-                                  //           height: 350,
-                                  //           fit: BoxFit.cover,
-                                  //         )
-                                  //       ],
-                                  //     ),
-                                  //   ))
-                                  //       .toList(),
-                                  // ),
+
+                                  CarouselSlider(
+                                    options: CarouselOptions(
+                                      enlargeCenterPage: false,
+                                      enableInfiniteScroll: false,
+                                      autoPlay: true,
+                                    ),
+                                    items: imageList
+                                        .map((e) => ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Stack(
+                                        fit: StackFit.expand,
+                                        children: <Widget>[
+                                          Image.network(
+                                            e,
+                                            width: 1050,
+                                            height: 350,
+                                            fit: BoxFit.cover,
+                                          )
+                                        ],
+                                      ),
+                                    ))
+                                        .toList(),
+                                  ),
 
                                   Center(
                                     child: SizedBox(

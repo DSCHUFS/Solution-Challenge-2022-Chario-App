@@ -20,9 +20,7 @@ Future <ContentsApi>fetchContJdata(var fcId)async {
   {
 
     String jsonData = response.body;
-
-    print(jsonDecode(jsonData));
-
+    print('나왔다 얍 ${jsonData}');
     return ContentsApi.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
