@@ -2,8 +2,15 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+<<<<<<< HEAD
 
 Future <ContentsApi>fetchContJdata(var fcId)async {
+=======
+
+Future <ContentsApi>fetchContJdata(var fcId)async {
+
+
+>>>>>>> origin
 
   final response = await http.get
     (
