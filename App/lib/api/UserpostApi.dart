@@ -3,9 +3,6 @@ import 'package:http/http.dart' as http;
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
-
-
-
 final _auth =fbs.FirebaseAuth.instance;
 Future<UserPostModel?> createUserpost(String u_name,String u_username,String u_phone,String u_birth)
 async{
@@ -38,7 +35,9 @@ async{
   if(response.statusCode == 200)
   {
     final String responseString = response.body;
-    return  UserPostModelFromJson(responseString);
+    print("thsi is output") ;
+    print(UserPostModelFromJson(responseString));
+    return  UserPostModelFromJson(responseString) ;
   }
   else
   {
@@ -52,24 +51,19 @@ UserPostModel UserPostModelFromJson(String str) => UserPostModel.fromJson(json.d
 String UserPostModelToJson(UserPostModel data) => json.encode(data.toJson());
 
 class UserPostModel {
-  int count;
   String status;
 
   UserPostModel({
-    required this.count,
     required this.status,
 
   });
 
   factory UserPostModel.fromJson(Map<String, dynamic> json) => UserPostModel(
-    count: json["count"],
     status: json["status"],
 
   );
 
   Map<String, dynamic> toJson() => {
-    "count": count,
     "status": status,
-
   };
 }

@@ -134,7 +134,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         print(amountInputController.text);
                         Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                       }
-                    }catch(e){print(e);}
+                    }catch(e){
+                      print("this is after auth") ;
+                      SnackBar(
+                        content: Text('아이디가 없습니다 회원 가입 해주세요.'),
+                      );
+                      print(e);
+                    }
                     print(amountInputController.text);
                   },
                   minWidth: 200.0,
@@ -156,7 +162,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                   SharedPreferences pref_user = await SharedPreferences.getInstance();
                   checkValue = pref_user.getBool("login")!;
-                  print("11");
                   print(checkValue);
                   print(checkValue.runtimeType);
 

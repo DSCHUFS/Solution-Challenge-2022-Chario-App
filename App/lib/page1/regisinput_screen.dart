@@ -267,14 +267,10 @@ class _RegisinputState extends State<Regisinput> {
                                 if (!_formKey.currentState!.validate()) return;
                                 try {
                                   setState(() => _loading = true);
-
-
-                                  print(birth);
-                                  print(name);
-                                  print(username);
-                                  print(maskFormatter.getMaskedText().runtimeType);
-
                                   createUserpost(name,username,phone,birth);
+                                  SnackBar(
+                                    content: Text('가입이 완료되었습니다.'),
+                                  );
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
 
                                 } catch (e) {

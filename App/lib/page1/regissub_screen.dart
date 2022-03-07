@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../api/Fcapi.dart';
 import 'package:flutter_try/methods/multi_select_dialog.dart';
 
+import '../api/subscribePostapi.dart';
 import '../constants.dart';
 import 'HomePage.dart';
 
@@ -91,7 +92,13 @@ class _RegissubState extends State<Regissub>
                   requestid.sort();
                   print(requestid);
 
-                  // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                  if(postsubs(requestid) == true){
+                    Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                  }
+                  else {
+                   print("It shoot  error in regissub scrren");
+                  }
+
                 }
             ),
           ],

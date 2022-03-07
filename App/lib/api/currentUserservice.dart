@@ -13,7 +13,7 @@ class CurrentUser {
             final response = await http.get(
                 Uri.parse("http://34.134.67.181:8080/api/user/"),
                 headers: {
-                  "Authorization" : 'iDfNltmm45UvW4n6nhpFXoHwo1f2',
+                  "Authorization" : Authorization,
                   // "Authorization" : Authorization,
                   "Content-Type": "application/json",
                 }

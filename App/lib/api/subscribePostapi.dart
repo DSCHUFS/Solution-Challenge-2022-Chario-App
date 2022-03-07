@@ -1,14 +1,21 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
-// get one more arguments
-postsubs(String Authorization)
-async{
+
+
+
+////  shoot list  of fac number to server  and get post while register
+final _auth =fbs.FirebaseAuth.instance;
+
+postsubs(List<int> sublist) async{
+  final user = await _auth.currentUser!;
+  final String Authorization = user.uid as String;
   const String apiUrl = "http://34.134.67.181:8080/api/";
   var requestbody = jsonEncode
     ({
-    "Authorization" :Authorization,
+    "fac_id": sublist
   });
 
   final response = await http.post(Uri.parse(apiUrl),
@@ -24,6 +31,7 @@ async{
   if(response.statusCode == 200)
   {
     final String responseString = response.body;
+    print(responseString) ;
     return true ;
   }
   else
