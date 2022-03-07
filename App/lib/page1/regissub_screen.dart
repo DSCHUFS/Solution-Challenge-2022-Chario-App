@@ -129,17 +129,35 @@ class _RegissubState extends State<Regissub>
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false, // for custom icon option setting down below
-        ),
-
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        body:
+          Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 120.0,
+                ),
+                Hero(
+                  tag: "logo",
+                  child: Container(
+                    height: 200.0,
+                    child: Image.asset('assets/Logo.png'),
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+
+                Text('소식을 받아볼 기부 단채를 골라보세요!') ,
+                SizedBox(
+                  height: 40.0,
+                ),
+
               GestureDetector(
                 onTap: _showMultiSelect,
-                child: Container(
+                child:
+                Container(
                   margin: EdgeInsets.symmetric(horizontal: 20.0),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -179,6 +197,11 @@ class _RegissubState extends State<Regissub>
                   ),
                 ),
               ),
+
+                SizedBox(
+                  height: 30.0,
+                ),
+
               ElevatedButton(
                 child: Text('SUBMIT'),
                 onPressed: selectedValues == null || selectedValues.length == 0 ? null
@@ -187,9 +210,16 @@ class _RegissubState extends State<Regissub>
               ),
             ],
           ),
+
+
+
+
+          ],
+
+          ),
         ),
-      ),
-    );
+      );
+
   }
 }
 
