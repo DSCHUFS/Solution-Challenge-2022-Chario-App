@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../methods/toast.dart';
-import 'HomePage.dart';
+
+
 import 'package:flutter_try/page1/regissub_screen.dart';
 import 'package:flutter/services.dart';
 import '../constants.dart';
@@ -41,6 +42,11 @@ class _RegisinputState extends State<Regisinput> {
   String birth = "2022-03-04";
 
   DateTime _dateTime = DateTime.now();
+
+
+  final snackBar = SnackBar(
+      content: Text("회원가입이 완료 되었습니다")
+  );
 
   @override
   initState() {
@@ -268,9 +274,8 @@ class _RegisinputState extends State<Regisinput> {
                                 try {
                                   setState(() => _loading = true);
                                   createUserpost(name,username,phone,birth);
-                                  SnackBar(
-                                    content: Text('가입이 완료되었습니다.'),
-                                  );
+
+                                  _scaffoldKey.currentState?.showSnackBar(snackBar);
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
 
                                 } catch (e) {

@@ -1,8 +1,12 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../api/FirebaseService.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
@@ -26,7 +30,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   final snackBar = SnackBar(
       content: Text("로그인 정보가 없습니다 회원가입 해주세요")
-
   );
 
   late String email;
@@ -177,8 +180,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     print("no account");
                     Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
                   }
-
-
                 } catch (e) {print(e);}
               },
             ),
@@ -190,8 +191,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
+                  onPressed: ()
+                  {
                     Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,

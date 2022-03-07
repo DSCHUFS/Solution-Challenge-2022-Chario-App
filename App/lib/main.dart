@@ -34,8 +34,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner:false,
 
 
-      initialRoute: Regissub.id,
-
+      initialRoute: Regisinput.id,
       //initialRoute: HomePage.id,
       //initialRoute: WelcomeScreen.id,
 
