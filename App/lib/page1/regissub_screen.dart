@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../api/Fcapi.dart';
 import 'package:flutter_try/methods/multi_select_dialog.dart';
 
+import '../api/subscribePostapi.dart';
 import '../constants.dart';
 import 'HomePage.dart';
 
@@ -70,13 +71,6 @@ class _RegissubState extends State<Regissub>
                 child: Text('OK'),
                 onPressed: () {
                   final requestpost = selectedValues.toList();
-
-                  print(requestpost);
-                  print(requestpost.runtimeType);
-
-                  print(namecheck);
-                  print(namecheck.runtimeType);
-
                   requestid = []; // init for re use
                   for (int i = 0; i < requestpost.length; i++)
                   {
@@ -89,9 +83,15 @@ class _RegissubState extends State<Regissub>
                     }
                   }
                   requestid.sort();
-                  print(requestid);
+                  subspost().postsubs(requestid);
+                  final bool re = subspost().resultc;
+                  if(re == true){
+                    Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                  }
+                  else {
+                   print("It shoot  error in regissub scrren");
+                  }
 
-                  // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                 }
             ),
           ],

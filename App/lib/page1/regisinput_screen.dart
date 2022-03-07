@@ -26,8 +26,8 @@ class _RegisinputState extends State<Regisinput> {
 
   // final String u_email = CurrentUser().u_email as String;
   // final String u_token = CurrentUser().Authorization as String;
-  final String u_email = "sd";
-  final String u_token = "fdfd";
+
+
 
   TextEditingController nameInputController = TextEditingController();
   TextEditingController usernameInputController = TextEditingController();
@@ -267,15 +267,10 @@ class _RegisinputState extends State<Regisinput> {
                                 if (!_formKey.currentState!.validate()) return;
                                 try {
                                   setState(() => _loading = true);
-
-
-                                  print(birth);
-                                  print(u_email);
-                                  print(name);
-                                  print(username);
-                                  print(maskFormatter.getMaskedText().runtimeType);
-
-                                  // createUserpost(u_token,birth , u_email, name, phone, username);
+                                  createUserpost(name,username,phone,birth);
+                                  SnackBar(
+                                    content: Text('가입이 완료되었습니다.'),
+                                  );
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
 
                                 } catch (e) {
