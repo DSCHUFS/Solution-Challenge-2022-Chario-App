@@ -7,7 +7,6 @@ class CurrentUser {
     void iscomplieteregis()
           async {
             SharedPreferences pref_user = await SharedPreferences.getInstance();
-
             final user = await _auth.currentUser!;
             final String Authorization = user.uid as String;
             print(Authorization);
@@ -19,8 +18,6 @@ class CurrentUser {
                   "Content-Type": "application/json",
                 }
             );
-
-
             String jsonData = response.body;
 
             print(response.statusCode);
