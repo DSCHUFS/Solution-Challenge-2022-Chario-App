@@ -21,6 +21,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   final amountInputController = TextEditingController();
   final _auth = FirebaseAuth.instance;
 
+  //// scaffold key for snack bar
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final snackBar = SnackBar(
+      content: Text("로그인 정보가 없습니다 회원가입 해주세요")
+
+  );
+
   late String email;
   late String password;
 
@@ -30,6 +38,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       drawer: Container(child: Text("this is drawer")),
       body:
@@ -136,9 +145,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       }
                     }catch(e){
                       print("this is after auth") ;
-                      SnackBar(
-                        content: Text('아이디가 없습니다 회원 가입 해주세요.'),
-                      );
+                      _scaffoldKey.currentState?.showSnackBar(snackBar);
                       print(e);
                     }
                     print(amountInputController.text);
@@ -157,23 +164,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onPressed: () async {
                 try {
                   await FirebaseService().signInwithGoogle();
-
                   CurrentUser().iscomplieteregis();
-
-                  SharedPreferences pref_user = await SharedPreferences.getInstance();
-                  checkValue = pref_user.getBool("login")!;
+                  checkValue = CurrentUser().checkvalide;
                   print(checkValue);
                   print(checkValue.runtimeType);
-
                   if(checkValue == true)
                   {
+                    print("ther is account");
                     Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                   }else // go to addtional sign
                       {
-                    print("what");
+                    print("no account");
                     Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
                   }
-                  ////////////////////     shared preference need
+
 
                 } catch (e) {print(e);}
               },
