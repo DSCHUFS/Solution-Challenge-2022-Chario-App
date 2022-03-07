@@ -8,6 +8,7 @@ import '../constants.dart';
 import '../methods/validators.dart';
 import 'package:flutter_try/api/UserpostApi.dart';
 import 'package:intl/intl.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Regisinput extends StatefulWidget {
   static const String id = "regisinpudt_screen";
@@ -31,6 +32,7 @@ class _RegisinputState extends State<Regisinput> {
   TextEditingController nameInputController = TextEditingController();
   TextEditingController usernameInputController = TextEditingController();
   TextEditingController phoneInputController = TextEditingController();
+  var maskFormatter = MaskTextInputFormatter(mask: '###-####-####',filter: { "#": RegExp(r'[0-9]') });
 
   bool _loading = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -208,9 +210,7 @@ class _RegisinputState extends State<Regisinput> {
                           },
                           controller: phoneInputController,
                           keyboardType: TextInputType.numberWithOptions(signed: true,decimal: true),
-                          inputFormatters:[
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
+                          inputFormatters: [maskFormatter],
                           validator: (phone) {
                             if (phoneValidator(phone!) == null)
                               return null;
@@ -268,12 +268,12 @@ class _RegisinputState extends State<Regisinput> {
                                 try {
                                   setState(() => _loading = true);
 
-                                  print(u_token.runtimeType);
-                                  print(birth.runtimeType);
-                                  print(u_email.runtimeType);
-                                  print(name.runtimeType);
-                                  print(username.runtimeType);
-                                  print(phone.runtimeType);
+
+                                  print(birth);
+                                  print(u_email);
+                                  print(name);
+                                  print(username);
+                                  print(maskFormatter.getMaskedText().runtimeType);
 
                                   // createUserpost(u_token,birth , u_email, name, phone, username);
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
