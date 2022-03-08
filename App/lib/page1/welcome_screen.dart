@@ -35,7 +35,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   late String email;
   late String password;
 
-  late bool checkValue;
+
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 Text(
-                  'handy corn',
+                  'handy con',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -164,24 +164,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
             SignInButton(
               Buttons.Google,
-              onPressed: () async {
-                try {
+              onPressed: ()
+              async{
                   await FirebaseService().signInwithGoogle();
-                  CurrentUser().iscomplieteregis();
-                  checkValue = CurrentUser().checkvalide;
-                  print(checkValue);
-                  print(checkValue.runtimeType);
-                  if(checkValue == true)
-                  {
-                    print("ther is account");
-                    Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
-                  }else // go to addtional sign
-                      {
-                    print("no account");
-                    Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
-                  }
-                } catch (e) {print(e);}
-              },
+
+                  CurrentUser cucheck = CurrentUser();
+                  await cucheck.iscomplieteregis();
+
+                    if (cucheck.checkvalide == true)
+                    {
+                      print("there is account");
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, HomePage.id, (route) => false);
+                    } else // go to addtional sign
+                    {
+                      print("no account");
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, Regisinput.id, (route) => false);
+                    }
+
+                  },
             ),
 
             Padding(
