@@ -1,23 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
-Future <UserDonJdata>fetchDonJdata(var g_name)async {
+Future <UserDonJdata>fetchDonJdata()async {
+  final _auth =fbs.FirebaseAuth.instance;
+  final user = await _auth.currentUser!;
+  final String Authorization = user.uid as String;
 
   final response = await http.get
     (
-      Uri.parse("https://1e85ce8f-6ffc-402d-9365-0576000728de.mock.pstmn.io/api/donation/"+"1"),
-        headers: {
-      "Accept": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    }
-
-
-      // Uri.parse("http://34.134.67.181:8080/api/subscribes"),
-      // headers: {
-      //   "Accept": "application/json",
-      //   "Access-Control-Allow-Origin": "*"
-      // }
+      Uri.parse("http://34.134.67.181:8080/api/user/"),
+      headers: {
+        "Authorization" : Authorization,
+        "Content-Type": "application/json",
+      }
   );
 
 
