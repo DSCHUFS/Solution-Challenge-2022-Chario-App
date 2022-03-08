@@ -274,8 +274,7 @@ class _RegisinputState extends State<Regisinput> {
                                 try {
                                   setState(() => _loading = true);
                                   createUserpost(name,username,phone,birth);
-
-                                  _scaffoldKey.currentState?.showSnackBar(snackBar);
+                                  //_scaffoldKey.currentState?.showSnackBar(snackBar);
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
 
                                 } catch (e) {

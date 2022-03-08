@@ -12,8 +12,7 @@ Future<UData> fetchUserJdata() async {
   final response = await http.get(
       Uri.parse("http://34.134.67.181:8080/api/user/"),
       headers: {
-        // "Authorization" :Authorization,
-        "Authorization" :"2",
+        "Authorization" :Authorization,
         "Content-Type": "application/json",
       }
   );
@@ -23,10 +22,8 @@ Future<UData> fetchUserJdata() async {
   if (response.statusCode == 200)
   {
     String jsonData = response.body;
-
     var myJson = jsonDecode(jsonData);
     print(myJson['u_username'].runtimeType);
-
 
     return UData.fromJson(myJson);
   } else {
