@@ -31,9 +31,13 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title:'Chari-o',
-      initialRoute: WelcomeScreen.id,
-      //initialRoute: Regissub.id,
+      debugShowCheckedModeBanner:false,
+
+
+      //initialRoute: Regisinput.id,
       //initialRoute: HomePage.id,
+      initialRoute: WelcomeScreen.id,
+
       routes:
       {
         WelcomeScreen.id: (context) => WelcomeScreen(),

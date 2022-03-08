@@ -17,7 +17,7 @@ String? emailValidator(String value)
 String? passwordValidator(String value) {
   if (value.length < 5)
   {
-    return 'Password must be longer than 5 ';
+    return 'Password must be longer than 5  ';
   } else {
     return null;
   }
@@ -56,13 +56,15 @@ String? usernameValidator(String value)
 }
 
 
-String? phoneValidator(String value)
-{
-  if (value.length < 1 )
-  {return 'name must be longer than 1 ';
-  } else
-  {
-  return null;
-  }
 
+String? phoneValidator(String value) {
+  // String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+  // RegExp regExp = new RegExp(patttern);
+  if (value.length < 10) {
+    return 'Please enter mobile number';
+  }
+  // else if (!regExp.hasMatch(value)) {
+  //   return 'Please enter valid mobile number';
+  // }
+  return null;
 }

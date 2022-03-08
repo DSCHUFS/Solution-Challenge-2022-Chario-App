@@ -21,9 +21,8 @@ Future<FcJdata> fetchFcJdata() async
     print(jsonDecode(jsonData));
 
     return FcJdata.fromJson(jsonDecode(jsonData));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
+  } else
+  {
     throw Exception('Failed to load data');
   }
 }

@@ -1,8 +1,12 @@
+
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../api/FirebaseService.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
@@ -21,15 +25,23 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   final amountInputController = TextEditingController();
   final _auth = FirebaseAuth.instance;
 
+  //// scaffold key for snack bar
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final snackBar = SnackBar(
+      content: Text("로그인 정보가 없습니다 회원가입 해주세요")
+  );
+
   late String email;
   late String password;
 
-  late bool checkValue;
+
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       drawer: Container(child: Text("this is drawer")),
       body:
@@ -49,7 +61,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
                 Text(
-                  'handy corn',
+                  'handy con',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -67,7 +79,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               decoration: InputDecoration(
                 hintText: 'ID:example@gmail.com',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
@@ -87,7 +99,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             TextField(
               onChanged: (value) {
-              password = value;
+                password = value;
 
               },
               decoration: InputDecoration(
@@ -129,13 +141,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
                   onPressed: () async{
                     try{
-                    final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
-                if(user != null) {
-                  print(amountInputController.text);
-                  Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
-                }
-                }catch(e){print(e);}
-                  print(amountInputController.text);
+                      final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
+                      if(user != null) {
+                        print(amountInputController.text);
+                        Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                      }
+                    }catch(e){
+                      print("this is after auth") ;
+                      _scaffoldKey.currentState?.showSnackBar(snackBar);
+                      print(e);
+                    }
+                    print(amountInputController.text);
                   },
                   minWidth: 200.0,
                   height: 42.0,
@@ -148,29 +164,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
             SignInButton(
               Buttons.Google,
-              onPressed: () async {
-                try {
+              onPressed: ()
+              async{
                   await FirebaseService().signInwithGoogle();
 
-                  CurrentUser().iscomplieteregis();
+                  CurrentUser cucheck = CurrentUser();
+                  await cucheck.iscomplieteregis();
 
-                  SharedPreferences pref_user = await SharedPreferences.getInstance();
-                  checkValue = pref_user.getBool("login")!;
-                  print("11");
-                  print(checkValue);
-                  print(checkValue.runtimeType);
-
-                  if(checkValue == true)
-                  {
-                    Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
-                  }else // go to addtional sign
+                    if (cucheck.checkvalide == true)
                     {
-                      print("what");
-                      Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
+                      print("there is account");
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, HomePage.id, (route) => false);
+                    } else // go to addtional sign
+                    {
+                      print("no account");
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, Regisinput.id, (route) => false);
                     }
-                  ////////////////////     shared preference need
 
-                } catch (e) {print(e);}
                   },
             ),
 
@@ -181,8 +193,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
-                    //Go to registration screen.
+                  onPressed: ()
+                  {
                     Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,
@@ -201,5 +213,4 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-
 

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import '../methods/toast.dart';
-import 'HomePage.dart';
+
+
 import 'package:flutter_try/page1/regissub_screen.dart';
 import 'package:flutter/services.dart';
 import '../constants.dart';
 import '../methods/validators.dart';
 import 'package:flutter_try/api/UserpostApi.dart';
 import 'package:intl/intl.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Regisinput extends StatefulWidget {
   static const String id = "regisinpudt_screen";
@@ -25,12 +27,13 @@ class _RegisinputState extends State<Regisinput> {
 
   // final String u_email = CurrentUser().u_email as String;
   // final String u_token = CurrentUser().Authorization as String;
-  final String u_email = "sd";
-  final String u_token = "fdfd";
+
+
 
   TextEditingController nameInputController = TextEditingController();
   TextEditingController usernameInputController = TextEditingController();
   TextEditingController phoneInputController = TextEditingController();
+  var maskFormatter = MaskTextInputFormatter(mask: '###-####-####',filter: { "#": RegExp(r'[0-9]') });
 
   bool _loading = false;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -39,6 +42,11 @@ class _RegisinputState extends State<Regisinput> {
   String birth = "2022-03-04";
 
   DateTime _dateTime = DateTime.now();
+
+
+  final snackBar = SnackBar(
+      content: Text("회원가입이 완료 되었습니다")
+  );
 
   @override
   initState() {
@@ -208,9 +216,7 @@ class _RegisinputState extends State<Regisinput> {
                           },
                           controller: phoneInputController,
                           keyboardType: TextInputType.numberWithOptions(signed: true,decimal: true),
-                          inputFormatters:[
-                            FilteringTextInputFormatter.digitsOnly,
-                          ],
+                          inputFormatters: [maskFormatter],
                           validator: (phone) {
                             if (phoneValidator(phone!) == null)
                               return null;
@@ -267,15 +273,8 @@ class _RegisinputState extends State<Regisinput> {
                                 if (!_formKey.currentState!.validate()) return;
                                 try {
                                   setState(() => _loading = true);
-
-                                  print(u_token.runtimeType);
-                                  print(birth.runtimeType);
-                                  print(u_email.runtimeType);
-                                  print(name.runtimeType);
-                                  print(username.runtimeType);
-                                  print(phone.runtimeType);
-
-                                  // createUserpost(u_token,birth , u_email, name, phone, username);
+                                  createUserpost(name,username,phone,birth);
+                                  //_scaffoldKey.currentState?.showSnackBar(snackBar);
                                   Navigator.pushNamedAndRemoveUntil(context,Regissub.id, (route) => false);
 
                                 } catch (e) {
