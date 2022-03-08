@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner:false,
 
 
-      initialRoute: Regisinput.id,
+      //initialRoute: Regisinput.id,
       //initialRoute: HomePage.id,
-      //initialRoute: WelcomeScreen.id,
+      initialRoute: WelcomeScreen.id,
 
       routes:
       {
