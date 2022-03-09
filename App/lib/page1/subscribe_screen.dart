@@ -56,6 +56,13 @@ class _SubscribeScreenState extends State<SubscribeScreen>
                         separatorBuilder: (context, index) { return Divider(); },
                         itemCount: snapshot.data!.sub_count);
                   }
+                  else if (snapshot.data == null) {
+                    return
+                      Center(
+                        child :
+                        Text('there is no subscribe yet'),
+                      );
+                  }
                   else if (snapshot.hasError) {
 
                     return Text('${snapshot.error}');
