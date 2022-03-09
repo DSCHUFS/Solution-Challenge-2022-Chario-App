@@ -23,7 +23,7 @@ class NoPoverty extends StatefulWidget
     required this.fc_id,}) : super(key: key);
   @override
   _MyAppState createState() => _MyAppState();
-  final int fc_id;
+  final String fc_id;
 }
 
 
@@ -41,7 +41,7 @@ class _MyAppState extends State<NoPoverty>
   async{
     ContentsApi gdata = await fetchContJdata(widget.fc_id);
     for (int i = 0; i < gdata.contentsList.length; i++) {
-      imageList.add(gdata.contentsList[i].cImage);
+      imageList.add(gdata.contentsList[i].image);
       print('${i}는 ${imageList[i]}');
     }
     print(imageList);

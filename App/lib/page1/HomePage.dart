@@ -283,9 +283,7 @@ class _MyAppState extends State<HomePage> {
                                               MaterialPageRoute(
                                                   builder: (context) =>
                                                       NoPoverty(
-                                                        fc_id: snapshot.data!
-                                                            .data[index].facility
-                                                            .fId,
+                                                        fc_id: (snapshot.data!.data[index].facility.fId).toString(),
                                                       )));
                                         },
                                         icon: Icon(Icons.arrow_forward_ios),
