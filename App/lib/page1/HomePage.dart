@@ -24,7 +24,7 @@ class _MyAppState extends State<HomePage> {
   // late Future<FcJdata> HomeFcJdata;
   late Future<CateFdata> CateFeJdata;
   late Future<UData> Userform;
-  late final String current_cate = '4';
+  late String current_cate = '4';
   static const List<String> images = <String>[
     'assets/sdg/goal1.png',
     'assets/sdg/goal2.png',
@@ -60,241 +60,271 @@ class _MyAppState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        automaticallyImplyLeading: false, // for custom icon option setting down below
-        backgroundColor: mainColor,
-        title:Image.asset("assets/Logo_width.png",width:100,height:50),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: Icon(Icons.person_rounded),
-            onPressed: () => Scaffold.of(context).openDrawer(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          // for custom icon option setting down below
+          backgroundColor: mainColor,
+          title: Image.asset("assets/Logo_width.png", width: 100, height: 50),
+          leading: Builder(
+            builder: (context) =>
+                IconButton(
+                  icon: Icon(Icons.person_rounded),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
 
-          ),
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.search),
-            //     onPressed: () => Navigator.of(context)
-            //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
-            onPressed: (){Navigator.pushNamed(context, PersonalScreen.id);},
-          )
-        ],
-      ),
-
-      drawer: Container(
-        child: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              FutureBuilder<UData>(
-                future: Userform,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return UserAccountsDrawerHeader(
-                      currentAccountPicture: CircleAvatar(
-                        backgroundImage: AssetImage('assets/Logo.png'),
-                      ),
-                      otherAccountsPictures: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage('assets/Logo.png'),
-                        )
-                      ],
-                      accountEmail: Text(snapshot.data!.u_Email),
-                      accountName: Text(snapshot.data!.u_Name),
-                      onDetailsPressed: () {
-                        print('press details');
-                      },
-                      decoration: BoxDecoration(
-                        // color:
-                          color: mainColor,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(40),
-                            bottomRight: Radius.circular(40),
-                          )),
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}' + '!!this is error');
-                  }
-                  return const CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  );
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.home,
-                  color: Colors.grey[850],
                 ),
-                title: Text('회원정보 보기'),
-                onTap: () {
-                  Navigator.pushNamed(context, PersonalScreen.id);
-                },
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-              ListTile(
-                  leading: Icon(
-                    Icons.image,
-                    color: Colors.grey[850],
-                  ),
-                  title: Text('구독현황'),
-                  onTap: () {
-                    Navigator.pushNamed(context, SubscribeScreen.id);
-                  },
-                  trailing: Icon(Icons.arrow_forward_ios)),
-              ListTile(
-                  leading: Icon(
-                    Icons.image,
-                    color: Colors.grey[850],
-                  ),
-                  title: Text('기부현황'),
-                  onTap: () {
-                    Navigator.pushNamed(context, DonpersonalScreen.id);
-                  },
-                  trailing: Icon(Icons.arrow_forward_ios)),
-            ],
           ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.search),
+              //     onPressed: () => Navigator.of(context)
+              //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
+              onPressed: () {
+                Navigator.pushNamed(context, PersonalScreen.id);
+              },
+            )
+          ],
         ),
-      ),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
-          Widget>[
-        Text(
-          "Where do you want to donate?",
-          style: TextStyle(fontSize: 40),
-        ),
-        Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 20.0,
-            runSpacing: 20.0,
-            children: [
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[0])),
-              ),
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[1])),
-              ),
-              GestureDetector(
-                onTap: (){setState(() {
 
-                });}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[2])),
-              ),
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[3])),
-              ),
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[4])),
-              ),
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[5])),
-              ),
-              GestureDetector(
-                onTap: (){}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[6])),
-              ),
-              GestureDetector(
-                onTap: (){print("first try");}
-                ,
-                child: CircleAvatar(
-                    radius: 40.0, backgroundImage: AssetImage(images[7])),
-              ),
-            ]),
-                FutureBuilder<CateFdata>(
-                  future: CateFeJdata,
+        drawer: Container(
+          child: Drawer(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                FutureBuilder<UData>(
+                  future: Userform,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-
-                      return ListView(
-                        itemBuilder :(context, index) {
-                          return Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 20.0,
-                            runSpacing: 20.0,
-                            children: [
-                              Column(
-                                  mainAxisAlignment: MainAxisAlignment
-                                      .spaceEvenly,
-                                  children: <Widget>[
-                                    Row(
-
-                                      children: [
-                                        ClipOval(
-                                            clipper: MyClipper(),
-                                            child: Image.network(
-                                              snapshot.data!.data[0].facility
-                                                  .fLogo,
-                                              width: 100,
-                                              height: 100,
-                                            )),
-                                        Text(
-                                          snapshot.data!.data[0].facility.fName,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20),
-                                        ),
-
-                                        IconButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        NoPoverty(
-                                                          fc_id: snapshot.data!
-                                                              .data[0].facility
-                                                              .fId,
-                                                        )));
-                                          },
-                                          icon: Icon(Icons.arrow_forward_ios),
-
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Image.network(
-                                                  snapshot.data!.data[0]
-                                                      .facility.fLogo,
-                                                  width: 200,
-                                                  height: 200),
-                                              Text(" "),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ]);
-                          
-)
-                        }, itemCount: null,
+                      return UserAccountsDrawerHeader(
+                        currentAccountPicture: CircleAvatar(
+                          backgroundImage: AssetImage('assets/Logo.png'),
+                        ),
+                        otherAccountsPictures: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage('assets/Logo.png'),
+                          )
+                        ],
+                        accountEmail: Text(snapshot.data!.u_Email),
+                        accountName: Text(snapshot.data!.u_Name),
+                        onDetailsPressed: () {
+                          print('press details');
+                        },
+                        decoration: BoxDecoration(
+                          // color:
+                            color: mainColor,
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(40),
+                              bottomRight: Radius.circular(40),
+                            )),
                       );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
+                      return Text('${snapshot.error}' + '!!this is error');
                     }
-                    // By default, show a loading spinner.
                     return const CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                     );
                   },
                 ),
+                ListTile(
+                  leading: Icon(
+                    Icons.home,
+                    color: Colors.grey[850],
+                  ),
+                  title: Text('회원정보 보기'),
+                  onTap: () {
+                    Navigator.pushNamed(context, PersonalScreen.id);
+                  },
+                  trailing: Icon(Icons.arrow_forward_ios),
+                ),
+                ListTile(
+                    leading: Icon(
+                      Icons.image,
+                      color: Colors.grey[850],
+                    ),
+                    title: Text('구독현황'),
+                    onTap: () {
+                      Navigator.pushNamed(context, SubscribeScreen.id);
+                    },
+                    trailing: Icon(Icons.arrow_forward_ios)),
+                ListTile(
+                    leading: Icon(
+                      Icons.image,
+                      color: Colors.grey[850],
+                    ),
+                    title: Text('기부현황'),
+                    onTap: () {
+                      Navigator.pushNamed(context, DonpersonalScreen.id);
+                    },
+                    trailing: Icon(Icons.arrow_forward_ios)),
+              ],
+            ),
+          ),
+        ),
+        body:
+        Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
+          Text(
+            "Where do you want to donate?",
+            style: TextStyle(fontSize: 40),
+          ),
+          Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20.0,
+              runSpacing: 20.0,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    print("first try");
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[0])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("first try");
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[1])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+
+                    });
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[2])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      current_cate = '4';
+                    });
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[3])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("first try");
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[4])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("first try");
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[5])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      current_cate = '13';
+                    });
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[6])),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    print("first try");
+                  }
+                  ,
+                  child: CircleAvatar(
+                      radius: 40.0, backgroundImage: AssetImage(images[7])),
+                ),
+              ]),
+          FutureBuilder<CateFdata>(
+            future: CateFeJdata,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                print('current cate is ${current_cate}');
+                return Flexible(
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                    itemCount: snapshot.data!.count,
+                    itemBuilder: (context, int index) {
+                      return Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: 20.0,
+                          runSpacing: 20.0,
+                          children: [
+                            Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  Row(
+                                    children: [
+                                      ClipOval(
+                                          clipper: MyClipper(),
+                                          child: Image.network(
+                                            snapshot.data!.data[index].facility.fLogo,
+                                            width: 100,
+                                            height: 100,
+                                          )),
+                                      Text(
+                                        snapshot.data!.data[index].facility.fName,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20),
+                                      ),
+
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NoPoverty(
+                                                        fc_id: snapshot.data!
+                                                            .data[index].facility
+                                                            .fId,
+                                                      )));
+                                        },
+                                        icon: Icon(Icons.arrow_forward_ios),
+
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Column(
+                                          children: [
+                                            Image.network(
+                                                snapshot.data!.data[index]
+                                                    .facility.fLogo,
+                                                width: 200,
+                                                height: 200),
+                                            Text(" "),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ])
+                          ]);
+                    }
+                  ),
+                );
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              );
+            },
+          ),
+        ]
+        )
+    );
+  }
+}
