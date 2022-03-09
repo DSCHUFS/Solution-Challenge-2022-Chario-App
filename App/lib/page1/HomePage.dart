@@ -250,68 +250,68 @@ class _MyAppState extends State<HomePage> {
                 return Flexible(
                   child: ListView.builder(
                       shrinkWrap: true,
-                    itemCount: snapshot.data!.count,
-                    itemBuilder: (context, int index) {
-                      return Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 20.0,
-                          runSpacing: 20.0,
-                          children: [
-                            Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  Row(
-                                    children: [
-                                      ClipOval(
-                                          clipper: MyClipper(),
-                                          child: Image.network(
-                                            snapshot.data!.data[index].facility.fLogo,
-                                            width: 100,
-                                            height: 100,
-                                          )),
-                                      Text(
-                                        snapshot.data!.data[index].facility.fName,
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
-                                      ),
-
-                                      IconButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      NoPoverty(
-                                                        fc_id: snapshot.data!
-                                                            .data[index].facility
-                                                            .fId,
-                                                      )));
-                                        },
-                                        icon: Icon(Icons.arrow_forward_ios),
-
-                                      ),
-                                    ],
-                                  ),
-                                  Container(
-                                    child: Row(
+                      itemCount: snapshot.data!.count,
+                      itemBuilder: (context, int index) {
+                        return Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: 20.0,
+                            runSpacing: 20.0,
+                            children: [
+                              Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    Row(
                                       children: [
-                                        Column(
-                                          children: [
-                                            Image.network(
-                                                snapshot.data!.data[index]
-                                                    .facility.fLogo,
-                                                width: 200,
-                                                height: 200),
-                                            Text(" "),
-                                          ],
+                                        ClipOval(
+                                            clipper: MyClipper(),
+                                            child: Image.network(
+                                              snapshot.data!.data[index].facility.fLogo,
+                                              width: 100,
+                                              height: 100,
+                                            )),
+                                        Text(
+                                          snapshot.data!.data[index].facility.fName,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+
+                                        IconButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        NoPoverty(
+                                                          fc_id: snapshot.data!
+                                                              .data[index].facility
+                                                              .fId,
+                                                        )));
+                                          },
+                                          icon: Icon(Icons.arrow_forward_ios),
+
                                         ),
                                       ],
                                     ),
-                                  ),
-                                ])
-                          ]);
-                    }
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Column(
+                                            children: [
+                                              Image.network(
+                                                  snapshot.data!.data[index]
+                                                      .facility.fLogo,
+                                                  width: 200,
+                                                  height: 200),
+                                              Text(" "),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ])
+                            ]);
+                      }
                   ),
                 );
               } else if (snapshot.hasError) {
