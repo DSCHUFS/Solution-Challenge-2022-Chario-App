@@ -75,7 +75,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NoPoverty(fc_id: 1,))
+                                  builder: (context) => NoPoverty(fc_id: '1',))
                           );
                         },
                         child: Text("confirm"),
@@ -95,7 +95,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => NoPoverty(fc_id: 1,))
+                                  builder: (context) => NoPoverty(fc_id: '1',))
                           );
                         },
                         child: Text("tmp button"),
