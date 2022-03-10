@@ -3,7 +3,6 @@ import 'package:flutter_try/api/Userapi.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_try/page1/HomePage.dart';
 import 'package:flutter_try/page1/welcome_screen.dart';
-
 import '../constants.dart';
 
 class PersonalScreen extends StatefulWidget {
@@ -23,7 +22,8 @@ class _PersonalScreenState extends State<PersonalScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     // const PrimaryColor = const Color(0xFFffa8a8);
     return Scaffold(
       body:
@@ -78,16 +78,6 @@ class _PersonalScreenState extends State<PersonalScreen> {
                         ),
                         title: Text(snapshot.data!.u_Email,
                             textAlign: TextAlign.right),
-
-
-                        // trailing: Icon(Icons.arrow_forward_ios),
-
-                        // trailing: InkWell(
-                        //   onTap: () {
-                        //     Navigator.pushNamed(context, HomePage.id);
-                        //   },
-                        //   child: Icon(Icons.arrow_forward_ios),
-
                         ),
                       ),
 
