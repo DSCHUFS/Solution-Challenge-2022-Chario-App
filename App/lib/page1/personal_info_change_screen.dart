@@ -19,12 +19,15 @@ class _InfochangeScreenState extends State<InfochangeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+      MaterialApp(
+        home: Scaffold(
+        appBar: AppBar(
+        automaticallyImplyLeading: false, // for custom icon option setting down below
+          title: Text("this is info post") ,
 
-
-
-
-
+        ),
+        )
     );
   }
 }
