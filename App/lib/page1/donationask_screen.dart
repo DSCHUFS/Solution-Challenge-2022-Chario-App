@@ -56,7 +56,7 @@ class _DonationaskState extends State<Donationask> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: 1,))
+                                  MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: '1',))
                               );
                             },
                             child: Text("x"),

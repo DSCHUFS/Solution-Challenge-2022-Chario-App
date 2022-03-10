@@ -276,19 +276,19 @@ class _MyAppState extends State<HomePage> {
                                               fontSize: 20),
                                         ),
 
-                                        IconButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        NoPoverty(
-                                                          fc_id: snapshot.data!
-                                                              .data[index].facility
-                                                              .fId,
-                                                        )));
-                                          },
-                                          icon: Icon(Icons.arrow_forward_ios),
+
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NoPoverty(
+                                                        fc_id: (snapshot.data!.data[index].facility.fId).toString(),
+                                                      )));
+                                        },
+                                        icon: Icon(Icons.arrow_forward_ios),
+
 
                                         ),
                                       ],
