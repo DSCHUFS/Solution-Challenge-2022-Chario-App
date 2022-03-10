@@ -53,12 +53,12 @@ class _PersonalScreenState extends State<PersonalScreen> {
                   backgroundImage: AssetImage('assets/logo_char.png'),
                 ),
                 SizedBox(height: 30),
-                Card(
-                  child: ListTile(
-                    title: Text('One-line with trailing widget'),
-                    trailing: Icon(Icons.more_vert),
-                  ),
-                ),
+                // Card(
+                //   child: ListTile(
+                //     title: Text('One-line with trailing widget'),
+                //     trailing: Icon(Icons.more_vert),
+                //   ),
+                // ),
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(
@@ -126,24 +126,26 @@ class _PersonalScreenState extends State<PersonalScreen> {
                 //     dense: true,
                 //   ),
                 // ),
-                Card(
-                  child: ListTile(
-                    leading: FlutterLogo(size: 56.0),
-                    title: Center(child: Text('Login - email')),
-                    subtitle: Center(child: Text(snapshot.data!.u_Email)),
-                    trailing: Icon(Icons.more_vert),
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: FlutterLogo(size: 72.0),
-                    title: Text('Three-line ListTile'),
-                    subtitle: Text(
-                        'A sufficiently long subtitle warrants three lines.'),
-                    trailing: Icon(Icons.more_vert),
-                    isThreeLine: true,
-                  ),
-                ),
+                // Card(
+                //   child: ListTile(
+                //     leading: FlutterLogo(size: 56.0),
+                //     title: Center(child: Text('Login - email')),
+                //     subtitle: Center(child: Text(snapshot.data!.u_Email)),
+                //     trailing: Icon(Icons.more_vert),
+                //   ),
+                // ),
+                // Card(
+                //   child: ListTile(
+                //     leading: FlutterLogo(size: 72.0),
+                //     title: Text('Three-line ListTile'),
+                //     subtitle: Text(
+                //         'A sufficiently long subtitle warrants three lines.'),
+                //     trailing: Icon(Icons.more_vert),
+                //     isThreeLine: true,
+                //   ),
+                // ),
+
+
               ],
             );
           } else if (snapshot.hasError) // there will be no null info
