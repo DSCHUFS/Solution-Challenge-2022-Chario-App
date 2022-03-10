@@ -126,7 +126,7 @@ class _MyAppState extends State<HomePage> {
                 ),
                 ListTile(
                   leading: Icon(
-                    Icons.home,
+                    Icons.person_rounded,
                     color: Colors.grey[850],
                   ),
                   title: Text('회원정보 보기'),

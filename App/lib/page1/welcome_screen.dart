@@ -166,24 +166,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               Buttons.Google,
               onPressed: ()
               async{
-                  await FirebaseService().signInwithGoogle();
+                await FirebaseService().signInwithGoogle();
 
-                  CurrentUser cucheck = CurrentUser();
-                  await cucheck.iscomplieteregis();
+                CurrentUser cucheck = CurrentUser();
+                await cucheck.iscomplieteregis();
 
-                    if (cucheck.checkvalide == true)
+                if (cucheck.checkvalide == true)
+                {
+                  print("there is account");
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, HomePage.id, (route) => false);
+                } else // go to addtional sign
                     {
-                      print("there is account");
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, HomePage.id, (route) => false);
-                    } else // go to addtional sign
-                    {
-                      print("no account");
-                      Navigator.pushNamedAndRemoveUntil(
-                          context, Regisinput.id, (route) => false);
-                    }
+                  print("no account");
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, Regisinput.id, (route) => false);
+                }
 
-                  },
+              },
             ),
 
             Padding(
@@ -213,4 +213,3 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
-
