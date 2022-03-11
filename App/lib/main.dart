@@ -5,6 +5,7 @@ import 'package:flutter_try/page1/dmoneyinput_screen.dart';
 import 'package:flutter_try/page1/donationask_screen.dart';
 import 'package:flutter_try/page1/donationfcdetail.dart';
 import 'package:flutter_try/page1/donpersonal_screen.dart';
+import 'package:flutter_try/page1/personal_info_change_screen.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
 import 'package:flutter_try/page1/search_screen.dart';
@@ -32,8 +33,6 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title:'Chari-o',
       debugShowCheckedModeBanner:false,
-
-
       //initialRoute: Regisinput.id,
       //initialRoute: HomePage.id,
       initialRoute: WelcomeScreen.id,
@@ -53,7 +52,8 @@ class MyApp extends StatelessWidget{
         DonfcdetailScreen.id: (context) => DonfcdetailScreen(),
         AuthPage.id:(context) => AuthPage(),
         Regisinput.id:(context)=>Regisinput(),
-        Regissub.id:(context) => Regissub()
+        Regissub.id:(context) => Regissub(),
+        InfochangeScreen.id :(context) => InfochangeScreen()
       },
     );
 
