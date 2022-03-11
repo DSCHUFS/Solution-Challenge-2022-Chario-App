@@ -12,7 +12,7 @@ Future<CateFdata> fetchCateFeJdata(String cate_id) async
         "Access-Control-Allow-Origin": "*"
       }
   );
-  print(response.statusCode);
+  print('CategoryFcApi ${response.statusCode}');
 
   if (response.statusCode == 200)
   {
