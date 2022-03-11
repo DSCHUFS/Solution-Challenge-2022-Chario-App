@@ -7,6 +7,7 @@ import 'package:flutter_try/api/Fcapi.dart';
 import '../api/ContentsApi.dart';
 import '../isLike_User.dart';
 import '../page1/donationask_screen.dart';
+import 'Fc_article.dart';
 
 _launchURL(String url) async {
   if (await canLaunch(url)) {
@@ -139,7 +140,11 @@ class _MyAppState extends State<NoPoverty>
                         child: Container(color: Colors.white),
                       ),
                     ),
-
+                    IconButton(onPressed: (){Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>HomeScreen( fc_id: widget.fc_id,)
+                               ));}, icon: Icon(Icons.invert_colors_on_sharp)),
                     CarouselSlider(
                       options: CarouselOptions(
                         enlargeCenterPage: false,
@@ -162,6 +167,7 @@ class _MyAppState extends State<NoPoverty>
                         ),
                       ))
                           .toList(),
+
                     ),
 
                     Center(
@@ -233,10 +239,6 @@ class _MyAppState extends State<NoPoverty>
             return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
           },
         ),
-
-
-
-
 
       ),
     );
