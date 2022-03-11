@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late Future<ContentsApi> ContentFcJdata;
+  Future<ContentsApi>? ContentFcJdata;
 
   @override
   void initstate() {

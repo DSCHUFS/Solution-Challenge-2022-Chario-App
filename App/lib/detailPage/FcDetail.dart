@@ -96,7 +96,8 @@ class _MyAppState extends State<NoPoverty>
                             },
                             child: Image.network(
                               snapshot.data!.facDto.fLogo,
-                              fit: BoxFit.fill,
+                              fit: BoxFit.fitWidth,
+                              // fit: BoxFit.fill,
                             ),
 
                           ),
