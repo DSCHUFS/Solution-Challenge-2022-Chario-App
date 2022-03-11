@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/main.dart';
+import 'package:flutter_try/page1/search_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../api/CategoryfcApi.dart';
 import '../color.dart';
@@ -76,10 +77,8 @@ class _MyAppState extends State<HomePage> {
           actions: [
             IconButton(
               icon: Icon(Icons.search),
-              //     onPressed: () => Navigator.of(context)
-              //         .push(MaterialPageRoute(builder: (_) => Search_Screen())),
               onPressed: () {
-                Navigator.pushNamed(context, PersonalScreen.id);
+                Navigator.pushNamed(context, SearchScreen.id);
               },
             )
           ],
