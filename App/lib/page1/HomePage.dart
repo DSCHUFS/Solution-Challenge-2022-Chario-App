@@ -25,7 +25,7 @@ class _MyAppState extends State<HomePage> {
   // late Future<FcJdata> HomeFcJdata;
   late Future<CateFdata> CateFeJdata;
   late Future<UData> Userform;
-  late String current_cate = '4';
+  String? current_cate = '4';
   static const List<String> images = <String>[
     'assets/sdg/goal1.png',
     'assets/sdg/goal2.png',
@@ -53,7 +53,7 @@ class _MyAppState extends State<HomePage> {
   void initState() {
     super.initState();
     // HomeFcJdata = fetchFcJdata();
-    CateFeJdata = fetchCateFeJdata(current_cate);
+    CateFeJdata = fetchCateFeJdata(current_cate!);
     Userform = fetchUserJdata();
   }
 
@@ -172,7 +172,10 @@ class _MyAppState extends State<HomePage> {
               children: [
                 GestureDetector(
                   onTap: () {
-                    print("first try");
+                    setState(() {
+                      current_cate = '1';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
+                    });
                   }
                   ,
                   child: CircleAvatar(
@@ -180,7 +183,10 @@ class _MyAppState extends State<HomePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print("first try");
+                    setState(() {
+                      current_cate = '2';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
+                    });
                   }
                   ,
                   child: CircleAvatar(
@@ -189,7 +195,8 @@ class _MyAppState extends State<HomePage> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-
+                      current_cate = '3';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   }
                   ,
@@ -200,6 +207,7 @@ class _MyAppState extends State<HomePage> {
                   onTap: () {
                     setState(() {
                       current_cate = '4';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   }
                   ,
@@ -208,7 +216,10 @@ class _MyAppState extends State<HomePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print("first try");
+                    setState(() {
+                      current_cate = '6';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
+                    });
                   }
                   ,
                   child: CircleAvatar(
@@ -216,7 +227,10 @@ class _MyAppState extends State<HomePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print("first try");
+                    setState(() {
+                      current_cate = '10';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
+                    });
                   }
                   ,
                   child: CircleAvatar(
@@ -226,6 +240,7 @@ class _MyAppState extends State<HomePage> {
                   onTap: () {
                     setState(() {
                       current_cate = '13';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   }
                   ,
@@ -234,94 +249,99 @@ class _MyAppState extends State<HomePage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print("first try");
+                    setState(() {
+                      current_cate = '14';
+                      CateFeJdata = fetchCateFeJdata(current_cate!);
+                    });
                   }
                   ,
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[7])),
                 ),
               ]),
-          FutureBuilder<CateFdata>(
-            future: CateFeJdata,
-            builder: (context, snapshot) {
+         FutureBuilder<CateFdata>(
+              future: CateFeJdata,
+              builder: (context, snapshot) {
               if (snapshot.hasData) {
-                print('current cate is ${current_cate}');
-                return Flexible(
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: snapshot.data!.count,
-                      itemBuilder: (context, int index) {
-                        return Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 20.0,
-                            runSpacing: 20.0,
-                            children: [
-                              Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    Row(
-                                      children: [
-                                        ClipOval(
-                                            clipper: MyClipper(),
-                                            child: Image.network(
-                                              snapshot.data!.data[index].facility.fLogo,
-                                              width: 100,
-                                              height: 100,
-                                            )),
-                                        Text(
-                                          snapshot.data!.data[index].facility.fName,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 20),
-                                        ),
+              print('current cate is ${current_cate}');
+              return Flexible(
+              child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: snapshot.data!.count,
+              itemBuilder: (context, int index) {
+              return Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 20.0,
+              runSpacing: 20.0,
+              children: [
+              Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+              Row(
+              children: [
+              ClipOval(
+              clipper: MyClipper(),
+              child: Image.network(
+              snapshot.data!.data[index].facility.fLogo,
+              width: 100,
+              height: 100,
+              )),
+              Text(
+              snapshot.data!.data[index].facility.fName,
+              style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
+              ),
 
 
-                                      IconButton(
-                                        onPressed: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      NoPoverty(
-                                                        fc_id: (snapshot.data!.data[index].facility.fId).toString(),
-                                                      )));
-                                        },
-                                        icon: Icon(Icons.arrow_forward_ios),
+              IconButton(
+              onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context) =>
+              NoPoverty(
+              fc_id: (snapshot.data!.data[index].facility.fId).toString(),
+              )));
+              },
+              icon: Icon(Icons.arrow_forward_ios),
 
 
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      child: Row(
-                                        children: [
-                                          Column(
-                                            children: [
-                                              Image.network(
-                                                  snapshot.data!.data[index]
-                                                      .facility.fLogo,
-                                                  width: 200,
-                                                  height: 200),
-                                              Text(" "),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ])
-                            ]);
-                      }
-                  ),
-                );
+              ),
+              ],
+              ),
+              Container(
+              child: Row(
+              children: [
+              Column(
+              children: [
+              Image.network(
+              snapshot.data!.data[index]
+                  .facility.fLogo,
+              width: 200,
+              height: 200),
+              Text(" "),
+              ],
+              ),
+              ],
+              ),
+              ),
+              ])
+              ]);
+              }
+              ),
+              );
               } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
+              return Text('${snapshot.error}');
               }
               // By default, show a loading spinner.
               return const CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               );
-            },
-          ),
+              },
+              )
+
+
         ]
         )
     );
