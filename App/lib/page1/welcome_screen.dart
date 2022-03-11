@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
 
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../api/FirebaseService.dart';
 import 'registration_screen.dart';
