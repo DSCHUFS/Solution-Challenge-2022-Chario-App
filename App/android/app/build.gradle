@@ -23,6 +23,7 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
@@ -43,14 +44,13 @@ android {
     }
 
     defaultConfig
-            {
-        multiDexEnabled true
-        applicationId "com.example.flutter_try"
-        minSdkVersion 19
-        targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
-    }
+            {multiDexEnabled true
+            applicationId "com.example.flutter_try"
+            minSdkVersion 19
+            targetSdkVersion 31
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            }
 
     buildTypes {
         release {
@@ -64,7 +64,8 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     def multidex_version = "2.0.1"
     implementation "androidx.multidex:multidex:$multidex_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
 }
