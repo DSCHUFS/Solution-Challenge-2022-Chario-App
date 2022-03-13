@@ -36,6 +36,9 @@ class _MyAppState extends State<HomePage> {
     'assets/sdg/goal13.png',
     'assets/sdg/14,15goal.png'
   ];
+  static const goals_color = {
+    '1':sdg1, '2':sdg2, '3':sdg3, '4':sdg4, '6':sdg6, '10':sdg10, '13':sdg13, '14':sdg14
+  };
   static const List<String> goals = <String>[
     'No Poverty',
     'Zero hunger',
@@ -63,7 +66,12 @@ class _MyAppState extends State<HomePage> {
           automaticallyImplyLeading: false,
           // for custom icon option setting down below
           backgroundColor: mainColor,
-          title: Image.asset("assets/Logo_width.png", width: 100, height: 50),
+          title: Row(
+            children: [
+              Image.asset("assets/logo_char.png", width: 50, height: 50),
+              Image.asset("assets/logo_word.png",width:120,height:100),
+            ],
+          ),
           leading: Builder(
             builder: (context) => IconButton(
               icon: Icon(Icons.person_rounded),
@@ -156,8 +164,12 @@ class _MyAppState extends State<HomePage> {
         body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
             Widget>[
           Text(
-            "Where do you want to donate?",
-            style: TextStyle(fontSize: 40),
+            "Donation part",
+            style: TextStyle(fontSize: 40,fontFamily: 'Ubuntu'),
+          ),
+          Text(
+            "click your interesting sdgs",
+            style: TextStyle(fontSize: 20,fontFamily: 'Ubuntu'),
           ),
           Wrap(
               alignment: WrapAlignment.center,
@@ -171,9 +183,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[0])),
-                ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[0] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -181,9 +195,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[1])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                        child :Image.asset(images[1] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -191,9 +207,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[2])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[2] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -201,9 +219,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[3])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[3] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -211,9 +231,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[4])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[4] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -221,9 +243,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[5])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[5],fit: BoxFit.cover,)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -231,9 +255,11 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[6])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(width:70,
+                      child :Image.asset(images[6] ,fit: BoxFit.cover)),
+                ),),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -241,9 +267,12 @@ class _MyAppState extends State<HomePage> {
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
                   },
-                  child: CircleAvatar(
-                      radius: 40.0, backgroundImage: AssetImage(images[7])),
-                ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                     width:70,
+                      child :Image.asset(images[7],fit: BoxFit.cover)),
+                ),),
               ]),
           FutureBuilder<CateFdata> (
             future: CateFeJdata,
@@ -258,51 +287,66 @@ class _MyAppState extends State<HomePage> {
                   itemCount: snapshot.data!.count,
                   itemBuilder: (context, int index) {
                   print('index는 ${snapshot.data!.data[index].facility.fId}');
-                  return Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ), shadowColor: Colors.red,
-                      elevation:11.0,
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      spacing: 20.0,
-                      runSpacing: 20.0, children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                        Row(
-                          children: [
-                          ClipOval(
-                            clipper: MyClipper(),
-                            child: Image.network(
-                            snapshot.data!.data[index].facility.fLogo,
-                            width: 100,
-                            height: 100,
-                          )),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
 
-                          Text(
-                          snapshot.data!.data[index].facility.fName,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
-                          ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),shadowColor: goals_color[current_cate!],
+                        elevation:11.0,
+                      child: Wrap(
+
+                        alignment: WrapAlignment.center,
+                        spacing: 20.0,
+                        runSpacing: 20.0, children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                          Row(
+                            children: [
+                            ClipOval(
+                              clipper: MyClipper(),
+                              child: Image.network(
+                              snapshot.data!.data[index].facility.fLogo,
+                              width: 100,
+                              height: 100,
+                            )),
+
+                            Text(
+                            snapshot.data!.data[index].facility.fName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                            ),
 
 
-                          IconButton(
-                              onPressed: () {
-                                // Navigator.push(context, MaterialPageRoute(builder: (context) => NoPoverty(fc_id: (snapshot.data!.data[index].facility.fId).toString(),)));
-                                Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString());
-                              },
-                            icon: Icon(Icons.arrow_forward_ios),
-                          ),],),
 
-                        Container (
-                          child:  ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
-                          ),
+                            IconButton(
+                                onPressed: () {
+                                Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                builder: (context) =>
+                              NoPoverty(
+                                fc_id: (snapshot.data!.data[index].facility.fId).toString(),
+                                )));
+                                },
+                              icon: Icon(Icons.arrow_forward_ios),
+
+
+              ),
+              ],
+              ),
+                          Container (
+                            child:  ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
+                            ),
+
               ),
               ]),
 
-              ]));
+              ])),
+                  );
               }
               ),
               );
