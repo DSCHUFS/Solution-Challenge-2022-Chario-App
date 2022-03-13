@@ -290,20 +290,12 @@ class _MyAppState extends State<HomePage> {
 
                           IconButton(
                               onPressed: () {
-                              Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                              builder: (context) =>
-                            NoPoverty(
-                              fc_id: (snapshot.data!.data[index].facility.fId).toString(),
-                              )));
+                                // Navigator.push(context, MaterialPageRoute(builder: (context) => NoPoverty(fc_id: (snapshot.data!.data[index].facility.fId).toString(),)));
+                                Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString());
                               },
                             icon: Icon(Icons.arrow_forward_ios),
+                          ),],),
 
-
-              ),
-              ],
-              ),
                         Container (
                           child:  ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
                           ),

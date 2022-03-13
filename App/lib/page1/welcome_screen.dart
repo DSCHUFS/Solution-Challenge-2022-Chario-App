@@ -137,7 +137,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: TeamColor,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
-
                   onPressed: () async{
                     try{
                       final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -156,8 +155,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.pushNamedAndRemoveUntil(
                               context, Regisinput.id, (route) => false);
                         }
-
-                        // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                       }
                     }catch(e){
                       print("this is after auth") ;
@@ -180,10 +177,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               onPressed: ()
               async{
                 await FirebaseService().signInwithGoogle();
-
                 CurrentUser cucheck = CurrentUser();
                 await cucheck.iscomplieteregis();
-
                 if (cucheck.checkvalide == true)
                 {
                   print("there is account");
@@ -195,7 +190,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Regisinput.id, (route) => false);
                 }
-
               },
             ),
 
