@@ -19,12 +19,14 @@ _launchURL(String url) async {
 
 class NoPoverty extends StatefulWidget
 {
-  const NoPoverty({
-    Key? key,
-    required this.fc_id,}) : super(key: key);
+  const NoPoverty({Key? key, required this.fc_id}) : super(key: key);
+
+  static const String id = "FcDetail" ;
+
   @override
   _MyAppState createState() => _MyAppState();
   final String fc_id;
+
 }
 
 

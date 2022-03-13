@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/main.dart';
 import 'package:flutter_try/page1/search_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../api/CategoryfcApi.dart';
 import '../api/ContentsApi.dart';
 import '../color.dart';
-import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'donpersonal_screen.dart';
@@ -53,7 +51,6 @@ class _MyAppState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // HomeFcJdata = fetchFcJdata();
     CateFeJdata = fetchCateFeJdata(current_cate!);
     Userform = fetchUserJdata();
   }
@@ -61,19 +58,16 @@ class _MyAppState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
         appBar: AppBar(
           automaticallyImplyLeading: false,
           // for custom icon option setting down below
           backgroundColor: mainColor,
           title: Image.asset("assets/Logo_width.png", width: 100, height: 50),
           leading: Builder(
-            builder: (context) =>
-                IconButton(
-                  icon: Icon(Icons.person_rounded),
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-
-                ),
+            builder: (context) => IconButton(
+              icon: Icon(Icons.person_rounded),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
           ),
           actions: [
             IconButton(
@@ -84,7 +78,6 @@ class _MyAppState extends State<HomePage> {
             )
           ],
         ),
-
         drawer: Container(
           child: Drawer(
             child: ListView(
@@ -109,7 +102,7 @@ class _MyAppState extends State<HomePage> {
                           print('press details');
                         },
                         decoration: BoxDecoration(
-                          // color:
+                            // color:
                             color: mainColor,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(40),
@@ -159,9 +152,8 @@ class _MyAppState extends State<HomePage> {
             ),
           ),
         ),
-        body:
-        Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
+        body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
+            Widget>[
           Text(
             "Where do you want to donate?",
             style: TextStyle(fontSize: 40),
@@ -177,8 +169,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '1';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[0])),
                 ),
@@ -188,8 +179,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '2';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[1])),
                 ),
@@ -199,8 +189,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '3';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[2])),
                 ),
@@ -210,8 +199,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '4';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[3])),
                 ),
@@ -221,8 +209,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '6';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[4])),
                 ),
@@ -232,8 +219,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '10';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[5])),
                 ),
@@ -243,8 +229,7 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '13';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[6])),
                 ),
@@ -254,16 +239,16 @@ class _MyAppState extends State<HomePage> {
                       current_cate = '14';
                       CateFeJdata = fetchCateFeJdata(current_cate!);
                     });
-                  }
-                  ,
+                  },
                   child: CircleAvatar(
                       radius: 40.0, backgroundImage: AssetImage(images[7])),
                 ),
               ]),
-         FutureBuilder<CateFdata>(
-              future: CateFeJdata,
-              builder: (context, snapshot) {
+          FutureBuilder<CateFdata>(
+            future: CateFeJdata,
+            builder: (context, snapshot) {
               if (snapshot.hasData) {
+
               print('current cate is ${current_cate}');
               print('전체길이는 ${snapshot.data!.count}');
               return Flexible(
@@ -328,20 +313,17 @@ class _MyAppState extends State<HomePage> {
               }
               ),
               );
+
               } else if (snapshot.hasError) {
-              return Text('${snapshot.error}');
+                return Text('${snapshot.error}');
               }
               // By default, show a loading spinner.
               return const CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               );
-              },
-              )
-
-
-        ]
-        )
-    );
+            },
+          )
+        ]));
   }
 }
 class ContentHome extends StatefulWidget {

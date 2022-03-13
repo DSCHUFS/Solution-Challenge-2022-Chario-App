@@ -53,7 +53,9 @@ class _PersonalScreenState extends State<PersonalScreen> {
                         },
                         child: Icon(Icons.home),
                       ),
-                    )),
+                    )
+                    ),
+
                     SizedBox(height: 30),
                     CircleAvatar(
                       maxRadius: 100,

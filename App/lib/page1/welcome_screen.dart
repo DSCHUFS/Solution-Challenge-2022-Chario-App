@@ -143,7 +143,21 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
                       if(user != null) {
                         print(amountInputController.text);
-                        Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                        CurrentUser cucheck = CurrentUser();
+                        await cucheck.iscomplieteregis();
+                        if (cucheck.checkvalide == true)
+                        {
+                          print("there is account");
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, HomePage.id, (route) => false);
+                        } else // go to addtional sign
+                            {
+                          print("no account");
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, Regisinput.id, (route) => false);
+                        }
+
+                        // Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
                       }
                     }catch(e){
                       print("this is after auth") ;
