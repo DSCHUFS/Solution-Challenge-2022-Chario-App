@@ -3,17 +3,19 @@ import 'package:flutter_try/constants.dart' as colort;
 import 'dmoneyinput_screen.dart';
 import '../detailPage/FcDetail.dart';
 
-class Donationask extends StatefulWidget {
-  const Donationask({Key? key}) : super(key: key);
+class Donationask extends StatefulWidget
+{
+  const Donationask({Key? key, required this.fc_id}) : super(key: key);
   static const String id = "Donationask";
-
   @override
   _DonationaskState createState() => _DonationaskState();
+  final String fc_id;
+
 }
 
-class _DonationaskState extends State<Donationask> {
-  //  구현
-  @override
+class _DonationaskState extends State<Donationask>
+{
+    @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -26,12 +28,12 @@ class _DonationaskState extends State<Donationask> {
           ),
           // alignment: Alignment.center,
           margin: EdgeInsets.all(50),
-          child: Column(
+          child:
+          Column(
             children: [
               SizedBox(height: 80),
               Text("기부를 완료 했습니까?"),
               SizedBox(height:80),
-
                   Container(
                   padding: EdgeInsets.all(15),
                   height:80,
@@ -40,11 +42,10 @@ class _DonationaskState extends State<Donationask> {
                     mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) =>Donationmoneyinput())
-                              );
+                            onPressed: ()
+                            {
+                              //// Navigator.push(context, MaterialPageRoute(builder: (context) =>Donationmoneyinput()));
+                              Navigator.pushNamed(context, Donationmoneyinput.id,arguments:widget.fc_id);
                             },
                             child: Text("O"),
                             style:  ButtonStyle(
@@ -54,11 +55,9 @@ class _DonationaskState extends State<Donationask> {
                           SizedBox(width: 10),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: '1',))
-                              );
-                            },
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: '1',)));
+                              Navigator.pushNamed(context, NoPoverty.id,arguments:widget.fc_id);
+                              },
                             child: Text("x"),
                             style:  ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(colort.TeamColor),

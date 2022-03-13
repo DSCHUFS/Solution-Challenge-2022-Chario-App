@@ -9,11 +9,12 @@ import '../detailPage/FcDetail.dart';
 
 class Donationmoneyinput extends StatefulWidget
 {
-  const Donationmoneyinput({Key? key}) : super(key: key);
+  const Donationmoneyinput({Key? key,required this.fc_id}) : super(key: key);
   static const String id = "Donationmoneyinput";
 
   @override
   _DonationmoneyinputState createState() => _DonationmoneyinputState();
+  final String fc_id;
 
 }
 

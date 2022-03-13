@@ -51,7 +51,8 @@ class _MyAppState extends State<NoPoverty>
   }
 
   @override
-  void initState() {
+  void initState()
+  {
     // TODO: implement initState
     super.initState();
     DetailFcJdata = fetchFcJdata();
@@ -59,6 +60,9 @@ class _MyAppState extends State<NoPoverty>
     ContentFcJdata = fetchContJdata(fcId) ;
     makelist();
   }
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,8 +152,7 @@ class _MyAppState extends State<NoPoverty>
 
                         MaterialPageRoute(
                             fullscreenDialog: true,builder:(BuildContext context){
-                              return HomeScreen(content: snapshot.data!.contentsList[0],);
-                        }
+                              return HomeScreen(content: snapshot.data!.contentsList[0],);}
                                ));}, icon: Icon(Icons.invert_colors_on_sharp)),
                     CarouselSlider(
                       options: CarouselOptions(
@@ -190,7 +193,7 @@ class _MyAppState extends State<NoPoverty>
                             RaisedButton(
                               onPressed: () {
                                 _launchURL(snapshot.data!.facDto.fPay);
-                                Navigator.pushNamed(context, Donationask.id);
+                                Navigator.pushNamed(context, Donationask.id,arguments: widget.fc_id);
                               },
                               child: const Text('donation', style: TextStyle(fontSize: 20)),
                               color: mainColor,

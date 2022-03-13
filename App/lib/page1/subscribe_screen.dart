@@ -76,12 +76,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                               ),
                               trailing: InkWell(
                                 onTap: () {
-                                  print(snapshot.data!.sub_list[index].f_id);
-                                  Navigator.pushNamedAndRemoveUntil(
-                                      context, NoPoverty.id, (route) => false,
-                                      arguments:
-                                      (snapshot.data!.sub_list[index].f_id)
-                                          .toString());
+                                  Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());
                                 },
                                 child:Icon(Icons.favorite , color: TeamColor),
 
