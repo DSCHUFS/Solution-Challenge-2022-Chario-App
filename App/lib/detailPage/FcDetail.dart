@@ -193,7 +193,7 @@ class _MyAppState extends State<NoPoverty>
                             RaisedButton(
                               onPressed: () {
                                 _launchURL(snapshot.data!.facDto.fPay);
-                                Navigator.pushNamed(context, Donationask.id,arguments: widget.fc_id);
+                                Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
                               },
                               child: const Text('donation', style: TextStyle(fontSize: 20)),
                               color: mainColor,

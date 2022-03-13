@@ -5,11 +5,11 @@ import '../detailPage/FcDetail.dart';
 
 class Donationask extends StatefulWidget
 {
-  const Donationask({Key? key, required this.fc_id}) : super(key: key);
+  const Donationask({Key? key ,required this.f_name}) : super(key: key);
   static const String id = "Donationask";
   @override
   _DonationaskState createState() => _DonationaskState();
-  final String fc_id;
+  final String f_name;
 
 }
 
@@ -45,7 +45,7 @@ class _DonationaskState extends State<Donationask>
                             onPressed: ()
                             {
                               //// Navigator.push(context, MaterialPageRoute(builder: (context) =>Donationmoneyinput()));
-                              Navigator.pushNamed(context, Donationmoneyinput.id,arguments:widget.fc_id);
+                              Navigator.pushNamed(context, Donationmoneyinput.id,arguments:widget.f_name);
                             },
                             child: Text("O"),
                             style:  ButtonStyle(
@@ -55,8 +55,9 @@ class _DonationaskState extends State<Donationask>
                           SizedBox(width: 10),
                           ElevatedButton(
                             onPressed: () {
-                              // Navigator.push(context, MaterialPageRoute(builder: (context) =>NoPoverty(fc_id: '1',)));
-                              Navigator.pushNamed(context, NoPoverty.id,arguments:widget.fc_id);
+                              // Navigator.push(context, MaterialPageRoute(builder: (context) =>NoPoverty(f_name: '1',)));
+                              // Navigator.pushNamed(context, NoPoverty.id,arguments:widget.f_name);
+                              Navigator.pop(context);
                               },
                             child: Text("x"),
                             style:  ButtonStyle(

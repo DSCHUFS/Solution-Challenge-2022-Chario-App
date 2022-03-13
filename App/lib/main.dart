@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner:false,
       //initialRoute: Regisinput.id,
       //initialRoute: SubscribeScreen.id,
-      initialRoute: HomePage.id,
-      //initialRoute: WelcomeScreen.id,
+      //initialRoute: HomePage.id,
+      initialRoute: WelcomeScreen.id,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
 

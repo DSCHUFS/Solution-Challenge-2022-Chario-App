@@ -57,10 +57,10 @@ class RouteGenerator{
       return MaterialPageRoute(builder:(context) =>  SearchScreen());
     case
     Donationask.id:
-      return MaterialPageRoute(builder:(context) => Donationask(fc_id: args.toString(),));
+      return MaterialPageRoute(builder:(context) => Donationask(f_name: args.toString(),));
     case
     Donationmoneyinput.id:
-      return MaterialPageRoute(builder:(context) =>  Donationmoneyinput(fc_id: args.toString(),));
+      return MaterialPageRoute(builder:(context) =>  Donationmoneyinput(f_name: args.toString(),));
     case
     DonpersonalScreen.id:
       return MaterialPageRoute(builder:(context) =>  DonpersonalScreen());

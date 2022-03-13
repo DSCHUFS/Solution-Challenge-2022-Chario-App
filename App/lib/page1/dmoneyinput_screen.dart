@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_try/api/donationpostapi.dart';
 import 'package:flutter_try/constants.dart' as colort;
+import 'package:flutter_try/page1/HomePage.dart';
 import 'package:intl/intl.dart';
 
 import '../api/isLikedapi.dart';
@@ -9,18 +10,20 @@ import '../detailPage/FcDetail.dart';
 
 class Donationmoneyinput extends StatefulWidget
 {
-  const Donationmoneyinput({Key? key,required this.fc_id}) : super(key: key);
+  const Donationmoneyinput({Key? key,required this.f_name}) : super(key: key);
   static const String id = "Donationmoneyinput";
 
   @override
   _DonationmoneyinputState createState() => _DonationmoneyinputState();
-  final String fc_id;
+  final String f_name;
 
 }
 
 class _DonationmoneyinputState extends State<Donationmoneyinput> {
+
   final amountInputController = TextEditingController();
   Welcome? _welcome;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,17 +70,18 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                         onPressed: () async {
                           final int price = int.parse(amountInputController.text);
                           String dateTime = DateFormat('yy/MM/dd').format(DateTime.now());
-                          final Welcome? welcome = await createDonation(dateTime, price,"유니세프");
-                          setState(() {
-                            _welcome = welcome!;
-                          });
-                          print("The user ${_welcome?.donationPrice}, ${_welcome?.donationDate}");
-                          //action 3   go back to Fc_detail page
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => NoPoverty(fc_id: '1',))
-                          );
+
+                          String fname = widget.f_name.toString();
+
+
+                          final Welcome? welcome =  await createDonation(dateTime, price,fname);
+
+                          print("@!#@!#!");
+
+                          setState(() {_welcome = welcome!;});
+
+                          Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+
                         },
                         child: Text("confirm"),
                         style: ButtonStyle(
@@ -88,23 +92,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                       //////////////////////////////////!!!///////////////
 
                       SizedBox(width: 10),
-                      ElevatedButton(
-                        onPressed: () async {
-                          // action 2
 
-                          // action 3
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => NoPoverty(fc_id: '1',))
-                          );
-                        },
-                        child: Text("tmp button"),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              colort.TeamColor),
-                        ),
-                      ),
                     ],
                   ),
                 ),
