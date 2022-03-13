@@ -23,13 +23,11 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
   @override
   Widget build(BuildContext context) {
     // const PrimaryColor = const Color(0xFFffa8a8);
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading:
-              false, // for custom icon option setting down below
-        ),
-        body: Container(
+    return Scaffold(
+      body:
+      SafeArea(
+        child :
+        Container(
             child: FutureBuilder<DataList>(
                 future: Fcinform,
                 builder: (context, snapshot) {
@@ -54,12 +52,12 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                             ),
                             trailing: InkWell(
                               onTap: () {
-                                Navigator.pushNamedAndRemoveUntil(
-                                    context, NoPoverty.id, (route) => false,
+                                print(snapshot.data!.sub_list[index].f_id) ;
+                                Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false,
                                     arguments:
                                         (snapshot.data!.sub_list[index].f_id).toString());
                               },
-                              child: Icon(Icons.home),
+                              child: Icon(Icons.arrow_forward_ios),
                             ),
                           );
                         },
