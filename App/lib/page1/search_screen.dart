@@ -98,6 +98,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         _searchText = "";
                       }); },
 
+
+
                       ) : Container(),
                       hintText: '검색',
                       labelStyle:TextStyle(color:Colors.white),
