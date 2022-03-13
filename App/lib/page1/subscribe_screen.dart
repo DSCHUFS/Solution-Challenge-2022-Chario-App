@@ -1,25 +1,23 @@
 import 'dart:core';
 import 'package:flutter/material.dart';
 import '../api/Subscribeapi.dart';
+import 'package:flutter_try/detailPage/FcDetail.dart';
 
-class SubscribeScreen extends StatefulWidget
-{
+class SubscribeScreen extends StatefulWidget {
   static const String id = "subscribe_screen";
 
   @override
   _SubscribeScreenState createState() => _SubscribeScreenState();
 }
 
-class _SubscribeScreenState extends State<SubscribeScreen>
-{
-  late Future <DataList> Fcinform;
+class _SubscribeScreenState extends State<SubscribeScreen> {
+  late Future<DataList> Fcinform;
   @override
-  void initState()
-  {
+  void initState() {
     super.initState();
 
     //// need name
-    Fcinform  = fetchSubJdata();
+    Fcinform = fetchSubJdata();
   }
 
   @override
@@ -28,49 +26,57 @@ class _SubscribeScreenState extends State<SubscribeScreen>
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false, // for custom icon option setting down below
+          automaticallyImplyLeading:
+              false, // for custom icon option setting down below
         ),
-
         body: Container(
             child: FutureBuilder<DataList>(
                 future: Fcinform,
                 builder: (context, snapshot) {
-
                   if (snapshot.hasData) {
-                    return  ListView.separated(
-                        itemBuilder:(context, index)
-                        {
-                          return
-                            ListTile(
-                              leading:ConstrainedBox(constraints: BoxConstraints(
+                    return ListView.separated(
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            leading: ConstrainedBox(
+                              constraints: BoxConstraints(
                                 minWidth: 44,
                                 minHeight: 44,
                                 maxWidth: 64,
                                 maxHeight: 64, //
-                                ),child: Image.network(snapshot.data!.sub_list[index].f_logo, fit: BoxFit.fill),
-
                               ),
-                                title:Center(child:Text(snapshot.data!.sub_list[index].f_name),)
-                            );
+                              child: Image.network(
+                                  snapshot.data!.sub_list[index].f_logo,
+                                  fit: BoxFit.fill),
+                            ),
+                            title: Center(
+                              child:
+                                  Text(snapshot.data!.sub_list[index].f_name),
+                            ),
+                            trailing: InkWell(
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                    context, NoPoverty.id, (route) => false,
+                                    arguments:
+                                        (snapshot.data!.sub_list[index].f_id).toString());
+                              },
+                              child: Icon(Icons.home),
+                            ),
+                          );
                         },
-                        separatorBuilder: (context, index) { return Divider(); },
+                        separatorBuilder: (context, index) {
+                          return Divider();
+                        },
                         itemCount: snapshot.data!.sub_count);
-                  }
-                  else if (snapshot.data == null) {
-                    return
-                      Center(
-                        child :
-                        Text('there is no subscribe yet'),
-                      );
-                  }
-                  else if (snapshot.hasError) {
-
+                  } else if (snapshot.data == null) {
+                    return Center(
+                      child: Text('there is no subscribe yet'),
+                    );
+                  } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
-                  }
-                  else {
+                  } else {
                     return CircularProgressIndicator();
-                  }})
-        ),
+                  }
+                })),
       ),
     );
   }
