@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/main.dart';
 import 'package:flutter_try/page1/search_screen.dart';
+import 'package:intl/intl.dart';
 import '../api/CategoryfcApi.dart';
 import '../api/ContentsApi.dart';
 import '../color.dart';
@@ -244,7 +245,7 @@ class _MyAppState extends State<HomePage> {
                       radius: 40.0, backgroundImage: AssetImage(images[7])),
                 ),
               ]),
-          FutureBuilder<CateFdata>(
+          FutureBuilder<CateFdata> (
             future: CateFeJdata,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -303,8 +304,8 @@ class _MyAppState extends State<HomePage> {
               ),
               ],
               ),
-                        Container(
-                          child: ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
+                        Container (
+                          child:  ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
                           ),
               ),
               ]),
@@ -343,18 +344,31 @@ class _ContentHomeState extends State<ContentHome> {
   }
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<ContentsApi>(
+    print("야 왜 안되니");
+    return FutureBuilder<ContentsApi> (
         future: ContentJdata,
         builder: (context, snapshot) {
           if(snapshot.hasData){
-            return Column(children:[
-             Image.network(snapshot.data!.contentsList[0].image),
-              Text(snapshot.data!.contentsList[0].title)]
-            );
+            try{
+              return
+
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children:[
+                  Text('최소 기부금액 ${snapshot.data!.facDto.fMinimal}',),
+
+                Image.network(snapshot.data!.contentsList[0].image),
+                Text(snapshot.data!.contentsList[0].title)]
+              );
+            }
+            on RangeError {
+              print("hey! api!");
+            }
+
 
           }
           else if (snapshot.hasError) {
-          return Text('${snapshot.error}');
+            return Text('${snapshot.error}');
           }
           // By default, show a loading spinner.
           return const CircularProgressIndicator(
