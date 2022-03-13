@@ -143,10 +143,13 @@ class _MyAppState extends State<NoPoverty>
                         child: Container(color: Colors.white),
                       ),
                     ),
-                    IconButton(onPressed: (){Navigator.push(
-                        context,
+                    IconButton(onPressed: (){
+                      Navigator.of(context).push(
+
                         MaterialPageRoute(
-                            builder: (context) =>HomeScreen( fc_id: widget.fc_id,)
+                            fullscreenDialog: true,builder:(BuildContext context){
+                              return HomeScreen(content: snapshot.data!.contentsList[0],);
+                        }
                                ));}, icon: Icon(Icons.invert_colors_on_sharp)),
                     CarouselSlider(
                       options: CarouselOptions(
