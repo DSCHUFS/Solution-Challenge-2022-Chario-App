@@ -49,6 +49,7 @@ class FcJdata {
 
 
 class Data {
+  final String f_id;
   final String f_name;
   final String f_intro;
   final int f_minimal;
@@ -59,6 +60,7 @@ class Data {
   final String f_logo;
 
   Data({
+    required this.f_id,
     required this.f_name,
     required this.f_intro,
     required this.f_minimal,
@@ -72,6 +74,7 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json)
   {
     return Data(
+        f_id: json['f_id'],
         f_name: json['f_name'],
         f_intro: json['f_intro'],
         f_minimal: json['f_minimal'],

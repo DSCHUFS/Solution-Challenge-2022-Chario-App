@@ -4,6 +4,7 @@ import 'package:flutter_try/main.dart';
 import 'package:flutter_try/page1/search_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../api/CategoryfcApi.dart';
+import '../api/ContentsApi.dart';
 import '../color.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
@@ -14,6 +15,7 @@ import 'package:firebase_auth/firebase_auth.dart' as fbs;
 import 'package:flutter_try/api/Userapi.dart';
 
 class HomePage extends StatefulWidget {
+
   const HomePage({Key? key}) : super(key: key);
   static const String id = "HomePage";
 
@@ -22,7 +24,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyAppState extends State<HomePage> {
-  // late Future<FcJdata> HomeFcJdata;
   late Future<CateFdata> CateFeJdata;
   late Future<UData> Userform;
   String? current_cate = '4';
@@ -264,70 +265,66 @@ class _MyAppState extends State<HomePage> {
               builder: (context, snapshot) {
               if (snapshot.hasData) {
               print('current cate is ${current_cate}');
+              print('전체길이는 ${snapshot.data!.count}');
               return Flexible(
-              child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: snapshot.data!.count,
-              itemBuilder: (context, int index) {
-              return Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 20.0,
-              runSpacing: 20.0,
-              children: [
-              Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-              Row(
-              children: [
-              ClipOval(
-              clipper: MyClipper(),
-              child: Image.network(
-              snapshot.data!.data[index].facility.fLogo,
-              width: 100,
-              height: 100,
-              )),
-              Text(
-              snapshot.data!.data[index].facility.fName,
-              style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20),
-              ),
+                child: ListView.builder(
+                shrinkWrap: true,
+                  itemCount: snapshot.data!.count,
+                  itemBuilder: (context, int index) {
+                  print('index는 ${snapshot.data!.data[index].facility.fId}');
+                  return Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ), shadowColor: Colors.red,
+                      elevation:11.0,
+                    child: Wrap(
+                      alignment: WrapAlignment.center,
+                      spacing: 20.0,
+                      runSpacing: 20.0, children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                        Row(
+                          children: [
+                          ClipOval(
+                            clipper: MyClipper(),
+                            child: Image.network(
+                            snapshot.data!.data[index].facility.fLogo,
+                            width: 100,
+                            height: 100,
+                          )),
+
+                          Text(
+                          snapshot.data!.data[index].facility.fName,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                          ),
 
 
-              IconButton(
-              onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(
-              builder: (context) =>
-              NoPoverty(
-              fc_id: (snapshot.data!.data[index].facility.fId).toString(),
-              )));
-              },
-              icon: Icon(Icons.arrow_forward_ios),
+                          IconButton(
+                              onPressed: () {
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (context) =>
+                            NoPoverty(
+                              fc_id: (snapshot.data!.data[index].facility.fId).toString(),
+                              )));
+                              },
+                            icon: Icon(Icons.arrow_forward_ios),
 
 
               ),
               ],
               ),
-              Container(
-              child: Row(
-              children: [
-              Column(
-              children: [
-              Image.network(
-              snapshot.data!.data[index]
-                  .facility.fLogo,
-              width: 200,
-              height: 200),
-              Text(" "),
-              ],
+                        Container(
+                          child: ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
+                          ),
               ),
-              ],
-              ),
-              ),
-              ])
-              ]);
+              ]),
+
+              ]));
               }
               ),
               );
@@ -347,3 +344,44 @@ class _MyAppState extends State<HomePage> {
     );
   }
 }
+class ContentHome extends StatefulWidget {
+  final fc_id;
+  const ContentHome({required this.fc_id});
+
+  @override
+  _ContentHomeState createState() => _ContentHomeState();
+}
+
+class _ContentHomeState extends State<ContentHome> {
+  Future<ContentsApi>? ContentJdata;
+  @override
+  void initState() {
+    super.initState();
+    ContentJdata = fetchContJdata(widget.fc_id);
+  }
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<ContentsApi>(
+        future: ContentJdata,
+        builder: (context, snapshot) {
+          if(snapshot.hasData){
+            return Column(children:[
+             Image.network(snapshot.data!.contentsList[0].image),
+              Text(snapshot.data!.contentsList[0].title)]
+            );
+
+          }
+          else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+          }
+          // By default, show a loading spinner.
+          return const CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+          );
+        }
+
+    );
+  }
+}
+
+
