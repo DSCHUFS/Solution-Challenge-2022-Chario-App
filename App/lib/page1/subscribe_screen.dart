@@ -33,6 +33,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Column(
+
                   children: <Widget>[
                     Card(
                         child: ListTile(
@@ -135,6 +136,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
 
 
                   ],
+
 
                 );
               } else if (snapshot.data == null) {
