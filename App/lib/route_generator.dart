@@ -38,8 +38,6 @@ class RouteGenerator{
 
       case
       NoPoverty.id:
-        print("this is in side of case");
-        print(args);
       return MaterialPageRoute(
           builder:(context) =>
               NoPoverty(

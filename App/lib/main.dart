@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'package:flutter_try/route_generator.dart';
 import 'page1/welcome_screen.dart';
 import 'firebase_options.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget{
       title:'Chari-o',
       debugShowCheckedModeBanner:false,
       //initialRoute: Regisinput.id,
-      //initialRoute: HomePage.id,
+      //initialRoute: SubscribeScreen.id,
       initialRoute: WelcomeScreen.id,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
