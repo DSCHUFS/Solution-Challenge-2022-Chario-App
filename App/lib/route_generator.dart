@@ -45,7 +45,6 @@ class RouteGenerator{
               NoPoverty(
         fc_id: args.toString(),
       )
-
       );
     case
       PersonalScreen.id:
@@ -58,10 +57,10 @@ class RouteGenerator{
       return MaterialPageRoute(builder:(context) =>  SearchScreen());
     case
     Donationask.id:
-      return MaterialPageRoute(builder:(context) => Donationask());
+      return MaterialPageRoute(builder:(context) => Donationask(f_name: args.toString(),));
     case
     Donationmoneyinput.id:
-      return MaterialPageRoute(builder:(context) =>  Donationmoneyinput());
+      return MaterialPageRoute(builder:(context) =>  Donationmoneyinput(f_name: args.toString(),));
     case
     DonpersonalScreen.id:
       return MaterialPageRoute(builder:(context) =>  DonpersonalScreen());

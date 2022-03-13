@@ -321,6 +321,7 @@ class _MyAppState extends State<HomePage> {
                             ),
 
 
+
                             IconButton(
                                 onPressed: () {
                                 Navigator.push(
@@ -340,6 +341,7 @@ class _MyAppState extends State<HomePage> {
                           Container (
                             child:  ContentHome(fc_id:(snapshot.data!.data[index].facility.fId).toString()
                             ),
+
               ),
               ]),
 
