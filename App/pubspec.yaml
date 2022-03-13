@@ -56,3 +56,7 @@ flutter:
     - assets/sdg/
 
   uses-material-design: true
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/font/Ubuntu-Bold.ttf
