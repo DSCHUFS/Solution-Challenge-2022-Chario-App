@@ -1,19 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_try/page1/auth_screen.dart';
-import 'package:flutter_try/page1/dmoneyinput_screen.dart';
-import 'package:flutter_try/page1/donationask_screen.dart';
-import 'package:flutter_try/page1/donationfcdetail.dart';
-import 'package:flutter_try/page1/donpersonal_screen.dart';
-import 'package:flutter_try/page1/personal_info_change_screen.dart';
-import 'package:flutter_try/page1/personal_screen.dart';
-import 'package:flutter_try/page1/regisinput_screen.dart';
-import 'package:flutter_try/page1/search_screen.dart';
-import 'package:flutter_try/page1/subscribe_screen.dart';
-import 'package:flutter_try/page1/regissub_screen.dart';
-import 'page1/HomePage.dart';
+import 'package:flutter_try/route_generator.dart';
 import 'page1/welcome_screen.dart';
-import 'page1/registration_screen.dart';
 import 'firebase_options.dart';
 
 
@@ -36,25 +24,7 @@ class MyApp extends StatelessWidget{
       //initialRoute: Regisinput.id,
       //initialRoute: HomePage.id,
       initialRoute: WelcomeScreen.id,
-
-      routes:
-      {
-        WelcomeScreen.id: (context) => WelcomeScreen(),
-        RegistrationScreen.id: (context) => RegistrationScreen(),
-
-        HomePage.id: (context) => HomePage(),
-        PersonalScreen.id: (context) => PersonalScreen(),
-        SubscribeScreen.id: (context) => SubscribeScreen(),
-        SearchScreen.id: (context) =>  SearchScreen(),
-        Donationask.id:(context) => Donationask(),
-        Donationmoneyinput.id:(context) =>  Donationmoneyinput(),
-        DonpersonalScreen.id:(context) =>  DonpersonalScreen(),
-        DonfcdetailScreen.id: (context) => DonfcdetailScreen(),
-        AuthPage.id:(context) => AuthPage(),
-        Regisinput.id:(context)=>Regisinput(),
-        Regissub.id:(context) => Regissub(),
-        InfochangeScreen.id :(context) => InfochangeScreen()
-      },
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
 
   }
