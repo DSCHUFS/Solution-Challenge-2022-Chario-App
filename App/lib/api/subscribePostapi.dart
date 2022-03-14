@@ -9,7 +9,7 @@ class subspost{
 ////  shoot list  of fac number to server  and get post while register
   final _auth =fbs.FirebaseAuth.instance;
 
-  bool resultc = true;
+  var resultc = true;
       void postsubs(List<int> sublist) async{
         final user = await _auth.currentUser!;
         final String Authorization = user.uid as String;
