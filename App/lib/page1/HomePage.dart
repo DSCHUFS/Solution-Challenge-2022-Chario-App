@@ -392,7 +392,6 @@ class _ContentHomeState extends State<ContentHome> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children:[
                       Text('최소 기부금액 ${snapshot.data!.facDto.fMinimal}',),
-
                       Image.network(snapshot.data!.contentsList[0].image),
                       Text(snapshot.data!.contentsList[0].title)]
                 );
@@ -400,8 +399,6 @@ class _ContentHomeState extends State<ContentHome> {
             on RangeError {
               print("hey! api!");
             }
-
-
           }
           else if (snapshot.hasError) {
             return Text('${snapshot.error}');

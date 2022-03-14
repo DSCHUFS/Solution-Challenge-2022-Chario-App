@@ -38,14 +38,7 @@ class RouteGenerator{
 
       case
       NoPoverty.id:
-        print("this is in side of case");
-        print(args);
-      return MaterialPageRoute(
-          builder:(context) =>
-              NoPoverty(
-        fc_id: args.toString(),
-      )
-      );
+      return MaterialPageRoute(builder:(context) => NoPoverty(fc_id: args.toString(),));
     case
       PersonalScreen.id:
       return MaterialPageRoute(builder:(context) => PersonalScreen());
@@ -66,7 +59,9 @@ class RouteGenerator{
       return MaterialPageRoute(builder:(context) =>  DonpersonalScreen());
     case
     DonfcdetailScreen.id:
-      return MaterialPageRoute(builder:(context) => DonfcdetailScreen());
+      final args = settings.arguments as Map;
+
+      return MaterialPageRoute(builder:(context) => DonfcdetailScreen(arguments : args,));
     case
     AuthPage.id:
       return MaterialPageRoute(builder:(context) => AuthPage());

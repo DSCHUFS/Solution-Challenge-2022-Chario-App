@@ -12,6 +12,8 @@ Future <UserDonJdata>fetchDonJdata()async {
     (
       Uri.parse("http://34.134.67.181:8080/api/donation/"),
       headers: {
+
+        //"Authorization" :'nayt1ViTYpd9OCNa1glBThfqcbz1',
         "Authorization" : Authorization,
         "Content-Type": "application/json",
       }
