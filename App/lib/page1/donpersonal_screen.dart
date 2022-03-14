@@ -17,7 +17,6 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
   @override
   void initState() {
     super.initState();
-    /////////////////// 1 = u_id
     userDonform = fetchDonJdata();
   }
 
@@ -37,19 +36,19 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                       return ListView.separated(
                           itemBuilder: (context, index) {
                             return ListTile(
-                              onTap: () { // send argument
+                              onTap: ()
+                              {
+
                                 arg =
                                 { 'f_name': snapshot.data!.datag[index].f_name,
                                   'f_logo': snapshot.data!.datag[index].f_logo,
-                                  'u_m_price': snapshot.data!.datag[index]
-                                      .u_m_price,
-                                  'don_date': snapshot.data!.datag[index]
-                                      .don_date
+                                  'u_m_price': snapshot.data!.datag[index].u_m_price,
+                                  'don_date': snapshot.data!.datag[index].don_date
                                 };
+                                print("1-----------1");
+                                print(arg);
 
-                                Navigator.pushNamed(
-                                    context, DonfcdetailScreen.id,
-                                    arguments: arg);
+                                Navigator.pushNamed(context, DonfcdetailScreen.id, arguments: arg);
                               },
                               leading: ConstrainedBox(
                                 constraints: BoxConstraints(

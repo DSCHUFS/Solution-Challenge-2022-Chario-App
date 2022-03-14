@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// const mainColor = const Color(0xff3EB489);//원래 메인칼라
 const mainColor = const Color(0xff759D1A);
 const cardColor = const Color(0xff759D1A);
 const sdg1 = const Color(0xffE5243B);
