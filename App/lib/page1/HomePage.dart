@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/main.dart';
@@ -164,14 +165,16 @@ class _MyAppState extends State<HomePage> {
         body: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <
             Widget>[
           Text(
-            "Donation part",
+            " Donation part",
             style: TextStyle(fontSize: 40,fontFamily: 'Ubuntu'),
           ),
           Text(
-            "click your interesting sdgs",
-            style: TextStyle(fontSize: 20,fontFamily: 'Ubuntu'),
+            "   click your sdgs",
+            style: TextStyle(fontSize: 20,fontFamily: 'Ubuntu',color: mainColor),
           ),
+          SizedBox(height: 10),
           Wrap(
+
               alignment: WrapAlignment.center,
               spacing: 20.0,
               runSpacing: 20.0,
@@ -290,13 +293,13 @@ class _MyAppState extends State<HomePage> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-
+                      color:cardColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
                       ),shadowColor: goals_color[current_cate!],
+
                         elevation:11.0,
                       child: Wrap(
-
                         alignment: WrapAlignment.center,
                         spacing: 20.0,
                         runSpacing: 20.0, children: [
@@ -312,16 +315,12 @@ class _MyAppState extends State<HomePage> {
                               width: 100,
                               height: 100,
                             )),
-
                             Text(
                             snapshot.data!.data[index].facility.fName,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20),
                             ),
-
-
-
                             IconButton(
                                 onPressed: () {
                                 Navigator.push(
@@ -389,12 +388,12 @@ class _ContentHomeState extends State<ContentHome> {
               return
 
                 Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                     children:[
-                  Text('최소 기부금액 ${snapshot.data!.facDto.fMinimal}',),
+                  Text('at least ${snapshot.data!.facDto.fMinimal}',style: TextStyle(fontFamily:'Ubuntu',fontSize: 10 )),
 
-                Image.network(snapshot.data!.contentsList[0].image),
-                Text(snapshot.data!.contentsList[0].title)]
+                  Image.network(snapshot.data!.contentsList[0].image,fit: BoxFit.fitWidth,),
+                  Text(snapshot.data!.contentsList[0].title,style: TextStyle(fontFamily:'Ubuntu',fontSize: 20 ),)]
               );
             }
             on RangeError {

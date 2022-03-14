@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:flutter_try/color.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
 
 
@@ -55,17 +56,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    child: Image.asset('assets/Logo.png'),
-                    height: 60.0,
+                    child: Row(children:[Image.asset('assets/logo_char.png',height: 90.0,),
+                      Image.asset('assets/logo_word.png',width: 250,)])
                   ),
                 ),
-                Text(
-                  'handy con',
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
+
+
               ],
             ),
             SizedBox(
@@ -83,11 +79,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide( color: TeamColor, width: 1.0),
+                  borderSide: BorderSide( color: mainColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TeamColor, width: 2.0),
+                  borderSide: BorderSide(color: mainColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -109,11 +105,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TeamColor, width: 1.0),
+                  borderSide: BorderSide(color: mainColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: TeamColor, width: 2.0),
+                  borderSide: BorderSide(color: mainColor, width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -126,7 +122,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               },
               child: Text(
                 'Forgot Password?',
-                style: TextStyle(color: TeamColor, fontSize: 15),
+                style: TextStyle(color: mainColor, fontSize: 15),
               ),
             ),
 
@@ -134,7 +130,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
                 elevation: 5.0,
-                color: TeamColor,
+                color: mainColor,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () async{
@@ -196,7 +192,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: Material(
-                color: TeamColor,
+                color: mainColor,
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
