@@ -55,9 +55,7 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                         itemCount: snapshot.data!.sub_count,
                         itemBuilder: (BuildContext context, index) {
                           return
-                            // Card(
-                            //   child:
-                            //
+
                             ListTile(
                               leading: ConstrainedBox(
                                 constraints: BoxConstraints(

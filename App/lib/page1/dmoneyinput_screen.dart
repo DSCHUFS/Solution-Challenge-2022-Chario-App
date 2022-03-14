@@ -3,16 +3,13 @@ import 'package:flutter_try/api/donationpostapi.dart';
 import 'package:flutter_try/constants.dart' as colort;
 import 'package:flutter_try/page1/HomePage.dart';
 import 'package:intl/intl.dart';
-
-import '../api/isLikedapi.dart';
 import '../constants.dart';
-import '../detailPage/FcDetail.dart';
+
 
 class Donationmoneyinput extends StatefulWidget
 {
   const Donationmoneyinput({Key? key,required this.f_name}) : super(key: key);
   static const String id = "Donationmoneyinput";
-
   @override
   _DonationmoneyinputState createState() => _DonationmoneyinputState();
   final String f_name;
@@ -22,7 +19,7 @@ class Donationmoneyinput extends StatefulWidget
 class _DonationmoneyinputState extends State<Donationmoneyinput> {
 
   final amountInputController = TextEditingController();
-  Welcome? _welcome;
+  bool _welcome = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,17 +43,13 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                 Text("월별 기부 액수를 입력해주세요"),
                 SizedBox(height: 80),
 
-                Row(mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 350,
-                      child:accountField(),
-                    ),
-                    Container(
-                        child:Text("원")
-                    )
-                  ],
-                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children:
+                    [
+                    Container(width: 350, child:accountField(),),
+                    Container(child:Text("원"))
+                    ],),
 
                 Container(
                   padding: EdgeInsets.all(15),
@@ -67,20 +60,30 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                     children: [
                       //////////////////////////////////!!!///////////////
                       ElevatedButton(
-                        onPressed: () async {
+                        onPressed: () async
+                        {
                           final int price = int.parse(amountInputController.text);
                           String dateTime = DateFormat('yy/MM/dd').format(DateTime.now());
-
                           String fname = widget.f_name.toString();
 
+                          donpost parm = donpost();
+                          await parm.createDonation(dateTime, price,fname);
+                          var re = parm.resultc ;
 
-                          final Welcome? welcome =  await createDonation(dateTime, price,fname);
+                          print(re);
 
-                          print("@!#@!#!");
 
-                          setState(() {_welcome = welcome!;});
+                          if (re == true)
+                          {
+                            setState(() {_welcome = re;});
+                            Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+                          }
+                          else
+                          {
+                            print("It shoot  error in dmoney");
+                          }
 
-                          Navigator.pushNamedAndRemoveUntil(context, HomePage.id, (route) => false);
+
 
                         },
                         child: Text("confirm"),
@@ -89,18 +92,13 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                               colort.TeamColor),
                         ),
                       ),
-                      //////////////////////////////////!!!///////////////
-
                       SizedBox(width: 10),
-
                     ],
                   ),
                 ),
               ],
             ),
           ),
-
-
         ),
       ),
     );
