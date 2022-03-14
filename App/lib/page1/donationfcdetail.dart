@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-
-
-
-
 class DonfcdetailScreen extends StatefulWidget {
   static const String id = "donationfcdetail";
 
@@ -21,55 +17,31 @@ class _DonfcdetailScreenState extends State<DonfcdetailScreen>
 
     // final arguments = ModalRoute.of(context)?.settings.arguments as Map;
     return Scaffold(
-      body:
-      Container(
-        child:
-            Column(
-              children: [
-                SizedBox(),
-                  Row(
-                  children:[
-
-                    Container(
-                      constraints: BoxConstraints(
-                        minWidth: 44,
-                        minHeight: 44,
-                        maxWidth: 64,
-                        maxHeight: 64, //
-                      ),
-                      child: Image.network(widget.arguments['f_logo'], fit: BoxFit.fill),
-                              ),
-
-                    Container(
-                    child:
-                        Text(widget.arguments["f_name"]),
+      body:SafeArea(child :
+      Center(
+        child: Column(
+          children: [
+                  Container(
+                    constraints:
+                    BoxConstraints(
+                      minWidth: 44,
+                      minHeight: 44,
+                      maxWidth: 64,
+                      maxHeight: 64, //
                     ),
-
-                    Container(
-
-                    ),
-
-                    Container(
-                    ),
-
-                  ],
-                  ),
-
-                SizedBox(),  // 월별 얼마 ?
-                SizedBox(),
-                SizedBox(),
-                Container(child:
-                  Text("${widget.arguments["u_m_price"] }"+"원"),
-                ),
-
-                Container(child:
-                Text("date:"+widget.arguments['don_date']),
-                ),
+                    child: Image.network(widget.arguments['f_logo'], fit: BoxFit.fill),),
+                  SizedBox(height: 15),
+                  Container(child: Text("기부 기관 :"+widget.arguments["f_name"]),),
+                  SizedBox(height: 15),
+                  Container(child: Text("${widget.arguments["u_m_price"] }"+"원"),),
+                  SizedBox(height: 15),
+                  Container(child: Text("date:"+widget.arguments['don_date']),),
 
               ],
       ),
 
 
+      ),
       ),
     );
   }

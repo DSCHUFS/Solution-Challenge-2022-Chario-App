@@ -24,13 +24,10 @@ class _InfochangeScreenState extends State<InfochangeScreen> {
         appBar: AppBar(
               automaticallyImplyLeading: false, // for custom icon option setting down below
               title:ListTile(
-              title :Text("this is info post"),
-              // maybe Hero - animation ?
-              trailing: Image.asset("assets/Logo.png",
-                  width: 100, height: 50)),
-                // centerTitle: true,
-                backgroundColor: TeamColor,
-                ),
+              title :Text("This is personal Info page"),
+              trailing: Image.asset("assets/Logo.png", width: 100, height: 50)),
+              backgroundColor: TeamColor,
+        ),
 
 
 

@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_try/page1/HomePage.dart';
+import 'package:flutter_try/page1/donationfcdetail.dart';
 import 'package:flutter_try/page1/donpersonal_screen.dart';
 
 import 'package:flutter_try/route_generator.dart';
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner:false,
       //initialRoute: HomePage.id,
       initialRoute: WelcomeScreen.id,
-      //initialRoute: DonpersonalScreen.id,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
 
