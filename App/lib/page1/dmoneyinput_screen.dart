@@ -28,14 +28,13 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
         child: Container(
           width: 600.0,
           height: 400.0,
-          decoration: BoxDecoration(
+          decoration:
+          BoxDecoration(
             border: Border.all(color: Colors.black),
             borderRadius: BorderRadius.circular(10),
-          ),
-          // alignment: Alignment.center,
-          margin: EdgeInsets.all(50),
+            ),
 
-          child: SingleChildScrollView(
+            margin: EdgeInsets.all(50),
             child: Column(
               children: [
                 SizedBox(height: 80),
@@ -43,13 +42,15 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                 Text("월별 기부 액수를 입력해주세요"),
                 SizedBox(height: 80),
 
+
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children:
-                    [
-                    Container(width: 350, child:accountField(),),
-                    Container(child:Text("원"))
-                    ],),
+                    [ Flexible(child:
+                      Container(width: 350, child : accountField(),),),
+                      Container(
+                          child:Text("원",  style: TextStyle(fontWeight: FontWeight.bold),))
+                    ],
+                ),
 
                 Container(
                   padding: EdgeInsets.all(15),
@@ -58,7 +59,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      //////////////////////////////////!!!///////////////
+
                       ElevatedButton(
                         onPressed: () async
                         {
@@ -98,7 +99,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                 ),
               ],
             ),
-          ),
+
         ),
       ),
     );
