@@ -59,11 +59,11 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                         itemBuilder: (context, index) {
                           return ListTile(
                             onTap: () {
-                              arg = {
+                              arg =
+                              { 'f_id': snapshot.data!.datag[index].f_id,
                                 'f_name': snapshot.data!.datag[index].f_name,
                                 'f_logo': snapshot.data!.datag[index].f_logo,
-                                'u_m_price':
-                                    snapshot.data!.datag[index].u_m_price,
+                                'u_m_price': snapshot.data!.datag[index].u_m_price,
                                 'don_date': snapshot.data!.datag[index].don_date
                               };
                               print("1-----------1");
