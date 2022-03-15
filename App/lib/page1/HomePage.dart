@@ -386,15 +386,20 @@ class _ContentHomeState extends State<ContentHome> {
           if(snapshot.hasData){
             try{
               return
+                GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 2,
+                  children: List.generate(snapshot.data!.contentsList.length, (index) {
+                    return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children:[
+                          Text('at least ${snapshot.data!.facDto.fMinimal}',style: TextStyle(fontFamily:'Ubuntu',fontSize: 10 )),
+                          Image.network(snapshot.data!.contentsList[index].image,fit: BoxFit.fitWidth,),
+                          Text(snapshot.data!.contentsList[index].title,style: TextStyle(fontFamily:'Ubuntu',fontSize: 12 ),)]
+                    );
+                  }),
 
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                    children:[
-                  Text('at least ${snapshot.data!.facDto.fMinimal}',style: TextStyle(fontFamily:'Ubuntu',fontSize: 10 )),
-
-                  Image.network(snapshot.data!.contentsList[0].image,fit: BoxFit.fitWidth,),
-                  Text(snapshot.data!.contentsList[0].title,style: TextStyle(fontFamily:'Ubuntu',fontSize: 20 ),)]
-              );
+                );
             }
             on RangeError {
               print("hey! api!");
