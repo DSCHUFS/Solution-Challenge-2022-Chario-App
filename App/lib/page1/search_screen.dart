@@ -1,12 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_try/api/CategoryfcApi.dart';
-import 'package:flutter_try/api/Subscribeapi.dart';
 import 'package:flutter_try/color.dart';
-
 import '../api/Fcapi.dart';
 import '../api/SearchApi.dart';
 import '../detailPage/FcDetail.dart';
+import '../main.dart';
+import 'HomePage.dart';
 
 
 class SearchScreen extends StatefulWidget {
@@ -17,42 +16,96 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  final snackBar = SnackBar(
+      content: Text("검색하신 기관을 찾을수없습니다.")
+  );
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _filter = TextEditingController();
-  late Future<FcJdata> SearchResult;
+  Future<FcJdata>? SearchResult;
   FocusNode focusNode = FocusNode();
   String _searchText = "";
   _SearchScreenState(){
     _filter.addListener(() {
       setState(() {
         _searchText = _filter.text;
-        SearchResult = fetchSearchdata(_searchText);
+        if(_searchText != ""){
+          SearchResult = fetchSearchdata(_searchText);
+        }
+
       });
     });}
   Widget _buildBody(BuildContext context){
     return FutureBuilder<FcJdata>(
-      future: SearchResult,
-      builder:(context,snapshot)
-    {
-      if (!snapshot.hasData) {
-        return LinearProgressIndicator();
-      }
-      return Expanded(child: GridView.count(crossAxisCount: 2,
-          childAspectRatio: 1 / 1.5,
-          padding: EdgeInsets.all(3),
-          children: [
-          InkWell(
-            // child: Image.network(snapshot.data!.data.),
-            // onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute<Null>(
-            //     fullscreenDialog: true,
-            //     builder: (BuildContext context) {
-            //       return NoPoverty(fc_id: snapshot.data!.data[index].f_id,);
-            //     }));
-          )
-          ])
+        future: SearchResult,
+        builder:(context,snapshot)
+        {
+          if (snapshot.hasData == null) {
 
-      );
-    });
+            _scaffoldKey.currentState?.showSnackBar(snackBar);
+
+          }
+          return Expanded(
+           child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: snapshot.data!.count,
+                itemBuilder: (context, int index) {
+                  return Card(
+                      color:cardColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      )
+
+                      ,elevation:11.0,
+                      child: Wrap(
+                          alignment: WrapAlignment.center,
+                          spacing: 20.0,
+                          runSpacing: 20.0, children: [
+                        Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Row(
+                                children: [
+                                  ClipOval(
+                                      clipper: MyClipper(),
+                                      child: Image.network(
+                                        snapshot.data!.data[index].f_logo,
+                                        width: 100,
+                                        height: 100,
+                                      )),
+                                  Text(
+                                    snapshot.data!.data[index].f_name,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20),
+                                  ),
+                                  IconButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  NoPoverty(
+                                                    fc_id: (snapshot.data!.data[index].f_id).toString(),
+                                                  )));
+                                    },
+                                    icon: Icon(Icons.arrow_forward_ios),
+
+
+                                  ),
+                                ],
+                              ),
+                              Container (
+                                child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
+                                ),
+
+                              ),
+                            ]),
+
+                      ]));
+                }
+            )
+          );
+        });
   }
 
 
@@ -90,7 +143,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       suffixIcon: focusNode.hasFocus
                           ? IconButton(
-                            icon: Icon(
+                        icon: Icon(
                           Icons.cancel,
                           size:20,
                           color: Colors.white,
@@ -123,7 +176,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
                 ],
               )
-          )
+          ), _buildBody(context)
         ],
       ),
     );
