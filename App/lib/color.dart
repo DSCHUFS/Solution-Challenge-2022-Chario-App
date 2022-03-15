@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 const mainColor = const Color(0xff759D1A);
-const cardColor = const Color(0xff759D1A);
+const cardColor = const Color(0xffFFB300);
 const sdg1 = const Color(0xffE5243B);
 const sdg2 = const Color(0xffDDA83A);
 const sdg3 = const Color(0xff4C9F38);
