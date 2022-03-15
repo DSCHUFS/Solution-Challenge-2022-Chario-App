@@ -16,6 +16,10 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  final snackBar = SnackBar(
+      content: Text("검색하신 기관을 찾을수없습니다.")
+  );
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _filter = TextEditingController();
   Future<FcJdata>? SearchResult;
   FocusNode focusNode = FocusNode();
@@ -24,7 +28,10 @@ class _SearchScreenState extends State<SearchScreen> {
     _filter.addListener(() {
       setState(() {
         _searchText = _filter.text;
-        SearchResult = fetchSearchdata(_searchText);
+        if(_searchText != ""){
+          SearchResult = fetchSearchdata(_searchText);
+        }
+
       });
     });}
   Widget _buildBody(BuildContext context){
@@ -32,8 +39,10 @@ class _SearchScreenState extends State<SearchScreen> {
         future: SearchResult,
         builder:(context,snapshot)
         {
-          if (!snapshot.hasData) {
-            return LinearProgressIndicator();
+          if (snapshot.hasData == null) {
+
+            _scaffoldKey.currentState?.showSnackBar(snackBar);
+
           }
           return Expanded(
            child: ListView.builder(
