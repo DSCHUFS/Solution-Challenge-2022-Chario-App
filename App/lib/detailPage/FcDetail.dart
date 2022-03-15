@@ -187,25 +187,37 @@ class _MyAppState extends State<NoPoverty>
                       ),
                     ),
 
-                    Center(
-                      child: Row(
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                           children:[
-                            RaisedButton(
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: mainColor, // background
+                                onPrimary: Colors.white, // foreground
+                              ),
                               onPressed: () {
                                 _launchURL(snapshot.data!.facDto.fPay);
                                 Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
                               },
                               child: const Text('donation', style: TextStyle(fontSize: 20)),
-                              color: mainColor,
-                              textColor: Colors.white,
-                              elevation: 5,
                             ),
+
+                            // RaisedButton(
+                            //   onPressed: () {
+                            //     _launchURL(snapshot.data!.facDto.fPay);
+                            //     Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
+                            //   },
+                            //   child: const Text('donation', style: TextStyle(fontSize: 20)),
+                            //   color: mainColor,
+                            //   textColor: Colors.white,
+                            //   elevation: 5,
+                            // ),
+
                             IconButton(
                                 icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
                                 color: isLike? Colors.red:null,
                                 onPressed: () async {
-
-
                                   setState(()  {
                                     if (isLike) {
                                       isLike = false;
@@ -237,7 +249,9 @@ class _MyAppState extends State<NoPoverty>
 
 
                           ]
-                      ),),
+
+
+                    ),
                   ]
               ),);
             } else if (snapshot.hasError) {

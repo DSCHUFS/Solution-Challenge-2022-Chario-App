@@ -51,19 +51,25 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Row(
-              children: [
-                Hero(
-                  tag: 'logo',
-                  child: Container(
-                    child: Row(children:[Image.asset('assets/logo_char.png',height: 90.0,),
-                      Image.asset('assets/logo_word.png',width: 250,)])
-                  ),
-                ),
+            Hero(
+              tag: 'logo',
+              child: Container(
+                  child: Row(
+                      children:<Widget>[
+                        Flexible(
+                          flex:1,
+                          child:
+                          Container(child : Image.asset('assets/logo_char.png'),),),
+                        Flexible(
+                          flex:2,
+                          child:
+                          Container(child :Image.asset('assets/logo_word.png')),),
 
-
-              ],
+                      ]
+                  )
+              ),
             ),
+
             SizedBox(
               height: 48.0,
             ),

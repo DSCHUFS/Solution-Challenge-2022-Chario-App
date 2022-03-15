@@ -3,6 +3,7 @@ import 'package:flutter_try/page1/HomePage.dart';
 import '../api/donationgetapi.dart';
 import 'donationfcdetail.dart';
 
+
 class DonpersonalScreen extends StatefulWidget {
   static const String id = "donpersonal_screen";
   @override
@@ -34,13 +35,13 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                 children: <Widget>[
                   Card(
                       child: ListTile(
-                    leading: InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, HomePage.id);
-                      },
-                      child: Icon(Icons.arrow_back_ios),
-                    ),
-                    trailing:
+                        leading: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, HomePage.id);
+                          },
+                          child: Icon(Icons.arrow_back_ios),
+                        ),
+                        trailing:
                         Wrap(
                           spacing: 12,
                           children:[
@@ -52,7 +53,7 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                           ],
                         ),
 
-                  )),
+                      )),
                   SizedBox(height: 30),
                   Expanded(
                     child: ListView.separated(
@@ -128,33 +129,33 @@ class BottomBar extends StatelessWidget {
             if (snapshot.hasData) {
               return Container(
                   child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.favorite, color: Colors.red),
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                  Text("기부금 :" + "${snapshot.data!.total_price}" + "원"),
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                ],
-              ));
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.favorite, color: Colors.red),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                      Text("기부금 :" + "${snapshot.data!.total_price}" + "원"),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                    ],
+                  ));
             } else if (snapshot.data == null) {
               return Container(
                   child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.favorite, color: Colors.red),
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                  Text("기부금 :" + "0" + "원"),
-                  SizedBox(
-                    width: 50.0,
-                  ),
-                ],
-              ));
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.favorite, color: Colors.red),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                      Text("기부금 :" + "0" + "원"),
+                      SizedBox(
+                        width: 50.0,
+                      ),
+                    ],
+                  ));
             }
             return const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),

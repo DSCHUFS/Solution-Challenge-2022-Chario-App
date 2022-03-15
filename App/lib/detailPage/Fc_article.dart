@@ -1,7 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-
 import '../api/ContentsApi.dart';
+import '../methods/BuildSocialButton.dart';
+
+
 
 class HomeScreen extends StatefulWidget {
  final ContentsList content;
@@ -13,10 +15,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   bool like = false;
+  late Map args;
+
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
@@ -120,14 +123,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                       child: Container(
                         child: Column(
-                          children: <Widget>[
-                            Icon(Icons.send),
+                          children: <Widget>
+                          [
+                        IconButton(
+                                onPressed: () {
+                                  args =
+                                  { 'image': widget.content.image,
+                                    'title': widget.content.title,
+                                    'body': widget.content.body,
+                                  };
+                                  //OnShare(args);
+                                }  ,
+                                icon :Icon(Icons.send),
+                                  ),
                             Padding(padding: EdgeInsets.all(5)),
-                            Text(
-                              '공유',
-                              style: TextStyle(
-                                  fontSize: 11, color: Colors.white60),
-                            ),
+                            Text('공유', style: TextStyle(fontSize: 11, color: Colors.white60),),
                           ],
                         ),
                       ),
