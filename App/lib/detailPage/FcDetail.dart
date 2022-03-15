@@ -59,6 +59,7 @@ class _MyAppState extends State<NoPoverty>
     String fcId = widget.fc_id.toString();
     ContentFcJdata = fetchContJdata(fcId) ;
     makelist();
+
   }
 
 
@@ -147,13 +148,7 @@ class _MyAppState extends State<NoPoverty>
                         child: Container(color: Colors.white),
                       ),
                     ),
-                    IconButton(onPressed: (){
-                      Navigator.of(context).push(
 
-                        MaterialPageRoute(
-                            fullscreenDialog: true,builder:(BuildContext context){
-                              return HomeScreen(content: snapshot.data!.contentsList[0],);}
-                               ));}, icon: Icon(Icons.invert_colors_on_sharp)),
                     CarouselSlider(
                       options: CarouselOptions(
                         enlargeCenterPage: false,
@@ -161,21 +156,27 @@ class _MyAppState extends State<NoPoverty>
                         autoPlay: true,
                       ),
                       items: imageList
-                          .map((e) => ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: <Widget>[
-                            Image.network(
-                              e,
-                              width: 1050,
-                              height: 350,
-                              fit: BoxFit.cover,
-                            )
-                          ],
-                        ),
-                      ))
-                          .toList(),
+                          .map((i){
+                        return Builder(
+                          builder: (BuildContext context) {
+                            return Container(
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                decoration: BoxDecoration(color: Colors.amber),
+                                child: GestureDetector(
+                                    child: Image.network(i, fit: BoxFit.fill),
+                                    onTap: () {
+                                      Navigator.push<Widget>(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => HomeScreen(content: snapshot.data!.contentsList[0]),
+                                        ),
+                                      );
+                                    })
+                            );
+                          },
+                        );
+                      }).toList(),
 
                     ),
 
