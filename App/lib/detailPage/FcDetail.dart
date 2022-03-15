@@ -40,12 +40,14 @@ class _MyAppState extends State<NoPoverty>
   late Future<ContentsApi> ContentFcJdata;
 
   List<String> imageList = [];
+  Map<String,int> image_index = {};
   void makelist()
   async{
     ContentsApi gdata = await fetchContJdata(widget.fc_id);
     for (int i = 0; i < gdata.contentsList.length; i++) {
       imageList.add(gdata.contentsList[i].image);
-      print('${i}는 ${imageList[i]}');
+      image_index[gdata.contentsList[i].image] = i;
+      // print('${i}는 ${imageList[i]}');
     }
     print(imageList);
   }
@@ -166,10 +168,11 @@ class _MyAppState extends State<NoPoverty>
                                 child: GestureDetector(
                                     child: Image.network(i, fit: BoxFit.fill),
                                     onTap: () {
+                                      int index = image_index[i]!.toInt();
                                       Navigator.push<Widget>(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => HomeScreen(content: snapshot.data!.contentsList[0]),
+                                          builder: (context) => HomeScreen(content: snapshot.data!.contentsList[index]),
                                         ),
                                       );
                                     })
