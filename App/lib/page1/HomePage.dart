@@ -140,7 +140,7 @@ class _MyAppState extends State<HomePage> {
                 ),
                 ListTile(
                     leading: Icon(
-                      Icons.image,
+                      Icons.favorite,
                       color: Colors.grey[850],
                     ),
                     title: Text('구독현황'),
@@ -150,7 +150,7 @@ class _MyAppState extends State<HomePage> {
                     trailing: Icon(Icons.arrow_forward_ios)),
                 ListTile(
                     leading: Icon(
-                      Icons.image,
+                      Icons.volunteer_activism,
                       color: Colors.grey[850],
                     ),
                     title: Text('기부현황'),

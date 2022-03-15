@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_try/constants.dart';
+import 'package:flutter_try/page1/donpersonal_screen.dart';
+import 'package:flutter_try/detailPage/FcDetail.dart';
+
 class DonfcdetailScreen extends StatefulWidget {
   static const String id = "donationfcdetail";
 
@@ -17,31 +21,56 @@ class _DonfcdetailScreenState extends State<DonfcdetailScreen>
 
     // final arguments = ModalRoute.of(context)?.settings.arguments as Map;
     return Scaffold(
-      body:SafeArea(child :
-      Center(
+      body:SafeArea(
+
         child: Column(
           children: [
-                  Container(
-                    constraints:
-                    BoxConstraints(
-                      minWidth: 44,
-                      minHeight: 44,
-                      maxWidth: 64,
-                      maxHeight: 64, //
-                    ),
-                    child: Image.network(widget.arguments['f_logo'], fit: BoxFit.fill),),
+            Card(
+                child: ListTile(
+                  leading: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, DonpersonalScreen.id);
+                    },
+                    child: Icon(Icons.arrow_back_ios),
+                  ),
+                  trailing:
+                  Wrap(
+                    spacing: 12,
+                    children:[
+                      TextButton(onPressed: () { Navigator.pushNamed(context, NoPoverty.id,arguments: widget.arguments["f_id"].toString() );},
+                        child: Text(widget.arguments["f_name"],style: TextStyle(fontWeight: FontWeight.bold,color: TeamColor),)
+                      )
+                    ],
+                  ),
+
+                )),
+            Expanded(
+            flex: 5, // 60% of space => (6/(6 + 4)
+            child :Container(
+              child: Image.network(widget.arguments['f_logo'], fit: BoxFit.fill),),
+            ) ,
+
+            Expanded(
+                flex: 5,
+              child :Container(
+              child: Column(
+                children :[
                   SizedBox(height: 15),
-                  Container(child: Text("기부 기관 :"+widget.arguments["f_name"]),),
+                  Container(child: Text("기부 기관 명 :"+widget.arguments["f_name"]),),
                   SizedBox(height: 15),
                   Container(child: Text("${widget.arguments["u_m_price"] }"+"원"),),
                   SizedBox(height: 15),
                   Container(child: Text("date:"+widget.arguments['don_date']),),
-
-              ],
+            ],
+            ),
+        )
+          ),
+          ],
       ),
 
 
-      ),
+
+
       ),
     );
   }

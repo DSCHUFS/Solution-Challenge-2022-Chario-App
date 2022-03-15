@@ -12,7 +12,6 @@ Future <UserDonJdata>fetchDonJdata()async {
     (
       Uri.parse("http://34.134.67.181:8080/api/donation/"),
       headers: {
-
         //"Authorization" :'nayt1ViTYpd9OCNa1glBThfqcbz1',
         "Authorization" : Authorization,
         "Content-Type": "application/json",
@@ -27,6 +26,7 @@ Future <UserDonJdata>fetchDonJdata()async {
     String jsonData = response.body;
 
     var myJson = jsonDecode(jsonData);
+    print("dfdfdfdfdfd") ;
     print(myJson);
     print(myJson['data']);
 
@@ -68,13 +68,14 @@ class UserDonJdata
 
 
 class Data {
-
+  final int f_id;
   final String f_name;
   final String f_logo;
   final int u_m_price;
   final String don_date;
 
   Data({
+    required this.f_id,
     required this.f_name,
     required this.f_logo,
     required this.u_m_price,
@@ -84,6 +85,7 @@ class Data {
   factory Data.fromJson(Map<String, dynamic> json)
   {
     return Data(
+        f_id:  json['f_id'],
         f_name: json['f_name'],
         f_logo: json['f_logo'],
       u_m_price: json['u_m_price'] ,
