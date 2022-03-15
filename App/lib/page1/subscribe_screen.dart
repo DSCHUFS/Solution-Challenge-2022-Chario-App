@@ -42,9 +42,19 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                             },
                             child: Icon(Icons.arrow_back_ios),
                           ),
-                          trailing: Text('Subscribe-page'),
+
+                          trailing:
+                              Wrap(
+                                spacing: 12,
+                                children:[
+                                  Text(' your like page '),
+                                  Icon(Icons.favorite, color: TeamColor,)
+                                ],
+                              ),
                         )
                     ),
+
+
                     SizedBox(height: 30),
 
                     Expanded(

@@ -40,7 +40,18 @@ class _DonpersonalScreenState extends State<DonpersonalScreen> {
                       },
                       child: Icon(Icons.arrow_back_ios),
                     ),
-                    trailing: Text('Donation-page'),
+                    trailing:
+                        Wrap(
+                          spacing: 12,
+                          children:[
+                            Text('Donation-page'),
+                            Icon(
+                              Icons.volunteer_activism,
+                              color: Colors.grey[850],
+                            ),
+                          ],
+                        ),
+
                   )),
                   SizedBox(height: 30),
                   Expanded(
