@@ -49,7 +49,7 @@ class FcJdata {
 
 
 class Data {
-  final String f_id;
+  final int f_id;
   final String f_name;
   final String f_intro;
   final int f_minimal;

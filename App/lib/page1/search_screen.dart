@@ -1,10 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_try/api/CategoryfcApi.dart';
-import 'package:flutter_try/api/Subscribeapi.dart';
 import 'package:flutter_try/color.dart';
-
-import '../api/Fcapi.dart';
 import '../api/SearchApi.dart';
 import '../detailPage/FcDetail.dart';
 
@@ -18,7 +14,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _filter = TextEditingController();
-  late Future<FcJdata> SearchResult;
+  late Future<Searchdata> SearchResult;
   FocusNode focusNode = FocusNode();
   String _searchText = "";
   _SearchScreenState(){
@@ -29,30 +25,32 @@ class _SearchScreenState extends State<SearchScreen> {
       });
     });}
   Widget _buildBody(BuildContext context){
-    return FutureBuilder<FcJdata>(
-      future: SearchResult,
-      builder:(context,snapshot)
-    {
-      if (!snapshot.hasData) {
-        return LinearProgressIndicator();
-      }
-      return Expanded(child: GridView.count(crossAxisCount: 2,
-          childAspectRatio: 1 / 1.5,
-          padding: EdgeInsets.all(3),
-          children: [
-          InkWell(
-            // child: Image.network(snapshot.data!.data.),
-            // onTap: () {
-            // Navigator.of(context).push(MaterialPageRoute<Null>(
-            //     fullscreenDialog: true,
-            //     builder: (BuildContext context) {
-            //       return NoPoverty(fc_id: snapshot.data!.data[index].f_id,);
-            //     }));
-          )
-          ])
+    return FutureBuilder<Searchdata>(
+        future: SearchResult,
+        builder:(context,snapshot)
+        {
+          if (!snapshot.hasData) {
+            return LinearProgressIndicator();
+          }
+          return Expanded(child: GridView.count(crossAxisCount: 2,
+              childAspectRatio: 1 / 1.5,
+              padding: EdgeInsets.all(3),
+              children: [
+                InkWell(
+                    child: Image.network(snapshot.data!.data[0].f_logo),
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute<Null>(
+                          fullscreenDialog: true,
+                          builder: (BuildContext context) {
+                            return NoPoverty(fc_id: (snapshot.data!.data[0].f_id).toString(),);
+                          }));
+                    }
+                )
 
-      );
-    });
+              ])
+
+          );
+        });
   }
 
 
@@ -90,7 +88,7 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       suffixIcon: focusNode.hasFocus
                           ? IconButton(
-                            icon: Icon(
+                        icon: Icon(
                           Icons.cancel,
                           size:20,
                           color: Colors.white,
@@ -123,7 +121,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
                 ],
               )
-          )
+          ), _buildBody(context)
         ],
       ),
     );
