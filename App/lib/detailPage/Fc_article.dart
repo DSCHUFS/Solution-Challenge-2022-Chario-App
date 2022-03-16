@@ -1,8 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../api/ContentsApi.dart';
+_launchURL(String url) async {
 
+  await launch(url);
+  // } else {
+  //   throw "could not lunch";
+  // }
+}
 class HomeScreen extends StatefulWidget {
  final ContentsList content;
 
@@ -114,8 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     )
-                  ],
-                ),
+                    ,TextButton(
+                        onPressed: () {
+                      _launchURL(widget.content.url);
+                    }, child: Text('기사 원문 보러가기',style: TextStyle(color: Colors.black),))
+
+        ]        ),
               )
             ],
           ),
