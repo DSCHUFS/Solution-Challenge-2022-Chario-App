@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
       title:'Chari-o',
       debugShowCheckedModeBanner:false,
-      //initialRoute: HomePage.id,
-      initialRoute: WelcomeScreen.id,
+      initialRoute: HomePage.id,
+      //initialRoute: WelcomeScreen.id,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
 

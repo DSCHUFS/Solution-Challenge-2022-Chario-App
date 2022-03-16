@@ -26,6 +26,9 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
     return Scaffold(
       body: Center(
         child: Container(
+          constraints: BoxConstraints(
+            maxHeight: double.infinity,
+          ),
           width: 600.0,
           height: 400.0,
           decoration:
@@ -44,9 +47,10 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
 
 
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children:
-                    [ Flexible(child:
-                      Container(width: 350, child : accountField(),),),
+                    [
+                      Container(width: 350, child : accountField(),),
                       Container(
                           child:Text("원",  style: TextStyle(fontWeight: FontWeight.bold),))
                     ],

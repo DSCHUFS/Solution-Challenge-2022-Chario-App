@@ -13,7 +13,7 @@ _launchURL(String url) async {
   if (await canLaunch(url)) {
     await launch(url);
   } else {
-    throw "could not lunch";
+    throw "could not launch";
   }
 }
 
