@@ -121,7 +121,7 @@ class _MyAppState extends State<HomePage> {
                           print('press details');
                         },
                         decoration: BoxDecoration(
-                            // color:
+                          // color:
                             color: mainColor,
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(40),
@@ -179,132 +179,132 @@ class _MyAppState extends State<HomePage> {
           Text(
             "   click your sdgs",
             style:
-                TextStyle(fontSize: 20, fontFamily: 'Ubuntu', color: mainColor),
+            TextStyle(fontSize: 20, fontFamily: 'Ubuntu', color: mainColor),
           ),
           SizedBox(height: 10),
           Container(
             child: Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 30.0,
-              runSpacing: 20.0,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '1';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[0], fit: BoxFit.cover)),
+                alignment: WrapAlignment.center,
+                spacing: 30.0,
+                runSpacing: 20.0,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '1';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[0], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '2';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[1], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '2';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[1], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '3';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[2], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '3';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[2], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '4';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[3], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '4';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[3], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '6';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[4], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '6';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[4], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '10';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(
-                          images[5],
-                          fit: BoxFit.cover,
-                        )),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '10';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(
+                            images[5],
+                            fit: BoxFit.cover,
+                          )),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '13';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[6], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '13';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[6], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      current_cate = '14';
-                      CateFeJdata = fetchCateFeJdata(current_cate!);
-                    });
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                        width: 70,
-                        child: Image.asset(images[7], fit: BoxFit.cover)),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        current_cate = '14';
+                        CateFeJdata = fetchCateFeJdata(current_cate!);
+                      });
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                          width: 70,
+                          child: Image.asset(images[7], fit: BoxFit.cover)),
+                    ),
                   ),
-                ),
-              ]),
-            ),
+                ]),
+          ),
           FutureBuilder<CateFdata>(
             future: CateFeJdata,
             builder: (context, snapshot) {
@@ -320,60 +320,60 @@ class _MyAppState extends State<HomePage> {
                         print('index는 ${snapshot.data!.data[index].facility.fId}');
                         return
                           Padding(
-                          padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
 
-                          child:
-                          Card(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder
-                              (
-                              //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-                              side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
-
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            //shadowColor: goals_color[current_cate!],
-                            elevation: 11.0,
                             child:
-                            Column(
-                                children :[
-                                  Wrap(
-                                      alignment: WrapAlignment.center,
-                                      spacing: 20.0,
-                                      runSpacing: 20.0,
-                                      children: [
-                                        Column(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                            children: <Widget>[
-                                              SizedBox(height: 5,),
-                                              Container
-                                                (
-                                                child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
-                                              ),
-                                            ]
-                                        ),
+                            Card(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder
+                                (
+                                //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
+                                side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
 
-
-                                        ListTile(
-                                          leading:ClipOval(
-                                              clipper: MyClipper(),
-                                              child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
-                                          title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                                          trailing: InkWell(
-                                            onTap:()
-                                            {
-                                              Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
-                                            },
-                                            child: Icon(Icons.arrow_forward_ios),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              //shadowColor: goals_color[current_cate!],
+                              elevation: 11.0,
+                              child:
+                              Column(
+                                  children :[
+                                    Wrap(
+                                        alignment: WrapAlignment.center,
+                                        spacing: 20.0,
+                                        runSpacing: 20.0,
+                                        children: [
+                                          Column(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                              children: <Widget>[
+                                                SizedBox(height: 5,),
+                                                Container
+                                                  (
+                                                  child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
+                                                ),
+                                              ]
                                           ),
-                                        ),
 
-                                      ]
-                                  )
-                                ]),
-                          ),
-                        );
+
+                                          ListTile(
+                                            leading:ClipOval(
+                                                clipper: MyClipper(),
+                                                child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
+                                            title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                                            trailing: InkWell(
+                                              onTap:()
+                                              {
+                                                Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
+                                              },
+                                              child: Icon(Icons.arrow_forward_ios),
+                                            ),
+                                          ),
+
+                                        ]
+                                    )
+                                  ]),
+                            ),
+                          );
                       }),
                 );
               } else if (snapshot.hasError) {
@@ -385,105 +385,6 @@ class _MyAppState extends State<HomePage> {
               );
             },
           ),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          // FutureBuilder<CateFdata>(
-          //   future: CateFeJdata,
-          //   builder: (context, snapshot) {
-          //     if (snapshot.hasData) {
-          //       print('current cate is ${current_cate}');
-          //       print('전체길이는 ${snapshot.data!.count}');
-          //       return Flexible(
-          //         child: ListView.builder(
-          //             shrinkWrap: true,
-          //             itemCount: snapshot.data!.count,
-          //             itemBuilder: (context, int index)
-          //             {
-          //               print('index는 ${snapshot.data!.data[index].facility.fId}');
-          //               return Padding(
-          //                 padding: const EdgeInsets.all(8.0),
-          //
-          //                 child: Card(
-          //                     color: Colors.white,
-          //                     shape: RoundedRectangleBorder
-          //                       (
-          //                       //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-          //                       side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
-          //
-          //                       borderRadius: BorderRadius.circular(20.0),
-          //                       ),
-          //                     //shadowColor: goals_color[current_cate!],
-          //                     elevation: 11.0,
-          //                     child:
-          //                     Column(
-          //                     children :[
-          //                     Wrap(
-          //                         alignment: WrapAlignment.center,
-          //                         spacing: 20.0,
-          //                         runSpacing: 20.0,
-          //                         children: [
-          //                           Column(
-          //                               mainAxisAlignment:
-          //                               MainAxisAlignment.spaceEvenly,
-          //                               children: <Widget>[
-          //                                 SizedBox(height: 5,),
-          //                                 Container
-          //                                   (
-          //                                   child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
-          //                                 ),
-          //                               ]
-          //                           ),
-          //
-          //
-          //                           ListTile(
-          //                             leading:ClipOval(
-          //                                 clipper: MyClipper(),
-          //                                 child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
-          //                             title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-          //                             trailing: InkWell(
-          //                               onTap:()
-          //                               {
-          //                                 Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
-          //                               },
-          //                               child: Icon(Icons.arrow_forward_ios),
-          //                             ),
-          //                           ),
-          //
-          //                         ]
-          //                     )
-          //                     ]),
-          //                 ),
-          //
-          //
-          //               );
-          //             }),
-          //       );
-          //     } else if (snapshot.hasError) {
-          //       return Text('${snapshot.error}');
-          //     }
-          //     // By default, show a loading spinner.
-          //     return const CircularProgressIndicator(
-          //       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-          //     );
-          //   },
-          // )
-
-
-
-
         ]));
   }
 }
@@ -521,20 +422,20 @@ class _ContentHomeState extends State<ContentHome>
                 Column(
                   children : [
                     SizedBox(height : 5),
-                          GridView.count(
-                          shrinkWrap: true,
-                          crossAxisCount: 2,
-                          children: List.generate(snapshot.data!.contentsList.length, (index) {
-                            return Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.network(snapshot.data!.contentsList[index].image, fit: BoxFit.fitWidth,),
-                                  Text(snapshot.data!.contentsList[index].title, style: TextStyle(fontFamily: 'Ubuntu', fontSize: 12),)
-                                ]);
-                                              }
-                          ),
+                    GridView.count(
+                      shrinkWrap: true,
+                      crossAxisCount: 2,
+                      children: List.generate(snapshot.data!.contentsList.length, (index) {
+                        return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.network(snapshot.data!.contentsList[index].image, fit: BoxFit.fitWidth,),
+                              Text(snapshot.data!.contentsList[index].title, style: TextStyle(fontFamily: 'Ubuntu', fontSize: 12),)
+                            ]);
+                      }
+                      ),
 
-                          ),
+                    ),
 
                     Container(
                       alignment: Alignment.bottomRight,
@@ -544,7 +445,7 @@ class _ContentHomeState extends State<ContentHome>
                       ),),
 
                   ],
-                      );
+                );
 
 
             } on RangeError
@@ -567,3 +468,4 @@ class _ContentHomeState extends State<ContentHome>
         });
   }
 }
+
