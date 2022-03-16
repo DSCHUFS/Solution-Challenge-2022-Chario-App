@@ -10,8 +10,11 @@ import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 import 'donpersonal_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
-
 import 'package:flutter_try/api/Userapi.dart';
+
+import 'package:flutter_try/methods/stacked.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -179,14 +182,6 @@ class _MyAppState extends State<HomePage> {
                 TextStyle(fontSize: 20, fontFamily: 'Ubuntu', color: mainColor),
           ),
           SizedBox(height: 10),
-
-          // Card (
-          //
-          //   shape: RoundedRectangleBorder
-          //     (
-          //     side: BorderSide(color: Colors.grey, width: 1),
-          //     borderRadius: BorderRadius. circular(10),
-          //   ),
           Container(
             child: Wrap(
               alignment: WrapAlignment.center,
@@ -309,9 +304,7 @@ class _MyAppState extends State<HomePage> {
                   ),
                 ),
               ]),
-    ),
-
-
+            ),
           FutureBuilder<CateFdata>(
             future: CateFeJdata,
             builder: (context, snapshot) {
@@ -325,55 +318,60 @@ class _MyAppState extends State<HomePage> {
                       itemBuilder: (context, int index)
                       {
                         print('index는 ${snapshot.data!.data[index].facility.fId}');
-                        return Padding(
+                        return
+                          Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Card(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder
-                                (
-                                //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-                                side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
 
-                                borderRadius: BorderRadius.circular(20.0),
-                                ),
-                              //shadowColor: goals_color[current_cate!],
-                              elevation: 11.0,
-                              child:
-                              Column(
-                              children :[
-                                ListTile(
-                                  leading:ClipOval(
-                                    clipper: MyClipper(),
-                                    child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
-                                  title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                                  trailing: InkWell(
-                                    onTap:()
-                                    {
-                                      Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
-                                    },
-                                    child: Icon(Icons.arrow_forward_ios),
-                                  ),
-                                ),
+                          child:
+                          Card(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder
+                              (
+                              //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
+                              side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
 
-                              Wrap(
-                                  alignment: WrapAlignment.center,
-                                  spacing: 20.0,
-                                  runSpacing: 20.0,
-                                  children: [
-                                    Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                        children: <Widget>[
-                                          SizedBox(height: 5,),
-                                          Container
-                                            (
-                                            child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            //shadowColor: goals_color[current_cate!],
+                            elevation: 11.0,
+                            child:
+                            Column(
+                                children :[
+                                  Wrap(
+                                      alignment: WrapAlignment.center,
+                                      spacing: 20.0,
+                                      runSpacing: 20.0,
+                                      children: [
+                                        Column(
+                                            mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                            children: <Widget>[
+                                              SizedBox(height: 5,),
+                                              Container
+                                                (
+                                                child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
+                                              ),
+                                            ]
+                                        ),
+
+
+                                        ListTile(
+                                          leading:ClipOval(
+                                              clipper: MyClipper(),
+                                              child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
+                                          title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+                                          trailing: InkWell(
+                                            onTap:()
+                                            {
+                                              Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
+                                            },
+                                            child: Icon(Icons.arrow_forward_ios),
                                           ),
-                                        ]),
-                                  ])
+                                        ),
 
-
-                              ]),
+                                      ]
+                                  )
+                                ]),
                           ),
                         );
                       }),
@@ -386,10 +384,112 @@ class _MyAppState extends State<HomePage> {
                 valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
               );
             },
-          )
+          ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          // FutureBuilder<CateFdata>(
+          //   future: CateFeJdata,
+          //   builder: (context, snapshot) {
+          //     if (snapshot.hasData) {
+          //       print('current cate is ${current_cate}');
+          //       print('전체길이는 ${snapshot.data!.count}');
+          //       return Flexible(
+          //         child: ListView.builder(
+          //             shrinkWrap: true,
+          //             itemCount: snapshot.data!.count,
+          //             itemBuilder: (context, int index)
+          //             {
+          //               print('index는 ${snapshot.data!.data[index].facility.fId}');
+          //               return Padding(
+          //                 padding: const EdgeInsets.all(8.0),
+          //
+          //                 child: Card(
+          //                     color: Colors.white,
+          //                     shape: RoundedRectangleBorder
+          //                       (
+          //                       //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
+          //                       side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
+          //
+          //                       borderRadius: BorderRadius.circular(20.0),
+          //                       ),
+          //                     //shadowColor: goals_color[current_cate!],
+          //                     elevation: 11.0,
+          //                     child:
+          //                     Column(
+          //                     children :[
+          //                     Wrap(
+          //                         alignment: WrapAlignment.center,
+          //                         spacing: 20.0,
+          //                         runSpacing: 20.0,
+          //                         children: [
+          //                           Column(
+          //                               mainAxisAlignment:
+          //                               MainAxisAlignment.spaceEvenly,
+          //                               children: <Widget>[
+          //                                 SizedBox(height: 5,),
+          //                                 Container
+          //                                   (
+          //                                   child: ContentHome(fc_id: (snapshot.data!.data[index].facility.fId).toString()),
+          //                                 ),
+          //                               ]
+          //                           ),
+          //
+          //
+          //                           ListTile(
+          //                             leading:ClipOval(
+          //                                 clipper: MyClipper(),
+          //                                 child: Image.network(snapshot.data!.data[index].facility.fLogo, width: 100, height: 100,)),
+          //                             title:Text(snapshot.data!.data[index].facility.fName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
+          //                             trailing: InkWell(
+          //                               onTap:()
+          //                               {
+          //                                 Navigator.pushNamed(context, NoPoverty.id,arguments:(snapshot.data!.data[index].facility.fId).toString() );
+          //                               },
+          //                               child: Icon(Icons.arrow_forward_ios),
+          //                             ),
+          //                           ),
+          //
+          //                         ]
+          //                     )
+          //                     ]),
+          //                 ),
+          //
+          //
+          //               );
+          //             }),
+          //       );
+          //     } else if (snapshot.hasError) {
+          //       return Text('${snapshot.error}');
+          //     }
+          //     // By default, show a loading spinner.
+          //     return const CircularProgressIndicator(
+          //       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+          //     );
+          //   },
+          // )
+
+
+
+
         ]));
   }
 }
+
+
+
 
 class ContentHome extends StatefulWidget
 {
@@ -420,13 +520,6 @@ class _ContentHomeState extends State<ContentHome>
               return
                 Column(
                   children : [
-                    Container(
-                      alignment: Alignment.topRight,
-                      child:
-                      Text('Start Donate :'+'  ${snapshot.data!.facDto.fMinimal}     ',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
-                      ),),
-
                     SizedBox(height : 5),
                           GridView.count(
                           shrinkWrap: true,
@@ -442,7 +535,15 @@ class _ContentHomeState extends State<ContentHome>
                           ),
 
                           ),
-                        ],
+
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      child:
+                      Text('Start Donate :'+'  ${snapshot.data!.facDto.fMinimal}     ',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
+                      ),),
+
+                  ],
                       );
 
 
