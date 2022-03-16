@@ -1,18 +1,14 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:flutter_try/color.dart';
 import 'package:flutter_try/page1/regisinput_screen.dart';
 
-
 import '../api/FirebaseService.dart';
 import 'registration_screen.dart';
 import 'HomePage.dart';
 import '../constants.dart';
 import 'package:flutter_try/api/currentUserservice.dart';
-
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = "welcome_screen";
@@ -28,24 +24,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   //// scaffold key for snack bar
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final snackBar = SnackBar(
-      content: Text("로그인 정보가 없습니다 회원가입 해주세요")
-  );
-
+  final snackBar = SnackBar(content: Text("로그인 정보가 없습니다 회원가입 해주세요"));
   late String email;
   late String password;
-
-
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
       drawer: Container(child: Text("this is drawer")),
-      body:
-      Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,39 +41,36 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Hero(
               tag: 'logo',
+              child: Container(
+                  child: Row(children: <Widget>[
+                Flexible(
+                  flex: 1,
                   child: Container(
-                    child: Row(
-                        children:<Widget>[
-                    Flexible(
-                    flex:1,
-                      child:
-                          Container(child : Image.asset('assets/logo_char.png'),),),
-                    Flexible(
-                        flex:2,
-                      child:
-                          Container(child :Image.asset('assets/logo_word.png')),),
-
-                        ]
-                    )
+                    child: Image.asset('assets/logo_char.png'),
                   ),
                 ),
-
+                Flexible(
+                  flex: 2,
+                  child: Container(child: Image.asset('assets/logo_word.png')),
+                ),
+              ])),
+            ),
             SizedBox(
               height: 48.0,
             ),
             TextField(
               onChanged: (value) {
-                email= value;
+                email = value;
               },
               decoration: InputDecoration(
                 hintText: 'ID:example@gmail.com',
                 contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide( color: mainColor, width: 1.0),
+                  borderSide: BorderSide(color: mainColor, width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
@@ -101,12 +86,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             TextField(
               onChanged: (value) {
                 password = value;
-
               },
               decoration: InputDecoration(
                 hintText: 'PW',
                 contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
@@ -124,14 +108,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 8.0,
             ),
             TextButton(
-              onPressed: (){
-              },
+              onPressed: () {},
               child: Text(
                 'Forgot Password?',
                 style: TextStyle(color: mainColor, fontSize: 15),
               ),
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
@@ -139,27 +121,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 color: mainColor,
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
-                  onPressed: () async{
-                    try{
-                      final user = await _auth.signInWithEmailAndPassword(email: email, password: password);
-                      if(user != null) {
+                  onPressed: () async {
+                    try {
+                      final user = await _auth.signInWithEmailAndPassword(
+                          email: email, password: password);
+                      if (user != null) {
                         print(amountInputController.text);
                         CurrentUser cucheck = CurrentUser();
                         await cucheck.iscomplieteregis();
-                        if (cucheck.checkvalide == true)
-                        {
+                        if (cucheck.checkvalide == true) {
                           print("there is account");
                           Navigator.pushNamedAndRemoveUntil(
                               context, HomePage.id, (route) => false);
                         } else // go to addtional sign
-                            {
+                        {
                           print("no account");
                           Navigator.pushNamedAndRemoveUntil(
                               context, Regisinput.id, (route) => false);
                         }
                       }
-                    }catch(e){
-                      print("this is after auth") ;
+                    } catch (e) {
+                      print("this is after auth");
                       _scaffoldKey.currentState?.showSnackBar(snackBar);
                       print(e);
                     }
@@ -173,28 +155,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ),
             ),
-
             SignInButton(
               Buttons.Google,
-              onPressed: ()
-              async{
+              onPressed: () async {
                 await FirebaseService().signInwithGoogle();
                 CurrentUser cucheck = CurrentUser();
                 await cucheck.iscomplieteregis();
-                if (cucheck.checkvalide == true)
-                {
+                if (cucheck.checkvalide == true) {
                   print("there is account");
                   Navigator.pushNamedAndRemoveUntil(
                       context, HomePage.id, (route) => false);
                 } else // go to addtional sign
-                    {
+                {
                   print("no account");
                   Navigator.pushNamedAndRemoveUntil(
                       context, Regisinput.id, (route) => false);
                 }
               },
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
               child: Material(
@@ -202,8 +180,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: ()
-                  {
+                  onPressed: () {
                     Navigator.pushNamed(context, RegistrationScreen.id);
                   },
                   minWidth: 200.0,
@@ -218,7 +195,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ],
         ),
       ),
-
     );
   }
 }
