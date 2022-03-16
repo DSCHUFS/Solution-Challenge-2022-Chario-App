@@ -10,11 +10,11 @@ import '../page1/donationask_screen.dart';
 import 'Fc_article.dart';
 
 _launchURL(String url) async {
-  if (await canLaunch(url)) {
+
     await launch(url);
-  } else {
-    throw "could not lunch";
-  }
+  // } else {
+  //   throw "could not lunch";
+  // }
 }
 
 class NoPoverty extends StatefulWidget
@@ -71,8 +71,8 @@ class _MyAppState extends State<NoPoverty>
     return Scaffold(
       appBar: AppBar(
         title: ListTile(
-            trailing: Image.asset("assets/Logo.png",
-                width: 100, height: 50)),
+            trailing: Image.asset("assets/logo_word.png",
+                width: 150, height: 50)),
         // centerTitle: true,
         backgroundColor: mainColor,
       ),
@@ -106,6 +106,7 @@ class _MyAppState extends State<NoPoverty>
                             child: Image.network(
                               snapshot.data!.facDto.fLogo,
                               fit: BoxFit.fitWidth,
+                              height: 100,
                               // fit: BoxFit.fill,
                             ),
 
@@ -114,16 +115,10 @@ class _MyAppState extends State<NoPoverty>
                       ),
                     ),
                     // box and text
-                    Center(
-                      child: SizedBox(
-                        height: 10,
-                        width: 200,
-                        child: Container(color: Colors.white),
-                      ),
-                    ),
+
 
                     Container(
-                      width: 240.0,
+                      width: 200.0,
                       height: 42.0,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24.0),
@@ -208,8 +203,6 @@ class _MyAppState extends State<NoPoverty>
                                 icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
                                 color: isLike? Colors.red:null,
                                 onPressed: () async {
-
-
                                   setState(()  {
                                     if (isLike) {
                                       isLike = false;
