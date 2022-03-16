@@ -74,6 +74,7 @@ class _MyAppState extends State<HomePage> {
         automaticallyImplyLeading: false,
         // for custom icon option setting down below
         backgroundColor: TeamColor,
+        // backgroundColor: mainColor,
         title: Row(
           children: [
             Image.asset("assets/logo_char.png", width: 50, height: 50),
@@ -176,234 +177,266 @@ class _MyAppState extends State<HomePage> {
                 colors: [gradientStartColor, gradientEndColor],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [0.3, 0.7]
-            )
-        ),
+                stops: [0.3, 0.7])),
         child: SafeArea(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
               SizedBox(height: 10),
-              Container(
-                child: Wrap(
-                    alignment: WrapAlignment.center,
-                    spacing: 30.0,
-                    runSpacing: 20.0,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '1';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[0], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '2';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[1], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '3';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[2], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '4';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[3], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '6';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[4], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '10';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(
-                                images[5],
-                                fit: BoxFit.cover,
-                              )),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '13';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[6], fit: BoxFit.cover)),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            current_cate = '14';
-                            CateFeJdata = fetchCateFeJdata(current_cate!);
-                          });
-                        },
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Container(
-                              width: 70,
-                              child: Image.asset(images[7], fit: BoxFit.cover)),
-                        ),
-                      ),
-                    ]),
-              ),
-              FutureBuilder<CateFdata>(
-                future: CateFeJdata,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Flexible(
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: snapshot.data!.count,
-                          itemBuilder: (context, int index) {
-                            print(
-                                'index는 ${snapshot.data!.data[index].facility.fId}');
-                            return Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Card(
-                                color: Colors.white,
-                                shape: RoundedRectangleBorder(
-                                  //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-                                  side: BorderSide(
-                                      color: (goals_color[current_cate!])!,
-                                      width: 0.5),
 
-                                  borderRadius: BorderRadius.circular(20.0),
+              Container(
+                height: 180,
+                        child: Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: 30.0,
+                            runSpacing: 20.0,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '1';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[0],
+                                          fit: BoxFit.cover)),
                                 ),
-                                //shadowColor: goals_color[current_cate!],
-                                elevation: 11.0,
-                                child: Column(children: [
-                                  Wrap(
-                                      alignment: WrapAlignment.center,
-                                      spacing: 20.0,
-                                      runSpacing: 20.0,
-                                      children: [
-                                        Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: <Widget>[
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Container(
-                                                child: ContentHome(
-                                                    fc_id: (snapshot
-                                                            .data!
-                                                            .data[index]
-                                                            .facility
-                                                            .fId)
-                                                        .toString()),
-                                              ),
-                                            ]),
-                                        ListTile(
-                                          leading: ClipOval(
-                                              clipper: MyClipper(),
-                                              child: Image.network(
-                                                snapshot.data!.data[index]
-                                                    .facility.fLogo,
-                                                width: 100,
-                                                height: 100,
-                                              )),
-                                          title: Text(
-                                            snapshot.data!.data[index].facility
-                                                .fName,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20),
-                                          ),
-                                          trailing: InkWell(
-                                            onTap: () {
-                                              Navigator.pushNamed(
-                                                  context, NoPoverty.id,
-                                                  arguments: (snapshot
-                                                          .data!
-                                                          .data[index]
-                                                          .facility
-                                                          .fId)
-                                                      .toString());
-                                            },
-                                            child:
-                                                Icon(Icons.arrow_forward_ios),
-                                          ),
-                                        ),
-                                      ])
-                                ]),
                               ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '2';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[1],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '3';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[2],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '4';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[3],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '6';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[4],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '10';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(
+                                        images[5],
+                                        fit: BoxFit.cover,
+                                      )),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '13';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[6],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    current_cate = '14';
+                                    CateFeJdata =
+                                        fetchCateFeJdata(current_cate!);
+                                  });
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Container(
+                                      width: 70,
+                                      child: Image.asset(images[7],
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                            ]),
+                    ),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                        height: 100,
+                        child: FutureBuilder<CateFdata>(
+                          future: CateFeJdata,
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+                              return Flexible(
+                                child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: snapshot.data!.count,
+                                    itemBuilder: (context, int index) {
+                                      print(
+                                          'index는 ${snapshot.data!.data[index].facility.fId}');
+                                      return Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Card(
+                                          color: Colors.white,
+                                          shape: RoundedRectangleBorder(
+                                            //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
+                                            side: BorderSide(
+                                                color: (goals_color[
+                                                    current_cate!])!,
+                                                width: 0.5),
+
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                          ),
+                                          //shadowColor: goals_color[current_cate!],
+                                          elevation: 11.0,
+                                          child: Column(children: [
+                                            Wrap(
+                                                alignment: WrapAlignment.center,
+                                                spacing: 20.0,
+                                                runSpacing: 20.0,
+                                                children: [
+                                                  Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceEvenly,
+                                                      children: <Widget>[
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Container(
+                                                          child: ContentHome(
+                                                              fc_id: (snapshot
+                                                                      .data!
+                                                                      .data[
+                                                                          index]
+                                                                      .facility
+                                                                      .fId)
+                                                                  .toString()),
+                                                        ),
+                                                      ]),
+                                                  ListTile(
+                                                    leading: ClipOval(
+                                                        clipper: MyClipper(),
+                                                        child: Image.network(
+                                                          snapshot
+                                                              .data!
+                                                              .data[index]
+                                                              .facility
+                                                              .fLogo,
+                                                          width: 100,
+                                                          height: 100,
+                                                        )),
+                                                    title: Text(
+                                                      snapshot.data!.data[index]
+                                                          .facility.fName,
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 20),
+                                                    ),
+                                                    trailing: InkWell(
+                                                      onTap: () {
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            NoPoverty.id,
+                                                            arguments: (snapshot
+                                                                    .data!
+                                                                    .data[index]
+                                                                    .facility
+                                                                    .fId)
+                                                                .toString());
+                                                      },
+                                                      child: Icon(Icons
+                                                          .arrow_forward_ios),
+                                                    ),
+                                                  ),
+                                                ])
+                                          ]),
+                                        ),
+                                      );
+                                    }),
+                              );
+                            } else if (snapshot.hasError) {
+                              return Text('${snapshot.error}');
+                            }
+                            // By default, show a loading spinner.
+                            return const CircularProgressIndicator(
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.white),
                             );
-                          }),
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  // By default, show a loading spinner.
-                  return const CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  );
-                },
-              ),
-            ])),
-      ),
-    );
+                          },
+                        ),
+                      ),
+                    ),
+                  ])),
+        ),
+      );
+
   }
 }
 
@@ -436,8 +469,8 @@ class _ContentHomeState extends State<ContentHome> {
                   GridView.count(
                     shrinkWrap: true,
                     crossAxisCount: 2,
-                    children: List.generate(snapshot.data!.contentsList.length,
-                        (index) {
+                    children: List.generate(snapshot.data!.contentsList.length, (index)
+                    {
                       return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
