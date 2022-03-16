@@ -10,11 +10,9 @@ import '../page1/donationask_screen.dart';
 import 'Fc_article.dart';
 
 _launchURL(String url) async {
-  if (await canLaunch(url)) {
+
     await launch(url);
-  } else {
-    throw "could not launch";
-  }
+
 }
 
 class NoPoverty extends StatefulWidget
@@ -88,18 +86,8 @@ class _MyAppState extends State<NoPoverty>
               // f_name_don = snapshot.data!.data[widget.fc_id].f_name;
               return Container(child: Column(
                   children:[
-                    Center(
-                      child: SizedBox(
-                        height: 10,
-                        width: 200,
-                        child: Container(color: Colors.white),
-                      ),
-                    ),
                     // logo
-                    Expanded(
-                      child: Container(
-                        child: Container(
-                          child: InkWell(
+                   InkWell(
                             onTap: () {
                               _launchURL(snapshot.data!.facDto.fHome);
                             },
@@ -110,17 +98,10 @@ class _MyAppState extends State<NoPoverty>
                             ),
 
                           ),
-                        ),
-                      ),
-                    ),
+
+
                     // box and text
-                    Center(
-                      child: SizedBox(
-                        height: 10,
-                        width: 200,
-                        child: Container(color: Colors.white),
-                      ),
-                    ),
+
 
                     Container(
                       width: 240.0,
@@ -130,27 +111,24 @@ class _MyAppState extends State<NoPoverty>
                         color: mainColor,
                       ),
                       child: Center(
-                        child: Text(
-                          snapshot.data!.facDto.fName,
-                          style: TextStyle(
-                            fontFamily: 'Arial',
-                            fontSize: 18,
-                            color: Colors.white,
-                            height: 1,
-                          ),
-                          textAlign: TextAlign.center,
+                        child:
+                              Text(
+                              snapshot.data!.facDto.fName,
+                              style: TextStyle(
+                                fontFamily: 'Arial',
+                                fontSize: 18,
+                                color: Colors.white,
+                                height: 1,
+                              ),
+                              textAlign: TextAlign.center,
                         ),
+
+
+
                       ),
                     ),
-
-                    Center(
-                      child: SizedBox(
-                        height: 10,
-                        width: 200,
-                        child: Container(color: Colors.white),
-                      ),
-                    ),
-
+                    Padding(padding: EdgeInsets.all(10)),
+                    Text(snapshot.data!.facDto.fIntro,style: TextStyle(fontSize: 18),),
                     CarouselSlider(
                       options: CarouselOptions(
                         enlargeCenterPage: false,
@@ -192,71 +170,9 @@ class _MyAppState extends State<NoPoverty>
                     ),
 
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                          children:[
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: mainColor, // background
-                                onPrimary: Colors.white, // foreground
-                              ),
-                              onPressed: () {
-                                _launchURL(snapshot.data!.facDto.fPay);
-                                Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
-                              },
-                              child: const Text('donation', style: TextStyle(fontSize: 20)),
-                            ),
 
-                            // RaisedButton(
-                            //   onPressed: () {
-                            //     _launchURL(snapshot.data!.facDto.fPay);
-                            //     Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
-                            //   },
-                            //   child: const Text('donation', style: TextStyle(fontSize: 20)),
-                            //   color: mainColor,
-                            //   textColor: Colors.white,
-                            //   elevation: 5,
-                            // ),
-
-                            IconButton(
-                                icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
-                                color: isLike? Colors.red:null,
-                                onPressed: () async {
-                                  setState(()  {
-                                    if (isLike) {
-                                      isLike = false;
-                                    } else {
-                                      isLike = true;
-                                    }
-                                  });
-                                  print(isLike);
-                                  if (isLike){
-                                    String LikeId = (widget.fc_id).toString();
-                                    final UserModel? like = await createUser(LikeId);
-                                    setState(() {
-                                      _like = like!;
-                                    });
-                                    print("dlqhk~~");
-                                  }else{
-                                    String LikeId = (widget.fc_id).toString();
-                                    final UserModel? delete = await deleteUser(LikeId);
-                                    setState(() {
-                                      _delete = delete!;
-                                    });
-                                  }
-
-                                  print(_like?.status);print(_delete?.status);
-
-
-                                }
-                            ),
-
-
-                          ]
-
-
-                    ),
                   ]
+
               ),);
             } else if (snapshot.hasError) {
               return Text('${snapshot.error}');
@@ -267,6 +183,66 @@ class _MyAppState extends State<NoPoverty>
           },
         ),
 
+      ),
+      bottomNavigationBar:
+      FutureBuilder<ContentsApi>(
+        future: ContentFcJdata,
+        builder: (context, snapshot) {
+
+        if (snapshot.hasData) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children:[
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: mainColor, // background
+                  onPrimary: Colors.white, // foreground
+                ),
+                onPressed: () {
+                  _launchURL(snapshot.data!.facDto.fPay);
+                  Navigator.pushNamed(context, Donationask.id,arguments: snapshot.data!.facDto.fName);
+                },
+                child: const Text('donation', style: TextStyle(fontSize: 20)),
+              ),
+              IconButton(
+                  icon: Icon(isLike? Icons.favorite : Icons.favorite_border),
+                  color: isLike? Colors.red:null,
+                  onPressed: () async {
+                    setState(()  {
+                      if (isLike) {
+                        isLike = false;
+                      } else {
+                        isLike = true;
+                      }
+                    });
+                    print(isLike);
+                    if (isLike){
+                      String LikeId = (widget.fc_id).toString();
+                      final UserModel? like = await createUser(LikeId);
+                      setState(() {
+                        _like = like!;
+                      });
+                      print("dlqhk~~");
+                    }else{
+                      String LikeId = (widget.fc_id).toString();
+                      final UserModel? delete = await deleteUser(LikeId);
+                      setState(() {
+                        _delete = delete!;
+                      });
+                    }
+
+                    print(_like?.status);print(_delete?.status);
+
+
+                  }
+              ),
+            ]
+        );}
+          else if (snapshot.hasError) {
+          return Text('${snapshot.error}');
+          }
+          return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
+        }
       ),
     );
 
