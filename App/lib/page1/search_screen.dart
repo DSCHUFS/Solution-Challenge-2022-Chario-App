@@ -30,6 +30,8 @@ class _SearchScreenState extends State<SearchScreen> {
         _searchText = _filter.text;
         if(_searchText != ""){
           SearchResult = fetchSearchdata(_searchText);
+        }else{
+          SearchResult = fetchSearchdata(_searchText);
         }
 
       });
