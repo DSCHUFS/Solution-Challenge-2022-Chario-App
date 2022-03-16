@@ -24,89 +24,200 @@ class _SearchScreenState extends State<SearchScreen> {
   Future<FcJdata>? SearchResult;
   FocusNode focusNode = FocusNode();
   String _searchText = "";
+
   _SearchScreenState(){
-    _filter.addListener(() {
+    _filter.addListener(()
+    {
       setState(() {
         _searchText = _filter.text;
         if(_searchText != ""){
           SearchResult = fetchSearchdata(_searchText);
         }
+        else{
+          SearchResult = fetchSearchdata(_searchText);
+        }
 
-      });
-    });}
-  Widget _buildBody(BuildContext context){
-    return FutureBuilder<FcJdata>(
+      }
+      );
+    }
+    );
+  }
+
+  Widget _buildBody(BuildContext context)
+  {
+
+    return
+      FutureBuilder<FcJdata>(
         future: SearchResult,
         builder:(context,snapshot)
         {
-          if (snapshot.hasData == null) {
-
+          if (snapshot.hasData == null)
+          {
             _scaffoldKey.currentState?.showSnackBar(snackBar);
-
           }
-          return Expanded(
-           child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: snapshot.data!.count,
-                itemBuilder: (context, int index) {
-                  return Card(
-                      color:cardColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      )
+            return Expanded(
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: snapshot.data!.count,
+                    itemBuilder: (context, int index) {
+                      return Card(
+                          color: cardColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          )
 
-                      ,elevation:11.0,
-                      child: Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 20.0,
-                          runSpacing: 20.0, children: [
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Row(
-                                children: [
-                                  ClipOval(
-                                      clipper: MyClipper(),
-                                      child: Image.network(
-                                        snapshot.data!.data[index].f_logo,
-                                        width: 100,
-                                        height: 100,
-                                      )),
-                                  Text(
-                                    snapshot.data!.data[index].f_name,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
+                          , elevation: 11.0,
+                          child: Wrap(
+                              alignment: WrapAlignment.center,
+                              spacing: 20.0,
+                              runSpacing: 20.0, children: [
+                            Column(
+                                mainAxisAlignment: MainAxisAlignment
+                                    .spaceEvenly,
+                                children: <Widget>[
+                                  Row(
+                                    children: [
+                                      ClipOval(
+                                          clipper: MyClipper(),
+                                          child: Image.network(
+                                            snapshot.data!.data[index].f_logo,
+                                            width: 100,
+                                            height: 100,
+                                          )),
+                                      Text(
+                                        snapshot.data!.data[index].f_name,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20),
+                                      ),
+                                      IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NoPoverty(
+                                                        fc_id: (snapshot.data!
+                                                            .data[index].f_id)
+                                                            .toString(),
+                                                      )));
+                                        },
+                                        icon: Icon(Icons.arrow_forward_ios),
+
+
+                                      ),
+                                    ],
                                   ),
-                                  IconButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  NoPoverty(
-                                                    fc_id: (snapshot.data!.data[index].f_id).toString(),
-                                                  )));
-                                    },
-                                    icon: Icon(Icons.arrow_forward_ios),
-
+                                  Container(
+                                    child: ContentHome(
+                                        fc_id: (snapshot.data!.data[index].f_id)
+                                            .toString()
+                                    ),
 
                                   ),
-                                ],
-                              ),
-                              Container (
-                                child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
-                                ),
+                                ]),
 
-                              ),
-                            ]),
+                          ]));
+                    }
+                )
+            );
 
-                      ]));
-                }
-            )
-          );
-        });
+        }, // builder
+      );
   }
+
+
+
+
+  // Widget _buildBody(BuildContext context)
+  // {
+  //   return
+  //     FutureBuilder<FcJdata>(
+  //       future: SearchResult,
+  //       builder:(context,snapshot) {
+  //         if (snapshot.hasData == null)
+  //         {
+  //            _scaffoldKey.currentState?.showSnackBar(snackBar);
+  //
+  //           return Expanded(
+  //               child: ListView.builder(
+  //                   shrinkWrap: true,
+  //                   itemCount: snapshot.data!.count,
+  //                   itemBuilder: (context, int index) {
+  //                     return Card(
+  //                         color: cardColor,
+  //                         shape: RoundedRectangleBorder(
+  //                           borderRadius: BorderRadius.circular(20.0),
+  //                         )
+  //
+  //                         , elevation: 11.0,
+  //                         child: Wrap(
+  //                             alignment: WrapAlignment.center,
+  //                             spacing: 20.0,
+  //                             runSpacing: 20.0, children: [
+  //                           Column(
+  //                               mainAxisAlignment: MainAxisAlignment
+  //                                   .spaceEvenly,
+  //                               children: <Widget>[
+  //                                 Row(
+  //                                   children: [
+  //                                     ClipOval(
+  //                                         clipper: MyClipper(),
+  //                                         child: Image.network(
+  //                                           snapshot.data!.data[index].f_logo,
+  //                                           width: 100,
+  //                                           height: 100,
+  //                                         )),
+  //                                     Text(
+  //                                       snapshot.data!.data[index].f_name,
+  //                                       style: TextStyle(
+  //                                           fontWeight: FontWeight.bold,
+  //                                           fontSize: 20),
+  //                                     ),
+  //                                     IconButton(
+  //                                       onPressed: () {
+  //                                         Navigator.push(
+  //                                             context,
+  //                                             MaterialPageRoute(
+  //                                                 builder: (context) =>
+  //                                                     NoPoverty(
+  //                                                       fc_id: (snapshot.data!
+  //                                                           .data[index].f_id)
+  //                                                           .toString(),
+  //                                                     )));
+  //                                       },
+  //                                       icon: Icon(Icons.arrow_forward_ios),
+  //
+  //
+  //                                     ),
+  //                                   ],
+  //                                 ),
+  //                                 Container(
+  //                                   child: ContentHome(
+  //                                       fc_id: (snapshot.data!.data[index].f_id)
+  //                                           .toString()
+  //                                   ),
+  //
+  //                                 ),
+  //                               ]),
+  //
+  //                         ]));
+  //                   }
+  //               )
+  //           );
+  //         }  // if line
+  //         else if (snapshot.data == null) {
+  //           return Center(
+  //             child: Text(' '),
+  //           );
+  //         }
+  //         return const CircularProgressIndicator(
+  //           valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+  //         );
+  //
+  //         }, // builder
+  //   );
+  // }
 
 
 
@@ -120,7 +231,6 @@ class _SearchScreenState extends State<SearchScreen> {
         children: <Widget>[
           Padding(
             padding:EdgeInsets.all(10),
-
           ),
           Container(
               color: mainColor,
@@ -137,11 +247,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     decoration: InputDecoration(
                       filled:true,
                       fillColor: Colors.white12,
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color:Colors.white60,
-                        size:20,
-                      ),
+                      prefixIcon: Icon(Icons.search, color:Colors.white60, size:20,),
                       suffixIcon: focusNode.hasFocus
                           ? IconButton(
                         icon: Icon(
@@ -150,11 +256,8 @@ class _SearchScreenState extends State<SearchScreen> {
                           color: Colors.white,
                         ), onPressed: () { setState(() {
                         _filter.clear();
-                        _searchText = "";
+                        _searchText = " ";
                       }); },
-
-
-
                       ) : Container(),
                       hintText: '검색',
                       labelStyle:TextStyle(color:Colors.white),
@@ -177,7 +280,10 @@ class _SearchScreenState extends State<SearchScreen> {
 
                 ],
               )
-          ), _buildBody(context)
+          ),
+
+            _buildBody(context),
+
         ],
       ),
     );
