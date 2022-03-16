@@ -7,7 +7,6 @@ class DonfcdetailScreen extends StatefulWidget {
   static const String id = "donationfcdetail";
 
   const DonfcdetailScreen({Key? key,required this.arguments}) : super(key: key);
-
   final Map arguments;
 
   @override
@@ -18,8 +17,6 @@ class _DonfcdetailScreenState extends State<DonfcdetailScreen>
 {
   @override
   Widget build(BuildContext context) {
-
-    // final arguments = ModalRoute.of(context)?.settings.arguments as Map;
     return Scaffold(
       body:SafeArea(
 
@@ -75,5 +72,7 @@ class _DonfcdetailScreenState extends State<DonfcdetailScreen>
     );
   }
 }
+
+
 
 

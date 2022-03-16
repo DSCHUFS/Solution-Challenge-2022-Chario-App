@@ -9,3 +9,4 @@ const sdg6 = const Color(0xff26BDE2);
 const sdg10 = const Color(0xffDD1367);
 const sdg13 = const Color(0xff3F7E44);
 const sdg14 = const Color(0xff56C02B);
+const teamColor = const Color(0xff3EB489);

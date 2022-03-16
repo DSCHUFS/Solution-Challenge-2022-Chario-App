@@ -240,19 +240,6 @@ class _RegistrationScreenState extends State<RegistrationScreen>
               },
             ),
 
-
-
-
-          SizedBox(
-            width: double.infinity,
-            height:50,
-            child: ElevatedButton(
-              child:Text('nexttemp'),
-              onPressed: (){
-                Navigator.pushNamedAndRemoveUntil(context,Regisinput.id, (route) => false);
-                },
-            ),
-          ),
           ],
         ),
 

@@ -18,7 +18,6 @@ Future <ContentsApi>fetchContJdata(String fcId)async {
   {
 
     String jsonData = response.body;
-    print('나왔다 얍 ${jsonData}');
     return ContentsApi.fromJson(jsonDecode(jsonData));
   } else {
     // If the server did not return a 200 OK response,
@@ -39,7 +38,7 @@ class ContentsApi {
   final List<ContentsList> contentsList;
 
   factory ContentsApi.fromJson(Map<String, dynamic> json)
-  {  var list = json['contentsList'] as List;
+  {
     return ContentsApi(
       facDto: FacDto.fromJson(json["facDto"]),
     contentsList:List<ContentsList>.from(json["contentsList"].map((x) => ContentsList.fromJson(x))));}

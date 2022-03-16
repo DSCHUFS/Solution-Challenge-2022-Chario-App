@@ -43,17 +43,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               tag: 'logo',
               child: Container(
                   child: Row(children: <Widget>[
-                Flexible(
-                  flex: 1,
-                  child: Container(
-                    child: Image.asset('assets/logo_char.png'),
-                  ),
-                ),
-                Flexible(
-                  flex: 2,
-                  child: Container(child: Image.asset('assets/logo_word.png')),
-                ),
-              ])),
+                    Flexible(
+                      flex: 1,
+                      child: Container(
+                        child: Image.asset('assets/logo_char.png'),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 2,
+                      child: Container(child: Image.asset('assets/logo_word.png')),
+                    ),
+                  ])),
             ),
             SizedBox(
               height: 48.0,
@@ -65,7 +65,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               decoration: InputDecoration(
                 hintText: 'ID:example@gmail.com',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
@@ -90,7 +90,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               decoration: InputDecoration(
                 hintText: 'PW',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
@@ -134,7 +134,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.pushNamedAndRemoveUntil(
                               context, HomePage.id, (route) => false);
                         } else // go to addtional sign
-                        {
+                            {
                           print("no account");
                           Navigator.pushNamedAndRemoveUntil(
                               context, Regisinput.id, (route) => false);
@@ -166,7 +166,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   Navigator.pushNamedAndRemoveUntil(
                       context, HomePage.id, (route) => false);
                 } else // go to addtional sign
-                {
+                    {
                   print("no account");
                   Navigator.pushNamedAndRemoveUntil(
                       context, Regisinput.id, (route) => false);
