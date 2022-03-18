@@ -172,12 +172,12 @@ class _MyAppState extends State<HomePage> {
       ),
       //////////////////////////////////////////////////////////////////////////////////////////////////
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.3, 0.7])),
+        // decoration: BoxDecoration(
+        //     gradient: LinearGradient(
+        //         colors: [gradientStartColor, gradientEndColor],
+        //         begin: Alignment.topCenter,
+        //         end: Alignment.bottomCenter,
+        //         stops: [0.3, 0.7])),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -185,143 +185,31 @@ class _MyAppState extends State<HomePage> {
               SizedBox(height: 10),
 
               Container(
-                height: 180,
-                        child: Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 30.0,
-                            runSpacing: 20.0,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '1';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
+                height: 115,
+                        child:
+                        ListView.separated(
+                              padding: const EdgeInsets.all(1),
+                              itemCount: 8,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context,index){
+                              return
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        current_cate = (index+1).toString() ;
+                                          CateFeJdata = fetchCateFeJdata(current_cate!);});},
+                                  child:
+                                  ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[0],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '2';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[1],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '3';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[2],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '4';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[3],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '6';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[4],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '10';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(
-                                        images[5],
-                                        fit: BoxFit.cover,
-                                      )),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '13';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[6],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '14';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[7],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                            ]),
+                                      width: 100,
+                                      child: Image.asset(images[index], fit: BoxFit.cover)),),),
+                                );
+                              },
+                          separatorBuilder: (BuildContext context,int index) =>const Divider(),
+                            ),
                     ),
                     Flexible(
                       fit: FlexFit.tight,
