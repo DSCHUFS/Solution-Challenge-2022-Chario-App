@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_try/color.dart';
 import '../api/Fcapi.dart';
@@ -25,12 +24,16 @@ class _SearchScreenState extends State<SearchScreen> {
   FocusNode focusNode = FocusNode();
   String _searchText = "";
   _SearchScreenState(){
-    _filter.addListener(() {
+    _filter.addListener(()
+    {
       setState(() {
         _searchText = _filter.text;
-        if(_searchText != ""){
+        if(_searchText != "")
+        {
           SearchResult = fetchSearchdata(_searchText);
-        }else{
+        }
+        else
+        {
           SearchResult = fetchSearchdata(_searchText);
         }
 
