@@ -235,8 +235,9 @@ class _MyAppState extends State<HomePage> {
                                         child: Card(
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
-                                            side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
+                                            // side: BorderSide(width: 0.5),
                                             borderRadius: BorderRadius.circular(30.0),),
+                                            shadowColor: goals_color[current_cate!],
                                           elevation: 11.0,
                                           child:
                                           Column(
