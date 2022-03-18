@@ -328,36 +328,33 @@ class _ContentHomeState extends State<ContentHome> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             try {
-              return Column(
-                children: [
-                  Container(
-                    decoration:
-                    BoxDecoration
-                      (
-                      // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
-                      ),
-                    child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+              return
+                Column(
+                    children: [
+                  Stack(
+                    children: <Widget>
+                    [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
+                        child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),
+                            ),
 
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
-                              child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                          child :Text(
+                            snapshot.data!.contentsList[0].title,
+                            style:
+                            TextStyle(fontFamily: 'Ubuntu', fontSize: 14,color: Colors.white),
+                          ),
+                        ),
+                    ],),
 
-                            Text(
-                              snapshot.data!.contentsList[0].title,
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 12),
-                            )
-                          ]
-                    ),
-                  ),
                   Container(
                     alignment: Alignment.bottomRight,
-                    child: Text('Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
+                    child: Text(
+                      'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                     ),
                   ),
                 ],
