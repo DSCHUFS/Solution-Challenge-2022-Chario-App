@@ -6,8 +6,12 @@ import 'package:flutter_try/page1/search_screen.dart';
 import '../api/CategoryfcApi.dart';
 import '../api/ContentsApi.dart';
 import '../color.dart';
+
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
+
+
+
 import '../constants.dart';
 import 'donpersonal_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
@@ -70,10 +74,11 @@ class _MyAppState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).primaryColor,
         // for custom icon option setting down below
-        backgroundColor: TeamColor,
         // backgroundColor: mainColor,
         title: Row(
           children: [
@@ -171,21 +176,20 @@ class _MyAppState extends State<HomePage> {
         ),
       ),
       //////////////////////////////////////////////////////////////////////////////////////////////////
-      body: Container(
-        // decoration: BoxDecoration(
-        //     gradient: LinearGradient(
-        //         colors: [gradientStartColor, gradientEndColor],
-        //         begin: Alignment.topCenter,
-        //         end: Alignment.bottomCenter,
-        //         stops: [0.3, 0.7])),
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      body:
+      Container
+        (
+        decoration:
+        BoxDecoration(
+            // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
+            ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SizedBox(height: 10),
-
+              SizedBox(height: 20),
               Container(
-                height: 115,
+                        height: 115,
                         child:
                         ListView.separated(
                               padding: const EdgeInsets.all(1),
@@ -211,6 +215,7 @@ class _MyAppState extends State<HomePage> {
                           separatorBuilder: (BuildContext context,int index) =>const Divider(),
                             ),
                     ),
+
                     Flexible(
                       fit: FlexFit.tight,
                       child: Container(
@@ -220,62 +225,33 @@ class _MyAppState extends State<HomePage> {
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
                               return Flexible(
-                                child: ListView.builder(
+                                    child: ListView.builder(
                                     shrinkWrap: true,
                                     itemCount: snapshot.data!.count,
                                     itemBuilder: (context, int index) {
-                                      print(
-                                          'index는 ${snapshot.data!.data[index].facility.fId}');
-                                      return Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                      print('index는 ${snapshot.data!.data[index].facility.fId}');
+
+                                      return Padding(padding: const EdgeInsets.all(8.0),
                                         child: Card(
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
-                                            //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-                                            side: BorderSide(
-                                                color: (goals_color[
-                                                    current_cate!])!,
-                                                width: 0.5),
-
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                          ),
-                                          //shadowColor: goals_color[current_cate!],
+                                            side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
+                                            borderRadius: BorderRadius.circular(30.0),),
                                           elevation: 11.0,
-                                          child: Column(children: [
-                                            Wrap(
-                                                alignment: WrapAlignment.center,
-                                                spacing: 20.0,
-                                                runSpacing: 20.0,
-                                                children: [
-                                                  Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceEvenly,
-                                                      children: <Widget>[
-                                                        SizedBox(
-                                                          height: 5,
-                                                        ),
-                                                        Container(
-                                                          child: ContentHome(
-                                                              fc_id: (snapshot
-                                                                      .data!
-                                                                      .data[
-                                                                          index]
-                                                                      .facility
-                                                                      .fId)
-                                                                  .toString()),
-                                                        ),
-                                                      ]),
+                                          child:
+                                          Column(
+                                              children: [
+                                                 Wrap(
+                                                  alignment: WrapAlignment.center, spacing: 20.0, runSpacing: 20.0,
+                                                  children: [
+
+                                                  ContentHome(fc_id: (snapshot.data!.data[index].facility.fId.toString()),),
+
                                                   ListTile(
                                                     leading: ClipOval(
                                                         clipper: MyClipper(),
                                                         child: Image.network(
-                                                          snapshot
-                                                              .data!
-                                                              .data[index]
-                                                              .facility
-                                                              .fLogo,
+                                                          snapshot.data!.data[index].facility.fLogo,
                                                           width: 100,
                                                           height: 100,
                                                         )),
@@ -321,7 +297,8 @@ class _MyAppState extends State<HomePage> {
                         ),
                       ),
                     ),
-                  ])),
+                  ]
+          ),
         ),
       );
 
@@ -353,32 +330,33 @@ class _ContentHomeState extends State<ContentHome> {
             try {
               return Column(
                 children: [
-                  SizedBox(height: 5),
-                  GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 2,
-                    children: List.generate(snapshot.data!.contentsList.length, (index)
-                    {
-                      return Column(
+                  Container(
+                    decoration:
+                    BoxDecoration
+                      (
+                      // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
+                      ),
+                    child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Image.network(
-                              snapshot.data!.contentsList[index].image,
-                              fit: BoxFit.fitWidth,
-                            ),
+
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
+                              child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),),
+
                             Text(
-                              snapshot.data!.contentsList[index].title,
+                              snapshot.data!.contentsList[0].title,
                               style:
                                   TextStyle(fontFamily: 'Ubuntu', fontSize: 12),
                             )
-                          ]);
-                    }),
+                          ]
+                    ),
                   ),
                   Container(
                     alignment: Alignment.bottomRight,
-                    child: Text(
-                      'Start Donate :' +
-                          '  ${snapshot.data!.facDto.fMinimal}     ',
+                    child: Text('Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
                       style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
                     ),
                   ),
