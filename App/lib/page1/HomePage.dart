@@ -121,7 +121,7 @@ class _MyAppState extends State<HomePage> {
                         print('press details');
                       },
                       decoration: BoxDecoration(
-                          // color:
+                        // color:
                           color: mainColor,
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40),
@@ -177,127 +177,127 @@ class _MyAppState extends State<HomePage> {
         (
         decoration:
         BoxDecoration(
-            // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
+          // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
             color: Colors.white,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
-            ),
+        ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               SizedBox(height: 20),
               Container(
-                        height: 115,
-                        child:
-                        ListView.separated(
-                              padding: const EdgeInsets.all(1),
-                              itemCount: 8,
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (context,index){
-                              return
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        current_cate = (index+1).toString() ;
-                                          CateFeJdata = fetchCateFeJdata(current_cate!);});},
-                                  child:
-                                  ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 100,
-                                      child: Image.asset(images[index], fit: BoxFit.cover)),),),
-                                );
-                              },
-                          separatorBuilder: (BuildContext context,int index) =>const Divider(),
-                            ),
-                    ),
+                height: 115,
+                child:
+                ListView.separated(
+                  padding: const EdgeInsets.all(1),
+                  itemCount: 8,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        child: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              current_cate = (index+1).toString() ;
+                              CateFeJdata = fetchCateFeJdata(current_cate!);});},
+                          child:
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                                width: 100,
+                                child: Image.asset(images[index], fit: BoxFit.cover)),),),
+                      );
+                  },
+                  separatorBuilder: (BuildContext context,int index) =>const Divider(),
+                ),
+              ),
 
-                    Flexible(
-                      fit: FlexFit.tight,
-                      child: Container(
-                        height: 100,
-                        child: FutureBuilder<CateFdata>(
-                          future: CateFeJdata,
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              return Flexible(
-                                    child: ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: snapshot.data!.count,
-                                    itemBuilder: (context, int index) {
-                                      print('index는 ${snapshot.data!.data[index].facility.fId}');
+              Flexible(
+                fit: FlexFit.tight,
+                child: Container(
+                  height: 100,
+                  child: FutureBuilder<CateFdata>(
+                    future: CateFeJdata,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Flexible(
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: snapshot.data!.count,
+                              itemBuilder: (context, int index) {
+                                print('index는 ${snapshot.data!.data[index].facility.fId}');
 
-                                      return Padding(padding: const EdgeInsets.all(8.0),
-                                        child: Card(
-                                          color: Colors.white,
-                                          shape: RoundedRectangleBorder(
-                                            // side: BorderSide(width: 0.5),
-                                            borderRadius: BorderRadius.circular(30.0),),
-                                            shadowColor: goals_color[current_cate!],
-                                          elevation: 11.0,
-                                          child:
-                                          Column(
+                                return Padding(padding: const EdgeInsets.all(8.0),
+                                  child: Card(
+                                    color: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      // side: BorderSide(width: 0.5),
+                                      borderRadius: BorderRadius.circular(30.0),),
+                                    shadowColor: goals_color[current_cate!],
+                                    elevation: 11.0,
+                                    child:
+                                    Column(
+                                        children: [
+                                          Wrap(
+                                              alignment: WrapAlignment.center, spacing: 20.0, runSpacing: 20.0,
                                               children: [
-                                                 Wrap(
-                                                  alignment: WrapAlignment.center, spacing: 20.0, runSpacing: 20.0,
-                                                  children: [
 
-                                                  ContentHome(fc_id: (snapshot.data!.data[index].facility.fId.toString()),),
+                                                ContentHome(fc_id: (snapshot.data!.data[index].facility.fId.toString()),),
 
-                                                  ListTile(
-                                                    leading: ClipOval(
-                                                        clipper: MyClipper(),
-                                                        child: Image.network(
-                                                          snapshot.data!.data[index].facility.fLogo,
-                                                          width: 100,
-                                                          height: 100,
-                                                        )),
-                                                    title: Text(
-                                                      snapshot.data!.data[index]
-                                                          .facility.fName,
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                          fontSize: 20),
-                                                    ),
-                                                    trailing: InkWell(
-                                                      onTap: () {
-                                                        Navigator.pushNamed(
-                                                            context,
-                                                            NoPoverty.id,
-                                                            arguments: (snapshot
-                                                                    .data!
-                                                                    .data[index]
-                                                                    .facility
-                                                                    .fId)
-                                                                .toString());
-                                                      },
-                                                      child: Icon(Icons
-                                                          .arrow_forward_ios),
-                                                    ),
+                                                ListTile(
+                                                  leading: ClipOval(
+                                                      clipper: MyClipper(),
+                                                      child: Image.network(
+                                                        snapshot.data!.data[index].facility.fLogo,
+                                                        width: 100,
+                                                        height: 100,
+                                                      )),
+                                                  title: Text(
+                                                    snapshot.data!.data[index]
+                                                        .facility.fName,
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                        FontWeight.bold,
+                                                        fontSize: 20),
                                                   ),
-                                                ])
-                                          ]),
-                                        ),
-                                      );
-                                    }),
-                              );
-                            } else if (snapshot.hasError) {
-                              return Text('${snapshot.error}');
-                            }
-                            // By default, show a loading spinner.
-                            return const CircularProgressIndicator(
-                              valueColor:
-                                  AlwaysStoppedAnimation<Color>(Colors.white),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ]
-          ),
+                                                  trailing: InkWell(
+                                                    onTap: () {
+                                                      Navigator.pushNamed(
+                                                          context,
+                                                          NoPoverty.id,
+                                                          arguments: (snapshot
+                                                              .data!
+                                                              .data[index]
+                                                              .facility
+                                                              .fId)
+                                                              .toString());
+                                                    },
+                                                    child: Icon(Icons
+                                                        .arrow_forward_ios),
+                                                  ),
+                                                ),
+                                              ])
+                                        ]),
+                                  ),
+                                );
+                              }),
+                        );
+                      } else if (snapshot.hasError) {
+                        return Text('${snapshot.error}');
+                      }
+                      // By default, show a loading spinner.
+                      return const CircularProgressIndicator(
+                        valueColor:
+                        AlwaysStoppedAnimation<Color>(Colors.white),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ]
         ),
-      );
+      ),
+    );
 
   }
 }
@@ -327,35 +327,35 @@ class _ContentHomeState extends State<ContentHome> {
             try {
               return
                 Column(
-                    children: [
-                  Stack(
-                    children: <Widget>
-                    [
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
-                        child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),
-                            ),
+                  children: [
+                    Stack(
+                      children: <Widget>
+                      [
+                        ClipRRect(
+                          borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
+                          child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),
+                        ),
 
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
                           child :Text(
                             snapshot.data!.contentsList[0].title,
                             style:
                             TextStyle(fontFamily: 'Ubuntu', fontSize: 14,color: Colors.white),
                           ),
                         ),
-                    ],),
+                      ],),
 
-                  Container(
-                    alignment: Alignment.bottomRight,
-                    child: Text(
-                      'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                    Container(
+                      alignment: Alignment.bottomRight,
+                      child: Text(
+                        'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                      ),
                     ),
-                  ),
-                ],
-              );
+                  ],
+                );
             } on RangeError {
               print("hey! api!");
             }
