@@ -6,8 +6,12 @@ import 'package:flutter_try/page1/search_screen.dart';
 import '../api/CategoryfcApi.dart';
 import '../api/ContentsApi.dart';
 import '../color.dart';
+
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
+
+
+
 import '../constants.dart';
 import 'donpersonal_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
@@ -70,10 +74,11 @@ class _MyAppState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        backgroundColor: Theme.of(context).primaryColor,
         // for custom icon option setting down below
-        backgroundColor: TeamColor,
         // backgroundColor: mainColor,
         title: Row(
           children: [
@@ -171,158 +176,46 @@ class _MyAppState extends State<HomePage> {
         ),
       ),
       //////////////////////////////////////////////////////////////////////////////////////////////////
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [gradientStartColor, gradientEndColor],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.3, 0.7])),
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      body:
+      Container
+        (
+        decoration:
+        BoxDecoration(
+            // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
+            color: Colors.white,
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
+            ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SizedBox(height: 10),
-
+              SizedBox(height: 20),
               Container(
-                height: 180,
-                        child: Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 30.0,
-                            runSpacing: 20.0,
-                            children: [
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '1';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
+                        height: 115,
+                        child:
+                        ListView.separated(
+                              padding: const EdgeInsets.all(1),
+                              itemCount: 8,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context,index){
+                              return
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        current_cate = (index+1).toString() ;
+                                          CateFeJdata = fetchCateFeJdata(current_cate!);});},
+                                  child:
+                                  ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
                                   child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[0],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '2';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[1],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '3';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[2],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '4';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[3],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '6';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[4],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '10';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(
-                                        images[5],
-                                        fit: BoxFit.cover,
-                                      )),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '13';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[6],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current_cate = '14';
-                                    CateFeJdata =
-                                        fetchCateFeJdata(current_cate!);
-                                  });
-                                },
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Container(
-                                      width: 70,
-                                      child: Image.asset(images[7],
-                                          fit: BoxFit.cover)),
-                                ),
-                              ),
-                            ]),
+                                      width: 100,
+                                      child: Image.asset(images[index], fit: BoxFit.cover)),),),
+                                );
+                              },
+                          separatorBuilder: (BuildContext context,int index) =>const Divider(),
+                            ),
                     ),
+
                     Flexible(
                       fit: FlexFit.tight,
                       child: Container(
@@ -332,62 +225,33 @@ class _MyAppState extends State<HomePage> {
                           builder: (context, snapshot) {
                             if (snapshot.hasData) {
                               return Flexible(
-                                child: ListView.builder(
+                                    child: ListView.builder(
                                     shrinkWrap: true,
                                     itemCount: snapshot.data!.count,
                                     itemBuilder: (context, int index) {
-                                      print(
-                                          'index는 ${snapshot.data!.data[index].facility.fId}');
-                                      return Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                      print('index는 ${snapshot.data!.data[index].facility.fId}');
+
+                                      return Padding(padding: const EdgeInsets.all(8.0),
                                         child: Card(
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
-                                            //side: BorderSide(color: (Colors.blue[300])!, width: 0.5),
-                                            side: BorderSide(
-                                                color: (goals_color[
-                                                    current_cate!])!,
-                                                width: 0.5),
-
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                          ),
-                                          //shadowColor: goals_color[current_cate!],
+                                            side: BorderSide(color: (goals_color[current_cate!])!, width: 0.5),
+                                            borderRadius: BorderRadius.circular(30.0),),
                                           elevation: 11.0,
-                                          child: Column(children: [
-                                            Wrap(
-                                                alignment: WrapAlignment.center,
-                                                spacing: 20.0,
-                                                runSpacing: 20.0,
-                                                children: [
-                                                  Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceEvenly,
-                                                      children: <Widget>[
-                                                        SizedBox(
-                                                          height: 5,
-                                                        ),
-                                                        Container(
-                                                          child: ContentHome(
-                                                              fc_id: (snapshot
-                                                                      .data!
-                                                                      .data[
-                                                                          index]
-                                                                      .facility
-                                                                      .fId)
-                                                                  .toString()),
-                                                        ),
-                                                      ]),
+                                          child:
+                                          Column(
+                                              children: [
+                                                 Wrap(
+                                                  alignment: WrapAlignment.center, spacing: 20.0, runSpacing: 20.0,
+                                                  children: [
+
+                                                  ContentHome(fc_id: (snapshot.data!.data[index].facility.fId.toString()),),
+
                                                   ListTile(
                                                     leading: ClipOval(
                                                         clipper: MyClipper(),
                                                         child: Image.network(
-                                                          snapshot
-                                                              .data!
-                                                              .data[index]
-                                                              .facility
-                                                              .fLogo,
+                                                          snapshot.data!.data[index].facility.fLogo,
                                                           width: 100,
                                                           height: 100,
                                                         )),
@@ -433,7 +297,8 @@ class _MyAppState extends State<HomePage> {
                         ),
                       ),
                     ),
-                  ])),
+                  ]
+          ),
         ),
       );
 
@@ -463,35 +328,33 @@ class _ContentHomeState extends State<ContentHome> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             try {
-              return Column(
-                children: [
-                  SizedBox(height: 5),
-                  GridView.count(
-                    shrinkWrap: true,
-                    crossAxisCount: 2,
-                    children: List.generate(snapshot.data!.contentsList.length, (index)
-                    {
-                      return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.network(
-                              snapshot.data!.contentsList[index].image,
-                              fit: BoxFit.fitWidth,
+              return
+                Column(
+                    children: [
+                  Stack(
+                    children: <Widget>
+                    [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0)),
+                        child:   Image.network(snapshot.data!.contentsList[0].image, fit: BoxFit.cover,),
                             ),
-                            Text(
-                              snapshot.data!.contentsList[index].title,
-                              style:
-                                  TextStyle(fontFamily: 'Ubuntu', fontSize: 12),
-                            )
-                          ]);
-                    }),
-                  ),
+
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                          child :Text(
+                            snapshot.data!.contentsList[0].title,
+                            style:
+                            TextStyle(fontFamily: 'Ubuntu', fontSize: 14,color: Colors.white),
+                          ),
+                        ),
+                    ],),
+
                   Container(
                     alignment: Alignment.bottomRight,
                     child: Text(
-                      'Start Donate :' +
-                          '  ${snapshot.data!.facDto.fMinimal}     ',
-                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 10),
+                      'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
+                      style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
                     ),
                   ),
                 ],

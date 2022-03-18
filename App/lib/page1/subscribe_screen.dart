@@ -5,6 +5,7 @@ import 'package:flutter_try/constants.dart';
 import '../api/Subscribeapi.dart';
 import 'package:flutter_try/detailPage/FcDetail.dart';
 import 'package:flutter_try/page1/HomePage.dart';
+import '../constants.dart';
 
 class SubscribeScreen extends StatefulWidget {
   static const String id = "subscribe_screen";
