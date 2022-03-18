@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_try/color.dart';
 import '../api/Fcapi.dart';
@@ -24,18 +25,11 @@ class _SearchScreenState extends State<SearchScreen> {
   FocusNode focusNode = FocusNode();
   String _searchText = "";
   _SearchScreenState(){
-    _filter.addListener(()
-    {
+    _filter.addListener(() {
       setState(() {
         _searchText = _filter.text;
-        if(_searchText != "")
-        {
-          SearchResult = fetchSearchdata(_searchText);
-        }
-        else
-        {
-          SearchResult = fetchSearchdata(_searchText);
-        }
+        SearchResult = fetchSearchdata(_searchText);
+
 
       });
     });}
@@ -44,71 +38,88 @@ class _SearchScreenState extends State<SearchScreen> {
         future: SearchResult,
         builder:(context,snapshot)
         {
-          if (snapshot.hasData == null) {
-
-            _scaffoldKey.currentState?.showSnackBar(snackBar);
-
+          if(!snapshot.hasData){
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              ),
+            );
           }
+          // if (snapshot.hasData == null) {
+          //
+          //   _scaffoldKey.currentState?.showSnackBar(snackBar);
+          //
+          // }
           return Expanded(
-           child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: snapshot.data!.count,
-                itemBuilder: (context, int index) {
-                  return Card(
-                      color:cardColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      )
+           child:
+           Column(
+             children:[
+               Text('찾고 싶은 기부기관명을 검색해보세요!',style: TextStyle(color: mainColor),),
+               ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: snapshot.data!.count,
+                  itemBuilder: (context, int index) {
+                    return Card(
+                        color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          // side: BorderSide(width: 0.5),
+                          borderRadius: BorderRadius.circular(30.0),),
 
-                      ,elevation:11.0,
-                      child: Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 20.0,
-                          runSpacing: 20.0, children: [
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Row(
-                                children: [
-                                  ClipOval(
-                                      clipper: MyClipper(),
-                                      child: Image.network(
-                                        snapshot.data!.data[index].f_logo,
-                                        width: 100,
-                                        height: 100,
-                                      )),
-                                  Text(
-                                    snapshot.data!.data[index].f_name,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20),
-                                  ),
-                                  IconButton(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  NoPoverty(
-                                                    fc_id: (snapshot.data!.data[index].f_id).toString(),
-                                                  )));
-                                    },
-                                    icon: Icon(Icons.arrow_forward_ios),
+                        elevation: 11.0,
+
+                        child: Wrap(
+                            alignment: WrapAlignment.center,
+                            spacing: 20.0,
+                            runSpacing: 20.0, children: [
+                          Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Row(
+                                  children: [
+                                    ClipOval(
+                                        clipper: MyClipper(),
+                                        child: Image.network(
+                                          snapshot.data!.data[index].f_logo,
+                                          width: 100,
+                                          height: 100,
+                                        )),
+                                    Text(
+                                      snapshot.data!.data[index].f_name,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20),
+                                    ),
+                                    IconButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    NoPoverty(
+                                                      fc_id: (snapshot.data!.data[index].f_id).toString(),
+                                                    )));
+                                      },
+                                      icon: Icon(Icons.arrow_forward_ios),
 
 
-                                  ),
-                                ],
-                              ),
-                              Container (
-                                child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
+                                    ),
+                                  ],
                                 ),
+                                Container (
+                                  child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
+                                  ),
 
-                              ),
-                            ]),
+                                ),
+                              ]),
 
-                      ]));
-                }
-            )
+                        ]));
+                  }
+              ),
+            ]
+           )
+
           );
         });
   }
