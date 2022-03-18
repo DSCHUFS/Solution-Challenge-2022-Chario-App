@@ -47,12 +47,22 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
 
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children:
                     [
-                      Container(width: 350, child : accountField(),),
-                      Container(
-                          child:Text("원",  style: TextStyle(fontWeight: FontWeight.bold),))
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                              child:Text("",  style: TextStyle(fontWeight: FontWeight.bold),))),
+
+                      Expanded(
+                        flex: 9,
+                        child: Container(child : accountField(),
+                      ),
+                      ),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                          child:Text("원",  style: TextStyle(fontWeight: FontWeight.bold),))),
                     ],
                 ),
 
