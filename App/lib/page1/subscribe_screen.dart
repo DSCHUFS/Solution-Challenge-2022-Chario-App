@@ -1,110 +1,203 @@
-import 'dart:core';
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_try/constants.dart';
-import '../api/Subscribeapi.dart';
-import 'package:flutter_try/detailPage/FcDetail.dart';
-import 'package:flutter_try/page1/HomePage.dart';
-import '../constants.dart';
+import 'package:flutter_try/color.dart';
+import '../api/Fcapi.dart';
+import '../api/SearchApi.dart';
+import '../detailPage/FcDetail.dart';
+import '../main.dart';
+import 'HomePage.dart';
 
-class SubscribeScreen extends StatefulWidget {
-  static const String id = "subscribe_screen";
 
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({Key? key}) : super(key: key);
+  static const String id = "search_screen" ;
   @override
-  _SubscribeScreenState createState() => _SubscribeScreenState();
+  _SearchScreenState createState() => _SearchScreenState();
 }
 
-class _SubscribeScreenState extends State<SubscribeScreen> {
-  late Future<DataList> Fcinform;
-  @override
-  void initState()
-  {
-    super.initState();
-    Fcinform = fetchSubJdata();
+class _SearchScreenState extends State<SearchScreen> {
+  final snackBar = SnackBar(
+      content: Text("검색하신 기관을 찾을수없습니다.")
+  );
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  final TextEditingController _filter = TextEditingController();
+  Future<FcJdata>? SearchResult;
+  FocusNode focusNode = FocusNode();
+  String _searchText = "";
+  _SearchScreenState(){
+    _filter.addListener(() {
+      setState(() {
+        _searchText = _filter.text;
+        SearchResult = fetchSearchdata(_searchText);
+
+
+      });
+    });}
+  Widget _buildBody(BuildContext context){
+    return FutureBuilder<FcJdata>(
+        future: SearchResult,
+        builder:(context,snapshot)
+        {
+          if(!snapshot.hasData){
+            return Container(
+              child: Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              ),
+            );
+          }
+          // if (snapshot.hasData == null) {
+          //
+          //   _scaffoldKey.currentState?.showSnackBar(snackBar);
+          //
+          // }
+          return Expanded(
+              child:
+              Column(
+                  children:[
+                    Text('찾고 싶은 기부기관명을 검색해보세요!',style: TextStyle(color: mainColor),),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.count,
+                        itemBuilder: (context, int index) {
+                          return Card(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                // side: BorderSide(width: 0.5),
+                                borderRadius: BorderRadius.circular(30.0),),
+
+                              elevation: 11.0,
+
+                              child: Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: 20.0,
+                                  runSpacing: 20.0, children: [
+                                Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: [
+                                          ClipOval(
+                                              clipper: MyClipper(),
+                                              child: Image.network(
+                                                snapshot.data!.data[index].f_logo,
+                                                width: 100,
+                                                height: 100,
+                                              )),
+                                          Text(
+                                            snapshot.data!.data[index].f_name,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                          IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          NoPoverty(
+                                                            fc_id: (snapshot.data!.data[index].f_id).toString(),
+                                                          )));
+                                            },
+                                            icon: Icon(Icons.arrow_forward_ios),
+
+
+                                          ),
+                                        ],
+                                      ),
+                                      Container (
+                                        child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
+                                        ),
+
+                                      ),
+                                    ]),
+
+                              ]));
+                        }
+                    ),
+                  ]
+              )
+
+          );
+        });
   }
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
-    // const PrimaryColor = const Color(0xFFffa8a8);
     return Scaffold(
-      body: SafeArea(
-        child: FutureBuilder<DataList>(
-            future: Fcinform,
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Column(
+      // key: _scaffoldKey,
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding:EdgeInsets.all(10),
 
-                  children: <Widget>[
-                    Card(
-                        child: ListTile(
-                          leading: InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, HomePage.id);
-                            },
-                            child: Icon(Icons.arrow_back_ios),
-                          ),
-
-                          trailing:
-                              Wrap(
-                                spacing: 12,
-                                children:[
-                                  Text(' your like page '),
-                                  Icon(Icons.favorite, color: TeamColor,)
-                                ],
-                              ),
-                        )
+          ),
+          Container(
+              color: mainColor,
+              padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
+              child:Row(
+                children: <Widget> [
+                  Expanded(flex: 6,child:TextField(
+                    focusNode: focusNode,
+                    style: TextStyle(
+                        fontSize: 15
                     ),
-
-
-                    SizedBox(height: 30),
-
-                    Expanded(
-                      child:
-                      ListView.separated(
-                        itemCount: snapshot.data!.sub_count,
-                        itemBuilder: (BuildContext context, index) {
-                          return ListTile(
-                              leading: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minWidth: 44,
-                                  minHeight: 44,
-                                  maxWidth: 64,
-                                  maxHeight: 64, //
-                                ),
-                                child: Image.network(
-                                    snapshot.data!.sub_list[index].f_logo,
-                                    fit: BoxFit.fill),
-                              ),
-                              title: Center(
-                                child:
-                                Text(snapshot.data!.sub_list[index].f_name),
-                              ),
-                              trailing: InkWell(
-                                onTap: () {
-                                  Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());
-                                },
-                                child:Icon(Icons.favorite , color: TeamColor),
-                              ),
-                            );
-                          },
-                        separatorBuilder: (context, index)
-                        {return Divider(color: Colors.black,);},
+                    autofocus: true,
+                    controller: _filter,
+                    decoration: InputDecoration(
+                      filled:true,
+                      fillColor: Colors.white12,
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color:Colors.white60,
+                        size:20,
                       ),
+                      suffixIcon: focusNode.hasFocus
+                          ? IconButton(
+                        icon: Icon(
+                          Icons.cancel,
+                          size:20,
+                          color: Colors.white,
+                        ), onPressed: () { setState(() {
+                        _filter.clear();
+                        _searchText = "";
+                      }); },
 
+
+
+                      ) : Container(),
+                      hintText: '검색',
+                      labelStyle:TextStyle(color:Colors.white),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius : BorderRadius.all(Radius.circular(10)),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius : BorderRadius.all(Radius.circular(10)),
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.transparent),
+                        borderRadius : BorderRadius.all(Radius.circular(10)),
+                      ),
                     ),
-                  ],
-                );
-              } else if (snapshot.data == null) {
-                return Center(
-                  child: Text('there is no subscribe yet'),
-                );
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              } else {
-                return CircularProgressIndicator();
-              }
-            }),
+                  ),
+
+                  ),
+
+                ],
+              )
+          ), _buildBody(context)
+        ],
       ),
     );
+
+
   }
 }

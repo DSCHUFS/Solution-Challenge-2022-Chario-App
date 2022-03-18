@@ -10,14 +10,10 @@ import '../color.dart';
 import 'package:flutter_try/page1/personal_screen.dart';
 import 'package:flutter_try/page1/subscribe_screen.dart';
 
-
-
-import '../constants.dart';
 import 'donpersonal_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 import 'package:flutter_try/api/Userapi.dart';
 
-import 'package:flutter_try/methods/stacked.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
