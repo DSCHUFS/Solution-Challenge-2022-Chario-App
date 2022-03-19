@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 class _MyAppState extends State<HomePage> {
   late Future<CateFdata> CateFeJdata;
   late Future<UData> Userform;
-  String? current_cate = '4';
+  String? current_cate = '1';
   static const List<String> images = <String>[
     'assets/sdg/goal1.png',
     'assets/sdg/goal2.png',
@@ -37,6 +37,7 @@ class _MyAppState extends State<HomePage> {
     'assets/sdg/goal13.png',
     'assets/sdg/14,15goal.png'
   ];
+  List<String> category = <String>['1','2','3','4','6','10','13','14'];
   static const goals_color = {
     '1': sdg1,
     '2': sdg2,
@@ -199,7 +200,7 @@ class _MyAppState extends State<HomePage> {
                                     onTap: () {
                                       setState(() {
                                         current_cate = (index+1).toString() ;
-                                          CateFeJdata = fetchCateFeJdata(current_cate!);});},
+                                          CateFeJdata = fetchCateFeJdata(category[int.parse(current_cate!)-1]);});},
                                   child:
                                   ClipRRect(
                                   borderRadius: BorderRadius.circular(20),
@@ -233,7 +234,7 @@ class _MyAppState extends State<HomePage> {
                                           shape: RoundedRectangleBorder(
                                             // side: BorderSide(width: 0.5),
                                             borderRadius: BorderRadius.circular(30.0),),
-                                            shadowColor: goals_color[current_cate!],
+                                            shadowColor: goals_color[category[int.parse(current_cate!)-1]],
                                           elevation: 11.0,
                                           child:
                                           Column(
