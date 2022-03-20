@@ -26,8 +26,7 @@ class HomePage extends StatefulWidget {
 class _MyAppState extends State<HomePage> {
   late Future<CateFdata> CateFeJdata;
   late Future<UData> Userform;
-  String? current_cate = '4';
-
+  String? current_cate = '1';
   static const List<String> images = <String>[
     'assets/sdg/goal1.png',
     'assets/sdg/goal2.png',
@@ -38,20 +37,17 @@ class _MyAppState extends State<HomePage> {
     'assets/sdg/goal13.png',
     'assets/sdg/14,15goal.png'
   ];
-
-  static const goals_color =
-  {
-    '1': sdg1, //0
-    '2': sdg2, //1
-    '3': sdg3, //2
-    '4': sdg4, //3
-
+  List<String> category = <String>['1','2','3','4','6','10','13','14'];
+  static const goals_color = {
+    '1': sdg1,
+    '2': sdg2,
+    '3': sdg3,
+    '4': sdg4,
     '6': sdg6,
     '10': sdg10,
     '13': sdg13,
     '14': sdg14
   };
-
   static const List<String> goals = <String>[
     'No Poverty',
     'Zero hunger',
@@ -196,18 +192,15 @@ class _MyAppState extends State<HomePage> {
                   padding: const EdgeInsets.all(1),
                   itemCount: 8,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context,index)
-                  {
+                  itemBuilder: (context,index){
                     return
                       Container(
                         padding: const EdgeInsets.all(10),
                         child: GestureDetector(
                           onTap: () {
-                            setState(()
-                            {
+                            setState(() {
                               current_cate = (index+1).toString() ;
-                              CateFeJdata = fetchCateFeJdata(current_cate!);})
-                            ;},
+                              CateFeJdata = fetchCateFeJdata(category[int.parse(current_cate!)-1]);});},
                           child:
                           ClipRRect(
                             borderRadius: BorderRadius.circular(20),
@@ -241,7 +234,7 @@ class _MyAppState extends State<HomePage> {
                                     shape: RoundedRectangleBorder(
                                       // side: BorderSide(width: 0.5),
                                       borderRadius: BorderRadius.circular(30.0),),
-                                    shadowColor: goals_color[current_cate!],
+                                    shadowColor: goals_color[category[int.parse(current_cate!)-1]],
                                     elevation: 11.0,
                                     child:
                                     Column(

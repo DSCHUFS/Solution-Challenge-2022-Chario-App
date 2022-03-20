@@ -45,13 +45,13 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                           ),
 
                           trailing:
-                              Wrap(
-                                spacing: 12,
-                                children:[
-                                  Text(' your like page '),
-                                  Icon(Icons.favorite, color: TeamColor,)
-                                ],
-                              ),
+                          Wrap(
+                            spacing: 12,
+                            children:[
+                              Text(' your like page '),
+                              Icon(Icons.favorite, color: TeamColor,)
+                            ],
+                          ),
                         )
                     ),
 
@@ -64,29 +64,29 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                         itemCount: snapshot.data!.sub_count,
                         itemBuilder: (BuildContext context, index) {
                           return ListTile(
-                              leading: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                  minWidth: 44,
-                                  minHeight: 44,
-                                  maxWidth: 64,
-                                  maxHeight: 64, //
-                                ),
-                                child: Image.network(
-                                    snapshot.data!.sub_list[index].f_logo,
-                                    fit: BoxFit.fill),
+                            leading: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                minWidth: 44,
+                                minHeight: 44,
+                                maxWidth: 64,
+                                maxHeight: 64, //
                               ),
-                              title: Center(
-                                child:
-                                Text(snapshot.data!.sub_list[index].f_name),
-                              ),
-                              trailing: InkWell(
-                                onTap: () {
-                                  Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());
-                                },
-                                child:Icon(Icons.favorite , color: TeamColor),
-                              ),
-                            );
-                          },
+                              child: Image.network(
+                                  snapshot.data!.sub_list[index].f_logo,
+                                  fit: BoxFit.fill),
+                            ),
+                            title: Center(
+                              child:
+                              Text(snapshot.data!.sub_list[index].f_name),
+                            ),
+                            trailing: InkWell(
+                              onTap: () {
+                                Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());
+                              },
+                              child:Icon(Icons.favorite , color: TeamColor),
+                            ),
+                          );
+                        },
                         separatorBuilder: (context, index)
                         {return Divider(color: Colors.black,);},
                       ),
