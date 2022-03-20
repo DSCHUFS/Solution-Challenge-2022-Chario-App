@@ -65,7 +65,7 @@ class _AuthPageState extends State<AuthPage>
           setState(() => _firebaseUser = user);
 
           if (!isEmailVerified) {
-            setState(() => _message = 'Email is not authenticated yet check your email.');
+            setState(() => _message = 'Email is not authenticated yet check your email or Please press it again');
             return;
           }
         }

@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   //// scaffold key for snack bar
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final snackBar = SnackBar(content: Text("로그인 정보가 없습니다 회원가입 해주세요"));
+  final snackBar = SnackBar(content: Text("There is no login info please sign up to start"));
   late String email;
   late String password;
   @override
