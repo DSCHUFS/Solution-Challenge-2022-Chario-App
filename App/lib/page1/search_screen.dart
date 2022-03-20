@@ -17,7 +17,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final snackBar = SnackBar(
-      content: Text("검색하신 기관을 찾을수없습니다.")
+      content: Text("Sorry I can't find the institution you searched for.")
   );
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   final TextEditingController _filter = TextEditingController();
@@ -56,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
               child:
               Column(
                   children:[
-                    Text('찾고 싶은 기부기관명을 검색해보세요!',style: TextStyle(color: mainColor),),
+                    Text('Search the name of the donation agency you want to find!',style: TextStyle(color: mainColor),),
                     ListView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data!.count,
@@ -172,7 +172,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
 
                       ) : Container(),
-                      hintText: '검색',
+                      hintText: 'Search',
                       labelStyle:TextStyle(color:Colors.white),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.transparent),

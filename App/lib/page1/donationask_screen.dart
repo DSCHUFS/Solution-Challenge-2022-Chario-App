@@ -32,7 +32,7 @@ class _DonationaskState extends State<Donationask>
           Column(
             children: [
               SizedBox(height: 80),
-              Text("기부를 완료 했습니까?"),
+              Text("Did you complete the donation?"),
               SizedBox(height:80),
                   Container(
                   padding: EdgeInsets.all(15),

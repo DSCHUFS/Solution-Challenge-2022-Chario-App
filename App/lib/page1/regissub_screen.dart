@@ -44,7 +44,7 @@ class _RegissubState extends State<Regissub> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('선택하신 기관은 다음과 같습니다'),
+          title: Text('This is your selection'),
           content: Container(
             color: Colors.grey[200],
             child: Wrap(
@@ -91,7 +91,7 @@ class _RegissubState extends State<Regissub> {
       context: context,
       builder: (context) {
         return MultiSelectDialog(
-          title: '구독할 기관을 선택해 주세요',
+          title: 'Choose a donation organization',
           items: items,
           initialSelectedValues: selectedValues,
         );
@@ -142,12 +142,12 @@ class _RegissubState extends State<Regissub> {
                         return Container(
                           child: Column(
                             children: [
-                              Text('반갑습니다!' + snapshot.data!.u_Username),
+                              Text('Hi !' + snapshot.data!.u_Username),
                               SizedBox(
                                 height: 20.0,
                               ),
 
-                              Text('소식을 받아볼 기부 단체를 골라보세요!'),
+                              Text('Choose a donation organization to receive news.'),
                               SizedBox(
                                 height: 40.0,
                               ),

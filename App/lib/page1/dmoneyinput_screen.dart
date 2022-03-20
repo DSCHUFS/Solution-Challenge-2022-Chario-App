@@ -41,8 +41,8 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
             child: Column(
               children: [
                 SizedBox(height: 80),
-                Text("기부  감사합니다."),
-                Text("월별 기부 액수를 입력해주세요"),
+                Text("Thank you for your donation."),
+                Text("please enter your monthly donation ammount"),
                 SizedBox(height: 80),
 
 
@@ -62,7 +62,7 @@ class _DonationmoneyinputState extends State<Donationmoneyinput> {
                       Expanded(
                           flex: 1,
                           child: Container(
-                          child:Text("원",  style: TextStyle(fontWeight: FontWeight.bold),))),
+                          child:Text("\$",  style: TextStyle(fontWeight: FontWeight.bold),))),
                     ],
                 ),
 

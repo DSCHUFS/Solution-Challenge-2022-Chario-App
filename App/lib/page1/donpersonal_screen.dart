@@ -135,7 +135,7 @@ class BottomBar extends StatelessWidget {
                       SizedBox(
                         width: 50.0,
                       ),
-                      Text("기부금 :" + "${snapshot.data!.total_price}" + "원"),
+                      Text("donation :"+ "\$" + "${snapshot.data!.total_price}"),
                       SizedBox(
                         width: 50.0,
                       ),
@@ -150,7 +150,7 @@ class BottomBar extends StatelessWidget {
                       SizedBox(
                         width: 50.0,
                       ),
-                      Text("기부금 :" + "0" + "원"),
+                      Text("donation :"+ "\$" + "0" ),
                       SizedBox(
                         width: 50.0,
                       ),

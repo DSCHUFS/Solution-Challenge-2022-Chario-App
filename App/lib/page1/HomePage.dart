@@ -142,7 +142,7 @@ class _MyAppState extends State<HomePage> {
                   Icons.person_rounded,
                   color: Colors.grey[850],
                 ),
-                title: Text('회원정보 보기'),
+                title: Text('My-Page'),
                 onTap: () {
                   Navigator.pushNamed(context, PersonalScreen.id);
                 },
@@ -153,7 +153,7 @@ class _MyAppState extends State<HomePage> {
                     Icons.favorite,
                     color: Colors.grey[850],
                   ),
-                  title: Text('구독현황'),
+                  title: Text('Subscribe'),
                   onTap: () {
                     Navigator.pushNamed(context, SubscribeScreen.id);
                   },
@@ -163,7 +163,7 @@ class _MyAppState extends State<HomePage> {
                     Icons.volunteer_activism,
                     color: Colors.grey[850],
                   ),
-                  title: Text('기부현황'),
+                  title: Text('Donation'),
                   onTap: () {
                     Navigator.pushNamed(context, DonpersonalScreen.id);
                   },
