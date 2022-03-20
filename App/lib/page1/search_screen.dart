@@ -53,72 +53,72 @@ class _SearchScreenState extends State<SearchScreen> {
           //
           // }
           return Expanded(
-           child:
-           Column(
-             children:[
-               Text('찾고 싶은 기부기관명을 검색해보세요!',style: TextStyle(color: mainColor),),
-               ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: snapshot.data!.count,
-                  itemBuilder: (context, int index) {
-                    return Card(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          // side: BorderSide(width: 0.5),
-                          borderRadius: BorderRadius.circular(30.0),),
+              child:
+              Column(
+                  children:[
+                    Text('찾고 싶은 기부기관명을 검색해보세요!',style: TextStyle(color: mainColor),),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data!.count,
+                        itemBuilder: (context, int index) {
+                          return Card(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                // side: BorderSide(width: 0.5),
+                                borderRadius: BorderRadius.circular(30.0),),
 
-                        elevation: 11.0,
+                              elevation: 11.0,
 
-                        child: Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 20.0,
-                            runSpacing: 20.0, children: [
-                          Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Row(
-                                  children: [
-                                    ClipOval(
-                                        clipper: MyClipper(),
-                                        child: Image.network(
-                                          snapshot.data!.data[index].f_logo,
-                                          width: 100,
-                                          height: 100,
-                                        )),
-                                    Text(
-                                      snapshot.data!.data[index].f_name,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20),
-                                    ),
-                                    IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    NoPoverty(
-                                                      fc_id: (snapshot.data!.data[index].f_id).toString(),
-                                                    )));
-                                      },
-                                      icon: Icon(Icons.arrow_forward_ios),
+                              child: Wrap(
+                                  alignment: WrapAlignment.center,
+                                  spacing: 20.0,
+                                  runSpacing: 20.0, children: [
+                                Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: [
+                                          ClipOval(
+                                              clipper: MyClipper(),
+                                              child: Image.network(
+                                                snapshot.data!.data[index].f_logo,
+                                                width: 100,
+                                                height: 100,
+                                              )),
+                                          Text(
+                                            snapshot.data!.data[index].f_name,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                          IconButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          NoPoverty(
+                                                            fc_id: (snapshot.data!.data[index].f_id).toString(),
+                                                          )));
+                                            },
+                                            icon: Icon(Icons.arrow_forward_ios),
 
 
-                                    ),
-                                  ],
-                                ),
-                                Container (
-                                  child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
-                                  ),
+                                          ),
+                                        ],
+                                      ),
+                                      Container (
+                                        child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
+                                        ),
 
-                                ),
-                              ]),
+                                      ),
+                                    ]),
 
-                        ]));
-                  }
-              ),
-            ]
-           )
+                              ]));
+                        }
+                    ),
+                  ]
+              )
 
           );
         });
