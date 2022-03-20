@@ -53,7 +53,7 @@ class _DonfcdetailScreenState extends State<DonfcdetailScreen>
               child: Column(
                 children :[
                   SizedBox(height: 15),
-                  Container(child: Text("기부 기관 명 :"+widget.arguments["f_name"]),),
+                  Container(child: Text("Name of organization :"+widget.arguments["f_name"]),),
                   SizedBox(height: 15),
                   Container(child: Text("\$"+"${widget.arguments["u_m_price"] }"),),
                   SizedBox(height: 15),
