@@ -113,8 +113,7 @@ class _MyAppState extends State<NoPoverty>
 
 
                     // box and text
-
-
+                    Padding(padding: EdgeInsets.all(10)),
                     Container(
                       width: 240.0,
                       height: 42.0,
@@ -139,8 +138,16 @@ class _MyAppState extends State<NoPoverty>
 
                       ),
                     ),
-                    Padding(padding: EdgeInsets.all(10)),
-                    Text(snapshot.data!.facDto.fIntro,style: TextStyle(fontSize: 18),),
+                    // Padding(padding: EdgeInsets.all(10)),
+
+                    Container(
+                      margin: const EdgeInsets.all(15.0),
+                      child:
+                      Text(snapshot.data!.facDto.fIntro,style: TextStyle(fontSize: 18),),
+                    ),
+
+
+
                     CarouselSlider(
                       options: CarouselOptions(
                         enlargeCenterPage: false,
