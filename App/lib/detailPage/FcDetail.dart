@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_try/api/Fcapi.dart';
 import '../api/ContentsApi.dart';
 import '../isLike_User.dart';
+import '../page1/HomePage.dart';
 import '../page1/donationask_screen.dart';
 import 'Fc_article.dart';
 
@@ -68,11 +69,17 @@ class _MyAppState extends State<NoPoverty>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: ListTile(
-            trailing: Image.asset("assets/Logo.png",
-                width: 100, height: 50)),
-        // centerTitle: true,
+
+        title: Text(""),
+        actions:[
+          IconButton
+            (
+          icon :Image.asset("assets/Logo.png"),
+            onPressed: () {Navigator.pushNamed(context, HomePage.id);}
+          ),
+        ],
         backgroundColor: mainColor,
+        // centerTitle: true,
       ),
       body:
       Container(
@@ -84,7 +91,12 @@ class _MyAppState extends State<NoPoverty>
 
             if (snapshot.hasData) {
               // f_name_don = snapshot.data!.data[widget.fc_id].f_name;
-              return Container(child: Column(
+              return
+                SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                // Container(
+
+                child: Column(
                   children:[
                     // logo
                    InkWell(
@@ -237,8 +249,16 @@ class _MyAppState extends State<NoPoverty>
                   }
               ),
             ]
-        );}
-          else if (snapshot.hasError) {
+        );
+        }
+        else if (snapshot.data == null)
+        {
+          return Center(
+            child: Text('there is no contents yet we will be soon update'),
+          );
+        }
+          else if (snapshot.hasError)
+          {
           return Text('${snapshot.error}');
           }
           return const CircularProgressIndicator(valueColor:AlwaysStoppedAnimation<Color>(Colors.white),);
