@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_try/page1/welcome_screen.dart';
 import '../constants.dart';
-import 'package:flutter_try/page1/HomePage.dart';
 import 'package:flutter_try/route_generator.dart';
 
 import 'firebase_options.dart';
@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primaryColor: TeamColor,
       ),
-      initialRoute: HomePage.id,
-      //initialRoute: WelcomeScreen.id,
+
+      initialRoute: WelcomeScreen.id,
       onGenerateRoute: RouteGenerator.generateRoute,
     );
 

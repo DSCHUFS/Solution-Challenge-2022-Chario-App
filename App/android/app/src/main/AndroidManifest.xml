@@ -3,7 +3,7 @@
     package="com.example.flutter_try">
 
     <application
-        android:label="Handy-Corn"
+        android:label="HandyCorn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
