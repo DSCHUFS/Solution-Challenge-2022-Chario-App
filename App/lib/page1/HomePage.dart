@@ -351,8 +351,8 @@ class _ContentHomeState extends State<ContentHome> {
                     Container(
                       alignment: Alignment.bottomRight,
                       child: Text(
-                        'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}     ',
-                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 20),
+                        'Start Donate :' + '  ${snapshot.data!.facDto.fMinimal}'+'KRW  ',
+                        style: TextStyle(fontFamily: 'Ubuntu', fontSize: 18),
                       ),
                     ),
                   ],

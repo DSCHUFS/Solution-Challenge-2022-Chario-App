@@ -30,6 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       key: _scaffoldKey,
       backgroundColor: Colors.white,
       drawer: Container(child: Text("this is drawer")),
