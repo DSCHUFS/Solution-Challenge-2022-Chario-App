@@ -53,12 +53,13 @@ android {
     }
 
     defaultConfig
-            {multiDexEnabled true
-            applicationId "com.example.flutter_try"
-            minSdkVersion 19
-            targetSdkVersion 31
-            versionCode flutterVersionCode.toInteger()
-            versionName flutterVersionName
+            {
+                multiDexEnabled true
+                applicationId "com.example.flutter_try"
+                minSdkVersion 23
+                targetSdkVersion 31
+                versionCode flutterVersionCode.toInteger()
+                versionName flutterVersionName
             }
 
     signingConfigs
@@ -68,8 +69,8 @@ android {
             keyAlias keystoreProperties['keyAlias']
             keyPassword keystoreProperties['keyPassword']
             storePassword keystoreProperties['storePassword']
-        }
-    }
+                }
+            }
 
     buildTypes {
         release {

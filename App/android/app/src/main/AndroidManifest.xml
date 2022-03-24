@@ -2,10 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_try">
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:label="HandyCorn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -34,9 +37,10 @@
 
             <intent-filter>
                 <action android:name="FLUTTER_NOTIFICATION_CLICK" />
-                <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
 
