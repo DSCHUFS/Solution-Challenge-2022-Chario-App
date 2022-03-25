@@ -54,21 +54,19 @@ class _SearchScreenState extends State<SearchScreen> {
             );
           }
 
-          return
-
-                     ListView.builder(
+          return ListView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data!.count,
-                        itemBuilder: (context, int index) {
+                        itemBuilder: (context, int index)
+                        {
                           return
                             Card(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 // side: BorderSide(width: 0.5),
-                                borderRadius: BorderRadius.circular(30.0),),
-
+                                borderRadius: BorderRadius.circular(30.0),
+                              ),
                               elevation: 11.0,
-
                               child: Wrap(
                                   alignment: WrapAlignment.center,
                                   spacing: 20.0,
@@ -76,47 +74,65 @@ class _SearchScreenState extends State<SearchScreen> {
                                 Column(
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
-                                      Row(
-                                        children: [
-                                          ClipOval(
-                                              clipper: MyClipper(),
-                                              child: Image.network(
-                                                snapshot.data!.data[index].f_logo,
-                                                width: 100,
-                                                height: 100,
-                                              )),
-                                          Text(
-                                            snapshot.data!.data[index].f_name,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 20),
-                                          ),
-                                          IconButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          NoPoverty(
-                                                            fc_id: (snapshot.data!.data[index].f_id).toString(),
-                                                          )));
-                                            },
-                                            icon: Icon(Icons.arrow_forward_ios),
-                                          ),
-                                        ],
+                                      ListTile(
+                                        leading: ClipOval(
+                                            clipper: MyClipper(),
+                                            child:
+                                            Image.network(
+                                              snapshot.data!.data[index].f_logo,
+                                              width: 100,
+                                              height: 100,
+                                            )),
+                                        title: Text(
+                                          snapshot.data!.data[index].f_name,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
+                                        trailing: IconButton(
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => NoPoverty(fc_id: (snapshot.data!.data[index].f_id).toString(),)));},
+                                          icon: Icon(Icons.arrow_forward_ios),
+                                        ),
                                       ),
+
+
+                                      // Row(
+                                      //   children: [
+                                      //     ClipOval(
+                                      //         clipper: MyClipper(),
+                                      //         child:
+                                      //         Image.network(
+                                      //           snapshot.data!.data[index].f_logo,
+                                      //           width: 100,
+                                      //           height: 100,
+                                      //         )),
+                                      //     Text(
+                                      //       snapshot.data!.data[index].f_name,
+                                      //       style: TextStyle(
+                                      //           fontWeight: FontWeight.bold,
+                                      //           fontSize: 20),
+                                      //     ),
+                                      //     IconButton(
+                                      //       onPressed: () {
+                                      //         Navigator.push(
+                                      //             context,
+                                      //             MaterialPageRoute(builder: (context) => NoPoverty(fc_id: (snapshot.data!.data[index].f_id).toString(),)));},
+                                      //       icon: Icon(Icons.arrow_forward_ios),
+                                      //     ),
+                                      //   ],
+                                      // ),
+                                      //
+                                      //
                                       Container (
                                         child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
                                         ),
-
                                       ),
                                     ]),
-
                               ]));
                               }
-
-
-
         );
         }
       );

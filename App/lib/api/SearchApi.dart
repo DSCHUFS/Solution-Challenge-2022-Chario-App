@@ -11,16 +11,9 @@ Future<FcJdata> fetchSearchdata(String search) async
         "Access-Control-Allow-Origin": "*"
       }
   );
-  print("searchapi는 ${response.body}");
-  print("searchapi는 ${response.statusCode}");
-
   if (response.statusCode == 200)
   {
-
     String jsonData = response.body;
-    print(jsonData.runtimeType);
-    print('나왔다 searchapi는 ${FcJdata.fromJson(jsonDecode(jsonData))}');
-
     return FcJdata.fromJson(jsonDecode(jsonData));
   } else
   {
