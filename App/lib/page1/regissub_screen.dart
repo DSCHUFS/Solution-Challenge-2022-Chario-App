@@ -19,7 +19,7 @@ class _RegissubState extends State<Regissub> {
   late Set<String> selectedValues;
   List<MultiSelectDialogItem<String>> items = List.generate(
     7,
-    (index) => MultiSelectDialogItem('$index+1', '미정입니다'),
+    (index) => MultiSelectDialogItem('$index+1', 'notyet'),
   );
 
   late List<String> namecheck = [];
@@ -35,8 +35,7 @@ class _RegissubState extends State<Regissub> {
     for (int i = 0; i < 7; i++) {
       namecheck.add(items[i].value);
     }
-    print("dfd");
-    print(namecheck);
+
   }
 
   void submit() {
@@ -155,7 +154,7 @@ class _RegissubState extends State<Regissub> {
                           ),
                         );
                       }else if (snapshot.hasError) {
-                        return Text('${snapshot.error}'+'!!this is error');}
+                        return Text('Welcome User!');}
                       return const CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       );

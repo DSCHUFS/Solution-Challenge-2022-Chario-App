@@ -48,16 +48,6 @@ class _MyAppState extends State<HomePage> {
     '13': sdg13,
     '14': sdg14
   };
-  static const List<String> goals = <String>[
-    'No Poverty',
-    'Zero hunger',
-    'Good Health and well-being',
-    'Quality education',
-    'Clean water and snitaion?',
-    'reduced inequalities',
-    'Climate action',
-    'Saving Life'
-  ];
 
   late fbs.User loggedInUser;
 
@@ -177,12 +167,13 @@ class _MyAppState extends State<HomePage> {
       Container
         (
         decoration:
-        BoxDecoration(
-          // gradient: LinearGradient(colors: [gradientStartColor, gradientEndColor], begin: Alignment.topCenter, end: Alignment.bottomCenter, stops: [0.3, 0.7]),
+        BoxDecoration
+          (
             color: Colors.white,
             borderRadius: BorderRadius.only(topLeft: Radius.circular(30.0), topRight: Radius.circular(30.0))
         ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               SizedBox(height: 20),
               Container(
@@ -221,8 +212,8 @@ class _MyAppState extends State<HomePage> {
                     future: CateFeJdata,
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
-                        return Flexible(
-                          child: ListView.builder(
+                        return
+                          ListView.builder(
                               shrinkWrap: true,
                               itemCount: snapshot.data!.count,
                               itemBuilder: (context, int index) {
@@ -281,8 +272,8 @@ class _MyAppState extends State<HomePage> {
                                         ]),
                                   ),
                                 );
-                              }),
-                        );
+                              }
+                              );
                       } else if (snapshot.hasError) {
                         return Text('${snapshot.error}');
                       }

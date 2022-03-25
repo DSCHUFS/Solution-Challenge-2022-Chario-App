@@ -16,13 +16,13 @@ void main() async {
 
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget
+{
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title:'Chari-o',
-      debugShowCheckedModeBanner:false,
       theme: ThemeData(
         primaryColor: TeamColor,
       ),
