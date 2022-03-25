@@ -79,11 +79,16 @@ class _SubscribeScreenState extends State<SubscribeScreen> {
                               child:
                               Text(snapshot.data!.sub_list[index].f_name),
                             ),
-                            trailing: InkWell(
-                              onTap: () {
-                                Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());
-                              },
-                              child:Icon(Icons.favorite , color: TeamColor),
+                            trailing:
+                            FittedBox(
+                              fit: BoxFit.fill,
+                              child: Row(
+                                children: <Widget>[
+                                  Text("Other likes :"),
+                                  Text(snapshot.data!.sub_count.toString()),
+                                  InkWell(onTap: () {Navigator.pushNamedAndRemoveUntil(context, NoPoverty.id, (route) => false, arguments: (snapshot.data!.sub_list[index].f_id).toString());}, child: Icon(Icons.favorite , color: TeamColor),),
+                                ],
+                              ),
                             ),
                           );
                         },
