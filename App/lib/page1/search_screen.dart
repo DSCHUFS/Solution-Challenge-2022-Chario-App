@@ -33,13 +33,19 @@ class _SearchScreenState extends State<SearchScreen> {
 
       });
     });}
-  Widget _buildBody(BuildContext context){
-    return FutureBuilder<FcJdata>(
+
+  Widget _buildBody(BuildContext context)
+  {
+    return
+      FutureBuilder<FcJdata>
+      (
         future: SearchResult,
         builder:(context,snapshot)
         {
-          if(!snapshot.hasData){
-            return Container(
+          if(!snapshot.hasData)
+          {
+            return
+              Container(
               child: Center(
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -47,21 +53,15 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             );
           }
-          // if (snapshot.hasData == null) {
-          //
-          //   _scaffoldKey.currentState?.showSnackBar(snackBar);
-          //
-          // }
-          return Expanded(
-              child:
-              Column(
-                  children:[
-                    Text('Search the name of the donation agency you want to find!',style: TextStyle(color: mainColor),),
-                    ListView.builder(
+
+          return
+
+                     ListView.builder(
                         shrinkWrap: true,
                         itemCount: snapshot.data!.count,
                         itemBuilder: (context, int index) {
-                          return Card(
+                          return
+                            Card(
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                 // side: BorderSide(width: 0.5),
@@ -102,8 +102,6 @@ class _SearchScreenState extends State<SearchScreen> {
                                                           )));
                                             },
                                             icon: Icon(Icons.arrow_forward_ios),
-
-
                                           ),
                                         ],
                                       ),
@@ -115,13 +113,13 @@ class _SearchScreenState extends State<SearchScreen> {
                                     ]),
 
                               ]));
-                        }
-                    ),
-                  ]
-              )
+                              }
 
-          );
-        });
+
+
+        );
+        }
+      );
   }
 
 
@@ -131,23 +129,16 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       // key: _scaffoldKey,
       body: Column(
         children: <Widget>[
-          Padding(
-            padding:EdgeInsets.all(10),
-
-          ),
+          Padding(padding:EdgeInsets.all(10),),
           Container(
               color: mainColor,
               padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
-              child:Row(
-                children: <Widget> [
-                  Expanded(flex: 6,child:TextField(
-                    focusNode: focusNode,
-                    style: TextStyle(
-                        fontSize: 15
-                    ),
+              child:Row(children: <Widget> [
+                Expanded(flex: 6,child:TextField(focusNode: focusNode, style: TextStyle(fontSize: 15),
                     autofocus: true,
                     controller: _filter,
                     decoration: InputDecoration(
@@ -156,22 +147,15 @@ class _SearchScreenState extends State<SearchScreen> {
                       prefixIcon: Icon(
                         Icons.search,
                         color:Colors.white60,
-                        size:20,
-                      ),
-                      suffixIcon: focusNode.hasFocus
-                          ? IconButton(
-                        icon: Icon(
+                        size:20,),
+                      suffixIcon: focusNode.hasFocus ? IconButton(icon: Icon(
                           Icons.cancel,
                           size:20,
                           color: Colors.white,
                         ), onPressed: () { setState(() {
                         _filter.clear();
                         _searchText = "";
-                      }); },
-
-
-
-                      ) : Container(),
+                      }); },) : Container(),
                       hintText: 'Search',
                       labelStyle:TextStyle(color:Colors.white),
                       focusedBorder: OutlineInputBorder(
@@ -190,10 +174,12 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
 
                   ),
-
                 ],
-              )
-          ), _buildBody(context)
+              )),
+          Text('Search the name of the donation agency you want to find!',style: TextStyle(color: mainColor),),
+          Flexible(
+            fit: FlexFit.tight,
+              child: _buildBody(context)),
         ],
       ),
     );
