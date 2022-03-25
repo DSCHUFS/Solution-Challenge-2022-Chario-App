@@ -126,6 +126,13 @@ class _SearchScreenState extends State<SearchScreen> {
               color: mainColor,
               padding: EdgeInsets.fromLTRB(5, 10, 5, 10),
               child:Row(children: <Widget> [
+                IconButton(
+                  icon: Icon(Icons.arrow_back_ios,
+                    color:Colors.white60,
+                    size:20,), onPressed: (){
+                  Navigator.pop(context, HomePage.id);
+                },
+                ),
                 Expanded(flex: 6,child:TextField(focusNode: focusNode, style: TextStyle(fontSize: 15),
                     autofocus: true,
                     controller: _filter,
@@ -133,9 +140,11 @@ class _SearchScreenState extends State<SearchScreen> {
                       filled:true,
                       fillColor: Colors.white12,
                       prefixIcon: Icon(
-                        Icons.search,
-                        color:Colors.white60,
-                        size:20,),
+                            Icons.search,
+                            color:Colors.white60,
+                            size:20,),
+                         
+
                       suffixIcon: focusNode.hasFocus ? IconButton(icon: Icon(
                           Icons.cancel,
                           size:20,
