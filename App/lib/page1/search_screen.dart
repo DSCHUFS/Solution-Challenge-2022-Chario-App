@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_try/color.dart';
 import '../api/Fcapi.dart';
@@ -48,7 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
               Container(
               child: Center(
                 child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                 ),
               ),
             );
@@ -98,37 +97,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                         ),
                                       ),
 
-
-                                      // Row(
-                                      //   children: [
-                                      //     ClipOval(
-                                      //         clipper: MyClipper(),
-                                      //         child:
-                                      //         Image.network(
-                                      //           snapshot.data!.data[index].f_logo,
-                                      //           width: 100,
-                                      //           height: 100,
-                                      //         )),
-                                      //     Text(
-                                      //       snapshot.data!.data[index].f_name,
-                                      //       style: TextStyle(
-                                      //           fontWeight: FontWeight.bold,
-                                      //           fontSize: 20),
-                                      //     ),
-                                      //     IconButton(
-                                      //       onPressed: () {
-                                      //         Navigator.push(
-                                      //             context,
-                                      //             MaterialPageRoute(builder: (context) => NoPoverty(fc_id: (snapshot.data!.data[index].f_id).toString(),)));},
-                                      //       icon: Icon(Icons.arrow_forward_ios),
-                                      //     ),
-                                      //   ],
-                                      // ),
-                                      //
-                                      //
-                                      Container (
-                                        child:  ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()
-                                        ),
+                                      Padding(
+                                        key: UniqueKey(),
+                                        padding: const EdgeInsets.all(8.0),
+                                      child:ContentHome(fc_id:(snapshot.data!.data[index].f_id).toString()),
                                       ),
                                     ]),
                               ]));
@@ -146,7 +118,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset : false,
-      // key: _scaffoldKey,
+      key: _scaffoldKey,
       body: Column(
         children: <Widget>[
           Padding(padding:EdgeInsets.all(10),),

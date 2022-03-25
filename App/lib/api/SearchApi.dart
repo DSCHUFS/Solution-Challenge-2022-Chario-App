@@ -14,6 +14,10 @@ Future<FcJdata> fetchSearchdata(String search) async
   if (response.statusCode == 200)
   {
     String jsonData = response.body;
+
+    print("check retun of response");
+    print(response.body);
+
     return FcJdata.fromJson(jsonDecode(jsonData));
   } else
   {

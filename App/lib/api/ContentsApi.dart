@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+
 
 Future <ContentsApi>fetchContJdata(String fcId)async {
 
@@ -13,7 +13,10 @@ Future <ContentsApi>fetchContJdata(String fcId)async {
         "Access-Control-Allow-Origin": "*"
       }
   );
+
   print("Contents api 는${response.statusCode}");
+  print(fcId);
+
   if (response.statusCode == 200)
   {
 

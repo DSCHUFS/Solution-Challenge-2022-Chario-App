@@ -296,7 +296,8 @@ class _MyAppState extends State<HomePage> {
 
 class ContentHome extends StatefulWidget {
   final fc_id;
-  const ContentHome({required this.fc_id});
+  const ContentHome({Key? key,required this.fc_id
+  }): super(key: key);
 
   @override
   _ContentHomeState createState() => _ContentHomeState();

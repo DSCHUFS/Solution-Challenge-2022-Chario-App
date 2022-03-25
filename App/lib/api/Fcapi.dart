@@ -11,15 +11,10 @@ Future<FcJdata> fetchFcJdata() async
       "Access-Control-Allow-Origin": "*"
       }
       );
-  print(response.statusCode);
-
   if (response.statusCode == 200)
   {
 
     String jsonData = response.body;
-
-    print(jsonDecode(jsonData));
-
     return FcJdata.fromJson(jsonDecode(jsonData));
   } else
   {
