@@ -13,18 +13,11 @@ Future <ContentsApi>fetchContJdata(String fcId)async {
         "Access-Control-Allow-Origin": "*"
       }
   );
-
-  print("Contents api 는${response.statusCode}");
-  print(fcId);
-
   if (response.statusCode == 200)
   {
-
     String jsonData = response.body;
     return ContentsApi.fromJson(jsonDecode(jsonData));
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
     throw Exception('Failed to load data');
   }
 }
