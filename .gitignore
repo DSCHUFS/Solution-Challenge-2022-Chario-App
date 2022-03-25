@@ -55,7 +55,7 @@ coverage/
 # Regenerating the pubspec.lock file lets you test your package against the latest compatible versions of its dependencies.
 # See https://dart.dev/guides/libraries/private-files#pubspeclock
 #pubspec.lock
-/keystore
+
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
@@ -141,7 +141,7 @@ proguard/
 captures/
 .navigation/
 
-app/key.jks
+
 # Keystore files
 *.jks
 *.keystore
