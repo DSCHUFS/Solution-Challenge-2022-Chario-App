@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart' as fbs;
 
 class donpost
@@ -46,31 +45,3 @@ class donpost
         }
       }
 }
-
-//
-// Welcome welcomeFromJson(String str) => Welcome.fromJson(json.decode(str));
-//
-// String welcomeToJson(Welcome data) => json.encode(data.toJson());
-//
-// class Welcome {
-//   Welcome({
-//     required this.donationDate,
-//     required this.donationPrice,
-//
-//   });
-//
-//   String donationDate;
-//   int donationPrice;
-//
-//   factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
-//     donationDate: json["donationDate"],
-//     donationPrice: json["donationPrice"],
-//
-//   );
-//
-//   Map<String, dynamic> toJson() => {
-//     "donationDate": donationDate,
-//     "donationPrice": donationPrice,
-//
-//   };
-// }

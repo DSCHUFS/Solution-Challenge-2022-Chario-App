@@ -43,24 +43,21 @@ class _MyAppState extends State<NoPoverty>
   void makelist()
   async{
     ContentsApi gdata = await fetchContJdata(widget.fc_id);
-    for (int i = 0; i < gdata.contentsList.length; i++) {
+    for (int i = 0; i < gdata.contentsList.length; i++)
+    {
       imageList.add(gdata.contentsList[i].image);
       image_index[gdata.contentsList[i].image] = i;
-      // print('${i}는 ${imageList[i]}');
     }
-    print(imageList);
   }
 
   @override
   void initState()
   {
-    // TODO: implement initState
     super.initState();
     DetailFcJdata = fetchFcJdata();
     String fcId = widget.fc_id.toString();
     ContentFcJdata = fetchContJdata(fcId) ;
     makelist();
-
   }
 
 
@@ -69,7 +66,6 @@ class _MyAppState extends State<NoPoverty>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-
         title: Text(""),
         actions:[
           IconButton
@@ -234,25 +230,22 @@ class _MyAppState extends State<NoPoverty>
                         isLike = true;
                       }
                     });
-                    print(isLike);
+
                     if (isLike){
                       String LikeId = (widget.fc_id).toString();
                       final UserModel? like = await createUser(LikeId);
                       setState(() {
                         _like = like!;
                       });
-                      print("dlqhk~~");
-                    }else{
+                    }
+                    else
+                    {
                       String LikeId = (widget.fc_id).toString();
                       final UserModel? delete = await deleteUser(LikeId);
                       setState(() {
                         _delete = delete!;
                       });
                     }
-
-                    print(_like?.status);print(_delete?.status);
-
-
                   }
               ),
             ]

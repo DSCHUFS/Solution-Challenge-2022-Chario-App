@@ -22,8 +22,6 @@ Future <ContentsApi>fetchContJdata(String fcId)async {
   }
 }
 
-
-
 class ContentsApi {
   ContentsApi({
     required this.facDto,

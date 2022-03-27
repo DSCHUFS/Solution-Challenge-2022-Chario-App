@@ -23,8 +23,6 @@ Future<UData> fetchUserJdata() async {
   {
     String jsonData = response.body;
     var myJson = jsonDecode(jsonData);
-    print(myJson['u_username'].runtimeType);
-
     return UData.fromJson(myJson);
   } else {
     throw Exception('Failed to load data');

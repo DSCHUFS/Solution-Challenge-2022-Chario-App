@@ -9,7 +9,6 @@ async{
   final user = await _auth.currentUser!;
   final String Authorization = user.uid as String;
   final String u_email = user.email as String;
-
   const String apiUrl = "http://34.134.67.181:8080/api/user";
   var requestbody = jsonEncode
     ({
@@ -34,8 +33,6 @@ async{
   if(response.statusCode == 200)
   {
     final String responseString = response.body;
-    print("thsi is output") ;
-    print(UserPostModelFromJson(responseString));
     return  UserPostModelFromJson(responseString) ;
   }
   else
@@ -59,7 +56,6 @@ class UserPostModel {
 
   factory UserPostModel.fromJson(Map<String, dynamic> json) => UserPostModel(
     status: json["status"],
-
   );
 
   Map<String, dynamic> toJson() => {

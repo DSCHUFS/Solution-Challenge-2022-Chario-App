@@ -28,7 +28,7 @@ class FcJdata {
   final List<Data> data;
 
   const FcJdata({
-    // required this.u_username,
+
     required this.count,
     required this.data,
   });

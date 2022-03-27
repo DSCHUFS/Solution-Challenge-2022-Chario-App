@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -16,15 +14,9 @@ Future<CateFdata> fetchCateFeJdata(String cate_id) async
 
   if (response.statusCode == 200)
   {
-
     String jsonData = response.body;
-
-    print(jsonDecode(jsonData));
-
     return CateFdata.fromJson(jsonDecode(jsonData));
   } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
     throw Exception('Failed to load data');
   }
 }
@@ -41,7 +33,6 @@ class CateFdata {
 
   factory CateFdata.fromJson(Map<String, dynamic> json)
   {
-      var list = json['data'] as List;
 
       return CateFdata(count: json["count"], data: List<Facility>.from(json["data"].map((x) => Facility.fromJson(x))));
 

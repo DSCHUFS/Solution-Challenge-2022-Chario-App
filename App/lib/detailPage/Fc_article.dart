@@ -4,11 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../api/ContentsApi.dart';
 _launchURL(String url) async {
-
   await launch(url);
-  // } else {
-  //   throw "could not lunch";
-  // }
 }
 class HomeScreen extends StatefulWidget {
  final ContentsList content;
