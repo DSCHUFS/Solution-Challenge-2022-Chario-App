@@ -5,7 +5,7 @@
 
     <application
         android:usesCleartextTraffic="true"
-        android:label="HandyCorn"
+        android:label="HandyCon"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 
