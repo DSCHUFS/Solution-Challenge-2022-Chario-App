@@ -1,5 +1,6 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.flutter_try">
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -8,6 +9,17 @@
         android:label="HandyCon"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.com.shekarmudaliyar.social_share"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
 
         <activity
             android:name=".MainActivity"

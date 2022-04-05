@@ -10,7 +10,7 @@ Future<UserModel?> createUser(String fc_id) async
   final String Authorization = user.uid as String;
 
 
-  final response = await http.post(Uri.parse("http://34.134.67.181:8080/api/subscribe/" + fc_id),
+  final response = await http.post(Uri.parse("http://34.64.244.237:8080/api/subscribe/" + fc_id),
     headers: {HttpHeaders.authorizationHeader: Authorization},
   );
 

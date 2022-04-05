@@ -10,7 +10,7 @@ Future <UserDonJdata>fetchDonJdata()async {
 
   final response = await http.get
     (
-      Uri.parse("http://34.134.67.181:8080/api/donation/"),
+      Uri.parse("http://34.64.244.237:8080/api/donation/"),
       headers: {
         "Authorization" : Authorization,
         "Content-Type": "application/json",

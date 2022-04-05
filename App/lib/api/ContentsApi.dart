@@ -7,7 +7,7 @@ Future <ContentsApi>fetchContJdata(String fcId)async {
 
   final response = await http.get
     (
-      Uri.parse("http://34.134.67.181:8080/api/facility/"+fcId),
+      Uri.parse("http://34.64.244.237:8080/api/facility/"+fcId),
       headers: {
         "Accept": "application/json",
         "Access-Control-Allow-Origin": "*"

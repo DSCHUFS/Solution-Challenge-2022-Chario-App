@@ -13,7 +13,7 @@ class donpost
         final user = await _auth.currentUser!;
         final String Authorization = user.uid as String;
 
-        const String apiUrl = "http://34.134.67.181:8080/api/donation";
+        const String apiUrl = "http://34.64.244.237:8080/api/donation";
         var resquestbody = jsonEncode({
           "donationDate": date,
           "donationPrice": price,
